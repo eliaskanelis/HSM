@@ -125,22 +125,10 @@ typedef struct <a class="el" href="structstate.html">state</a>&#160;</td><td cla
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a2f92663949e883b472e0b1effa4bf4d0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hsm_8h.html#a2f92663949e883b472e0b1effa4bf4d0">stateMode_t</a> { <a class="el" href="hsm_8h.html#a2f92663949e883b472e0b1effa4bf4d0af1ca16f85c38f6843da477ec1aa176a6">ENTRY</a>, 
-<a class="el" href="hsm_8h.html#a2f92663949e883b472e0b1effa4bf4d0ac52a80f28bdc6b1cd181af2bfe35a326">DURING</a>, 
-<a class="el" href="hsm_8h.html#a2f92663949e883b472e0b1effa4bf4d0a7a10b5d68d31711288e1fe0fa17dbf4f">EXIT</a>
- }<tr class="memdesc:a2f92663949e883b472e0b1effa4bf4d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hsm state mode.  <a href="hsm_8h.html#a2f92663949e883b472e0b1effa4bf4d0">More...</a><br /></td></tr>
-</td></tr>
-<tr class="separator:a2f92663949e883b472e0b1effa4bf4d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc1f55b61c22cb17be24d61058d517ab"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hsm_8h.html#adc1f55b61c22cb17be24d61058d517ab">hsmMode_t</a> { <br />
-&#160;&#160;<a class="el" href="hsm_8h.html#adc1f55b61c22cb17be24d61058d517aba0a3227ddd1783480d5671243bc03c08e">HSMM_ON_ENTRY</a>, 
+<tr class="memitem:adc1f55b61c22cb17be24d61058d517ab"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hsm_8h.html#adc1f55b61c22cb17be24d61058d517ab">hsmMode_t</a> { <a class="el" href="hsm_8h.html#adc1f55b61c22cb17be24d61058d517aba0a3227ddd1783480d5671243bc03c08e">HSMM_ON_ENTRY</a>, 
 <a class="el" href="hsm_8h.html#adc1f55b61c22cb17be24d61058d517abaf430c6aaaa7467dee845366c7c1adf43">HSMM_DURING</a>, 
 <a class="el" href="hsm_8h.html#adc1f55b61c22cb17be24d61058d517aba5c169a4116774a3fd9d7ec9445d8bdde">HSMM_CHECK_GUARD</a>, 
-<a class="el" href="hsm_8h.html#adc1f55b61c22cb17be24d61058d517aba134dd2f271cca2d3df73d4e27797001c">HSMM_GOTO_CHILD</a>, 
-<br />
-&#160;&#160;<a class="el" href="hsm_8h.html#adc1f55b61c22cb17be24d61058d517aba8d4bb933dd72f11f9cff3d17f9a356d6">HSMM_GOTO_PARENT</a>, 
-<a class="el" href="hsm_8h.html#adc1f55b61c22cb17be24d61058d517abaebd254b8baa44fbb921762c3232fbce5">HSMM_EXIT_PARENT</a>, 
 <a class="el" href="hsm_8h.html#adc1f55b61c22cb17be24d61058d517aba1b0c5663aa83f7c5719c2cbd8cc767fb">HSMM_ON_EXIT</a>
-<br />
  }<tr class="memdesc:adc1f55b61c22cb17be24d61058d517ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">HSM mode.  <a href="hsm_8h.html#adc1f55b61c22cb17be24d61058d517ab">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:adc1f55b61c22cb17be24d61058d517ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,9 +153,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ac55ba06c3c044c8b5a740b68e97af3cd"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hsm_8h.html#ac55ba06c3c044c8b5a740b68e97af3cd">hsm_state_getParentDepth</a> (const <a class="el" href="hsm_8h.html#a6d795d70c71822ed110b77cffa499f13">state_t</a> *me)</td></tr>
 <tr class="memdesc:ac55ba06c3c044c8b5a740b68e97af3cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the history depth number.  <a href="#ac55ba06c3c044c8b5a740b68e97af3cd">More...</a><br /></td></tr>
 <tr class="separator:ac55ba06c3c044c8b5a740b68e97af3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af71aaafbc06a9a188ee1e1511d1c2325"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hsm_8h.html#af71aaafbc06a9a188ee1e1511d1c2325">hsm_state_onEntry</a> (<a class="el" href="hsm_8h.html#a6d795d70c71822ed110b77cffa499f13">state_t</a> **me, <a class="el" href="structhsm__event__t.html">hsm_event_t</a> *event)</td></tr>
-<tr class="memdesc:af71aaafbc06a9a188ee1e1511d1c2325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs onEntry action for the current state's history tree.  <a href="#af71aaafbc06a9a188ee1e1511d1c2325">More...</a><br /></td></tr>
-<tr class="separator:af71aaafbc06a9a188ee1e1511d1c2325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cdd2857ba0f3692f6eafccb9cd7be98"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hsm_8h.html#a7cdd2857ba0f3692f6eafccb9cd7be98">hsm_state_onEntry</a> (<a class="el" href="hsm_8h.html#a6d795d70c71822ed110b77cffa499f13">state_t</a> **me, <a class="el" href="structhsm__event__t.html">hsm_event_t</a> *event)</td></tr>
+<tr class="memdesc:a7cdd2857ba0f3692f6eafccb9cd7be98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs onEntry action for the current state's history tree.  <a href="#a7cdd2857ba0f3692f6eafccb9cd7be98">More...</a><br /></td></tr>
+<tr class="separator:a7cdd2857ba0f3692f6eafccb9cd7be98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cdedba4f63874ed6472dc47a3343ec7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hsm_8h.html#a1cdedba4f63874ed6472dc47a3343ec7">hsm_state_during</a> (const <a class="el" href="hsm_8h.html#a6d795d70c71822ed110b77cffa499f13">state_t</a> *me, <a class="el" href="structhsm__event__t.html">hsm_event_t</a> *event)</td></tr>
 <tr class="memdesc:a1cdedba4f63874ed6472dc47a3343ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs during action for the current state's history tree.  <a href="#a1cdedba4f63874ed6472dc47a3343ec7">More...</a><br /></td></tr>
 <tr class="separator:a1cdedba4f63874ed6472dc47a3343ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -228,37 +216,7 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="adc1f55b61c22cb17be24d61058d517aba5c169a4116774a3fd9d7ec9445d8bdde"></a>HSMM_CHECK_GUARD&#160;</td><td class="fielddoc"><p>The HSM is checking guard. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="adc1f55b61c22cb17be24d61058d517aba134dd2f271cca2d3df73d4e27797001c"></a>HSMM_GOTO_CHILD&#160;</td><td class="fielddoc"><p>The HSM is going to child. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="adc1f55b61c22cb17be24d61058d517aba8d4bb933dd72f11f9cff3d17f9a356d6"></a>HSMM_GOTO_PARENT&#160;</td><td class="fielddoc"><p>The HSM is going to parent. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="adc1f55b61c22cb17be24d61058d517abaebd254b8baa44fbb921762c3232fbce5"></a>HSMM_EXIT_PARENT&#160;</td><td class="fielddoc"><p>The HSM is in parent on Exit. </p>
-</td></tr>
 <tr><td class="fieldname"><a id="adc1f55b61c22cb17be24d61058d517aba1b0c5663aa83f7c5719c2cbd8cc767fb"></a>HSMM_ON_EXIT&#160;</td><td class="fielddoc"><p>The HSM is in onExit. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a2f92663949e883b472e0b1effa4bf4d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f92663949e883b472e0b1effa4bf4d0">&sect;&nbsp;</a></span>stateMode_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="hsm_8h.html#a2f92663949e883b472e0b1effa4bf4d0">stateMode_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The hsm state mode. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2f92663949e883b472e0b1effa4bf4d0af1ca16f85c38f6843da477ec1aa176a6"></a>ENTRY&#160;</td><td class="fielddoc"><p>The hsm state is in onEntry action. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2f92663949e883b472e0b1effa4bf4d0ac52a80f28bdc6b1cd181af2bfe35a326"></a>DURING&#160;</td><td class="fielddoc"><p>The hsm state is in during action. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2f92663949e883b472e0b1effa4bf4d0a7a10b5d68d31711288e1fe0fa17dbf4f"></a>EXIT&#160;</td><td class="fielddoc"><p>The hsm state is in onExit action. </p>
 </td></tr>
 </table>
 
@@ -342,7 +300,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="hsm_8h_a6fde1c0d38ca306f9c220b90714470e5_cgraph.png" border="0" usemap="#hsm_8h_a6fde1c0d38ca306f9c220b90714470e5_cgraph" alt=""/></div>
 <map name="hsm_8h_a6fde1c0d38ca306f9c220b90714470e5_cgraph" id="hsm_8h_a6fde1c0d38ca306f9c220b90714470e5_cgraph">
-<area shape="rect" id="node2" href="hsm_8h.html#af71aaafbc06a9a188ee1e1511d1c2325" title="Runs onEntry action for the current state&#39;s history tree. " alt="" coords="200,5,335,32"/>
+<area shape="rect" id="node2" href="hsm_8h.html#a7cdd2857ba0f3692f6eafccb9cd7be98" title="Runs onEntry action for the current state&#39;s history tree. " alt="" coords="200,5,335,32"/>
 <area shape="rect" id="node5" href="hsm_8h.html#a1cdedba4f63874ed6472dc47a3343ec7" title="Runs during action for the current state&#39;s history tree. " alt="" coords="205,56,330,83"/>
 <area shape="rect" id="node6" href="hsm_8h.html#a63ecfc4ec4ff7e76cd4ce8f860c29846" title="Checks for transition guards for the current state&#39;s history tree. " alt="" coords="187,107,347,149"/>
 <area shape="rect" id="node7" href="hsm_8h.html#ac55ba06c3c044c8b5a740b68e97af3cd" title="Gets the history depth number. " alt="" coords="177,173,357,200"/>
@@ -601,7 +559,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="hsm_8h_ac68c2c5cd0d14a029223cda87467ec41_icgraph.png" border="0" usemap="#hsm_8h_ac68c2c5cd0d14a029223cda87467ec41_icgraph" alt=""/></div>
 <map name="hsm_8h_ac68c2c5cd0d14a029223cda87467ec41_icgraph" id="hsm_8h_ac68c2c5cd0d14a029223cda87467ec41_icgraph">
-<area shape="rect" id="node2" href="hsm_8h.html#af71aaafbc06a9a188ee1e1511d1c2325" title="Runs onEntry action for the current state&#39;s history tree. " alt="" coords="226,5,361,32"/>
+<area shape="rect" id="node2" href="hsm_8h.html#a7cdd2857ba0f3692f6eafccb9cd7be98" title="Runs onEntry action for the current state&#39;s history tree. " alt="" coords="226,5,361,32"/>
 <area shape="rect" id="node4" href="hsm_8h.html#a1cdedba4f63874ed6472dc47a3343ec7" title="Runs during action for the current state&#39;s history tree. " alt="" coords="231,56,356,83"/>
 <area shape="rect" id="node5" href="hsm_8h.html#a63ecfc4ec4ff7e76cd4ce8f860c29846" title="Checks for transition guards for the current state&#39;s history tree. " alt="" coords="213,107,373,149"/>
 <area shape="rect" id="node3" href="hsm_8h.html#a6fde1c0d38ca306f9c220b90714470e5" title="Hierarchical state machine event handler. " alt="" coords="421,56,545,83"/>
@@ -645,7 +603,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="hsm_8h_aae2ad8b79bcbe0a73bfdcaba5db8c691_icgraph.png" border="0" usemap="#hsm_8h_aae2ad8b79bcbe0a73bfdcaba5db8c691_icgraph" alt=""/></div>
 <map name="hsm_8h_aae2ad8b79bcbe0a73bfdcaba5db8c691_icgraph" id="hsm_8h_aae2ad8b79bcbe0a73bfdcaba5db8c691_icgraph">
-<area shape="rect" id="node2" href="hsm_8h.html#af71aaafbc06a9a188ee1e1511d1c2325" title="Runs onEntry action for the current state&#39;s history tree. " alt="" coords="206,5,341,32"/>
+<area shape="rect" id="node2" href="hsm_8h.html#a7cdd2857ba0f3692f6eafccb9cd7be98" title="Runs onEntry action for the current state&#39;s history tree. " alt="" coords="206,5,341,32"/>
 <area shape="rect" id="node4" href="hsm_8h.html#a1cdedba4f63874ed6472dc47a3343ec7" title="Runs during action for the current state&#39;s history tree. " alt="" coords="211,56,336,83"/>
 <area shape="rect" id="node5" href="hsm_8h.html#a63ecfc4ec4ff7e76cd4ce8f860c29846" title="Checks for transition guards for the current state&#39;s history tree. " alt="" coords="193,107,353,149"/>
 <area shape="rect" id="node3" href="hsm_8h.html#a6fde1c0d38ca306f9c220b90714470e5" title="Hierarchical state machine event handler. " alt="" coords="401,56,525,83"/>
@@ -696,14 +654,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="af71aaafbc06a9a188ee1e1511d1c2325"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af71aaafbc06a9a188ee1e1511d1c2325">&sect;&nbsp;</a></span>hsm_state_onEntry()</h2>
+<a id="a7cdd2857ba0f3692f6eafccb9cd7be98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cdd2857ba0f3692f6eafccb9cd7be98">&sect;&nbsp;</a></span>hsm_state_onEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void hsm_state_onEntry </td>
+          <td class="memname">int hsm_state_onEntry </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="hsm_8h.html#a6d795d70c71822ed110b77cffa499f13">state_t</a> **&#160;</td>
           <td class="paramname"><em>me</em>, </td>
@@ -726,15 +684,23 @@ Here is the caller graph for this function:</div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">me</td><td>The hsm state. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>The event signal. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>The event signal.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Action didn't run. </td></tr>
+    <tr><td class="paramname">1</td><td>Action run and it was the last one. </td></tr>
+    <tr><td class="paramname">2</td><td>Action run but has more children actions to run. </td></tr>
   </table>
   </dd>
 </dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="hsm_8h_af71aaafbc06a9a188ee1e1511d1c2325_cgraph.png" border="0" usemap="#hsm_8h_af71aaafbc06a9a188ee1e1511d1c2325_cgraph" alt=""/></div>
-<map name="hsm_8h_af71aaafbc06a9a188ee1e1511d1c2325_cgraph" id="hsm_8h_af71aaafbc06a9a188ee1e1511d1c2325_cgraph">
+<div class="center"><img src="hsm_8h_a7cdd2857ba0f3692f6eafccb9cd7be98_cgraph.png" border="0" usemap="#hsm_8h_a7cdd2857ba0f3692f6eafccb9cd7be98_cgraph" alt=""/></div>
+<map name="hsm_8h_a7cdd2857ba0f3692f6eafccb9cd7be98_cgraph" id="hsm_8h_a7cdd2857ba0f3692f6eafccb9cd7be98_cgraph">
 <area shape="rect" id="node2" href="hsm_8h.html#ac68c2c5cd0d14a029223cda87467ec41" title="Gets the top hsm state. " alt="" coords="188,5,348,32"/>
 <area shape="rect" id="node3" href="hsm_8h.html#aae2ad8b79bcbe0a73bfdcaba5db8c691" title="Checks if the state has a child. " alt="" coords="198,56,338,83"/>
 </map>
@@ -742,8 +708,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="hsm_8h_af71aaafbc06a9a188ee1e1511d1c2325_icgraph.png" border="0" usemap="#hsm_8h_af71aaafbc06a9a188ee1e1511d1c2325_icgraph" alt=""/></div>
-<map name="hsm_8h_af71aaafbc06a9a188ee1e1511d1c2325_icgraph" id="hsm_8h_af71aaafbc06a9a188ee1e1511d1c2325_icgraph">
+<div class="center"><img src="hsm_8h_a7cdd2857ba0f3692f6eafccb9cd7be98_icgraph.png" border="0" usemap="#hsm_8h_a7cdd2857ba0f3692f6eafccb9cd7be98_icgraph" alt=""/></div>
+<map name="hsm_8h_a7cdd2857ba0f3692f6eafccb9cd7be98_icgraph" id="hsm_8h_a7cdd2857ba0f3692f6eafccb9cd7be98_icgraph">
 <area shape="rect" id="node2" href="hsm_8h.html#a6fde1c0d38ca306f9c220b90714470e5" title="Hierarchical state machine event handler. " alt="" coords="188,5,312,32"/>
 </map>
 </div>

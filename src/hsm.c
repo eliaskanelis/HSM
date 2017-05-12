@@ -182,13 +182,18 @@ uint32_t hsm_state_getParentDepth( const state_t* me )
  * 
  * \param[in,out]	me		The hsm state.
  * \param[in]		event	The event signal.
+ * 
+ * \retval			0		Action didn't run.
+ * \retval			1		Action run and it was the last one.
+ * \retval			2		Action run but has more children actions to run.
  */
-void hsm_state_onEntry( state_t** me, hsm_event_t* event )
+int hsm_state_onEntry( state_t** me, hsm_event_t* event )
 {
 	/* Init */
 	state_t* state = hsm_state_getTopState( *me );
 	
 	/* Run for all children */
+	int isActionRun = 0;
 	int hasChildren = 0;//We assume it has no children
 	do
 	{
@@ -203,18 +208,41 @@ void hsm_state_onEntry( state_t** me, hsm_event_t* event )
 			{
 				state->onEntry( state, event );
 			}
+			
+			/**/
+			isActionRun = 1;
 		}
 		
 		/* Get children */
 		hasChildren = hsm_state_hasChild( state );
 		if( hasChildren )
 		{
+			/* Set history state */
 			state = state->itsHistoryState;
+			
+			/* Exit if any action is run */
+			if( isActionRun )
+			{
+				/* Exit with action run but has more */
+				return 2;
+			}
 		}
 		
 	} while( hasChildren );
 	
 	*me = state;
+	
+	/* Exit */
+	if( isActionRun )
+	{
+		/* Exit with last action run */
+		return 1;
+	}
+	else
+	{
+		/* Exit with no actions run */
+		return 0;
+	}
 }
 
 /**
@@ -438,6 +466,118 @@ int hsm_handleEvent( hsm_t* me, hsm_event_t* event )
 	/* Init */
 	state_t* curr = me->itsCurrentState;
 	
+	/* State machine for the state machine!!! */
+	switch ( me->itsMode )
+	{
+		case HSMM_ON_ENTRY:
+		{
+			/* On entry */
+			int err = hsm_state_onEntry( &curr, event );
+			
+			if( err == 1 )
+			{
+				me->itsMode = HSMM_DURING;
+			}
+			
+			break;
+		}
+		case HSMM_DURING:
+		{
+			/* During */
+			hsm_state_during( curr, event );
+			
+			me->itsMode = HSMM_CHECK_GUARD;
+			
+			break;
+		}
+		case HSMM_CHECK_GUARD:
+		{
+			/* Guard/Action */
+			me->itsNextState = hsm_state_checkGuard_Action( curr, event );
+			if( me->itsNextState == NULL )
+			{
+				/* Guard did not let transition */
+				me->itsMode = HSMM_DURING;
+				return 1;
+			}
+			else
+			{
+				/* Guard let transition */
+				me->itsMode = HSMM_ON_EXIT;
+			}
+			
+			break;
+		}
+		case HSMM_ON_EXIT:
+		{
+			/* 
+			 * Compare current vs nextState
+			 * 
+			 * If current parent and next have the same parent
+			 * then the parent should not exit.
+			 */
+			int flag = 1;
+			if ( curr->itsParentState == me->itsNextState->itsParentState )
+			{
+				if ( hsm_state_getParentDepth( me->itsNextState ) > 0 )
+				{
+					flag = 0;
+				}
+			}
+			
+			/* On exit */
+			if ( flag == 0 )
+			{
+				hsm_state_onExit( curr, event, 0 );
+			}
+			else
+			{
+				hsm_state_onExit( curr, event, 1 );
+			}
+			
+			/* Debug */
+			console_t serial = console_build();
+			serial.puts( "\nTransition: " );
+			serial.puts( hsm_state_getBottomState(curr)->itsName );
+			serial.puts( " ---> " );
+			serial.puts( me->itsNextState->itsName );
+			serial.puts( "\n" );
+			
+			/* Set this child as parent's history */
+			if( hsm_state_hasParent( me->itsNextState ) )
+			{
+				me->itsNextState->itsParentState->itsHistoryState = me->itsNextState;
+			}
+			
+			/* Set next state */
+			me->itsCurrentState = me->itsNextState;
+			
+			/* Set history */
+			//TODO: Change currents history.
+			
+			me->itsMode = HSMM_ON_ENTRY;
+			
+			break;
+		}
+		default:
+		{
+			break;
+		}
+	}
+	
+	
+	return 0;
+	
+	
+	
+	
+	
+	
+	
+	
+	/* Init */
+	//state_t* curr = me->itsCurrentState;
+	
 	/* On entry */
 	hsm_state_onEntry( &curr, event );
 	
@@ -455,7 +595,7 @@ int hsm_handleEvent( hsm_t* me, hsm_event_t* event )
 	 * Compare current vs nextState
 	 * 
 	 * If current parent and next have the same parent
-	 * the the parent should not exit.
+	 * then the parent should not exit.
 	 */
 	int flag = 1;
 	if ( curr->itsParentState == nextState->itsParentState )

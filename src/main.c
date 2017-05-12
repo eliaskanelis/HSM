@@ -91,15 +91,9 @@ int main( void )
 	console_t serial = console_build();
 	
 	serial.puts( "\n\n-------- UNIT TEST --------n\n" );
-//	oldSys_unit_test();
 	newSys_unit_test();
 	
 	serial.puts( "\n\n-------- DEVELOPMENT TEST AREA 1 --------\n\n" );
-//	serial.puts( "---- OldSys ----\n" );
-//	debugState( &oldSys_workState );
-//	debugState( &oldSys_errorState );
-//	debugState( &oldSys_onState );
-//	debugState( &oldSys_offState );
 	serial.puts( "---- NewSys ----\n" );
 	debugState( &newSys_superState );
 	debugState( &newSys_onState );
@@ -107,12 +101,6 @@ int main( void )
 	debugState( &newSys_outState );
 	
 	serial.puts( "\n\n-------- DEVELOPMENT TEST AREA 2 --------\n\n" );
-//	serial.puts( "---- OldSys ----\n" );
-//	oldSys_t oldSys = oldSys_build();
-//	debugStateDefActions( (hsm_t*)&oldSys, &oldSys_workState );
-//	debugStateDefActions( (hsm_t*)&oldSys, &oldSys_errorState );
-//	debugStateDefActions( (hsm_t*)&oldSys, &oldSys_onState );
-//	debugStateDefActions( (hsm_t*)&oldSys, &oldSys_offState );
 	serial.puts( "---- NewSys ----\n" );
 	newSys_t newSys = newSys_build();
 	debugStateDefActions( (hsm_t*)&newSys, &newSys_superState );
@@ -125,16 +113,28 @@ int main( void )
 	newSys_t sys = newSys_build();
 	serial.puts( "Initial state " );
 	serial.puts( sys.itsCurrentState->itsName );
+	
+	serial.puts( "\n\n-----------------------------------\n" );
 	serial.puts( "\n\nEvent: " );
-	uint32_t i = 0;
 	char* s = serial.gets();
+	serial.puts( "\n" );
+	
+	uint32_t i = 0;
 	
 	/* Endless loop */
 	while( 1 )
 	{
 		/* Handle event */
-//		state_t* oldState = sys.itsCurrentState;
 		newSys_handleEvent( &sys, &(hsm_event_t){ 0, s } );
+		
+		serial.puts( "\n\n-----------------------------------\n" );
+		if( sys.itsMode == HSMM_CHECK_GUARD )
+		{
+			serial.puts( "\n\nEvent: " );
+			s = serial.gets();
+			serial.puts( "\n" );
+		}
+		
 		
 		/* Show debug data */
 //		serial.puts( "\n" );
@@ -149,10 +149,11 @@ int main( void )
 //		serial.puts( " | Level: " );
 //		serial.putNum( sys.itsLevel );
 //		serial.puts( " | " );
-		serial.puts( "\n\n-----------------------------------\n" );
-		serial.puts( "\n\nEvent: " );
-		s = serial.gets();
-		serial.puts( "\n" );
+
+//		serial.puts( "\n\n-----------------------------------\n" );
+//		serial.puts( "\n\nEvent: " );
+//		s = serial.gets();
+//		serial.puts( "\n" );
 		Sleep( 100 );
 		i++;
 	}

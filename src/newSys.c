@@ -36,11 +36,11 @@ static void onEntry( state_t* me, hsm_event_t* event )
 
 static void during( state_t* me, hsm_event_t* event )
 {
-//#ifdef HSM_DEBUG
-//	console_t serial = console_build();
-//	serial.puts( me->itsName );
-//	serial.puts( ":\tduring\n" );
-//#endif
+#ifdef HSM_DEBUG
+	console_t serial = console_build();
+	serial.puts( me->itsName );
+	serial.puts( ":\tduring\n" );
+#endif
 };
 
 static void onExit( state_t* me, hsm_event_t* event )

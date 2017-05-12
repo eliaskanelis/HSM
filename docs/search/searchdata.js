@@ -6,8 +6,8 @@ var indexSectionsWithContent =
   3: "ch",
   4: "adeghiopt",
   5: "cns",
-  6: "hs",
-  7: "deh",
+  6: "h",
+  7: "h",
   8: "h",
   9: "ads",
   10: "ht"

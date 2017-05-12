@@ -59,9 +59,6 @@ typedef enum
 	HSMM_ON_ENTRY,			/**< The HSM is in onEntry action. */
 	HSMM_DURING,			/**< The HSM is in during action. */
 	HSMM_CHECK_GUARD,		/**< The HSM is checking guard. */
-	HSMM_GOTO_CHILD,		/**< The HSM is going to child. */
-	HSMM_GOTO_PARENT,		/**< The HSM is going to parent. */
-	HSMM_EXIT_PARENT,		/**< The HSM is in parent on Exit. */
 	HSMM_ON_EXIT			/**< The HSM is in onExit. */
 } hsmMode_t;
 
@@ -136,7 +133,7 @@ int			hsm_state_hasParent( const state_t* me );
 //uint32_t	hsm_state_getHistoryDepth( state_t* me );
 uint32_t	hsm_state_getParentDepth( const state_t* me );
 
-void		hsm_state_onEntry( state_t** me, hsm_event_t* event );
+int			hsm_state_onEntry( state_t** me, hsm_event_t* event );
 void		hsm_state_during( const state_t* me, hsm_event_t* event );
 state_t*	hsm_state_checkGuard_Action( const state_t* me, hsm_event_t* event );
 void		hsm_state_onExit( const state_t* me, hsm_event_t* event, const uint32_t parentLevel );
