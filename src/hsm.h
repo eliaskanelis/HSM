@@ -52,16 +52,6 @@
 ******************************************************************************/
 
 /**
- * \brief The hsm state mode.
- */
-typedef enum
-{
-	ENTRY,		/**< The hsm state is in onEntry action. */
-	DURING,		/**< The hsm state is in during action. */
-	EXIT		/**< The hsm state is in onExit action. */
-} stateMode_t;
-
-/**
  * \brief HSM mode.
  */
 typedef enum
