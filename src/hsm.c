@@ -62,166 +62,6 @@ void hsm_reset( hsm_t* me )
 }
 
 /**
- * \brief Hierarchical state machine event handler.
- * 
- * \param[in]	me		The hierarchical state machine handle.
- * \param[in]	event	The event signal.
- */
-void hsm_handleEvent( hsm_t* me, hsm_event_t* event )
-{
-	/* 
-	 * ENTRY
-	 */
-	if ( me->itsCurrentState->itsMode == ENTRY )
-	{
-		/* Run entry action */
-		if( me->itsCurrentState->onEntry != NULL )
-		{
-			me->itsCurrentState->onEntry( me->itsCurrentState, event );
-		}
-		/* Now proceed to DURING */
-		me->itsCurrentState->itsMode = DURING;
-	} /* ENTRY */
-	
-	/* 
-	 * DURING
-	 */
-	if ( me->itsCurrentState->itsMode == DURING )
-	{
-		/* Run entry action */
-		if( me->itsCurrentState->during != NULL )
-		{
-			me->itsCurrentState->during( me->itsCurrentState, event );
-		}
-		
-		/* 
-		 * CHECK_GUARD
-		 */
-		/* Search all transitions for successful guards */
-		uint32_t trans_i = 0;
-		bool guard = false;
-		for( trans_i=0; trans_i<me->itsCurrentState->itsTransitionNum; trans_i++ )
-		{
-			/* Test check guard */
-			
-			/* Check guard */
-			if( me->itsCurrentState->itsTransition[trans_i].guard == NULL )
-			{
-				/* Unconditional guard */
-				
-				/* We found next state */
-				me->itsNextState = me->itsCurrentState->itsTransition[trans_i].targetState;
-				
-				/* Now proceed to ACTION */
-				guard = true;
-				break;
-			}
-			else if (  me->itsCurrentState->itsTransition[trans_i].guard( me->itsCurrentState, event ) )
-			{
-				/* We found next state */
-				me->itsNextState = me->itsCurrentState->itsTransition[trans_i].targetState;
-				
-				/* Now proceed to ACTION */
-				guard = true;
-				break;
-			}
-		} /* CHECK_GUARD */
-		
-		/* 
-		 * ACTION
-		 */
-		if ( guard == true )
-		{
-			/* Run transition action */
-			if( me->itsCurrentState->itsTransition[trans_i].action != NULL )
-			{
-				me->itsCurrentState->itsTransition[trans_i].action( me->itsCurrentState, event );
-			}
-			/* Now proceed to EXIT */
-			me->itsCurrentState->itsMode = EXIT;
-		} /* ACTION */
-		
-		/* 
-		 * CHECK_CHILD (HISTORY) 
-		 */
-		 else
-		{
-			
-			/* Check to see if it has children */
-			if ( me->itsCurrentState->itsInitialState != NULL )
-			{
-				/* It has children */
-				me->itsLevel++;
-				
-				me->itsNextState = me->itsCurrentState->itsHistoryState;
-				me->itsCurrentState = me->itsNextState;
-				
-				#ifdef HSM_DEBUG
-				console_t serial = console_build();
-				serial.puts( "\t  Checked clild.\n" );
-				#endif
-				
-				hsm_handleEvent( me, event );//TODO: SOS
-				return;
-			}
-			
-			me->itsCurrentState->itsMode = DURING;
-		} /* CHECK_CHILD (HISTORY)  */
-		
-//		/* 
-//		 * CHECK_PARENT
-//		 */
-//		if ( me->itsCurrentState->itsParentState != NULL )
-//		{
-//			/* Check parent mode */
-//			if ( me->itsCurrentState->itsParentState->itsMode == DURING )
-//			{
-//				if ( me->itsNextState->itsParentState == me->itsCurrentState->itsParentState )
-//				{
-//					if ( guard == true )
-//					{
-//						console_t serial = console_build();
-//						//serial.puts( "\t  The same parents!!!!!!!!!\n" );
-//						serial.gets();
-//						/* Child is about to exit so parent should exit too */
-//						me->itsCurrentState->itsParentState->itsMode = EXIT;//TODO: except the new transition has the same parent
-//					}
-//				}
-//			}
-//			
-//			
-//			console_t serial = console_build();
-//			serial.puts( "\t  Checked parent.\n" );
-//			
-//			/* We should run parent */
-//			me->itsNextState = me->itsCurrentState->itsParentState;
-//			me->itsCurrentState = me->itsNextState;
-//			
-//			hsm_handleEvent( me, event );
-//			return;
-//		} /* CHECK_PARENT */
-	} /* DURING */
-	
-	/* 
-	 * EXIT
-	 */
-	if ( me->itsCurrentState->itsMode == EXIT )
-	{
-		/* Run entry action */
-		if( me->itsCurrentState->onExit != NULL )
-		{
-			me->itsCurrentState->onExit( me->itsCurrentState, event );
-		}
-		
-		/* Reset state to ENTRY */
-		me->itsCurrentState->itsMode = ENTRY;
-		
-		/* Set the next state */
-		me->itsCurrentState = me->itsNextState;
-	} /* EXIT */
-}
-
-/**
  * \brief Resets the state to its initial condition.
  * 
  * \param[in]	me		The hsm state.
@@ -230,7 +70,6 @@ void hsm_state_reset( state_t* me )
 {
 	/* Reset states */
 	me->isActivated = false;
-	me->itsMode = ENTRY;
 	me->itsHistoryState = (state_t*)me->itsInitialState;
 }
 
@@ -594,7 +433,7 @@ state_t* hsm_state_getBottomState( const state_t* me )
  * \retval		0		The hsm did not change state.
  * \retval		1		The hsm changed state.
  */
-int hsm_handleEventNew( hsm_t* me, hsm_event_t* event )
+int hsm_handleEvent( hsm_t* me, hsm_event_t* event )
 {
 	/* Init */
 	state_t* curr = me->itsCurrentState;

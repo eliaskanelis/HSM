@@ -17,7 +17,6 @@ var menudata={children:[
 {text:'e',url:'globals.html#index_e'},
 {text:'h',url:'globals.html#index_h'},
 {text:'n',url:'globals.html#index_n'},
-{text:'o',url:'globals.html#index_o'},
 {text:'s',url:'globals.html#index_s'}]},
 {text:'Functions',url:'globals_func.html'},
 {text:'Typedefs',url:'globals_type.html'},

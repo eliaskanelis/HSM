@@ -1,4 +1,3 @@
-C:/Users/Tedi/Desktop/New folder/HSM/src/oldSys.c:23: warning: Compound testData_t is not documented.
 C:/Users/Tedi/Desktop/New folder/HSM/src/newSys.c:23: warning: Compound testData_t is not documented.
 C:/Users/Tedi/Desktop/New folder/HSM/README.md:1: warning: found more than one \mainpage comment block! (first occurrence: C:/Users/Tedi/Desktop/New folder/HSM/src/main.c, line 7), Skipping current block!
 C:/Users/Tedi/Desktop/New folder/HSM/src/newSys.h:88: warning: Member newSys_unit_test(void) (function) of file newSys.h is not documented.
@@ -9,14 +8,5 @@ C:/Users/Tedi/Desktop/New folder/HSM/src/newSys.h:58: warning: Member newSys_sup
 C:/Users/Tedi/Desktop/New folder/HSM/src/newSys.h:59: warning: Member newSys_onState (variable) of file newSys.h is not documented.
 C:/Users/Tedi/Desktop/New folder/HSM/src/newSys.h:60: warning: Member newSys_offState (variable) of file newSys.h is not documented.
 C:/Users/Tedi/Desktop/New folder/HSM/src/newSys.h:61: warning: Member newSys_outState (variable) of file newSys.h is not documented.
-C:/Users/Tedi/Desktop/New folder/HSM/src/oldSys.h:88: warning: Member oldSys_unit_test(void) (function) of file oldSys.h is not documented.
-C:/Users/Tedi/Desktop/New folder/HSM/src/oldSys.h:90: warning: Member oldSys_build(void) (function) of file oldSys.h is not documented.
-C:/Users/Tedi/Desktop/New folder/HSM/src/oldSys.h:91: warning: Member oldSys_reset(oldSys_t *me) (function) of file oldSys.h is not documented.
-C:/Users/Tedi/Desktop/New folder/HSM/src/oldSys.h:92: warning: Member oldSys_handleEvent(oldSys_t *me, hsm_event_t *event) (function) of file oldSys.h is not documented.
-C:/Users/Tedi/Desktop/New folder/HSM/src/oldSys.h:58: warning: Member oldSys_workState (variable) of file oldSys.h is not documented.
-C:/Users/Tedi/Desktop/New folder/HSM/src/oldSys.h:59: warning: Member oldSys_errorState (variable) of file oldSys.h is not documented.
-C:/Users/Tedi/Desktop/New folder/HSM/src/oldSys.h:60: warning: Member oldSys_onState (variable) of file oldSys.h is not documented.
-C:/Users/Tedi/Desktop/New folder/HSM/src/oldSys.h:61: warning: Member oldSys_offState (variable) of file oldSys.h is not documented.
 C:/Users/Tedi/Desktop/New folder/HSM/src/newSys.c:24: warning: Member input (variable) of class testData_t is not documented.
 C:/Users/Tedi/Desktop/New folder/HSM/src/newSys.c:25: warning: Member expectedState (variable) of class testData_t is not documented.
-C:/Users/Tedi/Desktop/New folder/HSM/src/oldSys.c:26: warning: Member expected_level (variable) of class testData_t is not documented.

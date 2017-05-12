@@ -15,8 +15,6 @@
     <File Name="../src/hsm.h"/>
     <File Name="../src/newSys.c"/>
     <File Name="../src/newSys.h"/>
-    <File Name="../src/oldSys.c"/>
-    <File Name="../src/oldSys.h"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

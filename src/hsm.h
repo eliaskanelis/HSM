@@ -116,7 +116,6 @@ struct state
 	
 	/* Read only, defined internally */
 	bool isActivated;											/**< A state is activated after onEntry action and deactivated after onExit action. */
-	stateMode_t itsMode;										/**< The state's mode. */
 	state_t* itsHistoryState;									/**< If it has children, this is the history pseudostate. */
 };
 
@@ -138,7 +137,6 @@ typedef struct
 
 hsm_t		hsm_build( const state_t* initialState );
 void		hsm_reset( hsm_t* me );
-void		hsm_handleEvent( hsm_t* me, hsm_event_t* event );
 
 /* State related */
 void		hsm_state_reset( state_t* me );
@@ -156,6 +154,6 @@ void		hsm_state_onExit( const state_t* me, hsm_event_t* event, const uint32_t pa
 state_t*	hsm_state_getTopState( const state_t* me );
 state_t*	hsm_state_getBottomState( const state_t* me );
 
-int			hsm_handleEventNew( hsm_t* me, hsm_event_t* event );
+int			hsm_handleEvent( hsm_t* me, hsm_event_t* event );
 
 #endif /* HSM_H_ONLY_ONE_INCLUDE_SAFETY */

@@ -13,7 +13,6 @@
 	Include files
 ******************************************************************************/
 
-#include "oldSys.h"
 #include "newSys.h"
 #include "console.h"
 

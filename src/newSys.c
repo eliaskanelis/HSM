@@ -36,11 +36,11 @@ static void onEntry( state_t* me, hsm_event_t* event )
 
 static void during( state_t* me, hsm_event_t* event )
 {
-#ifdef HSM_DEBUG
-	console_t serial = console_build();
-	serial.puts( me->itsName );
-	serial.puts( ":\tduring\n" );
-#endif
+//#ifdef HSM_DEBUG
+//	console_t serial = console_build();
+//	serial.puts( me->itsName );
+//	serial.puts( ":\tduring\n" );
+//#endif
 };
 
 static void onExit( state_t* me, hsm_event_t* event )
@@ -138,8 +138,7 @@ state_t newSys_superState =
 	.itsTransitionNum = 0,
 	.itsTransition = NULL,
 	
-	.itsMode = false,
-	.itsMode = ENTRY,
+	.isActivated = false,
 	.itsHistoryState = &newSys_onState,
 };
 
@@ -156,8 +155,7 @@ state_t newSys_onState =
 		{ &guard, &action, &newSys_offState }
 	},
 	
-	.itsMode = false,
-	.itsMode = ENTRY,
+	.isActivated = false,
 	.itsHistoryState = NULL,
 };
 
@@ -174,8 +172,7 @@ state_t newSys_offState =
 		{ &guard, &action, &newSys_outState }
 	},
 	
-	.itsMode = false,
-	.itsMode = ENTRY,
+	.isActivated = false,
 	.itsHistoryState = NULL,
 };
 
@@ -192,8 +189,7 @@ state_t newSys_outState =
 		{ &guard, &action, &newSys_onState }
 	},
 	
-	.itsMode = false,
-	.itsMode = ENTRY,
+	.isActivated = false,
 	.itsHistoryState = NULL,
 };
 
@@ -242,5 +238,5 @@ void newSys_reset( newSys_t* me )
 
 void newSys_handleEvent( newSys_t* me, hsm_event_t* event )
 {
-	hsm_handleEventNew( (hsm_t*)me, (hsm_event_t*)event);
+	hsm_handleEvent( (hsm_t*)me, (hsm_event_t*)event);
 }

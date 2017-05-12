@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="C:\Users\Tedi\Desktop\New folder\HSM\prj\HSM.workspace">
+  <int Value="2" Name="m_selectedTab"/>
+  <wxString Value="C:\Users\Tedi\Desktop\New folder\HSM\prj\HSM.workspace" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="C:\Users\Tedi\Desktop\New folder\HSM\src\main.c" Name="FileName"/>
+      <int Value="114" Name="FirstVisibleLine"/>
+      <int Value="133" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Tedi\Desktop\New folder\HSM\src\hsm.c" Name="FileName"/>
+      <int Value="431" Name="FirstVisibleLine"/>
+      <int Value="461" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Tedi\Desktop\New folder\HSM\src\hsm.h" Name="FileName"/>
+      <int Value="129" Name="FirstVisibleLine"/>
+      <int Value="129" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Tedi\Desktop\New folder\HSM\src\newSys.c" Name="FileName"/>
+      <int Value="169" Name="FirstVisibleLine"/>
+      <int Value="131" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>
