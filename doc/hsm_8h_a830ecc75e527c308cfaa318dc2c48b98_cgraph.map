@@ -1,0 +1,12 @@
+<map id="hsm_handleEventNew" name="hsm_handleEventNew">
+<area shape="rect" id="node2" href="$hsm_8h.html#af71aaafbc06a9a188ee1e1511d1c2325" title="Runs onEntry action for the current state&#39;s history tree. " alt="" coords="225,5,360,32"/>
+<area shape="rect" id="node5" href="$hsm_8h.html#a1cdedba4f63874ed6472dc47a3343ec7" title="Runs during action for the current state&#39;s history tree. " alt="" coords="230,56,355,83"/>
+<area shape="rect" id="node6" href="$hsm_8h.html#a63ecfc4ec4ff7e76cd4ce8f860c29846" title="Checks for transition guards for the current state&#39;s history tree. " alt="" coords="213,107,373,149"/>
+<area shape="rect" id="node7" href="$hsm_8h.html#ac55ba06c3c044c8b5a740b68e97af3cd" title="Gets the history depth number. " alt="" coords="203,173,383,200"/>
+<area shape="rect" id="node8" href="$hsm_8h.html#a599171d5e950fafabc2e1c050bb85096" title="Runs onExit action for the current state&#39;s history tree. " alt="" coords="229,275,356,301"/>
+<area shape="rect" id="node9" href="$hsm_8h.html#a22ac02bb5f651c7112c24a8e167471eb" title="Gets the bottom hsm state. " alt="" coords="431,237,612,264"/>
+<area shape="rect" id="node10" href="$hsm_8h.html#a2dd79dd6fcf62529f9d36a86bca4827e" title="Checks if the state has a parent. " alt="" coords="447,300,596,327"/>
+<area shape="rect" id="node11" href="$console_8h.html#af1105837fdcc891804c24dbec78bfd18" title="Builds the console and provides a handler. " alt="" coords="242,376,343,403"/>
+<area shape="rect" id="node3" href="$hsm_8h.html#ac68c2c5cd0d14a029223cda87467ec41" title="Gets the top hsm state. " alt="" coords="441,31,601,57"/>
+<area shape="rect" id="node4" href="$hsm_8h.html#aae2ad8b79bcbe0a73bfdcaba5db8c691" title="Checks if the state has a child. " alt="" coords="451,81,591,108"/>
+</map>

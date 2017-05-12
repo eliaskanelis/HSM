@@ -6,7 +6,7 @@ echo ===================================================
 
 MKDIR "../../doc/"
 
-doxygen.exe "doxyfile" 1>NUL 2>"../../doc/doxygen_stderr.txt"
+doxygen.exe "doxyfile" 1>NUL 2>"doxygen_stderr.txt"
 
 echo ===================================================
 echo Doxygen process completed.
