@@ -138,7 +138,6 @@ state_t newSys_superState =
 	.itsTransitionNum = 0,
 	.itsTransition = NULL,
 	
-	.isActivated = false,
 	.itsHistoryState = &newSys_onState,
 };
 
@@ -155,7 +154,6 @@ state_t newSys_onState =
 		{ &guard, &action, &newSys_offState }
 	},
 	
-	.isActivated = false,
 	.itsHistoryState = NULL,
 };
 
@@ -172,7 +170,6 @@ state_t newSys_offState =
 		{ &guard, &action, &newSys_outState }
 	},
 	
-	.isActivated = false,
 	.itsHistoryState = NULL,
 };
 
@@ -189,7 +186,6 @@ state_t newSys_outState =
 		{ &guard, &action, &newSys_onState }
 	},
 	
-	.isActivated = false,
 	.itsHistoryState = NULL,
 };
 
@@ -203,8 +199,7 @@ static void newSys_init( hsm_t* obj, state_t* initialState )
 {
 	obj->itsInitialState = initialState;
 	obj->itsCurrentState = initialState;
-	obj->itsLevel = 0;
-	obj->itsMode = HSMM_ON_ENTRY;
+	obj->itsMode = HSM_ON_ENTRY;
 }
 
 /******************************************************************************

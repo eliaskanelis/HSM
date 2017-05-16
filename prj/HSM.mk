@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=HSM
 ConfigurationName      :=Debug
-WorkspacePath          :="C:/Users/Tedi/Desktop/New folder/HSM/prj"
-ProjectPath            :="C:/Users/Tedi/Desktop/New folder/HSM/prj"
+WorkspacePath          :=C:/Users/Tedi/Desktop/New_HSM/HSM/prj
+ProjectPath            :=C:/Users/Tedi/Desktop/New_HSM/HSM/prj
 IntermediateDirectory  :=./../obj
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Tedi
-Date                   :=12/05/2017
+Date                   :=16/05/2017
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=C:/TDM-GCC-32/bin/g++.exe
 SharedObjectLinkerName :=C:/TDM-GCC-32/bin/g++.exe -shared -fPIC
@@ -94,7 +94,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/up_src_main.c$(ObjectSuffix): ../src/main.c $(IntermediateDirectory)/up_src_main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/Tedi/Desktop/New folder/HSM/src/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_src_main.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/Tedi/Desktop/New_HSM/HSM/src/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_src_main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/up_src_main.c$(DependSuffix): ../src/main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/up_src_main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/up_src_main.c$(DependSuffix) -MM ../src/main.c
 
@@ -102,7 +102,7 @@ $(IntermediateDirectory)/up_src_main.c$(PreprocessSuffix): ../src/main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/up_src_main.c$(PreprocessSuffix) ../src/main.c
 
 $(IntermediateDirectory)/up_src_console.c$(ObjectSuffix): ../src/console.c $(IntermediateDirectory)/up_src_console.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/Tedi/Desktop/New folder/HSM/src/console.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_src_console.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/Tedi/Desktop/New_HSM/HSM/src/console.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_src_console.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/up_src_console.c$(DependSuffix): ../src/console.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/up_src_console.c$(ObjectSuffix) -MF$(IntermediateDirectory)/up_src_console.c$(DependSuffix) -MM ../src/console.c
 
@@ -110,7 +110,7 @@ $(IntermediateDirectory)/up_src_console.c$(PreprocessSuffix): ../src/console.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/up_src_console.c$(PreprocessSuffix) ../src/console.c
 
 $(IntermediateDirectory)/up_src_hsm.c$(ObjectSuffix): ../src/hsm.c $(IntermediateDirectory)/up_src_hsm.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/Tedi/Desktop/New folder/HSM/src/hsm.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_src_hsm.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/Tedi/Desktop/New_HSM/HSM/src/hsm.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_src_hsm.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/up_src_hsm.c$(DependSuffix): ../src/hsm.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/up_src_hsm.c$(ObjectSuffix) -MF$(IntermediateDirectory)/up_src_hsm.c$(DependSuffix) -MM ../src/hsm.c
 
@@ -118,7 +118,7 @@ $(IntermediateDirectory)/up_src_hsm.c$(PreprocessSuffix): ../src/hsm.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/up_src_hsm.c$(PreprocessSuffix) ../src/hsm.c
 
 $(IntermediateDirectory)/up_src_newSys.c$(ObjectSuffix): ../src/newSys.c $(IntermediateDirectory)/up_src_newSys.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/Tedi/Desktop/New folder/HSM/src/newSys.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_src_newSys.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/Tedi/Desktop/New_HSM/HSM/src/newSys.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_src_newSys.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/up_src_newSys.c$(DependSuffix): ../src/newSys.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/up_src_newSys.c$(ObjectSuffix) -MF$(IntermediateDirectory)/up_src_newSys.c$(DependSuffix) -MM ../src/newSys.c
 

@@ -32,8 +32,9 @@
 	Include files
 ******************************************************************************/
 
-#include <stdint.h>
-#include <stdbool.h>
+#include <stdint.h>		/* uint32_t */
+#include <stdbool.h>	/* bool */
+
 
 /******************************************************************************
 	Custom definitions
@@ -50,17 +51,6 @@
 /******************************************************************************
 	Type definitions
 ******************************************************************************/
-
-/**
- * \brief HSM mode.
- */
-typedef enum
-{
-	HSMM_ON_ENTRY,			/**< The HSM is in onEntry action. */
-	HSMM_DURING,			/**< The HSM is in during action. */
-	HSMM_CHECK_GUARD,		/**< The HSM is checking guard. */
-	HSMM_ON_EXIT			/**< The HSM is in onExit. */
-} hsmMode_t;
 
 /**
  * \brief HSM event signal.
@@ -87,6 +77,19 @@ typedef struct
 } transition_t;
 
 /**
+ * \brief HSM mode.
+ */
+typedef enum
+{
+	HSM_ON_ENTRY,		/**< The HSM is in onEntry action. */
+	HSM_DURING,			/**< The HSM is in during action. */
+	HSM_GUARD,			/**< The HSM is checking guards. */
+	HSM_ACTION,			/**< The HSM is in guard's action. */
+	HSM_ON_EXIT,		/**< The HSM is in onExit. */
+	HSM_ERROR			/**< The HSM is in error. */
+} hsmMode_t;
+
+/**
  * \brief HSM state.
  */
 struct state
@@ -94,7 +97,7 @@ struct state
 	/* User defined */
 	const char* const itsName;									/**< The first state to enter. */
 	const state_t* const itsInitialState;						/**< If it has children this is the initial. */
-	state_t* const itsParentState;						/**< The state's parent. */
+	state_t* const itsParentState;								/**< The state's parent. */
 	void (*const onEntry)( state_t* me, hsm_event_t* event );	/**< The state's on entry action. */
 	void (*const during)( state_t* me, hsm_event_t* event );	/**< The state's during action. */
 	void (*const onExit)( state_t* me, hsm_event_t* event );	/**< The state's on exit action. */
@@ -102,7 +105,6 @@ struct state
 	transition_t* itsTransition;								/**< The state's transition. */
 	
 	/* Read only, defined internally */
-	bool isActivated;											/**< A state is activated after onEntry action and deactivated after onExit action. */
 	state_t* itsHistoryState;									/**< If it has children, this is the history pseudostate. */
 };
 
@@ -114,8 +116,9 @@ typedef struct
 	state_t* itsInitialState;	/**< The first state to enter. */
 	state_t* itsCurrentState;	/**< The current state. */
 	state_t* itsNextState;		/**< The next state. */
-	uint32_t itsLevel;			/**< The child depth level. */
 	hsmMode_t itsMode;			/**< The hsm mode. */
+	
+	uint32_t transition_id;//TODO: This is temporary here...
 } hsm_t;
 
 /******************************************************************************
@@ -133,14 +136,18 @@ int			hsm_state_hasParent( const state_t* me );
 //uint32_t	hsm_state_getHistoryDepth( state_t* me );
 uint32_t	hsm_state_getParentDepth( const state_t* me );
 
-int			hsm_state_onEntry( state_t** me, hsm_event_t* event );
-void		hsm_state_during( const state_t* me, hsm_event_t* event );
-state_t*	hsm_state_checkGuard_Action( const state_t* me, hsm_event_t* event );
+uint32_t	hsm_state_onEntry( state_t** me, hsm_event_t* event );
+uint32_t	hsm_state_during( state_t** me, hsm_event_t* event );
+uint32_t	hsm_state_guard( state_t** me, hsm_event_t* event, uint32_t* transition_id );
+uint32_t	hsm_state_action( state_t** me, hsm_event_t* event, const uint32_t transition_id );
+
+uint32_t	hsm_state_onExit_new( state_t** me, hsm_event_t* event );
+
 void		hsm_state_onExit( const state_t* me, hsm_event_t* event, const uint32_t parentLevel );
 
 state_t*	hsm_state_getTopState( const state_t* me );
 state_t*	hsm_state_getBottomState( const state_t* me );
 
-int			hsm_handleEvent( hsm_t* me, hsm_event_t* event );
+hsmMode_t	hsm_handleEvent( hsm_t* me, hsm_event_t* event );
 
 #endif /* HSM_H_ONLY_ONE_INCLUDE_SAFETY */
