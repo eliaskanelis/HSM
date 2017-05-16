@@ -15,6 +15,15 @@
     <File Name="../src/hsm.h"/>
     <File Name="../src/newSys.c"/>
     <File Name="../src/newSys.h"/>
+    <File Name="../src/unit.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="tests">
+    <VirtualDirectory Name="hsm">
+      <File Name="../tests/hsm/test_state.h"/>
+      <File Name="../tests/hsm/test_state_transitions.h"/>
+      <File Name="../tests/hsm/unit_test_hsm_module.h"/>
+    </VirtualDirectory>
+    <File Name="../tests/tests.h"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
@@ -28,9 +37,12 @@
     </GlobalSettings>
     <Configuration Name="Debug" CompilerType="MinGW ( TDM-GCC-32 )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-g;-O0;-Wall" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
-        <IncludePath Value="."/>
+        <IncludePath Value="../src"/>
       </Compiler>
-      <Linker Options="" Required="yes"/>
+      <Linker Options="" Required="yes">
+        <LibraryPath Value="../lib"/>
+        <Library Value="libUnit.a"/>
+      </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="./../bin/Debug/$(ProjectName)" IntermediateDirectory="./../obj" Command="./../bin/Debug/$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
       <BuildSystem Name="Default"/>

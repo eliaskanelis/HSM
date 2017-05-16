@@ -16,6 +16,8 @@
 #include "newSys.h"
 #include "console.h"
 
+#include "../tests/tests.h"
+
 #include <stdint.h>
 #include <stdbool.h>
 #include <windows.h>	/* Sleep */
@@ -91,6 +93,7 @@ int main( void )
 	console_t serial = console_build();
 	
 	serial.puts( "\n\n-------- UNIT TEST --------\n\n" );
+	run_unit_tests();
 //	newSys_unit_test();
 //		
 //	serial.puts( "\n\n-------- DEVELOPMENT TEST AREA 1 --------\n\n" );
