@@ -1,1 +1,0 @@
-./../obj/up_src_main.c.o ./../obj/up_src_console.c.o ./../obj/up_src_hsm.c.o ./../obj/up_src_newSys.c.o   
