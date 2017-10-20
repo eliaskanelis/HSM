@@ -120,6 +120,17 @@ int main( void )
 {
 	/* Build console */
 	console_t serial = console_build();
+
+	/* Greeting */
+	serial.puts( "---- Hierarchical state machine v" );
+	serial.puts( VERSION );
+	serial.puts( " ----\nDate: " );
+	serial.puts( COMPILE_DATE );
+	serial.puts( "\nTime: " );
+	serial.puts( COMPILE_TIME );
+	serial.puts( "\nBranch: " );
+	serial.puts( BRANCH );
+	serial.puts( "\nSystem ready...\n\n" );
 	
 	//serial.puts( "\n\n-------- UNIT TEST --------\n\n" );
 	//run_unit_tests();
@@ -141,7 +152,7 @@ int main( void )
 //	debugStateDefActions( (hsm_t*)&newSys, &newSys_outState );
 	
 	/* Build new system */
-	serial.puts( "\n\n---- FSM Professional Development ----\n\n" );
+	serial.puts( "---- FSM Professional Development ----\n\n" );
 	newSys_t sys = newSys_build();
 	serial.puts( "Initial state " );
 	serial.puts( sys.base.itsCurrentState->itsName );

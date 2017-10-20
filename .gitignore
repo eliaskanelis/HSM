@@ -1,10 +1,22 @@
+# Executables
+*.elf
+*.exe
+*.out
+
 # Object files
 *.o
-*.o.d
-*.d
-*.ko
 *.obj
-*.elf
+
+# Auto-generated files
+version.h
+
+# Other files
+*.tmp
+
+# Folders
+.dep
+bin
+doc
 
 # Precompiled Headers
 *.gch
@@ -16,26 +28,8 @@
 *.la
 *.lo
 
-# Shared objects (inc. Windows DLLs)
+# Shared objects
 *.dll
 *.so
 *.so.*
 *.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-prj/.codelite/refactoring.db
-prj/.codelite/.tern-port
-prj/.codelite/.tern-project
-prj/.codelite/compilation.db
-prj/.codelite/compile_commands.json
-prj/.codelite/HSM.tags
