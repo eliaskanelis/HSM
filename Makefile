@@ -73,9 +73,7 @@ C_SOURCES +=	src/console.c\
 
 # Get version number from git
 # https://christianhujer.github.io/Git-Version-in-Doxygen/
-# doc: export PROJECT_NUMBER:=$(shell git rev-parse HEAD ; git diff-index --quiet HEAD || echo "(with uncommitted changes)")
-# doc: export PROJECT_NUMBER:=$(shell git rev-parse --short --verify HEAD ; git diff-index --quiet HEAD || echo "(with uncommitted changes)")
-doc: export PROJECT_NUMBER:=$(shell git describe --always --dirty --long --tags ; git diff-index --quiet HEAD || echo "(with uncommitted changes)")
+doc: export PROJECT_NUMBER:=$(shell git describe --always --dirty=" (with uncommitted changes)" --long --tags)
 
 ###############################################################################
 #	Rules and dependencies
