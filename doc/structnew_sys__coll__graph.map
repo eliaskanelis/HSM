@@ -1,0 +1,5 @@
+<map id="newSys" name="newSys">
+<area shape="rect" id="node2" href="$structhsm__t.html" title="Hierarchical state machine. " alt="" coords="11,141,69,168"/>
+<area shape="rect" id="node3" href="$structstate.html" title="HSM state. " alt="" coords="135,14,185,41"/>
+<area shape="rect" id="node4" href="$structtransition__t.html" title="HSM state transitions. " alt="" coords="166,141,253,168"/>
+</map>
