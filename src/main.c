@@ -16,15 +16,44 @@
 #include "newSys.h"
 #include "console.h"
 
-#include "../tests/tests.h"
+#include "version.h"
+
+//#include "../tests/tests.h"
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <windows.h>	/* Sleep */
+
+#ifdef WIN32
+	#include <windows.h>
+#elif _POSIX_C_SOURCE >= 199309L
+	#include <time.h>	/* nanosleep */
+	#include <stdlib.h>	/* NULL */
+#else
+	#include <unistd.h>	/* for usleep */
+#endif
 
 /******************************************************************************
 	Function definitions
 ******************************************************************************/
+
+/**
+ * \brief Cross-platform sleep function
+ * 
+ * \param[in]	Milliseconds to sleep.
+ */
+void sleep_ms( const int milliseconds )
+{
+#ifdef WIN32
+    Sleep(milliseconds);
+#elif _POSIX_C_SOURCE >= 199309L
+    struct timespec ts;
+    ts.tv_sec = milliseconds / 1000;
+    ts.tv_nsec = ( milliseconds % 1000 ) * 1000000;
+    nanosleep( &ts, NULL );
+#else
+    usleep( milliseconds * 1000 );
+#endif
+}
 
 //void debugState( state_t* me )
 //{
@@ -92,8 +121,8 @@ int main( void )
 	/* Build console */
 	console_t serial = console_build();
 	
-	serial.puts( "\n\n-------- UNIT TEST --------\n\n" );
-	run_unit_tests();
+	//serial.puts( "\n\n-------- UNIT TEST --------\n\n" );
+	//run_unit_tests();
 //	newSys_unit_test();
 //		
 //	serial.puts( "\n\n-------- DEVELOPMENT TEST AREA 1 --------\n\n" );
@@ -115,7 +144,7 @@ int main( void )
 	serial.puts( "\n\n---- FSM Professional Development ----\n\n" );
 	newSys_t sys = newSys_build();
 	serial.puts( "Initial state " );
-	serial.puts( sys.itsCurrentState->itsName );
+	serial.puts( sys.base.itsCurrentState->itsName );
 	
 	serial.puts( "\n\n-----------------------------------\n" );
 	serial.puts( "\n\nPress to start: " );
@@ -128,7 +157,7 @@ int main( void )
 	while( 1 )
 	{
 		serial.puts( "-----------------------------------\n" );
-		if( sys.itsMode == HSM_GUARD )
+		if( sys.base.itsMode == HSM_GUARD )
 		{
 			serial.puts( "Event: " );
 			s = serial.gets();
@@ -138,7 +167,7 @@ int main( void )
 		/* Handle event */
 		newSys_handleEvent( &sys, &(hsm_event_t){ 0, s } );
 		
-		Sleep( 100 );
+		sleep_ms( 100 );
 		i++;
 	}
 	

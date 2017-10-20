@@ -69,7 +69,7 @@ extern state_t newSys_outState;
  */
 typedef struct newSys
 {
-	hsm_t;			/**< It inherits from hsm_t. */
+	hsm_t base;			/**< It inherits from hsm_t. */
 } newSys_t;
 
 /**
@@ -77,7 +77,7 @@ typedef struct newSys
  */
 typedef struct newSys_event
 {
-	hsm_event_t;	/**< It inherits from hsm_event_t. */
+	hsm_event_t base;	/**< It inherits from hsm_event_t. */
 } newSys_event_t;
 
 

@@ -9,6 +9,7 @@
 #include "console.h"
 
 #include <stdio.h>
+#include <string.h>
 
 /******************************************************************************
 	Definitions
@@ -26,7 +27,12 @@ static char g_str[ 1000 ];
  */
 static char* getString( void )
 {
-	gets( g_str );
+    if( scanf( "%s", g_str ) != 1 )
+    {
+		/* It failed make it empty*/
+		strcpy( g_str, "" );//TODO: check if robust
+    }
+
 	return g_str;
 }
 
@@ -37,7 +43,7 @@ static char* getString( void )
  */
 static void putString( const char* s )
 {
-	printf( s );
+	printf( "%s", s );
 }
 
 /**

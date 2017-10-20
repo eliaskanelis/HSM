@@ -12,7 +12,7 @@
 #include "console.h"
 
 #include <stddef.h>		/* NULL */
-#include <stdbool.h>		/* bool */
+#include <stdbool.h>	/* bool */
 #include "string.h"		/* strcmp */
 
 /******************************************************************************
@@ -110,7 +110,7 @@ void newSys_unit_test( void )
 	{
 		newSys_handleEvent( &sysTest1, &(hsm_event_t){ 0, testSimple[i].input } );
 		
-		if( sysTest1.itsCurrentState != testSimple[i].expectedState )
+		if( sysTest1.base.itsCurrentState != testSimple[i].expectedState )
 		{
 			isTestFailed = 1;
 		}
@@ -221,7 +221,7 @@ newSys_t newSys_build( void )
 
 void newSys_reset( newSys_t* me )
 {
-	state_t* initialState = me->itsInitialState;
+	state_t* initialState = me->base.itsInitialState;
 	newSys_init( (hsm_t*)&me, initialState );
 	
 	/* Initialize states */
