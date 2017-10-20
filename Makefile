@@ -96,11 +96,11 @@ version: Makefile
 	scripts/get_version.sh
 
 doc: Makefile | default
-	mkdir -p docs
+	mkdir -p doc/html
 	@(cd conf/doxygen/ && doxygen)
 
 clean:
-	-rm -fR .dep $(BUILD_DIR)
+	-rm -fR .dep $(BUILD_DIR) doc/html
 	-rm -fR inc/version.h
 
 size:
