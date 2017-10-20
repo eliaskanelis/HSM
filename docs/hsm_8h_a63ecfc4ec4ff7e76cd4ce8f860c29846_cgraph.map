@@ -1,4 +1,0 @@
-<map id="hsm_state_checkGuard_Action" name="hsm_state_checkGuard_Action">
-<area shape="rect" id="node2" href="$hsm_8h.html#ac68c2c5cd0d14a029223cda87467ec41" title="Gets the top hsm state. " alt="" coords="213,5,373,32"/>
-<area shape="rect" id="node3" href="$hsm_8h.html#aae2ad8b79bcbe0a73bfdcaba5db8c691" title="Checks if the state has a child. " alt="" coords="223,56,363,83"/>
-</map>

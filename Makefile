@@ -71,6 +71,12 @@ C_SOURCES +=	src/console.c\
 				src/hsm.c\
 				src/newSys.c
 
+# Get version number from git
+# https://christianhujer.github.io/Git-Version-in-Doxygen/
+# doc: export PROJECT_NUMBER:=$(shell git rev-parse HEAD ; git diff-index --quiet HEAD || echo "(with uncommitted changes)")
+# doc: export PROJECT_NUMBER:=$(shell git rev-parse --short --verify HEAD ; git diff-index --quiet HEAD || echo "(with uncommitted changes)")
+doc: export PROJECT_NUMBER:=$(shell git describe --always --dirty --long --tags ; git diff-index --quiet HEAD || echo "(with uncommitted changes)")
+
 ###############################################################################
 #	Rules and dependencies
 ###############################################################################
@@ -92,6 +98,7 @@ version: Makefile
 	scripts/get_version.sh
 
 doc: Makefile | default
+	@echo "Project number: $(PROJECT_NUMBER)"
 	mkdir -p doc
 	@(cd conf/doxygen/ && doxygen)
 
