@@ -16,7 +16,7 @@ version.h
 # Folders
 .dep
 bin
-#doc we need to display this in github pages
+#docs we need to display this in github pages
 
 # Precompiled Headers
 *.gch

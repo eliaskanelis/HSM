@@ -96,12 +96,11 @@ version: Makefile
 	scripts/get_version.sh
 
 doc: Makefile | default
-	@echo "Project number: $(PROJECT_NUMBER)"
-	mkdir -p doc
+	mkdir -p docs
 	@(cd conf/doxygen/ && doxygen)
 
 clean:
-	-rm -fR .dep $(BUILD_DIR) doc
+	-rm -fR .dep $(BUILD_DIR)
 	-rm -fR inc/version.h
 
 size:
