@@ -1,0 +1,7 @@
+si 1
+device STM32F072RB
+speed 4000
+erase
+r
+g
+exit

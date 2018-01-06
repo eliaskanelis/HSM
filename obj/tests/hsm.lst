@@ -1,0 +1,1013 @@
+GAS LISTING /tmp/ccOtR0Mu.s 			page 1
+
+
+   1              		.file	"hsm.c"
+   2              		.section	.rodata
+   3              	.LC0:
+   4 0000 6F6E456E 		.string	"onEntry"
+   4      74727900 
+   5              	.LC1:
+   6 0008 64757269 		.string	"during "
+   6      6E672000 
+   7              	.LC2:
+   8 0010 67756172 		.string	"guard  "
+   8      64202000 
+   9              	.LC3:
+  10 0018 61637469 		.string	"action "
+  10      6F6E2000 
+  11              	.LC4:
+  12 0020 6F6E4578 		.string	"onExit "
+  12      69742000 
+  13              	.LC5:
+  14 0028 4552524F 		.string	"ERROR  "
+  14      52202000 
+  15              		.text
+  17              	_ZL21hsm_state_getModeNamePK5state:
+  18              	.LFB2:
+  19              		.cfi_startproc
+  20 0000 55       		pushq	%rbp
+  21              		.cfi_def_cfa_offset 16
+  22              		.cfi_offset 6, -16
+  23 0001 4889E5   		movq	%rsp, %rbp
+  24              		.cfi_def_cfa_register 6
+  25 0004 48897DF8 		movq	%rdi, -8(%rbp)
+  26 0008 488B45F8 		movq	-8(%rbp), %rax
+  27 000c 8B4034   		movl	52(%rax), %eax
+  28 000f 83F804   		cmpl	$4, %eax
+  29 0012 772F     		ja	.L2
+  30 0014 89C0     		movl	%eax, %eax
+  31 0016 488B04C5 		movq	.L4(,%rax,8), %rax
+  31      00000000 
+  32 001e FFE0     		jmp	*%rax
+  33              		.section	.rodata
+  34              		.align 8
+  35              		.align 4
+  36              	.L4:
+  37 0030 00000000 		.quad	.L3
+  37      00000000 
+  38 0038 00000000 		.quad	.L5
+  38      00000000 
+  39 0040 00000000 		.quad	.L6
+  39      00000000 
+  40 0048 00000000 		.quad	.L7
+  40      00000000 
+  41 0050 00000000 		.quad	.L8
+  41      00000000 
+  42              		.text
+  43              	.L3:
+  44 0020 B8000000 		movl	$.LC0, %eax
+  44      00
+  45 0025 EB21     		jmp	.L9
+GAS LISTING /tmp/ccOtR0Mu.s 			page 2
+
+
+  46              	.L5:
+  47 0027 B8000000 		movl	$.LC1, %eax
+  47      00
+  48 002c EB1A     		jmp	.L9
+  49              	.L6:
+  50 002e B8000000 		movl	$.LC2, %eax
+  50      00
+  51 0033 EB13     		jmp	.L9
+  52              	.L7:
+  53 0035 B8000000 		movl	$.LC3, %eax
+  53      00
+  54 003a EB0C     		jmp	.L9
+  55              	.L8:
+  56 003c B8000000 		movl	$.LC4, %eax
+  56      00
+  57 0041 EB05     		jmp	.L9
+  58              	.L2:
+  59 0043 B8000000 		movl	$.LC5, %eax
+  59      00
+  60              	.L9:
+  61 0048 5D       		popq	%rbp
+  62              		.cfi_def_cfa 7, 8
+  63 0049 C3       		ret
+  64              		.cfi_endproc
+  65              	.LFE2:
+  68              	_ZL13hsm_debugFromPKcPK5state:
+  69              	.LFB3:
+  70              		.cfi_startproc
+  71 004a 55       		pushq	%rbp
+  72              		.cfi_def_cfa_offset 16
+  73              		.cfi_offset 6, -16
+  74 004b 4889E5   		movq	%rsp, %rbp
+  75              		.cfi_def_cfa_register 6
+  76 004e 48897DF8 		movq	%rdi, -8(%rbp)
+  77 0052 488975F0 		movq	%rsi, -16(%rbp)
+  78 0056 90       		nop
+  79 0057 5D       		popq	%rbp
+  80              		.cfi_def_cfa 7, 8
+  81 0058 C3       		ret
+  82              		.cfi_endproc
+  83              	.LFE3:
+  86              	_ZL11hsm_debugToPKcPK5state:
+  87              	.LFB4:
+  88              		.cfi_startproc
+  89 0059 55       		pushq	%rbp
+  90              		.cfi_def_cfa_offset 16
+  91              		.cfi_offset 6, -16
+  92 005a 4889E5   		movq	%rsp, %rbp
+  93              		.cfi_def_cfa_register 6
+  94 005d 48897DF8 		movq	%rdi, -8(%rbp)
+  95 0061 488975F0 		movq	%rsi, -16(%rbp)
+  96 0065 90       		nop
+  97 0066 5D       		popq	%rbp
+  98              		.cfi_def_cfa 7, 8
+  99 0067 C3       		ret
+ 100              		.cfi_endproc
+ 101              	.LFE4:
+GAS LISTING /tmp/ccOtR0Mu.s 			page 3
+
+
+ 104              	_ZL8hsm_initP5hsm_tPK5statePPS1_j:
+ 105              	.LFB5:
+ 106              		.cfi_startproc
+ 107 0068 55       		pushq	%rbp
+ 108              		.cfi_def_cfa_offset 16
+ 109              		.cfi_offset 6, -16
+ 110 0069 4889E5   		movq	%rsp, %rbp
+ 111              		.cfi_def_cfa_register 6
+ 112 006c 4883EC30 		subq	$48, %rsp
+ 113 0070 48897DE8 		movq	%rdi, -24(%rbp)
+ 114 0074 488975E0 		movq	%rsi, -32(%rbp)
+ 115 0078 488955D8 		movq	%rdx, -40(%rbp)
+ 116 007c 894DD4   		movl	%ecx, -44(%rbp)
+ 117 007f 48837DE0 		cmpq	$0, -32(%rbp)
+ 117      00
+ 118 0084 740D     		je	.L13
+ 119 0086 48837DD8 		cmpq	$0, -40(%rbp)
+ 119      00
+ 120 008b 7406     		je	.L13
+ 121 008d 837DD400 		cmpl	$0, -44(%rbp)
+ 122 0091 7533     		jne	.L14
+ 123              	.L13:
+ 124 0093 488B45E8 		movq	-24(%rbp), %rax
+ 125 0097 48C70000 		movq	$0, (%rax)
+ 125      000000
+ 126 009e 488B45E8 		movq	-24(%rbp), %rax
+ 127 00a2 48C74008 		movq	$0, 8(%rax)
+ 127      00000000 
+ 128 00aa 488B45E8 		movq	-24(%rbp), %rax
+ 129 00ae 48C74010 		movq	$0, 16(%rax)
+ 129      00000000 
+ 130 00b6 488B45E8 		movq	-24(%rbp), %rax
+ 131 00ba C7401800 		movl	$0, 24(%rax)
+ 131      000000
+ 132 00c1 E9A50000 		jmp	.L12
+ 132      00
+ 133              	.L14:
+ 134 00c6 488B45E0 		movq	-32(%rbp), %rax
+ 135 00ca 488B4008 		movq	8(%rax), %rax
+ 136 00ce 4885C0   		testq	%rax, %rax
+ 137 00d1 7430     		je	.L16
+ 138 00d3 488B45E8 		movq	-24(%rbp), %rax
+ 139 00d7 48C70000 		movq	$0, (%rax)
+ 139      000000
+ 140 00de 488B45E8 		movq	-24(%rbp), %rax
+ 141 00e2 48C74008 		movq	$0, 8(%rax)
+ 141      00000000 
+ 142 00ea 488B45E8 		movq	-24(%rbp), %rax
+ 143 00ee 48C74010 		movq	$0, 16(%rax)
+ 143      00000000 
+ 144 00f6 488B45E8 		movq	-24(%rbp), %rax
+ 145 00fa C7401800 		movl	$0, 24(%rax)
+ 145      000000
+ 146 0101 EB68     		jmp	.L12
+ 147              	.L16:
+ 148 0103 488B45E8 		movq	-24(%rbp), %rax
+ 149 0107 488B55E0 		movq	-32(%rbp), %rdx
+GAS LISTING /tmp/ccOtR0Mu.s 			page 4
+
+
+ 150 010b 488910   		movq	%rdx, (%rax)
+ 151 010e 488B45E8 		movq	-24(%rbp), %rax
+ 152 0112 488B55E0 		movq	-32(%rbp), %rdx
+ 153 0116 48895008 		movq	%rdx, 8(%rax)
+ 154 011a 488B45E8 		movq	-24(%rbp), %rax
+ 155 011e 488B55D8 		movq	-40(%rbp), %rdx
+ 156 0122 48895010 		movq	%rdx, 16(%rax)
+ 157 0126 488B45E8 		movq	-24(%rbp), %rax
+ 158 012a 8B55D4   		movl	-44(%rbp), %edx
+ 159 012d 895018   		movl	%edx, 24(%rax)
+ 160 0130 488B45E8 		movq	-24(%rbp), %rax
+ 161 0134 8B4018   		movl	24(%rax), %eax
+ 162 0137 8945FC   		movl	%eax, -4(%rbp)
+ 163              	.L17:
+ 164 013a 8B45FC   		movl	-4(%rbp), %eax
+ 165 013d 8D50FF   		leal	-1(%rax), %edx
+ 166 0140 8955FC   		movl	%edx, -4(%rbp)
+ 167 0143 85C0     		testl	%eax, %eax
+ 168 0145 0F95C0   		setne	%al
+ 169 0148 84C0     		testb	%al, %al
+ 170 014a 741F     		je	.L12
+ 171 014c 488B45E8 		movq	-24(%rbp), %rax
+ 172 0150 488B4010 		movq	16(%rax), %rax
+ 173 0154 8B55FC   		movl	-4(%rbp), %edx
+ 174 0157 48C1E203 		salq	$3, %rdx
+ 175 015b 4801D0   		addq	%rdx, %rax
+ 176 015e 488B00   		movq	(%rax), %rax
+ 177 0161 4889C7   		movq	%rax, %rdi
+ 178 0164 E8040000 		call	_ZL11state_resetP5state
+ 178      00
+ 179 0169 EBCF     		jmp	.L17
+ 180              	.L12:
+ 181 016b C9       		leave
+ 182              		.cfi_def_cfa 7, 8
+ 183 016c C3       		ret
+ 184              		.cfi_endproc
+ 185              	.LFE5:
+ 188              	_ZL11state_resetP5state:
+ 189              	.LFB6:
+ 190              		.cfi_startproc
+ 191 016d 55       		pushq	%rbp
+ 192              		.cfi_def_cfa_offset 16
+ 193              		.cfi_offset 6, -16
+ 194 016e 4889E5   		movq	%rsp, %rbp
+ 195              		.cfi_def_cfa_register 6
+ 196 0171 48897DF8 		movq	%rdi, -8(%rbp)
+ 197 0175 488B45F8 		movq	-8(%rbp), %rax
+ 198 0179 C7403400 		movl	$0, 52(%rax)
+ 198      000000
+ 199 0180 488B45F8 		movq	-8(%rbp), %rax
+ 200 0184 488B10   		movq	(%rax), %rdx
+ 201 0187 488B45F8 		movq	-8(%rbp), %rax
+ 202 018b 48895038 		movq	%rdx, 56(%rax)
+ 203 018f 90       		nop
+ 204 0190 5D       		popq	%rbp
+ 205              		.cfi_def_cfa 7, 8
+ 206 0191 C3       		ret
+GAS LISTING /tmp/ccOtR0Mu.s 			page 5
+
+
+ 207              		.cfi_endproc
+ 208              	.LFE6:
+ 211              	_ZL14state_hasChildPK5state:
+ 212              	.LFB7:
+ 213              		.cfi_startproc
+ 214 0192 55       		pushq	%rbp
+ 215              		.cfi_def_cfa_offset 16
+ 216              		.cfi_offset 6, -16
+ 217 0193 4889E5   		movq	%rsp, %rbp
+ 218              		.cfi_def_cfa_register 6
+ 219 0196 48897DF8 		movq	%rdi, -8(%rbp)
+ 220 019a 488B45F8 		movq	-8(%rbp), %rax
+ 221 019e 488B4038 		movq	56(%rax), %rax
+ 222 01a2 4885C0   		testq	%rax, %rax
+ 223 01a5 7507     		jne	.L20
+ 224 01a7 B8000000 		movl	$0, %eax
+ 224      00
+ 225 01ac EB05     		jmp	.L21
+ 226              	.L20:
+ 227 01ae B8010000 		movl	$1, %eax
+ 227      00
+ 228              	.L21:
+ 229 01b3 5D       		popq	%rbp
+ 230              		.cfi_def_cfa 7, 8
+ 231 01b4 C3       		ret
+ 232              		.cfi_endproc
+ 233              	.LFE7:
+ 236              	_ZL15state_hasParentPK5state:
+ 237              	.LFB8:
+ 238              		.cfi_startproc
+ 239 01b5 55       		pushq	%rbp
+ 240              		.cfi_def_cfa_offset 16
+ 241              		.cfi_offset 6, -16
+ 242 01b6 4889E5   		movq	%rsp, %rbp
+ 243              		.cfi_def_cfa_register 6
+ 244 01b9 48897DF8 		movq	%rdi, -8(%rbp)
+ 245 01bd 488B45F8 		movq	-8(%rbp), %rax
+ 246 01c1 488B4008 		movq	8(%rax), %rax
+ 247 01c5 4885C0   		testq	%rax, %rax
+ 248 01c8 7507     		jne	.L23
+ 249 01ca B8000000 		movl	$0, %eax
+ 249      00
+ 250 01cf EB05     		jmp	.L24
+ 251              	.L23:
+ 252 01d1 B8010000 		movl	$1, %eax
+ 252      00
+ 253              	.L24:
+ 254 01d6 5D       		popq	%rbp
+ 255              		.cfi_def_cfa 7, 8
+ 256 01d7 C3       		ret
+ 257              		.cfi_endproc
+ 258              	.LFE8:
+ 261              	_ZL12state_getTopPK5state:
+ 262              	.LFB9:
+ 263              		.cfi_startproc
+ 264 01d8 55       		pushq	%rbp
+ 265              		.cfi_def_cfa_offset 16
+GAS LISTING /tmp/ccOtR0Mu.s 			page 6
+
+
+ 266              		.cfi_offset 6, -16
+ 267 01d9 4889E5   		movq	%rsp, %rbp
+ 268              		.cfi_def_cfa_register 6
+ 269 01dc 4883EC18 		subq	$24, %rsp
+ 270 01e0 48897DE8 		movq	%rdi, -24(%rbp)
+ 271 01e4 488B45E8 		movq	-24(%rbp), %rax
+ 272 01e8 488945F8 		movq	%rax, -8(%rbp)
+ 273              	.L28:
+ 274 01ec 488B45E8 		movq	-24(%rbp), %rax
+ 275 01f0 4889C7   		movq	%rax, %rdi
+ 276 01f3 E8BDFFFF 		call	_ZL15state_hasParentPK5state
+ 276      FF
+ 277 01f8 85C0     		testl	%eax, %eax
+ 278 01fa 0F95C0   		setne	%al
+ 279 01fd 84C0     		testb	%al, %al
+ 280 01ff 740C     		je	.L26
+ 281 0201 488B45F8 		movq	-8(%rbp), %rax
+ 282 0205 488B4008 		movq	8(%rax), %rax
+ 283 0209 488945F8 		movq	%rax, -8(%rbp)
+ 284              	.L26:
+ 285 020d 48837DF8 		cmpq	$0, -8(%rbp)
+ 285      00
+ 286 0212 7502     		jne	.L27
+ 287 0214 EBD6     		jmp	.L28
+ 288              	.L27:
+ 289 0216 488B45F8 		movq	-8(%rbp), %rax
+ 290 021a C9       		leave
+ 291              		.cfi_def_cfa 7, 8
+ 292 021b C3       		ret
+ 293              		.cfi_endproc
+ 294              	.LFE9:
+ 297              	_ZL18state_exec_onEntryPK5statePK11hsm_event_t:
+ 298              	.LFB10:
+ 299              		.cfi_startproc
+ 300 021c 55       		pushq	%rbp
+ 301              		.cfi_def_cfa_offset 16
+ 302              		.cfi_offset 6, -16
+ 303 021d 4889E5   		movq	%rsp, %rbp
+ 304              		.cfi_def_cfa_register 6
+ 305 0220 4883EC20 		subq	$32, %rsp
+ 306 0224 48897DE8 		movq	%rdi, -24(%rbp)
+ 307 0228 488975E0 		movq	%rsi, -32(%rbp)
+ 308 022c C745FC00 		movl	$0, -4(%rbp)
+ 308      000000
+ 309 0233 488B45E8 		movq	-24(%rbp), %rax
+ 310 0237 488B4010 		movq	16(%rax), %rax
+ 311 023b 4885C0   		testq	%rax, %rax
+ 312 023e 741B     		je	.L31
+ 313 0240 488B45E8 		movq	-24(%rbp), %rax
+ 314 0244 488B4010 		movq	16(%rax), %rax
+ 315 0248 488B4DE0 		movq	-32(%rbp), %rcx
+ 316 024c 488B55E8 		movq	-24(%rbp), %rdx
+ 317 0250 4889CE   		movq	%rcx, %rsi
+ 318 0253 4889D7   		movq	%rdx, %rdi
+ 319 0256 FFD0     		call	*%rax
+ 320 0258 8945FC   		movl	%eax, -4(%rbp)
+ 321              	.L31:
+GAS LISTING /tmp/ccOtR0Mu.s 			page 7
+
+
+ 322 025b 8B45FC   		movl	-4(%rbp), %eax
+ 323 025e C9       		leave
+ 324              		.cfi_def_cfa 7, 8
+ 325 025f C3       		ret
+ 326              		.cfi_endproc
+ 327              	.LFE10:
+ 330              	_ZL17state_exec_duringPK5statePK11hsm_event_t:
+ 331              	.LFB11:
+ 332              		.cfi_startproc
+ 333 0260 55       		pushq	%rbp
+ 334              		.cfi_def_cfa_offset 16
+ 335              		.cfi_offset 6, -16
+ 336 0261 4889E5   		movq	%rsp, %rbp
+ 337              		.cfi_def_cfa_register 6
+ 338 0264 4883EC20 		subq	$32, %rsp
+ 339 0268 48897DE8 		movq	%rdi, -24(%rbp)
+ 340 026c 488975E0 		movq	%rsi, -32(%rbp)
+ 341 0270 C745FC00 		movl	$0, -4(%rbp)
+ 341      000000
+ 342 0277 488B45E8 		movq	-24(%rbp), %rax
+ 343 027b 488B4018 		movq	24(%rax), %rax
+ 344 027f 4885C0   		testq	%rax, %rax
+ 345 0282 741B     		je	.L34
+ 346 0284 488B45E8 		movq	-24(%rbp), %rax
+ 347 0288 488B4018 		movq	24(%rax), %rax
+ 348 028c 488B4DE0 		movq	-32(%rbp), %rcx
+ 349 0290 488B55E8 		movq	-24(%rbp), %rdx
+ 350 0294 4889CE   		movq	%rcx, %rsi
+ 351 0297 4889D7   		movq	%rdx, %rdi
+ 352 029a FFD0     		call	*%rax
+ 353 029c 8945FC   		movl	%eax, -4(%rbp)
+ 354              	.L34:
+ 355 029f 8B45FC   		movl	-4(%rbp), %eax
+ 356 02a2 C9       		leave
+ 357              		.cfi_def_cfa 7, 8
+ 358 02a3 C3       		ret
+ 359              		.cfi_endproc
+ 360              	.LFE11:
+ 363              	_ZL17state_exec_onExitPK5statePK11hsm_event_t:
+ 364              	.LFB12:
+ 365              		.cfi_startproc
+ 366 02a4 55       		pushq	%rbp
+ 367              		.cfi_def_cfa_offset 16
+ 368              		.cfi_offset 6, -16
+ 369 02a5 4889E5   		movq	%rsp, %rbp
+ 370              		.cfi_def_cfa_register 6
+ 371 02a8 4883EC20 		subq	$32, %rsp
+ 372 02ac 48897DE8 		movq	%rdi, -24(%rbp)
+ 373 02b0 488975E0 		movq	%rsi, -32(%rbp)
+ 374 02b4 C745FC00 		movl	$0, -4(%rbp)
+ 374      000000
+ 375 02bb 488B45E8 		movq	-24(%rbp), %rax
+ 376 02bf 488B4020 		movq	32(%rax), %rax
+ 377 02c3 4885C0   		testq	%rax, %rax
+ 378 02c6 741B     		je	.L37
+ 379 02c8 488B45E8 		movq	-24(%rbp), %rax
+ 380 02cc 488B4020 		movq	32(%rax), %rax
+GAS LISTING /tmp/ccOtR0Mu.s 			page 8
+
+
+ 381 02d0 488B4DE0 		movq	-32(%rbp), %rcx
+ 382 02d4 488B55E8 		movq	-24(%rbp), %rdx
+ 383 02d8 4889CE   		movq	%rcx, %rsi
+ 384 02db 4889D7   		movq	%rdx, %rdi
+ 385 02de FFD0     		call	*%rax
+ 386 02e0 8945FC   		movl	%eax, -4(%rbp)
+ 387              	.L37:
+ 388 02e3 8B45FC   		movl	-4(%rbp), %eax
+ 389 02e6 C9       		leave
+ 390              		.cfi_def_cfa 7, 8
+ 391 02e7 C3       		ret
+ 392              		.cfi_endproc
+ 393              	.LFE12:
+ 395              		.globl	_Z10_hsm_buildPK5statePPS_j
+ 397              	_Z10_hsm_buildPK5statePPS_j:
+ 398              	.LFB13:
+ 399              		.cfi_startproc
+ 400 02e8 55       		pushq	%rbp
+ 401              		.cfi_def_cfa_offset 16
+ 402              		.cfi_offset 6, -16
+ 403 02e9 4889E5   		movq	%rsp, %rbp
+ 404              		.cfi_def_cfa_register 6
+ 405 02ec 4883EC30 		subq	$48, %rsp
+ 406 02f0 48897DE8 		movq	%rdi, -24(%rbp)
+ 407 02f4 488975E0 		movq	%rsi, -32(%rbp)
+ 408 02f8 488955D8 		movq	%rdx, -40(%rbp)
+ 409 02fc 894DD4   		movl	%ecx, -44(%rbp)
+ 410 02ff 64488B04 		movq	%fs:40, %rax
+ 410      25280000 
+ 410      00
+ 411 0308 488945F8 		movq	%rax, -8(%rbp)
+ 412 030c 31C0     		xorl	%eax, %eax
+ 413 030e 8B4DD4   		movl	-44(%rbp), %ecx
+ 414 0311 488B55D8 		movq	-40(%rbp), %rdx
+ 415 0315 488B75E0 		movq	-32(%rbp), %rsi
+ 416 0319 488B45E8 		movq	-24(%rbp), %rax
+ 417 031d 4889C7   		movq	%rax, %rdi
+ 418 0320 E843FDFF 		call	_ZL8hsm_initP5hsm_tPK5statePPS1_j
+ 418      FF
+ 419 0325 90       		nop
+ 420 0326 488B45E8 		movq	-24(%rbp), %rax
+ 421 032a 488B7DF8 		movq	-8(%rbp), %rdi
+ 422 032e 6448333C 		xorq	%fs:40, %rdi
+ 422      25280000 
+ 422      00
+ 423 0337 7405     		je	.L41
+ 424 0339 E8000000 		call	__stack_chk_fail
+ 424      00
+ 425              	.L41:
+ 426 033e C9       		leave
+ 427              		.cfi_def_cfa 7, 8
+ 428 033f C3       		ret
+ 429              		.cfi_endproc
+ 430              	.LFE13:
+ 432              		.globl	_Z9hsm_resetP5hsm_t
+ 434              	_Z9hsm_resetP5hsm_t:
+ 435              	.LFB14:
+GAS LISTING /tmp/ccOtR0Mu.s 			page 9
+
+
+ 436              		.cfi_startproc
+ 437 0340 55       		pushq	%rbp
+ 438              		.cfi_def_cfa_offset 16
+ 439              		.cfi_offset 6, -16
+ 440 0341 4889E5   		movq	%rsp, %rbp
+ 441              		.cfi_def_cfa_register 6
+ 442 0344 4883EC10 		subq	$16, %rsp
+ 443 0348 48897DF8 		movq	%rdi, -8(%rbp)
+ 444 034c 48837DF8 		cmpq	$0, -8(%rbp)
+ 444      00
+ 445 0351 7507     		jne	.L43
+ 446 0353 B8FFFFFF 		movl	$-1, %eax
+ 446      FF
+ 447 0358 EB27     		jmp	.L44
+ 448              	.L43:
+ 449 035a 488B45F8 		movq	-8(%rbp), %rax
+ 450 035e 8B4818   		movl	24(%rax), %ecx
+ 451 0361 488B45F8 		movq	-8(%rbp), %rax
+ 452 0365 488B5010 		movq	16(%rax), %rdx
+ 453 0369 488B45F8 		movq	-8(%rbp), %rax
+ 454 036d 488B30   		movq	(%rax), %rsi
+ 455 0370 488B45F8 		movq	-8(%rbp), %rax
+ 456 0374 4889C7   		movq	%rax, %rdi
+ 457 0377 E8ECFCFF 		call	_ZL8hsm_initP5hsm_tPK5statePPS1_j
+ 457      FF
+ 458 037c B8000000 		movl	$0, %eax
+ 458      00
+ 459              	.L44:
+ 460 0381 C9       		leave
+ 461              		.cfi_def_cfa 7, 8
+ 462 0382 C3       		ret
+ 463              		.cfi_endproc
+ 464              	.LFE14:
+ 466              		.section	.rodata
+ 467              	.LC6:
+ 468 0058 4F4E5F45 		.string	"ON_ENTRY"
+ 468      4E545259 
+ 468      00
+ 469              	.LC7:
+ 470 0061 546F7020 		.string	"Top --> Child"
+ 470      2D2D3E20 
+ 470      4368696C 
+ 470      6400
+ 471              	.LC8:
+ 472 006f 4368696C 		.string	"Child --> Top"
+ 472      64202D2D 
+ 472      3E20546F 
+ 472      7000
+ 473              	.LC9:
+ 474 007d 44555249 		.string	"DURING  "
+ 474      4E472020 
+ 474      00
+ 475              	.LC10:
+ 476 0086 47554152 		.string	"GUARD   "
+ 476      44202020 
+ 476      00
+ 477 008f 00       		.align 8
+GAS LISTING /tmp/ccOtR0Mu.s 			page 10
+
+
+ 478              	.LC11:
+ 479 0090 28547261 		.string	"(Transition == NULL): Top --> Child"
+ 479      6E736974 
+ 479      696F6E20 
+ 479      3D3D204E 
+ 479      554C4C29 
+ 480              	.LC12:
+ 481 00b4 284E6F20 		.string	"(No guard): Top --> Child"
+ 481      67756172 
+ 481      64293A20 
+ 481      546F7020 
+ 481      2D2D3E20 
+ 482              	.LC13:
+ 483 00ce 4F4E5F45 		.string	"ON_EXIT "
+ 483      58495420 
+ 483      00
+ 484 00d7 00       		.align 8
+ 485              	.LC14:
+ 486 00d8 28436F6D 		.string	"(Common parent): Child --> Child"
+ 486      6D6F6E20 
+ 486      70617265 
+ 486      6E74293A 
+ 486      20436869 
+ 487              	.LC15:
+ 488 00f9 28506172 		.string	"(Parent shouldExit also) --> "
+ 488      656E7420 
+ 488      73686F75 
+ 488      6C644578 
+ 488      69742061 
+ 489              	.LC16:
+ 490 0117 28436861 		.string	"(Change TOP)Top --> Top"
+ 490      6E676520 
+ 490      544F5029 
+ 490      546F7020 
+ 490      2D2D3E20 
+ 491              	.LC17:
+ 492 012f 3F203F20 		.string	"? ? ? (Change TOP)Top --> Top"
+ 492      3F202843 
+ 492      68616E67 
+ 492      6520544F 
+ 492      5029546F 
+ 493              		.text
+ 494              		.globl	_Z15hsm_handleEventP5hsm_tPK11hsm_event_t
+ 496              	_Z15hsm_handleEventP5hsm_tPK11hsm_event_t:
+ 497              	.LFB15:
+ 498              		.cfi_startproc
+ 499 0383 55       		pushq	%rbp
+ 500              		.cfi_def_cfa_offset 16
+ 501              		.cfi_offset 6, -16
+ 502 0384 4889E5   		movq	%rsp, %rbp
+ 503              		.cfi_def_cfa_register 6
+ 504 0387 4883EC30 		subq	$48, %rsp
+ 505 038b 48897DD8 		movq	%rdi, -40(%rbp)
+ 506 038f 488975D0 		movq	%rsi, -48(%rbp)
+ 507 0393 48837DD8 		cmpq	$0, -40(%rbp)
+ 507      00
+ 508 0398 750A     		jne	.L46
+GAS LISTING /tmp/ccOtR0Mu.s 			page 11
+
+
+ 509 039a B8FFFFFF 		movl	$-1, %eax
+ 509      FF
+ 510 039f E9D90300 		jmp	.L47
+ 510      00
+ 511              	.L46:
+ 512 03a4 488B45D8 		movq	-40(%rbp), %rax
+ 513 03a8 488B4008 		movq	8(%rax), %rax
+ 514 03ac 488945F0 		movq	%rax, -16(%rbp)
+ 515 03b0 488B45D8 		movq	-40(%rbp), %rax
+ 516 03b4 488B4008 		movq	8(%rax), %rax
+ 517 03b8 488945E8 		movq	%rax, -24(%rbp)
+ 518 03bc 488B45F0 		movq	-16(%rbp), %rax
+ 519 03c0 8B4034   		movl	52(%rax), %eax
+ 520 03c3 83F801   		cmpl	$1, %eax
+ 521 03c6 0F84BF00 		je	.L49
+ 521      0000
+ 522 03cc 83F801   		cmpl	$1, %eax
+ 523 03cf 7F09     		jg	.L50
+ 524 03d1 85C0     		testl	%eax, %eax
+ 525 03d3 741C     		je	.L51
+ 526 03d5 E9730300 		jmp	.L48
+ 526      00
+ 527              	.L50:
+ 528 03da 83F802   		cmpl	$2, %eax
+ 529 03dd 0F845F01 		je	.L52
+ 529      0000
+ 530 03e3 83F804   		cmpl	$4, %eax
+ 531 03e6 0F841102 		je	.L53
+ 531      0000
+ 532 03ec E95C0300 		jmp	.L48
+ 532      00
+ 533              	.L51:
+ 534 03f1 488B45F0 		movq	-16(%rbp), %rax
+ 535 03f5 4889C6   		movq	%rax, %rsi
+ 536 03f8 BF000000 		movl	$.LC6, %edi
+ 536      00
+ 537 03fd E848FCFF 		call	_ZL13hsm_debugFromPKcPK5state
+ 537      FF
+ 538 0402 488B45F0 		movq	-16(%rbp), %rax
+ 539 0406 C7403401 		movl	$1, 52(%rax)
+ 539      000000
+ 540 040d 488B45F0 		movq	-16(%rbp), %rax
+ 541 0411 4889C7   		movq	%rax, %rdi
+ 542 0414 E879FDFF 		call	_ZL14state_hasChildPK5state
+ 542      FF
+ 543 0419 85C0     		testl	%eax, %eax
+ 544 041b 0F95C0   		setne	%al
+ 545 041e 84C0     		testb	%al, %al
+ 546 0420 741E     		je	.L54
+ 547 0422 488B45F0 		movq	-16(%rbp), %rax
+ 548 0426 488B00   		movq	(%rax), %rax
+ 549 0429 488945E8 		movq	%rax, -24(%rbp)
+ 550 042d 488B45E8 		movq	-24(%rbp), %rax
+ 551 0431 4889C6   		movq	%rax, %rsi
+ 552 0434 BF000000 		movl	$.LC7, %edi
+ 552      00
+ 553 0439 E81BFCFF 		call	_ZL11hsm_debugToPKcPK5state
+GAS LISTING /tmp/ccOtR0Mu.s 			page 12
+
+
+ 553      FF
+ 554 043e EB21     		jmp	.L55
+ 555              	.L54:
+ 556 0440 488B45F0 		movq	-16(%rbp), %rax
+ 557 0444 4889C7   		movq	%rax, %rdi
+ 558 0447 E88CFDFF 		call	_ZL12state_getTopPK5state
+ 558      FF
+ 559 044c 488945E8 		movq	%rax, -24(%rbp)
+ 560 0450 488B45E8 		movq	-24(%rbp), %rax
+ 561 0454 4889C6   		movq	%rax, %rsi
+ 562 0457 BF000000 		movl	$.LC8, %edi
+ 562      00
+ 563 045c E8F8FBFF 		call	_ZL11hsm_debugToPKcPK5state
+ 563      FF
+ 564              	.L55:
+ 565 0461 488B55D0 		movq	-48(%rbp), %rdx
+ 566 0465 488B45F0 		movq	-16(%rbp), %rax
+ 567 0469 4889D6   		movq	%rdx, %rsi
+ 568 046c 4889C7   		movq	%rax, %rdi
+ 569 046f E8A8FDFF 		call	_ZL18state_exec_onEntryPK5statePK11hsm_event_t
+ 569      FF
+ 570 0474 85C0     		testl	%eax, %eax
+ 571 0476 0F95C0   		setne	%al
+ 572 0479 84C0     		testb	%al, %al
+ 573 047b 0F84D302 		je	.L75
+ 573      0000
+ 574 0481 B8FFFFFF 		movl	$-1, %eax
+ 574      FF
+ 575 0486 E9F20200 		jmp	.L47
+ 575      00
+ 576              	.L49:
+ 577 048b 488B45F0 		movq	-16(%rbp), %rax
+ 578 048f 4889C6   		movq	%rax, %rsi
+ 579 0492 BF000000 		movl	$.LC9, %edi
+ 579      00
+ 580 0497 E8AEFBFF 		call	_ZL13hsm_debugFromPKcPK5state
+ 580      FF
+ 581 049c 488B45F0 		movq	-16(%rbp), %rax
+ 582 04a0 C7403402 		movl	$2, 52(%rax)
+ 582      000000
+ 583 04a7 488B45F0 		movq	-16(%rbp), %rax
+ 584 04ab 4889C7   		movq	%rax, %rdi
+ 585 04ae E8DFFCFF 		call	_ZL14state_hasChildPK5state
+ 585      FF
+ 586 04b3 85C0     		testl	%eax, %eax
+ 587 04b5 0F95C0   		setne	%al
+ 588 04b8 84C0     		testb	%al, %al
+ 589 04ba 743B     		je	.L58
+ 590 04bc 488B45F0 		movq	-16(%rbp), %rax
+ 591 04c0 488B00   		movq	(%rax), %rax
+ 592 04c3 8B4034   		movl	52(%rax), %eax
+ 593 04c6 83F801   		cmpl	$1, %eax
+ 594 04c9 750D     		jne	.L59
+ 595 04cb 488B45F0 		movq	-16(%rbp), %rax
+ 596 04cf 488B00   		movq	(%rax), %rax
+ 597 04d2 488945E8 		movq	%rax, -24(%rbp)
+ 598 04d6 EB0C     		jmp	.L60
+GAS LISTING /tmp/ccOtR0Mu.s 			page 13
+
+
+ 599              	.L59:
+ 600 04d8 488B45F0 		movq	-16(%rbp), %rax
+ 601 04dc 488B4038 		movq	56(%rax), %rax
+ 602 04e0 488945E8 		movq	%rax, -24(%rbp)
+ 603              	.L60:
+ 604 04e4 488B45E8 		movq	-24(%rbp), %rax
+ 605 04e8 4889C6   		movq	%rax, %rsi
+ 606 04eb BF000000 		movl	$.LC7, %edi
+ 606      00
+ 607 04f0 E864FBFF 		call	_ZL11hsm_debugToPKcPK5state
+ 607      FF
+ 608 04f5 EB21     		jmp	.L61
+ 609              	.L58:
+ 610 04f7 488B45F0 		movq	-16(%rbp), %rax
+ 611 04fb 4889C7   		movq	%rax, %rdi
+ 612 04fe E8D5FCFF 		call	_ZL12state_getTopPK5state
+ 612      FF
+ 613 0503 488945E8 		movq	%rax, -24(%rbp)
+ 614 0507 488B45E8 		movq	-24(%rbp), %rax
+ 615 050b 4889C6   		movq	%rax, %rsi
+ 616 050e BF000000 		movl	$.LC8, %edi
+ 616      00
+ 617 0513 E841FBFF 		call	_ZL11hsm_debugToPKcPK5state
+ 617      FF
+ 618              	.L61:
+ 619 0518 488B55D0 		movq	-48(%rbp), %rdx
+ 620 051c 488B45F0 		movq	-16(%rbp), %rax
+ 621 0520 4889D6   		movq	%rdx, %rsi
+ 622 0523 4889C7   		movq	%rax, %rdi
+ 623 0526 E835FDFF 		call	_ZL17state_exec_duringPK5statePK11hsm_event_t
+ 623      FF
+ 624 052b 85C0     		testl	%eax, %eax
+ 625 052d 0F95C0   		setne	%al
+ 626 0530 84C0     		testb	%al, %al
+ 627 0532 0F841F02 		je	.L76
+ 627      0000
+ 628 0538 B8FFFFFF 		movl	$-1, %eax
+ 628      FF
+ 629 053d E93B0200 		jmp	.L47
+ 629      00
+ 630              	.L52:
+ 631 0542 488B45F0 		movq	-16(%rbp), %rax
+ 632 0546 4889C6   		movq	%rax, %rsi
+ 633 0549 BF000000 		movl	$.LC10, %edi
+ 633      00
+ 634 054e E8F7FAFF 		call	_ZL13hsm_debugFromPKcPK5state
+ 634      FF
+ 635 0553 488B45F0 		movq	-16(%rbp), %rax
+ 636 0557 488B4028 		movq	40(%rax), %rax
+ 637 055b 4885C0   		testq	%rax, %rax
+ 638 055e 7568     		jne	.L63
+ 639 0560 488B45F0 		movq	-16(%rbp), %rax
+ 640 0564 4889C7   		movq	%rax, %rdi
+ 641 0567 E826FCFF 		call	_ZL14state_hasChildPK5state
+ 641      FF
+ 642 056c 85C0     		testl	%eax, %eax
+ 643 056e 0F95C0   		setne	%al
+GAS LISTING /tmp/ccOtR0Mu.s 			page 14
+
+
+ 644 0571 84C0     		testb	%al, %al
+ 645 0573 742D     		je	.L64
+ 646 0575 488B45F0 		movq	-16(%rbp), %rax
+ 647 0579 C7403401 		movl	$1, 52(%rax)
+ 647      000000
+ 648 0580 488B45F0 		movq	-16(%rbp), %rax
+ 649 0584 488B4038 		movq	56(%rax), %rax
+ 650 0588 488945E8 		movq	%rax, -24(%rbp)
+ 651 058c 488B45E8 		movq	-24(%rbp), %rax
+ 652 0590 4889C6   		movq	%rax, %rsi
+ 653 0593 BF000000 		movl	$.LC11, %edi
+ 653      00
+ 654 0598 E8BCFAFF 		call	_ZL11hsm_debugToPKcPK5state
+ 654      FF
+ 655 059d E9B80100 		jmp	.L77
+ 655      00
+ 656              	.L64:
+ 657 05a2 488B45F0 		movq	-16(%rbp), %rax
+ 658 05a6 4889C7   		movq	%rax, %rdi
+ 659 05a9 E82AFCFF 		call	_ZL12state_getTopPK5state
+ 659      FF
+ 660 05ae 488945E8 		movq	%rax, -24(%rbp)
+ 661 05b2 488B45E8 		movq	-24(%rbp), %rax
+ 662 05b6 4889C6   		movq	%rax, %rsi
+ 663 05b9 BF000000 		movl	$.LC8, %edi
+ 663      00
+ 664 05be E896FAFF 		call	_ZL11hsm_debugToPKcPK5state
+ 664      FF
+ 665 05c3 E9920100 		jmp	.L77
+ 665      00
+ 666              	.L63:
+ 667 05c8 488B45F0 		movq	-16(%rbp), %rax
+ 668 05cc 488B4028 		movq	40(%rax), %rax
+ 669 05d0 488B00   		movq	(%rax), %rax
+ 670 05d3 4885C0   		testq	%rax, %rax
+ 671 05d6 0F857E01 		jne	.L77
+ 671      0000
+ 672 05dc 488B45F0 		movq	-16(%rbp), %rax
+ 673 05e0 C7403404 		movl	$4, 52(%rax)
+ 673      000000
+ 674 05e7 488B45E8 		movq	-24(%rbp), %rax
+ 675 05eb 4889C6   		movq	%rax, %rsi
+ 676 05ee BF000000 		movl	$.LC12, %edi
+ 676      00
+ 677 05f3 E861FAFF 		call	_ZL11hsm_debugToPKcPK5state
+ 677      FF
+ 678 05f8 E95D0100 		jmp	.L77
+ 678      00
+ 679              	.L53:
+ 680 05fd 488B45F0 		movq	-16(%rbp), %rax
+ 681 0601 4889C6   		movq	%rax, %rsi
+ 682 0604 BF000000 		movl	$.LC13, %edi
+ 682      00
+ 683 0609 E83CFAFF 		call	_ZL13hsm_debugFromPKcPK5state
+ 683      FF
+ 684 060e 488B45F0 		movq	-16(%rbp), %rax
+ 685 0612 C7403400 		movl	$0, 52(%rax)
+GAS LISTING /tmp/ccOtR0Mu.s 			page 15
+
+
+ 685      000000
+ 686 0619 488B45F0 		movq	-16(%rbp), %rax
+ 687 061d 488B4028 		movq	40(%rax), %rax
+ 688 0621 4885C0   		testq	%rax, %rax
+ 689 0624 7410     		je	.L67
+ 690 0626 488B45F0 		movq	-16(%rbp), %rax
+ 691 062a 488B4028 		movq	40(%rax), %rax
+ 692 062e 488B4010 		movq	16(%rax), %rax
+ 693 0632 488945E8 		movq	%rax, -24(%rbp)
+ 694              	.L67:
+ 695 0636 488B45F0 		movq	-16(%rbp), %rax
+ 696 063a 4889C7   		movq	%rax, %rdi
+ 697 063d E873FBFF 		call	_ZL15state_hasParentPK5state
+ 697      FF
+ 698 0642 85C0     		testl	%eax, %eax
+ 699 0644 0F95C0   		setne	%al
+ 700 0647 84C0     		testb	%al, %al
+ 701 0649 746D     		je	.L68
+ 702 064b 488B45F0 		movq	-16(%rbp), %rax
+ 703 064f 488B5008 		movq	8(%rax), %rdx
+ 704 0653 488B45E8 		movq	-24(%rbp), %rax
+ 705 0657 488B4008 		movq	8(%rax), %rax
+ 706 065b 4839C2   		cmpq	%rax, %rdx
+ 707 065e 752E     		jne	.L69
+ 708 0660 488B45F0 		movq	-16(%rbp), %rax
+ 709 0664 488B4008 		movq	8(%rax), %rax
+ 710 0668 488945F8 		movq	%rax, -8(%rbp)
+ 711 066c 488B45F8 		movq	-8(%rbp), %rax
+ 712 0670 488B55E8 		movq	-24(%rbp), %rdx
+ 713 0674 48895038 		movq	%rdx, 56(%rax)
+ 714 0678 488B45E8 		movq	-24(%rbp), %rax
+ 715 067c 4889C6   		movq	%rax, %rsi
+ 716 067f BF000000 		movl	$.LC14, %edi
+ 716      00
+ 717 0684 E8D0F9FF 		call	_ZL11hsm_debugToPKcPK5state
+ 717      FF
+ 718 0689 E99C0000 		jmp	.L71
+ 718      00
+ 719              	.L69:
+ 720 068e 488B45F0 		movq	-16(%rbp), %rax
+ 721 0692 488B4008 		movq	8(%rax), %rax
+ 722 0696 488945E8 		movq	%rax, -24(%rbp)
+ 723 069a 488B45E8 		movq	-24(%rbp), %rax
+ 724 069e C7403404 		movl	$4, 52(%rax)
+ 724      000000
+ 725 06a5 488B45E8 		movq	-24(%rbp), %rax
+ 726 06a9 4889C6   		movq	%rax, %rsi
+ 727 06ac BF000000 		movl	$.LC15, %edi
+ 727      00
+ 728 06b1 E8A3F9FF 		call	_ZL11hsm_debugToPKcPK5state
+ 728      FF
+ 729 06b6 EB72     		jmp	.L71
+ 730              	.L68:
+ 731 06b8 488B45F0 		movq	-16(%rbp), %rax
+ 732 06bc 4889C7   		movq	%rax, %rdi
+ 733 06bf E8F1FAFF 		call	_ZL15state_hasParentPK5state
+ 733      FF
+GAS LISTING /tmp/ccOtR0Mu.s 			page 16
+
+
+ 734 06c4 85C0     		testl	%eax, %eax
+ 735 06c6 0F95C0   		setne	%al
+ 736 06c9 84C0     		testb	%al, %al
+ 737 06cb 755D     		jne	.L71
+ 738 06cd 488B45F0 		movq	-16(%rbp), %rax
+ 739 06d1 488B4028 		movq	40(%rax), %rax
+ 740 06d5 4885C0   		testq	%rax, %rax
+ 741 06d8 752F     		jne	.L72
+ 742 06da 488B45F0 		movq	-16(%rbp), %rax
+ 743 06de 488B4038 		movq	56(%rax), %rax
+ 744 06e2 488B4028 		movq	40(%rax), %rax
+ 745 06e6 488B4010 		movq	16(%rax), %rax
+ 746 06ea 4889C7   		movq	%rax, %rdi
+ 747 06ed E8E6FAFF 		call	_ZL12state_getTopPK5state
+ 747      FF
+ 748 06f2 488945E8 		movq	%rax, -24(%rbp)
+ 749 06f6 488B45E8 		movq	-24(%rbp), %rax
+ 750 06fa 4889C6   		movq	%rax, %rsi
+ 751 06fd BF000000 		movl	$.LC16, %edi
+ 751      00
+ 752 0702 E852F9FF 		call	_ZL11hsm_debugToPKcPK5state
+ 752      FF
+ 753 0707 EB21     		jmp	.L71
+ 754              	.L72:
+ 755 0709 488B45E8 		movq	-24(%rbp), %rax
+ 756 070d 4889C7   		movq	%rax, %rdi
+ 757 0710 E8C3FAFF 		call	_ZL12state_getTopPK5state
+ 757      FF
+ 758 0715 488945E8 		movq	%rax, -24(%rbp)
+ 759 0719 488B45E8 		movq	-24(%rbp), %rax
+ 760 071d 4889C6   		movq	%rax, %rsi
+ 761 0720 BF000000 		movl	$.LC17, %edi
+ 761      00
+ 762 0725 E82FF9FF 		call	_ZL11hsm_debugToPKcPK5state
+ 762      FF
+ 763              	.L71:
+ 764 072a 488B55D0 		movq	-48(%rbp), %rdx
+ 765 072e 488B45F0 		movq	-16(%rbp), %rax
+ 766 0732 4889D6   		movq	%rdx, %rsi
+ 767 0735 4889C7   		movq	%rax, %rdi
+ 768 0738 E867FBFF 		call	_ZL17state_exec_onExitPK5statePK11hsm_event_t
+ 768      FF
+ 769 073d 85C0     		testl	%eax, %eax
+ 770 073f 0F95C0   		setne	%al
+ 771 0742 84C0     		testb	%al, %al
+ 772 0744 7417     		je	.L78
+ 773 0746 B8FFFFFF 		movl	$-1, %eax
+ 773      FF
+ 774 074b EB30     		jmp	.L47
+ 775              	.L48:
+ 776 074d B8FFFFFF 		movl	$-1, %eax
+ 776      FF
+ 777 0752 EB29     		jmp	.L47
+ 778              	.L75:
+ 779 0754 90       		nop
+ 780 0755 EB07     		jmp	.L57
+ 781              	.L76:
+GAS LISTING /tmp/ccOtR0Mu.s 			page 17
+
+
+ 782 0757 90       		nop
+ 783 0758 EB04     		jmp	.L57
+ 784              	.L77:
+ 785 075a 90       		nop
+ 786 075b EB01     		jmp	.L57
+ 787              	.L78:
+ 788 075d 90       		nop
+ 789              	.L57:
+ 790 075e 488B45D8 		movq	-40(%rbp), %rax
+ 791 0762 488B55E8 		movq	-24(%rbp), %rdx
+ 792 0766 48895008 		movq	%rdx, 8(%rax)
+ 793 076a 48837DD0 		cmpq	$0, -48(%rbp)
+ 793      00
+ 794 076f 7507     		jne	.L74
+ 795 0771 B8010000 		movl	$1, %eax
+ 795      00
+ 796 0776 EB05     		jmp	.L47
+ 797              	.L74:
+ 798 0778 B8000000 		movl	$0, %eax
+ 798      00
+ 799              	.L47:
+ 800 077d C9       		leave
+ 801              		.cfi_def_cfa 7, 8
+ 802 077e C3       		ret
+ 803              		.cfi_endproc
+ 804              	.LFE15:
+ 806              		.ident	"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.5) 5.4.0 20160609"
+ 807              		.section	.note.GNU-stack,"",@progbits
+GAS LISTING /tmp/ccOtR0Mu.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 hsm.c
+     /tmp/ccOtR0Mu.s:17     .text:0000000000000000 _ZL21hsm_state_getModeNamePK5state
+     /tmp/ccOtR0Mu.s:68     .text:000000000000004a _ZL13hsm_debugFromPKcPK5state
+     /tmp/ccOtR0Mu.s:86     .text:0000000000000059 _ZL11hsm_debugToPKcPK5state
+     /tmp/ccOtR0Mu.s:104    .text:0000000000000068 _ZL8hsm_initP5hsm_tPK5statePPS1_j
+     /tmp/ccOtR0Mu.s:188    .text:000000000000016d _ZL11state_resetP5state
+     /tmp/ccOtR0Mu.s:211    .text:0000000000000192 _ZL14state_hasChildPK5state
+     /tmp/ccOtR0Mu.s:236    .text:00000000000001b5 _ZL15state_hasParentPK5state
+     /tmp/ccOtR0Mu.s:261    .text:00000000000001d8 _ZL12state_getTopPK5state
+     /tmp/ccOtR0Mu.s:297    .text:000000000000021c _ZL18state_exec_onEntryPK5statePK11hsm_event_t
+     /tmp/ccOtR0Mu.s:330    .text:0000000000000260 _ZL17state_exec_duringPK5statePK11hsm_event_t
+     /tmp/ccOtR0Mu.s:363    .text:00000000000002a4 _ZL17state_exec_onExitPK5statePK11hsm_event_t
+     /tmp/ccOtR0Mu.s:397    .text:00000000000002e8 _Z10_hsm_buildPK5statePPS_j
+     /tmp/ccOtR0Mu.s:434    .text:0000000000000340 _Z9hsm_resetP5hsm_t
+     /tmp/ccOtR0Mu.s:496    .text:0000000000000383 _Z15hsm_handleEventP5hsm_tPK11hsm_event_t
+
+UNDEFINED SYMBOLS
+__stack_chk_fail

@@ -1,0 +1,5077 @@
+GAS LISTING /tmp/ccl1pnZZ.s 			page 1
+
+
+   1              		.file	"hsm_2_layer_noEvents_test.cpp"
+   2              		.section	.text._ZN14TestTerminatorC2Ev,"axG",@progbits,_ZN14TestTerminatorC5Ev,comdat
+   3              		.align 2
+   4              		.weak	_ZN14TestTerminatorC2Ev
+   6              	_ZN14TestTerminatorC2Ev:
+   7              	.LFB611:
+   8              		.cfi_startproc
+   9 0000 55       		pushq	%rbp
+  10              		.cfi_def_cfa_offset 16
+  11              		.cfi_offset 6, -16
+  12 0001 4889E5   		movq	%rsp, %rbp
+  13              		.cfi_def_cfa_register 6
+  14 0004 48897DF8 		movq	%rdi, -8(%rbp)
+  15 0008 BA000000 		movl	$_ZTV14TestTerminator+16, %edx
+  15      00
+  16 000d 488B45F8 		movq	-8(%rbp), %rax
+  17 0011 488910   		movq	%rdx, (%rax)
+  18 0014 90       		nop
+  19 0015 5D       		popq	%rbp
+  20              		.cfi_def_cfa 7, 8
+  21 0016 C3       		ret
+  22              		.cfi_endproc
+  23              	.LFE611:
+  25              		.weak	_ZN14TestTerminatorC1Ev
+  26              		.set	_ZN14TestTerminatorC1Ev,_ZN14TestTerminatorC2Ev
+  27              		.section	.text._ZN20NormalTestTerminatorC2Ev,"axG",@progbits,_ZN20NormalTestTerminatorC5Ev,comdat
+  28              		.align 2
+  29              		.weak	_ZN20NormalTestTerminatorC2Ev
+  31              	_ZN20NormalTestTerminatorC2Ev:
+  32              	.LFB613:
+  33              		.cfi_startproc
+  34 0000 55       		pushq	%rbp
+  35              		.cfi_def_cfa_offset 16
+  36              		.cfi_offset 6, -16
+  37 0001 4889E5   		movq	%rsp, %rbp
+  38              		.cfi_def_cfa_register 6
+  39 0004 4883EC10 		subq	$16, %rsp
+  40 0008 48897DF8 		movq	%rdi, -8(%rbp)
+  41 000c 488B45F8 		movq	-8(%rbp), %rax
+  42 0010 4889C7   		movq	%rax, %rdi
+  43 0013 E8000000 		call	_ZN14TestTerminatorC2Ev
+  43      00
+  44 0018 BA000000 		movl	$_ZTV20NormalTestTerminator+16, %edx
+  44      00
+  45 001d 488B45F8 		movq	-8(%rbp), %rax
+  46 0021 488910   		movq	%rdx, (%rax)
+  47 0024 90       		nop
+  48 0025 C9       		leave
+  49              		.cfi_def_cfa 7, 8
+  50 0026 C3       		ret
+  51              		.cfi_endproc
+  52              	.LFE613:
+  54              		.weak	_ZN20NormalTestTerminatorC1Ev
+  55              		.set	_ZN20NormalTestTerminatorC1Ev,_ZN20NormalTestTerminatorC2Ev
+  56              		.globl	topA
+  57              		.data
+  58              		.align 32
+GAS LISTING /tmp/ccl1pnZZ.s 			page 2
+
+
+  61              	topA:
+  62 0000 00000000 		.quad	subA1
+  62      00000000 
+  63 0008 00000000 		.quad	0
+  63      00000000 
+  64 0010 00000000 		.quad	0
+  64      00000000 
+  65 0018 00000000 		.quad	0
+  65      00000000 
+  66 0020 00000000 		.quad	0
+  66      00000000 
+  67 0028 00000000 		.quad	0
+  67      00000000 
+  68 0030 00000000 		.long	0
+  69 0034 00000000 		.zero	20
+  69      00000000 
+  69      00000000 
+  69      00000000 
+  69      00000000 
+  70              		.globl	subA1
+  71 0048 00000000 		.align 32
+  71      00000000 
+  71      00000000 
+  71      00000000 
+  71      00000000 
+  74              	subA1:
+  75 0060 00000000 		.quad	0
+  75      00000000 
+  76 0068 00000000 		.quad	topA
+  76      00000000 
+  77 0070 00000000 		.quad	0
+  77      00000000 
+  78 0078 00000000 		.quad	0
+  78      00000000 
+  79 0080 00000000 		.quad	0
+  79      00000000 
+  80 0088 00000000 		.quad	._79
+  80      00000000 
+  81 0090 01000000 		.long	1
+  82 0094 00000000 		.zero	20
+  82      00000000 
+  82      00000000 
+  82      00000000 
+  82      00000000 
+  83              		.globl	subA2
+  84 00a8 00000000 		.align 32
+  84      00000000 
+  84      00000000 
+  84      00000000 
+  84      00000000 
+  87              	subA2:
+  88 00c0 00000000 		.quad	0
+  88      00000000 
+  89 00c8 00000000 		.quad	topA
+  89      00000000 
+  90 00d0 00000000 		.quad	0
+  90      00000000 
+GAS LISTING /tmp/ccl1pnZZ.s 			page 3
+
+
+  91 00d8 00000000 		.quad	0
+  91      00000000 
+  92 00e0 00000000 		.quad	0
+  92      00000000 
+  93 00e8 00000000 		.quad	._80
+  93      00000000 
+  94 00f0 00000000 		.long	0
+  95 00f4 00000000 		.zero	20
+  95      00000000 
+  95      00000000 
+  95      00000000 
+  95      00000000 
+  96              		.globl	topB
+  97 0108 00000000 		.align 32
+  97      00000000 
+  97      00000000 
+  97      00000000 
+  97      00000000 
+ 100              	topB:
+ 101 0120 00000000 		.quad	subB1
+ 101      00000000 
+ 102 0128 00000000 		.quad	0
+ 102      00000000 
+ 103 0130 00000000 		.quad	0
+ 103      00000000 
+ 104 0138 00000000 		.quad	0
+ 104      00000000 
+ 105 0140 00000000 		.quad	0
+ 105      00000000 
+ 106 0148 00000000 		.quad	0
+ 106      00000000 
+ 107 0150 00000000 		.long	0
+ 108 0154 00000000 		.zero	20
+ 108      00000000 
+ 108      00000000 
+ 108      00000000 
+ 108      00000000 
+ 109              		.globl	subB1
+ 110 0168 00000000 		.align 32
+ 110      00000000 
+ 110      00000000 
+ 110      00000000 
+ 110      00000000 
+ 113              	subB1:
+ 114 0180 00000000 		.quad	0
+ 114      00000000 
+ 115 0188 00000000 		.quad	topB
+ 115      00000000 
+ 116 0190 00000000 		.quad	0
+ 116      00000000 
+ 117 0198 00000000 		.quad	0
+ 117      00000000 
+ 118 01a0 00000000 		.quad	0
+ 118      00000000 
+ 119 01a8 00000000 		.quad	._81
+ 119      00000000 
+ 120 01b0 01000000 		.long	1
+GAS LISTING /tmp/ccl1pnZZ.s 			page 4
+
+
+ 121 01b4 00000000 		.zero	20
+ 121      00000000 
+ 121      00000000 
+ 121      00000000 
+ 121      00000000 
+ 122 01c8 00000000 		.align 32
+ 122      00000000 
+ 122      00000000 
+ 122      00000000 
+ 122      00000000 
+ 125              	_ZL9stateList:
+ 126 01e0 00000000 		.quad	topA
+ 126      00000000 
+ 127 01e8 00000000 		.quad	subA1
+ 127      00000000 
+ 128 01f0 00000000 		.quad	subA2
+ 128      00000000 
+ 129 01f8 00000000 		.quad	topB
+ 129      00000000 
+ 130 0200 00000000 		.quad	subB1
+ 130      00000000 
+ 131              		.globl	externTestGrouphsm_2_layer_noEvents
+ 132              		.bss
+ 133              		.align 4
+ 136              	externTestGrouphsm_2_layer_noEvents:
+ 137 0000 00000000 		.zero	4
+ 138              		.section	.rodata
+ 139              		.align 8
+ 140              	.LC0:
+ 141 0000 74657374 		.string	"tests/fsm/use_case/hsm_2_layer_noEvents_test.cpp"
+ 141      732F6673 
+ 141      6D2F7573 
+ 141      655F6361 
+ 141      73652F68 
+ 142              		.section	.text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents5setupEv,"axG",@progbits,_ZN44TEST
+ 143              		.align 2
+ 144              		.weak	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents5setupEv
+ 146              	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents5setupEv:
+ 147              	.LFB692:
+ 148              		.cfi_startproc
+ 149              		.cfi_personality 0x3,__gxx_personality_v0
+ 150              		.cfi_lsda 0x3,.LLSDA692
+ 151 0000 55       		pushq	%rbp
+ 152              		.cfi_def_cfa_offset 16
+ 153              		.cfi_offset 6, -16
+ 154 0001 4889E5   		movq	%rsp, %rbp
+ 155              		.cfi_def_cfa_register 6
+ 156 0004 4154     		pushq	%r12
+ 157 0006 53       		pushq	%rbx
+ 158 0007 4883EC40 		subq	$64, %rsp
+ 159              		.cfi_offset 12, -24
+ 160              		.cfi_offset 3, -32
+ 161 000b 48897DD8 		movq	%rdi, -40(%rbp)
+ 162 000f 64488B04 		movq	%fs:40, %rax
+ 162      25280000 
+ 162      00
+ 163 0018 488945E8 		movq	%rax, -24(%rbp)
+GAS LISTING /tmp/ccl1pnZZ.s 			page 5
+
+
+ 164 001c 31C0     		xorl	%eax, %eax
+ 165 001e B8050000 		movl	$5, %eax
+ 165      00
+ 166 0023 89C2     		movl	%eax, %edx
+ 167 0025 488B5DD8 		movq	-40(%rbp), %rbx
+ 168 0029 488D45B0 		leaq	-80(%rbp), %rax
+ 169 002d 89D1     		movl	%edx, %ecx
+ 170 002f BA000000 		movl	$_ZL9stateList, %edx
+ 170      00
+ 171 0034 BE000000 		movl	$topA, %esi
+ 171      00
+ 172 0039 4889C7   		movq	%rax, %rdi
+ 173              	.LEHB0:
+ 174 003c E8000000 		call	_Z10_hsm_buildPK5statePPS_j
+ 174      00
+ 175 0041 488B45B0 		movq	-80(%rbp), %rax
+ 176 0045 48894308 		movq	%rax, 8(%rbx)
+ 177 0049 488B45B8 		movq	-72(%rbp), %rax
+ 178 004d 48894310 		movq	%rax, 16(%rbx)
+ 179 0051 488B45C0 		movq	-64(%rbp), %rax
+ 180 0055 48894318 		movq	%rax, 24(%rbx)
+ 181 0059 488B45C8 		movq	-56(%rbp), %rax
+ 182 005d 48894320 		movq	%rax, 32(%rbx)
+ 183 0061 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 183      00
+ 184 0066 488B10   		movq	(%rax), %rdx
+ 185 0069 4881C288 		addq	$136, %rdx
+ 185      000000
+ 186 0070 4C8B0A   		movq	(%rdx), %r9
+ 187 0073 488B55D8 		movq	-40(%rbp), %rdx
+ 188 0077 488B5208 		movq	8(%rdx), %rdx
+ 189 007b 41B89600 		movl	$150, %r8d
+ 189      0000
+ 190 0081 B9000000 		movl	$.LC0, %ecx
+ 190      00
+ 191 0086 BE000000 		movl	$topA, %esi
+ 191      00
+ 192 008b 4889C7   		movq	%rax, %rdi
+ 193 008e 41FFD1   		call	*%r9
+ 194 0091 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 194      00
+ 195 0096 488B10   		movq	(%rax), %rdx
+ 196 0099 4881C288 		addq	$136, %rdx
+ 196      000000
+ 197 00a0 4C8B0A   		movq	(%rdx), %r9
+ 198 00a3 488B55D8 		movq	-40(%rbp), %rdx
+ 199 00a7 488B5210 		movq	16(%rdx), %rdx
+ 200 00ab 41B89700 		movl	$151, %r8d
+ 200      0000
+ 201 00b1 B9000000 		movl	$.LC0, %ecx
+ 201      00
+ 202 00b6 BE000000 		movl	$topA, %esi
+ 202      00
+ 203 00bb 4889C7   		movq	%rax, %rdi
+ 204 00be 41FFD1   		call	*%r9
+ 205 00c1 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 205      00
+GAS LISTING /tmp/ccl1pnZZ.s 			page 6
+
+
+ 206              	.LEHE0:
+ 207 00c6 4889C3   		movq	%rax, %rbx
+ 208 00c9 488B03   		movq	(%rbx), %rax
+ 209 00cc 4883C078 		addq	$120, %rax
+ 210 00d0 4C8B20   		movq	(%rax), %r12
+ 211 00d3 48C745E0 		movq	$0, -32(%rbp)
+ 211      00000000 
+ 212 00db 488D45E0 		leaq	-32(%rbp), %rax
+ 213 00df 4889C7   		movq	%rax, %rdi
+ 214 00e2 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 214      00
+ 215 00e7 488B45D8 		movq	-40(%rbp), %rax
+ 216 00eb 488B4010 		movq	16(%rax), %rax
+ 217 00ef 8B4034   		movl	52(%rax), %eax
+ 218 00f2 89C2     		movl	%eax, %edx
+ 219 00f4 488D45E0 		leaq	-32(%rbp), %rax
+ 220 00f8 4989C1   		movq	%rax, %r9
+ 221 00fb 41B89800 		movl	$152, %r8d
+ 221      0000
+ 222 0101 B9000000 		movl	$.LC0, %ecx
+ 222      00
+ 223 0106 BE000000 		movl	$0, %esi
+ 223      00
+ 224 010b 4889DF   		movq	%rbx, %rdi
+ 225              	.LEHB1:
+ 226 010e 41FFD4   		call	*%r12
+ 227              	.LEHE1:
+ 228 0111 488D45E0 		leaq	-32(%rbp), %rax
+ 229 0115 4889C7   		movq	%rax, %rdi
+ 230              	.LEHB2:
+ 231 0118 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 231      00
+ 232              	.LEHE2:
+ 233 011d 90       		nop
+ 234 011e 488B45E8 		movq	-24(%rbp), %rax
+ 235 0122 64483304 		xorq	%fs:40, %rax
+ 235      25280000 
+ 235      00
+ 236 012b 7421     		je	.L5
+ 237 012d EB1A     		jmp	.L7
+ 238              	.L6:
+ 239 012f 4889C3   		movq	%rax, %rbx
+ 240 0132 488D45E0 		leaq	-32(%rbp), %rax
+ 241 0136 4889C7   		movq	%rax, %rdi
+ 242 0139 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 242      00
+ 243 013e 4889D8   		movq	%rbx, %rax
+ 244 0141 4889C7   		movq	%rax, %rdi
+ 245              	.LEHB3:
+ 246 0144 E8000000 		call	_Unwind_Resume
+ 246      00
+ 247              	.LEHE3:
+ 248              	.L7:
+ 249 0149 E8000000 		call	__stack_chk_fail
+ 249      00
+ 250              	.L5:
+ 251 014e 4883C440 		addq	$64, %rsp
+GAS LISTING /tmp/ccl1pnZZ.s 			page 7
+
+
+ 252 0152 5B       		popq	%rbx
+ 253 0153 415C     		popq	%r12
+ 254 0155 5D       		popq	%rbp
+ 255              		.cfi_def_cfa 7, 8
+ 256 0156 C3       		ret
+ 257              		.cfi_endproc
+ 258              	.LFE692:
+ 259              		.globl	__gxx_personality_v0
+ 260              		.section	.gcc_except_table._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents5setupEv,"aG",@progbit
+ 261              	.LLSDA692:
+ 262 0000 FF       		.byte	0xff
+ 263 0001 FF       		.byte	0xff
+ 264 0002 01       		.byte	0x1
+ 265 0003 15       		.uleb128 .LLSDACSE692-.LLSDACSB692
+ 266              	.LLSDACSB692:
+ 267 0004 3C       		.uleb128 .LEHB0-.LFB692
+ 268 0005 8A01     		.uleb128 .LEHE0-.LEHB0
+ 269 0007 00       		.uleb128 0
+ 270 0008 00       		.uleb128 0
+ 271 0009 8E02     		.uleb128 .LEHB1-.LFB692
+ 272 000b 03       		.uleb128 .LEHE1-.LEHB1
+ 273 000c AF02     		.uleb128 .L6-.LFB692
+ 274 000e 00       		.uleb128 0
+ 275 000f 9802     		.uleb128 .LEHB2-.LFB692
+ 276 0011 05       		.uleb128 .LEHE2-.LEHB2
+ 277 0012 00       		.uleb128 0
+ 278 0013 00       		.uleb128 0
+ 279 0014 C402     		.uleb128 .LEHB3-.LFB692
+ 280 0016 05       		.uleb128 .LEHE3-.LEHB3
+ 281 0017 00       		.uleb128 0
+ 282 0018 00       		.uleb128 0
+ 283              	.LLSDACSE692:
+ 284              		.section	.text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents5setupEv,"axG",@progbits,_ZN44TEST
+ 286              		.section	.text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents8teardownEv,"axG",@progbits,_ZN44T
+ 287              		.align 2
+ 288              		.weak	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents8teardownEv
+ 290              	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents8teardownEv:
+ 291              	.LFB693:
+ 292              		.cfi_startproc
+ 293 0000 55       		pushq	%rbp
+ 294              		.cfi_def_cfa_offset 16
+ 295              		.cfi_offset 6, -16
+ 296 0001 4889E5   		movq	%rsp, %rbp
+ 297              		.cfi_def_cfa_register 6
+ 298 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 299 0008 90       		nop
+ 300 0009 5D       		popq	%rbp
+ 301              		.cfi_def_cfa 7, 8
+ 302 000a C3       		ret
+ 303              		.cfi_endproc
+ 304              	.LFE693:
+ 306              		.text
+ 308              	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_:
+ 309              	.LFB694:
+ 310              		.cfi_startproc
+ 311              		.cfi_personality 0x3,__gxx_personality_v0
+ 312              		.cfi_lsda 0x3,.LLSDA694
+GAS LISTING /tmp/ccl1pnZZ.s 			page 8
+
+
+ 313 0000 55       		pushq	%rbp
+ 314              		.cfi_def_cfa_offset 16
+ 315              		.cfi_offset 6, -16
+ 316 0001 4889E5   		movq	%rsp, %rbp
+ 317              		.cfi_def_cfa_register 6
+ 318 0004 4155     		pushq	%r13
+ 319 0006 4154     		pushq	%r12
+ 320 0008 53       		pushq	%rbx
+ 321 0009 4883EC68 		subq	$104, %rsp
+ 322              		.cfi_offset 13, -24
+ 323              		.cfi_offset 12, -32
+ 324              		.cfi_offset 3, -40
+ 325 000d 48897D98 		movq	%rdi, -104(%rbp)
+ 326 0011 48897590 		movq	%rsi, -112(%rbp)
+ 327 0015 89558C   		movl	%edx, -116(%rbp)
+ 328 0018 48894D80 		movq	%rcx, -128(%rbp)
+ 329 001c 44894588 		movl	%r8d, -120(%rbp)
+ 330 0020 64488B04 		movq	%fs:40, %rax
+ 330      25280000 
+ 330      00
+ 331 0029 488945D8 		movq	%rax, -40(%rbp)
+ 332 002d 31C0     		xorl	%eax, %eax
+ 333              	.LEHB4:
+ 334 002f E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 334      00
+ 335 0034 488B10   		movq	(%rax), %rdx
+ 336 0037 4881C288 		addq	$136, %rdx
+ 336      000000
+ 337 003e 4C8B0A   		movq	(%rdx), %r9
+ 338 0041 488B5598 		movq	-104(%rbp), %rdx
+ 339 0045 488B5208 		movq	8(%rdx), %rdx
+ 340 0049 488B7590 		movq	-112(%rbp), %rsi
+ 341 004d 41B8A500 		movl	$165, %r8d
+ 341      0000
+ 342 0053 B9000000 		movl	$.LC0, %ecx
+ 342      00
+ 343 0058 4889C7   		movq	%rax, %rdi
+ 344 005b 41FFD1   		call	*%r9
+ 345 005e E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 345      00
+ 346              	.LEHE4:
+ 347 0063 4889C3   		movq	%rax, %rbx
+ 348 0066 488B03   		movq	(%rbx), %rax
+ 349 0069 4883C078 		addq	$120, %rax
+ 350 006d 4C8B20   		movq	(%rax), %r12
+ 351 0070 48C745D0 		movq	$0, -48(%rbp)
+ 351      00000000 
+ 352 0078 488D45D0 		leaq	-48(%rbp), %rax
+ 353 007c 4889C7   		movq	%rax, %rdi
+ 354 007f E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 354      00
+ 355 0084 488B4598 		movq	-104(%rbp), %rax
+ 356 0088 488B4008 		movq	8(%rax), %rax
+ 357 008c 8B4034   		movl	52(%rax), %eax
+ 358 008f 89C6     		movl	%eax, %esi
+ 359 0091 8B458C   		movl	-116(%rbp), %eax
+ 360 0094 488D55D0 		leaq	-48(%rbp), %rdx
+GAS LISTING /tmp/ccl1pnZZ.s 			page 9
+
+
+ 361 0098 4989D1   		movq	%rdx, %r9
+ 362 009b 41B8A600 		movl	$166, %r8d
+ 362      0000
+ 363 00a1 B9000000 		movl	$.LC0, %ecx
+ 363      00
+ 364 00a6 4889F2   		movq	%rsi, %rdx
+ 365 00a9 4889C6   		movq	%rax, %rsi
+ 366 00ac 4889DF   		movq	%rbx, %rdi
+ 367              	.LEHB5:
+ 368 00af 41FFD4   		call	*%r12
+ 369              	.LEHE5:
+ 370 00b2 488D45D0 		leaq	-48(%rbp), %rax
+ 371 00b6 4889C7   		movq	%rax, %rdi
+ 372              	.LEHB6:
+ 373 00b9 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 373      00
+ 374 00be 488B4598 		movq	-104(%rbp), %rax
+ 375 00c2 BE000000 		movl	$0, %esi
+ 375      00
+ 376 00c7 4889C7   		movq	%rax, %rdi
+ 377 00ca E8000000 		call	_Z15hsm_handleEventP5hsm_tPK11hsm_event_t
+ 377      00
+ 378 00cf 8945AC   		movl	%eax, -84(%rbp)
+ 379 00d2 837DAC01 		cmpl	$1, -84(%rbp)
+ 380 00d6 0F84B500 		je	.L10
+ 380      0000
+ 381 00dc E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 381      00
+ 382              	.LEHE6:
+ 383 00e1 4889C3   		movq	%rax, %rbx
+ 384 00e4 488B03   		movq	(%rbx), %rax
+ 385 00e7 48059800 		addq	$152, %rax
+ 385      0000
+ 386 00ed 4C8B20   		movq	(%rax), %r12
+ 387 00f0 48C745D0 		movq	$0, -48(%rbp)
+ 387      00000000 
+ 388 00f8 488D45D0 		leaq	-48(%rbp), %rax
+ 389 00fc 4889C7   		movq	%rax, %rdi
+ 390 00ff E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 390      00
+ 391 0104 488D45C0 		leaq	-64(%rbp), %rax
+ 392 0108 8B55AC   		movl	-84(%rbp), %edx
+ 393 010b 89D6     		movl	%edx, %esi
+ 394 010d 4889C7   		movq	%rax, %rdi
+ 395              	.LEHB7:
+ 396 0110 E8000000 		call	_Z10StringFromi
+ 396      00
+ 397              	.LEHE7:
+ 398 0115 488D45C0 		leaq	-64(%rbp), %rax
+ 399 0119 4889C7   		movq	%rax, %rdi
+ 400              	.LEHB8:
+ 401 011c E8000000 		call	_ZNK12SimpleString12asCharStringEv
+ 401      00
+ 402 0121 4989C5   		movq	%rax, %r13
+ 403 0124 488D45B0 		leaq	-80(%rbp), %rax
+ 404 0128 BE010000 		movl	$1, %esi
+ 404      00
+GAS LISTING /tmp/ccl1pnZZ.s 			page 10
+
+
+ 405 012d 4889C7   		movq	%rax, %rdi
+ 406 0130 E8000000 		call	_Z10StringFromi
+ 406      00
+ 407              	.LEHE8:
+ 408 0135 488D45B0 		leaq	-80(%rbp), %rax
+ 409 0139 4889C7   		movq	%rax, %rdi
+ 410              	.LEHB9:
+ 411 013c E8000000 		call	_ZNK12SimpleString12asCharStringEv
+ 411      00
+ 412 0141 4889C2   		movq	%rax, %rdx
+ 413 0144 4883EC08 		subq	$8, %rsp
+ 414 0148 488D45D0 		leaq	-48(%rbp), %rax
+ 415 014c 50       		pushq	%rax
+ 416 014d 41B9AA00 		movl	$170, %r9d
+ 416      0000
+ 417 0153 41B80000 		movl	$.LC0, %r8d
+ 417      0000
+ 418 0159 4C89E9   		movq	%r13, %rcx
+ 419 015c BE010000 		movl	$1, %esi
+ 419      00
+ 420 0161 4889DF   		movq	%rbx, %rdi
+ 421              		.cfi_escape 0x2e,0x10
+ 422 0164 41FFD4   		call	*%r12
+ 423              	.LEHE9:
+ 424 0167 4883C410 		addq	$16, %rsp
+ 425 016b 488D45B0 		leaq	-80(%rbp), %rax
+ 426 016f 4889C7   		movq	%rax, %rdi
+ 427              	.LEHB10:
+ 428              		.cfi_escape 0x2e,0
+ 429 0172 E8000000 		call	_ZN12SimpleStringD1Ev
+ 429      00
+ 430              	.LEHE10:
+ 431 0177 488D45C0 		leaq	-64(%rbp), %rax
+ 432 017b 4889C7   		movq	%rax, %rdi
+ 433              	.LEHB11:
+ 434 017e E8000000 		call	_ZN12SimpleStringD1Ev
+ 434      00
+ 435              	.LEHE11:
+ 436 0183 488D45D0 		leaq	-48(%rbp), %rax
+ 437 0187 4889C7   		movq	%rax, %rdi
+ 438              	.LEHB12:
+ 439 018a E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 439      00
+ 440 018f EB54     		jmp	.L11
+ 441              	.L10:
+ 442 0191 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 442      00
+ 443              	.LEHE12:
+ 444 0196 4889C3   		movq	%rax, %rbx
+ 445 0199 488B03   		movq	(%rbx), %rax
+ 446 019c 4883C078 		addq	$120, %rax
+ 447 01a0 4C8B20   		movq	(%rax), %r12
+ 448 01a3 48C745D0 		movq	$0, -48(%rbp)
+ 448      00000000 
+ 449 01ab 488D45D0 		leaq	-48(%rbp), %rax
+ 450 01af 4889C7   		movq	%rax, %rdi
+ 451 01b2 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+GAS LISTING /tmp/ccl1pnZZ.s 			page 11
+
+
+ 451      00
+ 452 01b7 488D45D0 		leaq	-48(%rbp), %rax
+ 453 01bb 4989C1   		movq	%rax, %r9
+ 454 01be 41B8AA00 		movl	$170, %r8d
+ 454      0000
+ 455 01c4 B9000000 		movl	$.LC0, %ecx
+ 455      00
+ 456 01c9 BA000000 		movl	$0, %edx
+ 456      00
+ 457 01ce BE000000 		movl	$0, %esi
+ 457      00
+ 458 01d3 4889DF   		movq	%rbx, %rdi
+ 459              	.LEHB13:
+ 460 01d6 41FFD4   		call	*%r12
+ 461              	.LEHE13:
+ 462 01d9 488D45D0 		leaq	-48(%rbp), %rax
+ 463 01dd 4889C7   		movq	%rax, %rdi
+ 464              	.LEHB14:
+ 465 01e0 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 465      00
+ 466              	.L11:
+ 467 01e5 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 467      00
+ 468 01ea 488B10   		movq	(%rax), %rdx
+ 469 01ed 4881C288 		addq	$136, %rdx
+ 469      000000
+ 470 01f4 4C8B0A   		movq	(%rdx), %r9
+ 471 01f7 488B5598 		movq	-104(%rbp), %rdx
+ 472 01fb 488B5208 		movq	8(%rdx), %rdx
+ 473 01ff 488B7580 		movq	-128(%rbp), %rsi
+ 474 0203 41B8AD00 		movl	$173, %r8d
+ 474      0000
+ 475 0209 B9000000 		movl	$.LC0, %ecx
+ 475      00
+ 476 020e 4889C7   		movq	%rax, %rdi
+ 477 0211 41FFD1   		call	*%r9
+ 478 0214 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 478      00
+ 479              	.LEHE14:
+ 480 0219 4889C3   		movq	%rax, %rbx
+ 481 021c 488B03   		movq	(%rbx), %rax
+ 482 021f 4883C078 		addq	$120, %rax
+ 483 0223 4C8B20   		movq	(%rax), %r12
+ 484 0226 48C745D0 		movq	$0, -48(%rbp)
+ 484      00000000 
+ 485 022e 488D45D0 		leaq	-48(%rbp), %rax
+ 486 0232 4889C7   		movq	%rax, %rdi
+ 487 0235 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 487      00
+ 488 023a 488B4598 		movq	-104(%rbp), %rax
+ 489 023e 488B4008 		movq	8(%rax), %rax
+ 490 0242 8B4034   		movl	52(%rax), %eax
+ 491 0245 89C6     		movl	%eax, %esi
+ 492 0247 8B4588   		movl	-120(%rbp), %eax
+ 493 024a 488D55D0 		leaq	-48(%rbp), %rdx
+ 494 024e 4989D1   		movq	%rdx, %r9
+ 495 0251 41B8AE00 		movl	$174, %r8d
+GAS LISTING /tmp/ccl1pnZZ.s 			page 12
+
+
+ 495      0000
+ 496 0257 B9000000 		movl	$.LC0, %ecx
+ 496      00
+ 497 025c 4889F2   		movq	%rsi, %rdx
+ 498 025f 4889C6   		movq	%rax, %rsi
+ 499 0262 4889DF   		movq	%rbx, %rdi
+ 500              	.LEHB15:
+ 501 0265 41FFD4   		call	*%r12
+ 502              	.LEHE15:
+ 503 0268 488D45D0 		leaq	-48(%rbp), %rax
+ 504 026c 4889C7   		movq	%rax, %rdi
+ 505              	.LEHB16:
+ 506 026f E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 506      00
+ 507              	.LEHE16:
+ 508 0274 90       		nop
+ 509 0275 488B45D8 		movq	-40(%rbp), %rax
+ 510 0279 64483304 		xorq	%fs:40, %rax
+ 510      25280000 
+ 510      00
+ 511 0282 0F849400 		je	.L18
+ 511      0000
+ 512 0288 E98A0000 		jmp	.L25
+ 512      00
+ 513              	.L19:
+ 514 028d 4889C3   		movq	%rax, %rbx
+ 515 0290 488D45D0 		leaq	-48(%rbp), %rax
+ 516 0294 4889C7   		movq	%rax, %rdi
+ 517 0297 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 517      00
+ 518 029c 4889D8   		movq	%rbx, %rax
+ 519 029f 4889C7   		movq	%rax, %rdi
+ 520              	.LEHB17:
+ 521 02a2 E8000000 		call	_Unwind_Resume
+ 521      00
+ 522              	.LEHE17:
+ 523              	.L22:
+ 524 02a7 4889C3   		movq	%rax, %rbx
+ 525 02aa 488D45B0 		leaq	-80(%rbp), %rax
+ 526 02ae 4889C7   		movq	%rax, %rdi
+ 527 02b1 E8000000 		call	_ZN12SimpleStringD1Ev
+ 527      00
+ 528 02b6 EB03     		jmp	.L14
+ 529              	.L21:
+ 530 02b8 4889C3   		movq	%rax, %rbx
+ 531              	.L14:
+ 532 02bb 488D45C0 		leaq	-64(%rbp), %rax
+ 533 02bf 4889C7   		movq	%rax, %rdi
+ 534 02c2 E8000000 		call	_ZN12SimpleStringD1Ev
+ 534      00
+ 535 02c7 EB03     		jmp	.L15
+ 536              	.L20:
+ 537 02c9 4889C3   		movq	%rax, %rbx
+ 538              	.L15:
+ 539 02cc 488D45D0 		leaq	-48(%rbp), %rax
+ 540 02d0 4889C7   		movq	%rax, %rdi
+ 541 02d3 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+GAS LISTING /tmp/ccl1pnZZ.s 			page 13
+
+
+ 541      00
+ 542 02d8 4889D8   		movq	%rbx, %rax
+ 543 02db 4889C7   		movq	%rax, %rdi
+ 544              	.LEHB18:
+ 545 02de E8000000 		call	_Unwind_Resume
+ 545      00
+ 546              	.LEHE18:
+ 547              	.L23:
+ 548 02e3 4889C3   		movq	%rax, %rbx
+ 549 02e6 488D45D0 		leaq	-48(%rbp), %rax
+ 550 02ea 4889C7   		movq	%rax, %rdi
+ 551 02ed E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 551      00
+ 552 02f2 4889D8   		movq	%rbx, %rax
+ 553 02f5 4889C7   		movq	%rax, %rdi
+ 554              	.LEHB19:
+ 555 02f8 E8000000 		call	_Unwind_Resume
+ 555      00
+ 556              	.LEHE19:
+ 557              	.L24:
+ 558 02fd 4889C3   		movq	%rax, %rbx
+ 559 0300 488D45D0 		leaq	-48(%rbp), %rax
+ 560 0304 4889C7   		movq	%rax, %rdi
+ 561 0307 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 561      00
+ 562 030c 4889D8   		movq	%rbx, %rax
+ 563 030f 4889C7   		movq	%rax, %rdi
+ 564              	.LEHB20:
+ 565 0312 E8000000 		call	_Unwind_Resume
+ 565      00
+ 566              	.LEHE20:
+ 567              	.L25:
+ 568 0317 E8000000 		call	__stack_chk_fail
+ 568      00
+ 569              	.L18:
+ 570 031c 488D65E8 		leaq	-24(%rbp), %rsp
+ 571 0320 5B       		popq	%rbx
+ 572 0321 415C     		popq	%r12
+ 573 0323 415D     		popq	%r13
+ 574 0325 5D       		popq	%rbp
+ 575              		.cfi_def_cfa 7, 8
+ 576 0326 C3       		ret
+ 577              		.cfi_endproc
+ 578              	.LFE694:
+ 579              		.section	.gcc_except_table,"a",@progbits
+ 580              	.LLSDA694:
+ 581 0000 FF       		.byte	0xff
+ 582 0001 FF       		.byte	0xff
+ 583 0002 01       		.byte	0x1
+ 584 0003 5C       		.uleb128 .LLSDACSE694-.LLSDACSB694
+ 585              	.LLSDACSB694:
+ 586 0004 2F       		.uleb128 .LEHB4-.LFB694
+ 587 0005 34       		.uleb128 .LEHE4-.LEHB4
+ 588 0006 00       		.uleb128 0
+ 589 0007 00       		.uleb128 0
+ 590 0008 AF01     		.uleb128 .LEHB5-.LFB694
+ 591 000a 03       		.uleb128 .LEHE5-.LEHB5
+GAS LISTING /tmp/ccl1pnZZ.s 			page 14
+
+
+ 592 000b 8D05     		.uleb128 .L19-.LFB694
+ 593 000d 00       		.uleb128 0
+ 594 000e B901     		.uleb128 .LEHB6-.LFB694
+ 595 0010 28       		.uleb128 .LEHE6-.LEHB6
+ 596 0011 00       		.uleb128 0
+ 597 0012 00       		.uleb128 0
+ 598 0013 9002     		.uleb128 .LEHB7-.LFB694
+ 599 0015 05       		.uleb128 .LEHE7-.LEHB7
+ 600 0016 C905     		.uleb128 .L20-.LFB694
+ 601 0018 00       		.uleb128 0
+ 602 0019 9C02     		.uleb128 .LEHB8-.LFB694
+ 603 001b 19       		.uleb128 .LEHE8-.LEHB8
+ 604 001c B805     		.uleb128 .L21-.LFB694
+ 605 001e 00       		.uleb128 0
+ 606 001f BC02     		.uleb128 .LEHB9-.LFB694
+ 607 0021 2B       		.uleb128 .LEHE9-.LEHB9
+ 608 0022 A705     		.uleb128 .L22-.LFB694
+ 609 0024 00       		.uleb128 0
+ 610 0025 F202     		.uleb128 .LEHB10-.LFB694
+ 611 0027 05       		.uleb128 .LEHE10-.LEHB10
+ 612 0028 B805     		.uleb128 .L21-.LFB694
+ 613 002a 00       		.uleb128 0
+ 614 002b FE02     		.uleb128 .LEHB11-.LFB694
+ 615 002d 05       		.uleb128 .LEHE11-.LEHB11
+ 616 002e C905     		.uleb128 .L20-.LFB694
+ 617 0030 00       		.uleb128 0
+ 618 0031 8A03     		.uleb128 .LEHB12-.LFB694
+ 619 0033 0C       		.uleb128 .LEHE12-.LEHB12
+ 620 0034 00       		.uleb128 0
+ 621 0035 00       		.uleb128 0
+ 622 0036 D603     		.uleb128 .LEHB13-.LFB694
+ 623 0038 03       		.uleb128 .LEHE13-.LEHB13
+ 624 0039 E305     		.uleb128 .L23-.LFB694
+ 625 003b 00       		.uleb128 0
+ 626 003c E003     		.uleb128 .LEHB14-.LFB694
+ 627 003e 39       		.uleb128 .LEHE14-.LEHB14
+ 628 003f 00       		.uleb128 0
+ 629 0040 00       		.uleb128 0
+ 630 0041 E504     		.uleb128 .LEHB15-.LFB694
+ 631 0043 03       		.uleb128 .LEHE15-.LEHB15
+ 632 0044 FD05     		.uleb128 .L24-.LFB694
+ 633 0046 00       		.uleb128 0
+ 634 0047 EF04     		.uleb128 .LEHB16-.LFB694
+ 635 0049 05       		.uleb128 .LEHE16-.LEHB16
+ 636 004a 00       		.uleb128 0
+ 637 004b 00       		.uleb128 0
+ 638 004c A205     		.uleb128 .LEHB17-.LFB694
+ 639 004e 05       		.uleb128 .LEHE17-.LEHB17
+ 640 004f 00       		.uleb128 0
+ 641 0050 00       		.uleb128 0
+ 642 0051 DE05     		.uleb128 .LEHB18-.LFB694
+ 643 0053 05       		.uleb128 .LEHE18-.LEHB18
+ 644 0054 00       		.uleb128 0
+ 645 0055 00       		.uleb128 0
+ 646 0056 F805     		.uleb128 .LEHB19-.LFB694
+ 647 0058 05       		.uleb128 .LEHE19-.LEHB19
+ 648 0059 00       		.uleb128 0
+GAS LISTING /tmp/ccl1pnZZ.s 			page 15
+
+
+ 649 005a 00       		.uleb128 0
+ 650 005b 9206     		.uleb128 .LEHB20-.LFB694
+ 651 005d 05       		.uleb128 .LEHE20-.LEHB20
+ 652 005e 00       		.uleb128 0
+ 653 005f 00       		.uleb128 0
+ 654              	.LLSDACSE694:
+ 655              		.text
+ 657              		.section	.text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsC2Ev,"axG",@progbits,_ZN44TEST_GRO
+ 658              		.align 2
+ 659              		.weak	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsC2Ev
+ 661              	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsC2Ev:
+ 662              	.LFB697:
+ 663              		.cfi_startproc
+ 664 0000 55       		pushq	%rbp
+ 665              		.cfi_def_cfa_offset 16
+ 666              		.cfi_offset 6, -16
+ 667 0001 4889E5   		movq	%rsp, %rbp
+ 668              		.cfi_def_cfa_register 6
+ 669 0004 4883EC10 		subq	$16, %rsp
+ 670 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 671 000c 488B45F8 		movq	-8(%rbp), %rax
+ 672 0010 4889C7   		movq	%rax, %rdi
+ 673 0013 E8000000 		call	_ZN5UtestC2Ev
+ 673      00
+ 674 0018 BA000000 		movl	$_ZTV44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents+16, %edx
+ 674      00
+ 675 001d 488B45F8 		movq	-8(%rbp), %rax
+ 676 0021 488910   		movq	%rdx, (%rax)
+ 677 0024 90       		nop
+ 678 0025 C9       		leave
+ 679              		.cfi_def_cfa 7, 8
+ 680 0026 C3       		ret
+ 681              		.cfi_endproc
+ 682              	.LFE697:
+ 684              		.weak	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsC1Ev
+ 685              		.set	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsC1Ev,_ZN44TEST_GROUP_CppUTestGrouphsm_2_laye
+ 686              		.section	.text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD2Ev,"axG",@progbits,_ZN44TEST_GRO
+ 687              		.align 2
+ 688              		.weak	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD2Ev
+ 690              	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD2Ev:
+ 691              	.LFB700:
+ 692              		.cfi_startproc
+ 693 0000 55       		pushq	%rbp
+ 694              		.cfi_def_cfa_offset 16
+ 695              		.cfi_offset 6, -16
+ 696 0001 4889E5   		movq	%rsp, %rbp
+ 697              		.cfi_def_cfa_register 6
+ 698 0004 4883EC10 		subq	$16, %rsp
+ 699 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 700 000c BA000000 		movl	$_ZTV44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents+16, %edx
+ 700      00
+ 701 0011 488B45F8 		movq	-8(%rbp), %rax
+ 702 0015 488910   		movq	%rdx, (%rax)
+ 703 0018 488B45F8 		movq	-8(%rbp), %rax
+ 704 001c 4889C7   		movq	%rax, %rdi
+ 705 001f E8000000 		call	_ZN5UtestD2Ev
+ 705      00
+GAS LISTING /tmp/ccl1pnZZ.s 			page 16
+
+
+ 706 0024 B8000000 		movl	$0, %eax
+ 706      00
+ 707 0029 85C0     		testl	%eax, %eax
+ 708 002b 740C     		je	.L27
+ 709 002d 488B45F8 		movq	-8(%rbp), %rax
+ 710 0031 4889C7   		movq	%rax, %rdi
+ 711 0034 E8000000 		call	_ZdlPv
+ 711      00
+ 712              	.L27:
+ 713 0039 C9       		leave
+ 714              		.cfi_def_cfa 7, 8
+ 715 003a C3       		ret
+ 716              		.cfi_endproc
+ 717              	.LFE700:
+ 719              		.weak	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD1Ev
+ 720              		.set	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD1Ev,_ZN44TEST_GROUP_CppUTestGrouphsm_2_laye
+ 721              		.section	.text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD0Ev,"axG",@progbits,_ZN44TEST_GRO
+ 722              		.align 2
+ 723              		.weak	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD0Ev
+ 725              	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD0Ev:
+ 726              	.LFB702:
+ 727              		.cfi_startproc
+ 728 0000 55       		pushq	%rbp
+ 729              		.cfi_def_cfa_offset 16
+ 730              		.cfi_offset 6, -16
+ 731 0001 4889E5   		movq	%rsp, %rbp
+ 732              		.cfi_def_cfa_register 6
+ 733 0004 4883EC10 		subq	$16, %rsp
+ 734 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 735 000c 488B45F8 		movq	-8(%rbp), %rax
+ 736 0010 4889C7   		movq	%rax, %rdi
+ 737 0013 E8000000 		call	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD1Ev
+ 737      00
+ 738 0018 488B45F8 		movq	-8(%rbp), %rax
+ 739 001c 4889C7   		movq	%rax, %rdi
+ 740 001f E8000000 		call	_ZdlPv
+ 740      00
+ 741 0024 C9       		leave
+ 742              		.cfi_def_cfa 7, 8
+ 743 0025 C3       		ret
+ 744              		.cfi_endproc
+ 745              	.LFE702:
+ 747              		.section	.text._ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestC2Ev,"axG",@progbits,_Z
+ 748              		.align 2
+ 749              		.weak	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestC2Ev
+ 751              	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestC2Ev:
+ 752              	.LFB703:
+ 753              		.cfi_startproc
+ 754 0000 55       		pushq	%rbp
+ 755              		.cfi_def_cfa_offset 16
+ 756              		.cfi_offset 6, -16
+ 757 0001 4889E5   		movq	%rsp, %rbp
+ 758              		.cfi_def_cfa_register 6
+ 759 0004 4883EC10 		subq	$16, %rsp
+ 760 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 761 000c 488B45F8 		movq	-8(%rbp), %rax
+ 762 0010 4889C6   		movq	%rax, %rsi
+GAS LISTING /tmp/ccl1pnZZ.s 			page 17
+
+
+ 763 0013 B8000000 		movl	$0, %eax
+ 763      00
+ 764 0018 BA070000 		movl	$7, %edx
+ 764      00
+ 765 001d 4889F7   		movq	%rsi, %rdi
+ 766 0020 4889D1   		movq	%rdx, %rcx
+ 767 0023 F348AB   		rep stosq
+ 768 0026 488B45F8 		movq	-8(%rbp), %rax
+ 769 002a 4889C7   		movq	%rax, %rdi
+ 770 002d E8000000 		call	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsC2Ev
+ 770      00
+ 771 0032 BA000000 		movl	$_ZTV55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test+16, %edx
+ 771      00
+ 772 0037 488B45F8 		movq	-8(%rbp), %rax
+ 773 003b 488910   		movq	%rdx, (%rax)
+ 774 003e 90       		nop
+ 775 003f C9       		leave
+ 776              		.cfi_def_cfa 7, 8
+ 777 0040 C3       		ret
+ 778              		.cfi_endproc
+ 779              	.LFE703:
+ 781              		.weak	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestC1Ev
+ 782              		.set	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestC1Ev,_ZN55TEST_hsm_2_layer_noEven
+ 783              		.section	.text._ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell10createTestEv,"ax
+ 784              		.align 2
+ 785              		.weak	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell10createTestEv
+ 787              	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell10createTestEv:
+ 788              	.LFB705:
+ 789              		.cfi_startproc
+ 790              		.cfi_personality 0x3,__gxx_personality_v0
+ 791              		.cfi_lsda 0x3,.LLSDA705
+ 792 0000 55       		pushq	%rbp
+ 793              		.cfi_def_cfa_offset 16
+ 794              		.cfi_offset 6, -16
+ 795 0001 4889E5   		movq	%rsp, %rbp
+ 796              		.cfi_def_cfa_register 6
+ 797 0004 4154     		pushq	%r12
+ 798 0006 53       		pushq	%rbx
+ 799 0007 4883EC10 		subq	$16, %rsp
+ 800              		.cfi_offset 12, -24
+ 801              		.cfi_offset 3, -32
+ 802 000b 48897DE8 		movq	%rdi, -24(%rbp)
+ 803 000f BAB10000 		movl	$177, %edx
+ 803      00
+ 804 0014 BE000000 		movl	$.LC0, %esi
+ 804      00
+ 805 0019 BF380000 		movl	$56, %edi
+ 805      00
+ 806              	.LEHB21:
+ 807 001e E8000000 		call	_ZnwmPKci
+ 807      00
+ 808              	.LEHE21:
+ 809 0023 4889C3   		movq	%rax, %rbx
+ 810 0026 4889DF   		movq	%rbx, %rdi
+ 811              	.LEHB22:
+ 812 0029 E8000000 		call	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestC1Ev
+ 812      00
+GAS LISTING /tmp/ccl1pnZZ.s 			page 18
+
+
+ 813              	.LEHE22:
+ 814 002e 4889D8   		movq	%rbx, %rax
+ 815 0031 EB20     		jmp	.L35
+ 816              	.L34:
+ 817 0033 4989C4   		movq	%rax, %r12
+ 818 0036 BAB10000 		movl	$177, %edx
+ 818      00
+ 819 003b BE000000 		movl	$.LC0, %esi
+ 819      00
+ 820 0040 4889DF   		movq	%rbx, %rdi
+ 821 0043 E8000000 		call	_ZdlPvPKci
+ 821      00
+ 822 0048 4C89E0   		movq	%r12, %rax
+ 823 004b 4889C7   		movq	%rax, %rdi
+ 824              	.LEHB23:
+ 825 004e E8000000 		call	_Unwind_Resume
+ 825      00
+ 826              	.LEHE23:
+ 827              	.L35:
+ 828 0053 4883C410 		addq	$16, %rsp
+ 829 0057 5B       		popq	%rbx
+ 830 0058 415C     		popq	%r12
+ 831 005a 5D       		popq	%rbp
+ 832              		.cfi_def_cfa 7, 8
+ 833 005b C3       		ret
+ 834              		.cfi_endproc
+ 835              	.LFE705:
+ 836              		.section	.gcc_except_table
+ 837              	.LLSDA705:
+ 838 0060 FF       		.byte	0xff
+ 839 0061 FF       		.byte	0xff
+ 840 0062 01       		.byte	0x1
+ 841 0063 0C       		.uleb128 .LLSDACSE705-.LLSDACSB705
+ 842              	.LLSDACSB705:
+ 843 0064 1E       		.uleb128 .LEHB21-.LFB705
+ 844 0065 05       		.uleb128 .LEHE21-.LEHB21
+ 845 0066 00       		.uleb128 0
+ 846 0067 00       		.uleb128 0
+ 847 0068 29       		.uleb128 .LEHB22-.LFB705
+ 848 0069 05       		.uleb128 .LEHE22-.LEHB22
+ 849 006a 33       		.uleb128 .L34-.LFB705
+ 850 006b 00       		.uleb128 0
+ 851 006c 4E       		.uleb128 .LEHB23-.LFB705
+ 852 006d 05       		.uleb128 .LEHE23-.LEHB23
+ 853 006e 00       		.uleb128 0
+ 854 006f 00       		.uleb128 0
+ 855              	.LLSDACSE705:
+ 856              		.section	.text._ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell10createTestEv,"ax
+ 858              		.section	.text._ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellC2Ev,"axG",@progbi
+ 859              		.align 2
+ 860              		.weak	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellC2Ev
+ 862              	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellC2Ev:
+ 863              	.LFB707:
+ 864              		.cfi_startproc
+ 865 0000 55       		pushq	%rbp
+ 866              		.cfi_def_cfa_offset 16
+ 867              		.cfi_offset 6, -16
+GAS LISTING /tmp/ccl1pnZZ.s 			page 19
+
+
+ 868 0001 4889E5   		movq	%rsp, %rbp
+ 869              		.cfi_def_cfa_register 6
+ 870 0004 4883EC10 		subq	$16, %rsp
+ 871 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 872 000c 488B45F8 		movq	-8(%rbp), %rax
+ 873 0010 4889C7   		movq	%rax, %rdi
+ 874 0013 E8000000 		call	_ZN10UtestShellC2Ev
+ 874      00
+ 875 0018 BA000000 		movl	$_ZTV60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell+16, %edx
+ 875      00
+ 876 001d 488B45F8 		movq	-8(%rbp), %rax
+ 877 0021 488910   		movq	%rdx, (%rax)
+ 878 0024 90       		nop
+ 879 0025 C9       		leave
+ 880              		.cfi_def_cfa 7, 8
+ 881 0026 C3       		ret
+ 882              		.cfi_endproc
+ 883              	.LFE707:
+ 885              		.weak	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellC1Ev
+ 886              		.set	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellC1Ev,_ZN60TEST_hsm_2_layer_n
+ 887              		.globl	TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell_instance
+ 888              		.bss
+ 889 0004 00000000 		.align 32
+ 889      00000000 
+ 889      00000000 
+ 889      00000000 
+ 889      00000000 
+ 892              	TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell_instance:
+ 893 0020 00000000 		.zero	56
+ 893      00000000 
+ 893      00000000 
+ 893      00000000 
+ 893      00000000 
+ 894              		.local	_ZL60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Installer
+ 895              		.comm	_ZL60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Installer,8,8
+ 896              		.text
+ 897 0327 90       		.align 2
+ 898              		.globl	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test8testBodyEv
+ 900              	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test8testBodyEv:
+ 901              	.LFB709:
+ 902              		.cfi_startproc
+ 903              		.cfi_personality 0x3,__gxx_personality_v0
+ 904              		.cfi_lsda 0x3,.LLSDA709
+ 905 0328 55       		pushq	%rbp
+ 906              		.cfi_def_cfa_offset 16
+ 907              		.cfi_offset 6, -16
+ 908 0329 4889E5   		movq	%rsp, %rbp
+ 909              		.cfi_def_cfa_register 6
+ 910 032c 4154     		pushq	%r12
+ 911 032e 53       		pushq	%rbx
+ 912 032f 4883EC20 		subq	$32, %rsp
+ 913              		.cfi_offset 12, -24
+ 914              		.cfi_offset 3, -32
+ 915 0333 48897DD8 		movq	%rdi, -40(%rbp)
+ 916 0337 64488B04 		movq	%fs:40, %rax
+ 916      25280000 
+ 916      00
+GAS LISTING /tmp/ccl1pnZZ.s 			page 20
+
+
+ 917 0340 488945E8 		movq	%rax, -24(%rbp)
+ 918 0344 31C0     		xorl	%eax, %eax
+ 919 0346 488B45D8 		movq	-40(%rbp), %rax
+ 920 034a 4883C008 		addq	$8, %rax
+ 921 034e 41B80000 		movl	$0, %r8d
+ 921      0000
+ 922 0354 B9000000 		movl	$subA1, %ecx
+ 922      00
+ 923 0359 BA000000 		movl	$0, %edx
+ 923      00
+ 924 035e BE000000 		movl	$topA, %esi
+ 924      00
+ 925 0363 4889C7   		movq	%rax, %rdi
+ 926              	.LEHB24:
+ 927 0366 E895FCFF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 927      FF
+ 928 036b E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 928      00
+ 929              	.LEHE24:
+ 930 0370 4889C3   		movq	%rax, %rbx
+ 931 0373 488B03   		movq	(%rbx), %rax
+ 932 0376 4883C078 		addq	$120, %rax
+ 933 037a 4C8B20   		movq	(%rax), %r12
+ 934 037d 48C745E0 		movq	$0, -32(%rbp)
+ 934      00000000 
+ 935 0385 488D45E0 		leaq	-32(%rbp), %rax
+ 936 0389 4889C7   		movq	%rax, %rdi
+ 937 038c E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 937      00
+ 938 0391 8B050000 		movl	topA+52(%rip), %eax
+ 938      0000
+ 939 0397 89C2     		movl	%eax, %edx
+ 940 0399 488D45E0 		leaq	-32(%rbp), %rax
+ 941 039d 4989C1   		movq	%rax, %r9
+ 942 03a0 41B8B500 		movl	$181, %r8d
+ 942      0000
+ 943 03a6 B9000000 		movl	$.LC0, %ecx
+ 943      00
+ 944 03ab BE010000 		movl	$1, %esi
+ 944      00
+ 945 03b0 4889DF   		movq	%rbx, %rdi
+ 946              	.LEHB25:
+ 947 03b3 41FFD4   		call	*%r12
+ 948              	.LEHE25:
+ 949 03b6 488D45E0 		leaq	-32(%rbp), %rax
+ 950 03ba 4889C7   		movq	%rax, %rdi
+ 951              	.LEHB26:
+ 952 03bd E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 952      00
+ 953 03c2 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 953      00
+ 954 03c7 488B10   		movq	(%rax), %rdx
+ 955 03ca 4881C288 		addq	$136, %rdx
+ 955      000000
+ 956 03d1 4C8B0A   		movq	(%rdx), %r9
+ 957 03d4 488B1500 		movq	topA+56(%rip), %rdx
+ 957      000000
+GAS LISTING /tmp/ccl1pnZZ.s 			page 21
+
+
+ 958 03db 41B8B600 		movl	$182, %r8d
+ 958      0000
+ 959 03e1 B9000000 		movl	$.LC0, %ecx
+ 959      00
+ 960 03e6 BE000000 		movl	$subA1, %esi
+ 960      00
+ 961 03eb 4889C7   		movq	%rax, %rdi
+ 962 03ee 41FFD1   		call	*%r9
+ 963 03f1 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 963      00
+ 964 03f6 488B10   		movq	(%rax), %rdx
+ 965 03f9 4881C288 		addq	$136, %rdx
+ 965      000000
+ 966 0400 4C8B0A   		movq	(%rdx), %r9
+ 967 0403 488B1500 		movq	topB+56(%rip), %rdx
+ 967      000000
+ 968 040a 41B8B700 		movl	$183, %r8d
+ 968      0000
+ 969 0410 B9000000 		movl	$.LC0, %ecx
+ 969      00
+ 970 0415 BE000000 		movl	$subB1, %esi
+ 970      00
+ 971 041a 4889C7   		movq	%rax, %rdi
+ 972 041d 41FFD1   		call	*%r9
+ 973 0420 488B45D8 		movq	-40(%rbp), %rax
+ 974 0424 4883C008 		addq	$8, %rax
+ 975 0428 41B80100 		movl	$1, %r8d
+ 975      0000
+ 976 042e B9000000 		movl	$topA, %ecx
+ 976      00
+ 977 0433 BA000000 		movl	$0, %edx
+ 977      00
+ 978 0438 BE000000 		movl	$subA1, %esi
+ 978      00
+ 979 043d 4889C7   		movq	%rax, %rdi
+ 980 0440 E8BBFBFF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 980      FF
+ 981 0445 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 981      00
+ 982              	.LEHE26:
+ 983 044a 4889C3   		movq	%rax, %rbx
+ 984 044d 488B03   		movq	(%rbx), %rax
+ 985 0450 4883C078 		addq	$120, %rax
+ 986 0454 4C8B20   		movq	(%rax), %r12
+ 987 0457 48C745E0 		movq	$0, -32(%rbp)
+ 987      00000000 
+ 988 045f 488D45E0 		leaq	-32(%rbp), %rax
+ 989 0463 4889C7   		movq	%rax, %rdi
+ 990 0466 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 990      00
+ 991 046b 8B050000 		movl	subA1+52(%rip), %eax
+ 991      0000
+ 992 0471 89C2     		movl	%eax, %edx
+ 993 0473 488D45E0 		leaq	-32(%rbp), %rax
+ 994 0477 4989C1   		movq	%rax, %r9
+ 995 047a 41B8BB00 		movl	$187, %r8d
+ 995      0000
+GAS LISTING /tmp/ccl1pnZZ.s 			page 22
+
+
+ 996 0480 B9000000 		movl	$.LC0, %ecx
+ 996      00
+ 997 0485 BE010000 		movl	$1, %esi
+ 997      00
+ 998 048a 4889DF   		movq	%rbx, %rdi
+ 999              	.LEHB27:
+ 1000 048d 41FFD4   		call	*%r12
+ 1001              	.LEHE27:
+ 1002 0490 488D45E0 		leaq	-32(%rbp), %rax
+ 1003 0494 4889C7   		movq	%rax, %rdi
+ 1004              	.LEHB28:
+ 1005 0497 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1005      00
+ 1006 049c E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1006      00
+ 1007 04a1 488B10   		movq	(%rax), %rdx
+ 1008 04a4 4881C288 		addq	$136, %rdx
+ 1008      000000
+ 1009 04ab 4C8B0A   		movq	(%rdx), %r9
+ 1010 04ae 488B1500 		movq	topA+56(%rip), %rdx
+ 1010      000000
+ 1011 04b5 41B8BC00 		movl	$188, %r8d
+ 1011      0000
+ 1012 04bb B9000000 		movl	$.LC0, %ecx
+ 1012      00
+ 1013 04c0 BE000000 		movl	$subA1, %esi
+ 1013      00
+ 1014 04c5 4889C7   		movq	%rax, %rdi
+ 1015 04c8 41FFD1   		call	*%r9
+ 1016 04cb E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1016      00
+ 1017 04d0 488B10   		movq	(%rax), %rdx
+ 1018 04d3 4881C288 		addq	$136, %rdx
+ 1018      000000
+ 1019 04da 4C8B0A   		movq	(%rdx), %r9
+ 1020 04dd 488B1500 		movq	topB+56(%rip), %rdx
+ 1020      000000
+ 1021 04e4 41B8BD00 		movl	$189, %r8d
+ 1021      0000
+ 1022 04ea B9000000 		movl	$.LC0, %ecx
+ 1022      00
+ 1023 04ef BE000000 		movl	$subB1, %esi
+ 1023      00
+ 1024 04f4 4889C7   		movq	%rax, %rdi
+ 1025 04f7 41FFD1   		call	*%r9
+ 1026 04fa 488B45D8 		movq	-40(%rbp), %rax
+ 1027 04fe 4883C008 		addq	$8, %rax
+ 1028 0502 41B80100 		movl	$1, %r8d
+ 1028      0000
+ 1029 0508 B9000000 		movl	$subA1, %ecx
+ 1029      00
+ 1030 050d BA010000 		movl	$1, %edx
+ 1030      00
+ 1031 0512 BE000000 		movl	$topA, %esi
+ 1031      00
+ 1032 0517 4889C7   		movq	%rax, %rdi
+ 1033 051a E8E1FAFF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+GAS LISTING /tmp/ccl1pnZZ.s 			page 23
+
+
+ 1033      FF
+ 1034 051f E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1034      00
+ 1035              	.LEHE28:
+ 1036 0524 4889C3   		movq	%rax, %rbx
+ 1037 0527 488B03   		movq	(%rbx), %rax
+ 1038 052a 4883C078 		addq	$120, %rax
+ 1039 052e 4C8B20   		movq	(%rax), %r12
+ 1040 0531 48C745E0 		movq	$0, -32(%rbp)
+ 1040      00000000 
+ 1041 0539 488D45E0 		leaq	-32(%rbp), %rax
+ 1042 053d 4889C7   		movq	%rax, %rdi
+ 1043 0540 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1043      00
+ 1044 0545 8B050000 		movl	topA+52(%rip), %eax
+ 1044      0000
+ 1045 054b 89C2     		movl	%eax, %edx
+ 1046 054d 488D45E0 		leaq	-32(%rbp), %rax
+ 1047 0551 4989C1   		movq	%rax, %r9
+ 1048 0554 41B8C100 		movl	$193, %r8d
+ 1048      0000
+ 1049 055a B9000000 		movl	$.LC0, %ecx
+ 1049      00
+ 1050 055f BE020000 		movl	$2, %esi
+ 1050      00
+ 1051 0564 4889DF   		movq	%rbx, %rdi
+ 1052              	.LEHB29:
+ 1053 0567 41FFD4   		call	*%r12
+ 1054              	.LEHE29:
+ 1055 056a 488D45E0 		leaq	-32(%rbp), %rax
+ 1056 056e 4889C7   		movq	%rax, %rdi
+ 1057              	.LEHB30:
+ 1058 0571 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1058      00
+ 1059 0576 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1059      00
+ 1060 057b 488B10   		movq	(%rax), %rdx
+ 1061 057e 4881C288 		addq	$136, %rdx
+ 1061      000000
+ 1062 0585 4C8B0A   		movq	(%rdx), %r9
+ 1063 0588 488B1500 		movq	topA+56(%rip), %rdx
+ 1063      000000
+ 1064 058f 41B8C200 		movl	$194, %r8d
+ 1064      0000
+ 1065 0595 B9000000 		movl	$.LC0, %ecx
+ 1065      00
+ 1066 059a BE000000 		movl	$subA1, %esi
+ 1066      00
+ 1067 059f 4889C7   		movq	%rax, %rdi
+ 1068 05a2 41FFD1   		call	*%r9
+ 1069 05a5 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1069      00
+ 1070 05aa 488B10   		movq	(%rax), %rdx
+ 1071 05ad 4881C288 		addq	$136, %rdx
+ 1071      000000
+ 1072 05b4 4C8B0A   		movq	(%rdx), %r9
+ 1073 05b7 488B1500 		movq	topB+56(%rip), %rdx
+GAS LISTING /tmp/ccl1pnZZ.s 			page 24
+
+
+ 1073      000000
+ 1074 05be 41B8C300 		movl	$195, %r8d
+ 1074      0000
+ 1075 05c4 B9000000 		movl	$.LC0, %ecx
+ 1075      00
+ 1076 05c9 BE000000 		movl	$subB1, %esi
+ 1076      00
+ 1077 05ce 4889C7   		movq	%rax, %rdi
+ 1078 05d1 41FFD1   		call	*%r9
+ 1079 05d4 488B45D8 		movq	-40(%rbp), %rax
+ 1080 05d8 4883C008 		addq	$8, %rax
+ 1081 05dc 41B80200 		movl	$2, %r8d
+ 1081      0000
+ 1082 05e2 B9000000 		movl	$topA, %ecx
+ 1082      00
+ 1083 05e7 BA010000 		movl	$1, %edx
+ 1083      00
+ 1084 05ec BE000000 		movl	$subA1, %esi
+ 1084      00
+ 1085 05f1 4889C7   		movq	%rax, %rdi
+ 1086 05f4 E807FAFF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1086      FF
+ 1087 05f9 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1087      00
+ 1088              	.LEHE30:
+ 1089 05fe 4889C3   		movq	%rax, %rbx
+ 1090 0601 488B03   		movq	(%rbx), %rax
+ 1091 0604 4883C078 		addq	$120, %rax
+ 1092 0608 4C8B20   		movq	(%rax), %r12
+ 1093 060b 48C745E0 		movq	$0, -32(%rbp)
+ 1093      00000000 
+ 1094 0613 488D45E0 		leaq	-32(%rbp), %rax
+ 1095 0617 4889C7   		movq	%rax, %rdi
+ 1096 061a E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1096      00
+ 1097 061f 8B050000 		movl	subA1+52(%rip), %eax
+ 1097      0000
+ 1098 0625 89C2     		movl	%eax, %edx
+ 1099 0627 488D45E0 		leaq	-32(%rbp), %rax
+ 1100 062b 4989C1   		movq	%rax, %r9
+ 1101 062e 41B8C700 		movl	$199, %r8d
+ 1101      0000
+ 1102 0634 B9000000 		movl	$.LC0, %ecx
+ 1102      00
+ 1103 0639 BE020000 		movl	$2, %esi
+ 1103      00
+ 1104 063e 4889DF   		movq	%rbx, %rdi
+ 1105              	.LEHB31:
+ 1106 0641 41FFD4   		call	*%r12
+ 1107              	.LEHE31:
+ 1108 0644 488D45E0 		leaq	-32(%rbp), %rax
+ 1109 0648 4889C7   		movq	%rax, %rdi
+ 1110              	.LEHB32:
+ 1111 064b E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1111      00
+ 1112 0650 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1112      00
+GAS LISTING /tmp/ccl1pnZZ.s 			page 25
+
+
+ 1113 0655 488B10   		movq	(%rax), %rdx
+ 1114 0658 4881C288 		addq	$136, %rdx
+ 1114      000000
+ 1115 065f 4C8B0A   		movq	(%rdx), %r9
+ 1116 0662 488B1500 		movq	topA+56(%rip), %rdx
+ 1116      000000
+ 1117 0669 41B8C800 		movl	$200, %r8d
+ 1117      0000
+ 1118 066f B9000000 		movl	$.LC0, %ecx
+ 1118      00
+ 1119 0674 BE000000 		movl	$subA1, %esi
+ 1119      00
+ 1120 0679 4889C7   		movq	%rax, %rdi
+ 1121 067c 41FFD1   		call	*%r9
+ 1122 067f E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1122      00
+ 1123 0684 488B10   		movq	(%rax), %rdx
+ 1124 0687 4881C288 		addq	$136, %rdx
+ 1124      000000
+ 1125 068e 4C8B0A   		movq	(%rdx), %r9
+ 1126 0691 488B1500 		movq	topB+56(%rip), %rdx
+ 1126      000000
+ 1127 0698 41B8C900 		movl	$201, %r8d
+ 1127      0000
+ 1128 069e B9000000 		movl	$.LC0, %ecx
+ 1128      00
+ 1129 06a3 BE000000 		movl	$subB1, %esi
+ 1129      00
+ 1130 06a8 4889C7   		movq	%rax, %rdi
+ 1131 06ab 41FFD1   		call	*%r9
+ 1132 06ae 488B45D8 		movq	-40(%rbp), %rax
+ 1133 06b2 4883C008 		addq	$8, %rax
+ 1134 06b6 41B80200 		movl	$2, %r8d
+ 1134      0000
+ 1135 06bc B9000000 		movl	$subA1, %ecx
+ 1135      00
+ 1136 06c1 BA020000 		movl	$2, %edx
+ 1136      00
+ 1137 06c6 BE000000 		movl	$topA, %esi
+ 1137      00
+ 1138 06cb 4889C7   		movq	%rax, %rdi
+ 1139 06ce E82DF9FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1139      FF
+ 1140 06d3 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1140      00
+ 1141              	.LEHE32:
+ 1142 06d8 4889C3   		movq	%rax, %rbx
+ 1143 06db 488B03   		movq	(%rbx), %rax
+ 1144 06de 4883C078 		addq	$120, %rax
+ 1145 06e2 4C8B20   		movq	(%rax), %r12
+ 1146 06e5 48C745E0 		movq	$0, -32(%rbp)
+ 1146      00000000 
+ 1147 06ed 488D45E0 		leaq	-32(%rbp), %rax
+ 1148 06f1 4889C7   		movq	%rax, %rdi
+ 1149 06f4 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1149      00
+ 1150 06f9 8B050000 		movl	topA+52(%rip), %eax
+GAS LISTING /tmp/ccl1pnZZ.s 			page 26
+
+
+ 1150      0000
+ 1151 06ff 89C2     		movl	%eax, %edx
+ 1152 0701 488D45E0 		leaq	-32(%rbp), %rax
+ 1153 0705 4989C1   		movq	%rax, %r9
+ 1154 0708 41B8CD00 		movl	$205, %r8d
+ 1154      0000
+ 1155 070e B9000000 		movl	$.LC0, %ecx
+ 1155      00
+ 1156 0713 BE010000 		movl	$1, %esi
+ 1156      00
+ 1157 0718 4889DF   		movq	%rbx, %rdi
+ 1158              	.LEHB33:
+ 1159 071b 41FFD4   		call	*%r12
+ 1160              	.LEHE33:
+ 1161 071e 488D45E0 		leaq	-32(%rbp), %rax
+ 1162 0722 4889C7   		movq	%rax, %rdi
+ 1163              	.LEHB34:
+ 1164 0725 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1164      00
+ 1165 072a E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1165      00
+ 1166 072f 488B10   		movq	(%rax), %rdx
+ 1167 0732 4881C288 		addq	$136, %rdx
+ 1167      000000
+ 1168 0739 4C8B0A   		movq	(%rdx), %r9
+ 1169 073c 488B1500 		movq	topA+56(%rip), %rdx
+ 1169      000000
+ 1170 0743 41B8CE00 		movl	$206, %r8d
+ 1170      0000
+ 1171 0749 B9000000 		movl	$.LC0, %ecx
+ 1171      00
+ 1172 074e BE000000 		movl	$subA1, %esi
+ 1172      00
+ 1173 0753 4889C7   		movq	%rax, %rdi
+ 1174 0756 41FFD1   		call	*%r9
+ 1175 0759 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1175      00
+ 1176 075e 488B10   		movq	(%rax), %rdx
+ 1177 0761 4881C288 		addq	$136, %rdx
+ 1177      000000
+ 1178 0768 4C8B0A   		movq	(%rdx), %r9
+ 1179 076b 488B1500 		movq	topB+56(%rip), %rdx
+ 1179      000000
+ 1180 0772 41B8CF00 		movl	$207, %r8d
+ 1180      0000
+ 1181 0778 B9000000 		movl	$.LC0, %ecx
+ 1181      00
+ 1182 077d BE000000 		movl	$subB1, %esi
+ 1182      00
+ 1183 0782 4889C7   		movq	%rax, %rdi
+ 1184 0785 41FFD1   		call	*%r9
+ 1185 0788 488B45D8 		movq	-40(%rbp), %rax
+ 1186 078c 4883C008 		addq	$8, %rax
+ 1187 0790 41B80400 		movl	$4, %r8d
+ 1187      0000
+ 1188 0796 B9000000 		movl	$subA1, %ecx
+ 1188      00
+GAS LISTING /tmp/ccl1pnZZ.s 			page 27
+
+
+ 1189 079b BA020000 		movl	$2, %edx
+ 1189      00
+ 1190 07a0 BE000000 		movl	$subA1, %esi
+ 1190      00
+ 1191 07a5 4889C7   		movq	%rax, %rdi
+ 1192 07a8 E853F8FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1192      FF
+ 1193 07ad E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1193      00
+ 1194              	.LEHE34:
+ 1195 07b2 4889C3   		movq	%rax, %rbx
+ 1196 07b5 488B03   		movq	(%rbx), %rax
+ 1197 07b8 4883C078 		addq	$120, %rax
+ 1198 07bc 4C8B20   		movq	(%rax), %r12
+ 1199 07bf 48C745E0 		movq	$0, -32(%rbp)
+ 1199      00000000 
+ 1200 07c7 488D45E0 		leaq	-32(%rbp), %rax
+ 1201 07cb 4889C7   		movq	%rax, %rdi
+ 1202 07ce E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1202      00
+ 1203 07d3 8B050000 		movl	subA1+52(%rip), %eax
+ 1203      0000
+ 1204 07d9 89C2     		movl	%eax, %edx
+ 1205 07db 488D45E0 		leaq	-32(%rbp), %rax
+ 1206 07df 4989C1   		movq	%rax, %r9
+ 1207 07e2 41B8D300 		movl	$211, %r8d
+ 1207      0000
+ 1208 07e8 B9000000 		movl	$.LC0, %ecx
+ 1208      00
+ 1209 07ed BE040000 		movl	$4, %esi
+ 1209      00
+ 1210 07f2 4889DF   		movq	%rbx, %rdi
+ 1211              	.LEHB35:
+ 1212 07f5 41FFD4   		call	*%r12
+ 1213              	.LEHE35:
+ 1214 07f8 488D45E0 		leaq	-32(%rbp), %rax
+ 1215 07fc 4889C7   		movq	%rax, %rdi
+ 1216              	.LEHB36:
+ 1217 07ff E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1217      00
+ 1218 0804 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1218      00
+ 1219 0809 488B10   		movq	(%rax), %rdx
+ 1220 080c 4881C288 		addq	$136, %rdx
+ 1220      000000
+ 1221 0813 4C8B0A   		movq	(%rdx), %r9
+ 1222 0816 488B1500 		movq	topA+56(%rip), %rdx
+ 1222      000000
+ 1223 081d 41B8D400 		movl	$212, %r8d
+ 1223      0000
+ 1224 0823 B9000000 		movl	$.LC0, %ecx
+ 1224      00
+ 1225 0828 BE000000 		movl	$subA1, %esi
+ 1225      00
+ 1226 082d 4889C7   		movq	%rax, %rdi
+ 1227 0830 41FFD1   		call	*%r9
+ 1228 0833 E8000000 		call	_ZN10UtestShell10getCurrentEv
+GAS LISTING /tmp/ccl1pnZZ.s 			page 28
+
+
+ 1228      00
+ 1229 0838 488B10   		movq	(%rax), %rdx
+ 1230 083b 4881C288 		addq	$136, %rdx
+ 1230      000000
+ 1231 0842 4C8B0A   		movq	(%rdx), %r9
+ 1232 0845 488B1500 		movq	topB+56(%rip), %rdx
+ 1232      000000
+ 1233 084c 41B8D500 		movl	$213, %r8d
+ 1233      0000
+ 1234 0852 B9000000 		movl	$.LC0, %ecx
+ 1234      00
+ 1235 0857 BE000000 		movl	$subB1, %esi
+ 1235      00
+ 1236 085c 4889C7   		movq	%rax, %rdi
+ 1237 085f 41FFD1   		call	*%r9
+ 1238 0862 488B45D8 		movq	-40(%rbp), %rax
+ 1239 0866 4883C008 		addq	$8, %rax
+ 1240 086a 41B80000 		movl	$0, %r8d
+ 1240      0000
+ 1241 0870 B9000000 		movl	$subA2, %ecx
+ 1241      00
+ 1242 0875 BA040000 		movl	$4, %edx
+ 1242      00
+ 1243 087a BE000000 		movl	$subA1, %esi
+ 1243      00
+ 1244 087f 4889C7   		movq	%rax, %rdi
+ 1245 0882 E879F7FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1245      FF
+ 1246 0887 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1246      00
+ 1247              	.LEHE36:
+ 1248 088c 4889C3   		movq	%rax, %rbx
+ 1249 088f 488B03   		movq	(%rbx), %rax
+ 1250 0892 4883C078 		addq	$120, %rax
+ 1251 0896 4C8B20   		movq	(%rax), %r12
+ 1252 0899 48C745E0 		movq	$0, -32(%rbp)
+ 1252      00000000 
+ 1253 08a1 488D45E0 		leaq	-32(%rbp), %rax
+ 1254 08a5 4889C7   		movq	%rax, %rdi
+ 1255 08a8 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1255      00
+ 1256 08ad 8B050000 		movl	subA1+52(%rip), %eax
+ 1256      0000
+ 1257 08b3 89C2     		movl	%eax, %edx
+ 1258 08b5 488D45E0 		leaq	-32(%rbp), %rax
+ 1259 08b9 4989C1   		movq	%rax, %r9
+ 1260 08bc 41B8D900 		movl	$217, %r8d
+ 1260      0000
+ 1261 08c2 B9000000 		movl	$.LC0, %ecx
+ 1261      00
+ 1262 08c7 BE000000 		movl	$0, %esi
+ 1262      00
+ 1263 08cc 4889DF   		movq	%rbx, %rdi
+ 1264              	.LEHB37:
+ 1265 08cf 41FFD4   		call	*%r12
+ 1266              	.LEHE37:
+ 1267 08d2 488D45E0 		leaq	-32(%rbp), %rax
+GAS LISTING /tmp/ccl1pnZZ.s 			page 29
+
+
+ 1268 08d6 4889C7   		movq	%rax, %rdi
+ 1269              	.LEHB38:
+ 1270 08d9 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1270      00
+ 1271 08de E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1271      00
+ 1272 08e3 488B10   		movq	(%rax), %rdx
+ 1273 08e6 4881C288 		addq	$136, %rdx
+ 1273      000000
+ 1274 08ed 4C8B0A   		movq	(%rdx), %r9
+ 1275 08f0 488B1500 		movq	topA+56(%rip), %rdx
+ 1275      000000
+ 1276 08f7 41B8DA00 		movl	$218, %r8d
+ 1276      0000
+ 1277 08fd B9000000 		movl	$.LC0, %ecx
+ 1277      00
+ 1278 0902 BE000000 		movl	$subA2, %esi
+ 1278      00
+ 1279 0907 4889C7   		movq	%rax, %rdi
+ 1280 090a 41FFD1   		call	*%r9
+ 1281 090d E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1281      00
+ 1282 0912 488B10   		movq	(%rax), %rdx
+ 1283 0915 4881C288 		addq	$136, %rdx
+ 1283      000000
+ 1284 091c 4C8B0A   		movq	(%rdx), %r9
+ 1285 091f 488B1500 		movq	topB+56(%rip), %rdx
+ 1285      000000
+ 1286 0926 41B8DB00 		movl	$219, %r8d
+ 1286      0000
+ 1287 092c B9000000 		movl	$.LC0, %ecx
+ 1287      00
+ 1288 0931 BE000000 		movl	$subB1, %esi
+ 1288      00
+ 1289 0936 4889C7   		movq	%rax, %rdi
+ 1290 0939 41FFD1   		call	*%r9
+ 1291 093c 488B45D8 		movq	-40(%rbp), %rax
+ 1292 0940 4883C008 		addq	$8, %rax
+ 1293 0944 41B80100 		movl	$1, %r8d
+ 1293      0000
+ 1294 094a B9000000 		movl	$topA, %ecx
+ 1294      00
+ 1295 094f BA000000 		movl	$0, %edx
+ 1295      00
+ 1296 0954 BE000000 		movl	$subA2, %esi
+ 1296      00
+ 1297 0959 4889C7   		movq	%rax, %rdi
+ 1298 095c E89FF6FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1298      FF
+ 1299 0961 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1299      00
+ 1300              	.LEHE38:
+ 1301 0966 4889C3   		movq	%rax, %rbx
+ 1302 0969 488B03   		movq	(%rbx), %rax
+ 1303 096c 4883C078 		addq	$120, %rax
+ 1304 0970 4C8B20   		movq	(%rax), %r12
+ 1305 0973 48C745E0 		movq	$0, -32(%rbp)
+GAS LISTING /tmp/ccl1pnZZ.s 			page 30
+
+
+ 1305      00000000 
+ 1306 097b 488D45E0 		leaq	-32(%rbp), %rax
+ 1307 097f 4889C7   		movq	%rax, %rdi
+ 1308 0982 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1308      00
+ 1309 0987 8B050000 		movl	subA2+52(%rip), %eax
+ 1309      0000
+ 1310 098d 89C2     		movl	%eax, %edx
+ 1311 098f 488D45E0 		leaq	-32(%rbp), %rax
+ 1312 0993 4989C1   		movq	%rax, %r9
+ 1313 0996 41B8DF00 		movl	$223, %r8d
+ 1313      0000
+ 1314 099c B9000000 		movl	$.LC0, %ecx
+ 1314      00
+ 1315 09a1 BE010000 		movl	$1, %esi
+ 1315      00
+ 1316 09a6 4889DF   		movq	%rbx, %rdi
+ 1317              	.LEHB39:
+ 1318 09a9 41FFD4   		call	*%r12
+ 1319              	.LEHE39:
+ 1320 09ac 488D45E0 		leaq	-32(%rbp), %rax
+ 1321 09b0 4889C7   		movq	%rax, %rdi
+ 1322              	.LEHB40:
+ 1323 09b3 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1323      00
+ 1324 09b8 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1324      00
+ 1325 09bd 488B10   		movq	(%rax), %rdx
+ 1326 09c0 4881C288 		addq	$136, %rdx
+ 1326      000000
+ 1327 09c7 4C8B0A   		movq	(%rdx), %r9
+ 1328 09ca 488B1500 		movq	topA+56(%rip), %rdx
+ 1328      000000
+ 1329 09d1 41B8E000 		movl	$224, %r8d
+ 1329      0000
+ 1330 09d7 B9000000 		movl	$.LC0, %ecx
+ 1330      00
+ 1331 09dc BE000000 		movl	$subA2, %esi
+ 1331      00
+ 1332 09e1 4889C7   		movq	%rax, %rdi
+ 1333 09e4 41FFD1   		call	*%r9
+ 1334 09e7 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1334      00
+ 1335 09ec 488B10   		movq	(%rax), %rdx
+ 1336 09ef 4881C288 		addq	$136, %rdx
+ 1336      000000
+ 1337 09f6 4C8B0A   		movq	(%rdx), %r9
+ 1338 09f9 488B1500 		movq	topB+56(%rip), %rdx
+ 1338      000000
+ 1339 0a00 41B8E100 		movl	$225, %r8d
+ 1339      0000
+ 1340 0a06 B9000000 		movl	$.LC0, %ecx
+ 1340      00
+ 1341 0a0b BE000000 		movl	$subB1, %esi
+ 1341      00
+ 1342 0a10 4889C7   		movq	%rax, %rdi
+ 1343 0a13 41FFD1   		call	*%r9
+GAS LISTING /tmp/ccl1pnZZ.s 			page 31
+
+
+ 1344 0a16 488B45D8 		movq	-40(%rbp), %rax
+ 1345 0a1a 4883C008 		addq	$8, %rax
+ 1346 0a1e 41B80100 		movl	$1, %r8d
+ 1346      0000
+ 1347 0a24 B9000000 		movl	$subA2, %ecx
+ 1347      00
+ 1348 0a29 BA010000 		movl	$1, %edx
+ 1348      00
+ 1349 0a2e BE000000 		movl	$topA, %esi
+ 1349      00
+ 1350 0a33 4889C7   		movq	%rax, %rdi
+ 1351 0a36 E8C5F5FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1351      FF
+ 1352 0a3b E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1352      00
+ 1353              	.LEHE40:
+ 1354 0a40 4889C3   		movq	%rax, %rbx
+ 1355 0a43 488B03   		movq	(%rbx), %rax
+ 1356 0a46 4883C078 		addq	$120, %rax
+ 1357 0a4a 4C8B20   		movq	(%rax), %r12
+ 1358 0a4d 48C745E0 		movq	$0, -32(%rbp)
+ 1358      00000000 
+ 1359 0a55 488D45E0 		leaq	-32(%rbp), %rax
+ 1360 0a59 4889C7   		movq	%rax, %rdi
+ 1361 0a5c E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1361      00
+ 1362 0a61 8B050000 		movl	topA+52(%rip), %eax
+ 1362      0000
+ 1363 0a67 89C2     		movl	%eax, %edx
+ 1364 0a69 488D45E0 		leaq	-32(%rbp), %rax
+ 1365 0a6d 4989C1   		movq	%rax, %r9
+ 1366 0a70 41B8E500 		movl	$229, %r8d
+ 1366      0000
+ 1367 0a76 B9000000 		movl	$.LC0, %ecx
+ 1367      00
+ 1368 0a7b BE020000 		movl	$2, %esi
+ 1368      00
+ 1369 0a80 4889DF   		movq	%rbx, %rdi
+ 1370              	.LEHB41:
+ 1371 0a83 41FFD4   		call	*%r12
+ 1372              	.LEHE41:
+ 1373 0a86 488D45E0 		leaq	-32(%rbp), %rax
+ 1374 0a8a 4889C7   		movq	%rax, %rdi
+ 1375              	.LEHB42:
+ 1376 0a8d E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1376      00
+ 1377 0a92 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1377      00
+ 1378 0a97 488B10   		movq	(%rax), %rdx
+ 1379 0a9a 4881C288 		addq	$136, %rdx
+ 1379      000000
+ 1380 0aa1 4C8B0A   		movq	(%rdx), %r9
+ 1381 0aa4 488B1500 		movq	topA+56(%rip), %rdx
+ 1381      000000
+ 1382 0aab 41B8E600 		movl	$230, %r8d
+ 1382      0000
+ 1383 0ab1 B9000000 		movl	$.LC0, %ecx
+GAS LISTING /tmp/ccl1pnZZ.s 			page 32
+
+
+ 1383      00
+ 1384 0ab6 BE000000 		movl	$subA2, %esi
+ 1384      00
+ 1385 0abb 4889C7   		movq	%rax, %rdi
+ 1386 0abe 41FFD1   		call	*%r9
+ 1387 0ac1 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1387      00
+ 1388 0ac6 488B10   		movq	(%rax), %rdx
+ 1389 0ac9 4881C288 		addq	$136, %rdx
+ 1389      000000
+ 1390 0ad0 4C8B0A   		movq	(%rdx), %r9
+ 1391 0ad3 488B1500 		movq	topB+56(%rip), %rdx
+ 1391      000000
+ 1392 0ada 41B8E700 		movl	$231, %r8d
+ 1392      0000
+ 1393 0ae0 B9000000 		movl	$.LC0, %ecx
+ 1393      00
+ 1394 0ae5 BE000000 		movl	$subB1, %esi
+ 1394      00
+ 1395 0aea 4889C7   		movq	%rax, %rdi
+ 1396 0aed 41FFD1   		call	*%r9
+ 1397 0af0 488B45D8 		movq	-40(%rbp), %rax
+ 1398 0af4 4883C008 		addq	$8, %rax
+ 1399 0af8 41B80200 		movl	$2, %r8d
+ 1399      0000
+ 1400 0afe B9000000 		movl	$topA, %ecx
+ 1400      00
+ 1401 0b03 BA010000 		movl	$1, %edx
+ 1401      00
+ 1402 0b08 BE000000 		movl	$subA2, %esi
+ 1402      00
+ 1403 0b0d 4889C7   		movq	%rax, %rdi
+ 1404 0b10 E8EBF4FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1404      FF
+ 1405 0b15 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1405      00
+ 1406              	.LEHE42:
+ 1407 0b1a 4889C3   		movq	%rax, %rbx
+ 1408 0b1d 488B03   		movq	(%rbx), %rax
+ 1409 0b20 4883C078 		addq	$120, %rax
+ 1410 0b24 4C8B20   		movq	(%rax), %r12
+ 1411 0b27 48C745E0 		movq	$0, -32(%rbp)
+ 1411      00000000 
+ 1412 0b2f 488D45E0 		leaq	-32(%rbp), %rax
+ 1413 0b33 4889C7   		movq	%rax, %rdi
+ 1414 0b36 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1414      00
+ 1415 0b3b 8B050000 		movl	subA2+52(%rip), %eax
+ 1415      0000
+ 1416 0b41 89C2     		movl	%eax, %edx
+ 1417 0b43 488D45E0 		leaq	-32(%rbp), %rax
+ 1418 0b47 4989C1   		movq	%rax, %r9
+ 1419 0b4a 41B8EB00 		movl	$235, %r8d
+ 1419      0000
+ 1420 0b50 B9000000 		movl	$.LC0, %ecx
+ 1420      00
+ 1421 0b55 BE020000 		movl	$2, %esi
+GAS LISTING /tmp/ccl1pnZZ.s 			page 33
+
+
+ 1421      00
+ 1422 0b5a 4889DF   		movq	%rbx, %rdi
+ 1423              	.LEHB43:
+ 1424 0b5d 41FFD4   		call	*%r12
+ 1425              	.LEHE43:
+ 1426 0b60 488D45E0 		leaq	-32(%rbp), %rax
+ 1427 0b64 4889C7   		movq	%rax, %rdi
+ 1428              	.LEHB44:
+ 1429 0b67 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1429      00
+ 1430 0b6c E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1430      00
+ 1431 0b71 488B10   		movq	(%rax), %rdx
+ 1432 0b74 4881C288 		addq	$136, %rdx
+ 1432      000000
+ 1433 0b7b 4C8B0A   		movq	(%rdx), %r9
+ 1434 0b7e 488B1500 		movq	topA+56(%rip), %rdx
+ 1434      000000
+ 1435 0b85 41B8EC00 		movl	$236, %r8d
+ 1435      0000
+ 1436 0b8b B9000000 		movl	$.LC0, %ecx
+ 1436      00
+ 1437 0b90 BE000000 		movl	$subA2, %esi
+ 1437      00
+ 1438 0b95 4889C7   		movq	%rax, %rdi
+ 1439 0b98 41FFD1   		call	*%r9
+ 1440 0b9b E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1440      00
+ 1441 0ba0 488B10   		movq	(%rax), %rdx
+ 1442 0ba3 4881C288 		addq	$136, %rdx
+ 1442      000000
+ 1443 0baa 4C8B0A   		movq	(%rdx), %r9
+ 1444 0bad 488B1500 		movq	topB+56(%rip), %rdx
+ 1444      000000
+ 1445 0bb4 41B8ED00 		movl	$237, %r8d
+ 1445      0000
+ 1446 0bba B9000000 		movl	$.LC0, %ecx
+ 1446      00
+ 1447 0bbf BE000000 		movl	$subB1, %esi
+ 1447      00
+ 1448 0bc4 4889C7   		movq	%rax, %rdi
+ 1449 0bc7 41FFD1   		call	*%r9
+ 1450 0bca 488B45D8 		movq	-40(%rbp), %rax
+ 1451 0bce 4883C008 		addq	$8, %rax
+ 1452 0bd2 41B80200 		movl	$2, %r8d
+ 1452      0000
+ 1453 0bd8 B9000000 		movl	$subA2, %ecx
+ 1453      00
+ 1454 0bdd BA020000 		movl	$2, %edx
+ 1454      00
+ 1455 0be2 BE000000 		movl	$topA, %esi
+ 1455      00
+ 1456 0be7 4889C7   		movq	%rax, %rdi
+ 1457 0bea E811F4FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1457      FF
+ 1458 0bef E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1458      00
+GAS LISTING /tmp/ccl1pnZZ.s 			page 34
+
+
+ 1459              	.LEHE44:
+ 1460 0bf4 4889C3   		movq	%rax, %rbx
+ 1461 0bf7 488B03   		movq	(%rbx), %rax
+ 1462 0bfa 4883C078 		addq	$120, %rax
+ 1463 0bfe 4C8B20   		movq	(%rax), %r12
+ 1464 0c01 48C745E0 		movq	$0, -32(%rbp)
+ 1464      00000000 
+ 1465 0c09 488D45E0 		leaq	-32(%rbp), %rax
+ 1466 0c0d 4889C7   		movq	%rax, %rdi
+ 1467 0c10 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1467      00
+ 1468 0c15 8B050000 		movl	topA+52(%rip), %eax
+ 1468      0000
+ 1469 0c1b 89C2     		movl	%eax, %edx
+ 1470 0c1d 488D45E0 		leaq	-32(%rbp), %rax
+ 1471 0c21 4989C1   		movq	%rax, %r9
+ 1472 0c24 41B8F100 		movl	$241, %r8d
+ 1472      0000
+ 1473 0c2a B9000000 		movl	$.LC0, %ecx
+ 1473      00
+ 1474 0c2f BE010000 		movl	$1, %esi
+ 1474      00
+ 1475 0c34 4889DF   		movq	%rbx, %rdi
+ 1476              	.LEHB45:
+ 1477 0c37 41FFD4   		call	*%r12
+ 1478              	.LEHE45:
+ 1479 0c3a 488D45E0 		leaq	-32(%rbp), %rax
+ 1480 0c3e 4889C7   		movq	%rax, %rdi
+ 1481              	.LEHB46:
+ 1482 0c41 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1482      00
+ 1483 0c46 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1483      00
+ 1484 0c4b 488B10   		movq	(%rax), %rdx
+ 1485 0c4e 4881C288 		addq	$136, %rdx
+ 1485      000000
+ 1486 0c55 4C8B0A   		movq	(%rdx), %r9
+ 1487 0c58 488B1500 		movq	topA+56(%rip), %rdx
+ 1487      000000
+ 1488 0c5f 41B8F200 		movl	$242, %r8d
+ 1488      0000
+ 1489 0c65 B9000000 		movl	$.LC0, %ecx
+ 1489      00
+ 1490 0c6a BE000000 		movl	$subA2, %esi
+ 1490      00
+ 1491 0c6f 4889C7   		movq	%rax, %rdi
+ 1492 0c72 41FFD1   		call	*%r9
+ 1493 0c75 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1493      00
+ 1494 0c7a 488B10   		movq	(%rax), %rdx
+ 1495 0c7d 4881C288 		addq	$136, %rdx
+ 1495      000000
+ 1496 0c84 4C8B0A   		movq	(%rdx), %r9
+ 1497 0c87 488B1500 		movq	topB+56(%rip), %rdx
+ 1497      000000
+ 1498 0c8e 41B8F300 		movl	$243, %r8d
+ 1498      0000
+GAS LISTING /tmp/ccl1pnZZ.s 			page 35
+
+
+ 1499 0c94 B9000000 		movl	$.LC0, %ecx
+ 1499      00
+ 1500 0c99 BE000000 		movl	$subB1, %esi
+ 1500      00
+ 1501 0c9e 4889C7   		movq	%rax, %rdi
+ 1502 0ca1 41FFD1   		call	*%r9
+ 1503 0ca4 488B45D8 		movq	-40(%rbp), %rax
+ 1504 0ca8 4883C008 		addq	$8, %rax
+ 1505 0cac 41B80400 		movl	$4, %r8d
+ 1505      0000
+ 1506 0cb2 B9000000 		movl	$subA2, %ecx
+ 1506      00
+ 1507 0cb7 BA020000 		movl	$2, %edx
+ 1507      00
+ 1508 0cbc BE000000 		movl	$subA2, %esi
+ 1508      00
+ 1509 0cc1 4889C7   		movq	%rax, %rdi
+ 1510 0cc4 E837F3FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1510      FF
+ 1511 0cc9 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1511      00
+ 1512              	.LEHE46:
+ 1513 0cce 4889C3   		movq	%rax, %rbx
+ 1514 0cd1 488B03   		movq	(%rbx), %rax
+ 1515 0cd4 4883C078 		addq	$120, %rax
+ 1516 0cd8 4C8B20   		movq	(%rax), %r12
+ 1517 0cdb 48C745E0 		movq	$0, -32(%rbp)
+ 1517      00000000 
+ 1518 0ce3 488D45E0 		leaq	-32(%rbp), %rax
+ 1519 0ce7 4889C7   		movq	%rax, %rdi
+ 1520 0cea E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1520      00
+ 1521 0cef 8B050000 		movl	subA2+52(%rip), %eax
+ 1521      0000
+ 1522 0cf5 89C2     		movl	%eax, %edx
+ 1523 0cf7 488D45E0 		leaq	-32(%rbp), %rax
+ 1524 0cfb 4989C1   		movq	%rax, %r9
+ 1525 0cfe 41B8F700 		movl	$247, %r8d
+ 1525      0000
+ 1526 0d04 B9000000 		movl	$.LC0, %ecx
+ 1526      00
+ 1527 0d09 BE040000 		movl	$4, %esi
+ 1527      00
+ 1528 0d0e 4889DF   		movq	%rbx, %rdi
+ 1529              	.LEHB47:
+ 1530 0d11 41FFD4   		call	*%r12
+ 1531              	.LEHE47:
+ 1532 0d14 488D45E0 		leaq	-32(%rbp), %rax
+ 1533 0d18 4889C7   		movq	%rax, %rdi
+ 1534              	.LEHB48:
+ 1535 0d1b E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1535      00
+ 1536 0d20 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1536      00
+ 1537 0d25 488B10   		movq	(%rax), %rdx
+ 1538 0d28 4881C288 		addq	$136, %rdx
+ 1538      000000
+GAS LISTING /tmp/ccl1pnZZ.s 			page 36
+
+
+ 1539 0d2f 4C8B0A   		movq	(%rdx), %r9
+ 1540 0d32 488B1500 		movq	topA+56(%rip), %rdx
+ 1540      000000
+ 1541 0d39 41B8F800 		movl	$248, %r8d
+ 1541      0000
+ 1542 0d3f B9000000 		movl	$.LC0, %ecx
+ 1542      00
+ 1543 0d44 BE000000 		movl	$subA2, %esi
+ 1543      00
+ 1544 0d49 4889C7   		movq	%rax, %rdi
+ 1545 0d4c 41FFD1   		call	*%r9
+ 1546 0d4f E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1546      00
+ 1547 0d54 488B10   		movq	(%rax), %rdx
+ 1548 0d57 4881C288 		addq	$136, %rdx
+ 1548      000000
+ 1549 0d5e 4C8B0A   		movq	(%rdx), %r9
+ 1550 0d61 488B1500 		movq	topB+56(%rip), %rdx
+ 1550      000000
+ 1551 0d68 41B8F900 		movl	$249, %r8d
+ 1551      0000
+ 1552 0d6e B9000000 		movl	$.LC0, %ecx
+ 1552      00
+ 1553 0d73 BE000000 		movl	$subB1, %esi
+ 1553      00
+ 1554 0d78 4889C7   		movq	%rax, %rdi
+ 1555 0d7b 41FFD1   		call	*%r9
+ 1556 0d7e 488B45D8 		movq	-40(%rbp), %rax
+ 1557 0d82 4883C008 		addq	$8, %rax
+ 1558 0d86 41B80400 		movl	$4, %r8d
+ 1558      0000
+ 1559 0d8c B9000000 		movl	$topA, %ecx
+ 1559      00
+ 1560 0d91 BA040000 		movl	$4, %edx
+ 1560      00
+ 1561 0d96 BE000000 		movl	$subA2, %esi
+ 1561      00
+ 1562 0d9b 4889C7   		movq	%rax, %rdi
+ 1563 0d9e E85DF2FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1563      FF
+ 1564 0da3 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1564      00
+ 1565              	.LEHE48:
+ 1566 0da8 4889C3   		movq	%rax, %rbx
+ 1567 0dab 488B03   		movq	(%rbx), %rax
+ 1568 0dae 4883C078 		addq	$120, %rax
+ 1569 0db2 4C8B20   		movq	(%rax), %r12
+ 1570 0db5 48C745E0 		movq	$0, -32(%rbp)
+ 1570      00000000 
+ 1571 0dbd 488D45E0 		leaq	-32(%rbp), %rax
+ 1572 0dc1 4889C7   		movq	%rax, %rdi
+ 1573 0dc4 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1573      00
+ 1574 0dc9 8B050000 		movl	subA2+52(%rip), %eax
+ 1574      0000
+ 1575 0dcf 89C2     		movl	%eax, %edx
+ 1576 0dd1 488D45E0 		leaq	-32(%rbp), %rax
+GAS LISTING /tmp/ccl1pnZZ.s 			page 37
+
+
+ 1577 0dd5 4989C1   		movq	%rax, %r9
+ 1578 0dd8 41B8FD00 		movl	$253, %r8d
+ 1578      0000
+ 1579 0dde B9000000 		movl	$.LC0, %ecx
+ 1579      00
+ 1580 0de3 BE000000 		movl	$0, %esi
+ 1580      00
+ 1581 0de8 4889DF   		movq	%rbx, %rdi
+ 1582              	.LEHB49:
+ 1583 0deb 41FFD4   		call	*%r12
+ 1584              	.LEHE49:
+ 1585 0dee 488D45E0 		leaq	-32(%rbp), %rax
+ 1586 0df2 4889C7   		movq	%rax, %rdi
+ 1587              	.LEHB50:
+ 1588 0df5 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1588      00
+ 1589 0dfa E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1589      00
+ 1590 0dff 488B10   		movq	(%rax), %rdx
+ 1591 0e02 4881C288 		addq	$136, %rdx
+ 1591      000000
+ 1592 0e09 4C8B0A   		movq	(%rdx), %r9
+ 1593 0e0c 488B1500 		movq	topA+56(%rip), %rdx
+ 1593      000000
+ 1594 0e13 41B8FE00 		movl	$254, %r8d
+ 1594      0000
+ 1595 0e19 B9000000 		movl	$.LC0, %ecx
+ 1595      00
+ 1596 0e1e BE000000 		movl	$subA2, %esi
+ 1596      00
+ 1597 0e23 4889C7   		movq	%rax, %rdi
+ 1598 0e26 41FFD1   		call	*%r9
+ 1599 0e29 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1599      00
+ 1600 0e2e 488B10   		movq	(%rax), %rdx
+ 1601 0e31 4881C288 		addq	$136, %rdx
+ 1601      000000
+ 1602 0e38 4C8B0A   		movq	(%rdx), %r9
+ 1603 0e3b 488B1500 		movq	topB+56(%rip), %rdx
+ 1603      000000
+ 1604 0e42 41B8FF00 		movl	$255, %r8d
+ 1604      0000
+ 1605 0e48 B9000000 		movl	$.LC0, %ecx
+ 1605      00
+ 1606 0e4d BE000000 		movl	$subB1, %esi
+ 1606      00
+ 1607 0e52 4889C7   		movq	%rax, %rdi
+ 1608 0e55 41FFD1   		call	*%r9
+ 1609 0e58 488B45D8 		movq	-40(%rbp), %rax
+ 1610 0e5c 4883C008 		addq	$8, %rax
+ 1611 0e60 41B80000 		movl	$0, %r8d
+ 1611      0000
+ 1612 0e66 B9000000 		movl	$topB, %ecx
+ 1612      00
+ 1613 0e6b BA040000 		movl	$4, %edx
+ 1613      00
+ 1614 0e70 BE000000 		movl	$topA, %esi
+GAS LISTING /tmp/ccl1pnZZ.s 			page 38
+
+
+ 1614      00
+ 1615 0e75 4889C7   		movq	%rax, %rdi
+ 1616 0e78 E883F1FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1616      FF
+ 1617 0e7d E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1617      00
+ 1618              	.LEHE50:
+ 1619 0e82 4889C3   		movq	%rax, %rbx
+ 1620 0e85 488B03   		movq	(%rbx), %rax
+ 1621 0e88 4883C078 		addq	$120, %rax
+ 1622 0e8c 4C8B20   		movq	(%rax), %r12
+ 1623 0e8f 48C745E0 		movq	$0, -32(%rbp)
+ 1623      00000000 
+ 1624 0e97 488D45E0 		leaq	-32(%rbp), %rax
+ 1625 0e9b 4889C7   		movq	%rax, %rdi
+ 1626 0e9e E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1626      00
+ 1627 0ea3 8B050000 		movl	topA+52(%rip), %eax
+ 1627      0000
+ 1628 0ea9 89C2     		movl	%eax, %edx
+ 1629 0eab 488D45E0 		leaq	-32(%rbp), %rax
+ 1630 0eaf 4989C1   		movq	%rax, %r9
+ 1631 0eb2 41B80301 		movl	$259, %r8d
+ 1631      0000
+ 1632 0eb8 B9000000 		movl	$.LC0, %ecx
+ 1632      00
+ 1633 0ebd BE000000 		movl	$0, %esi
+ 1633      00
+ 1634 0ec2 4889DF   		movq	%rbx, %rdi
+ 1635              	.LEHB51:
+ 1636 0ec5 41FFD4   		call	*%r12
+ 1637              	.LEHE51:
+ 1638 0ec8 488D45E0 		leaq	-32(%rbp), %rax
+ 1639 0ecc 4889C7   		movq	%rax, %rdi
+ 1640              	.LEHB52:
+ 1641 0ecf E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1641      00
+ 1642 0ed4 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1642      00
+ 1643 0ed9 488B10   		movq	(%rax), %rdx
+ 1644 0edc 4881C288 		addq	$136, %rdx
+ 1644      000000
+ 1645 0ee3 4C8B0A   		movq	(%rdx), %r9
+ 1646 0ee6 488B1500 		movq	topA+56(%rip), %rdx
+ 1646      000000
+ 1647 0eed 41B80401 		movl	$260, %r8d
+ 1647      0000
+ 1648 0ef3 B9000000 		movl	$.LC0, %ecx
+ 1648      00
+ 1649 0ef8 BE000000 		movl	$subA2, %esi
+ 1649      00
+ 1650 0efd 4889C7   		movq	%rax, %rdi
+ 1651 0f00 41FFD1   		call	*%r9
+ 1652 0f03 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1652      00
+ 1653 0f08 488B10   		movq	(%rax), %rdx
+ 1654 0f0b 4881C288 		addq	$136, %rdx
+GAS LISTING /tmp/ccl1pnZZ.s 			page 39
+
+
+ 1654      000000
+ 1655 0f12 4C8B0A   		movq	(%rdx), %r9
+ 1656 0f15 488B1500 		movq	topB+56(%rip), %rdx
+ 1656      000000
+ 1657 0f1c 41B80501 		movl	$261, %r8d
+ 1657      0000
+ 1658 0f22 B9000000 		movl	$.LC0, %ecx
+ 1658      00
+ 1659 0f27 BE000000 		movl	$subB1, %esi
+ 1659      00
+ 1660 0f2c 4889C7   		movq	%rax, %rdi
+ 1661 0f2f 41FFD1   		call	*%r9
+ 1662 0f32 488B45D8 		movq	-40(%rbp), %rax
+ 1663 0f36 4883C008 		addq	$8, %rax
+ 1664 0f3a 41B80000 		movl	$0, %r8d
+ 1664      0000
+ 1665 0f40 B9000000 		movl	$subB1, %ecx
+ 1665      00
+ 1666 0f45 BA000000 		movl	$0, %edx
+ 1666      00
+ 1667 0f4a BE000000 		movl	$topB, %esi
+ 1667      00
+ 1668 0f4f 4889C7   		movq	%rax, %rdi
+ 1669 0f52 E8A9F0FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1669      FF
+ 1670 0f57 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1670      00
+ 1671              	.LEHE52:
+ 1672 0f5c 4889C3   		movq	%rax, %rbx
+ 1673 0f5f 488B03   		movq	(%rbx), %rax
+ 1674 0f62 4883C078 		addq	$120, %rax
+ 1675 0f66 4C8B20   		movq	(%rax), %r12
+ 1676 0f69 48C745E0 		movq	$0, -32(%rbp)
+ 1676      00000000 
+ 1677 0f71 488D45E0 		leaq	-32(%rbp), %rax
+ 1678 0f75 4889C7   		movq	%rax, %rdi
+ 1679 0f78 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1679      00
+ 1680 0f7d 8B050000 		movl	topB+52(%rip), %eax
+ 1680      0000
+ 1681 0f83 89C2     		movl	%eax, %edx
+ 1682 0f85 488D45E0 		leaq	-32(%rbp), %rax
+ 1683 0f89 4989C1   		movq	%rax, %r9
+ 1684 0f8c 41B80901 		movl	$265, %r8d
+ 1684      0000
+ 1685 0f92 B9000000 		movl	$.LC0, %ecx
+ 1685      00
+ 1686 0f97 BE010000 		movl	$1, %esi
+ 1686      00
+ 1687 0f9c 4889DF   		movq	%rbx, %rdi
+ 1688              	.LEHB53:
+ 1689 0f9f 41FFD4   		call	*%r12
+ 1690              	.LEHE53:
+ 1691 0fa2 488D45E0 		leaq	-32(%rbp), %rax
+ 1692 0fa6 4889C7   		movq	%rax, %rdi
+ 1693              	.LEHB54:
+ 1694 0fa9 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+GAS LISTING /tmp/ccl1pnZZ.s 			page 40
+
+
+ 1694      00
+ 1695 0fae E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1695      00
+ 1696 0fb3 488B10   		movq	(%rax), %rdx
+ 1697 0fb6 4881C288 		addq	$136, %rdx
+ 1697      000000
+ 1698 0fbd 4C8B0A   		movq	(%rdx), %r9
+ 1699 0fc0 488B1500 		movq	topA+56(%rip), %rdx
+ 1699      000000
+ 1700 0fc7 41B80A01 		movl	$266, %r8d
+ 1700      0000
+ 1701 0fcd B9000000 		movl	$.LC0, %ecx
+ 1701      00
+ 1702 0fd2 BE000000 		movl	$subA2, %esi
+ 1702      00
+ 1703 0fd7 4889C7   		movq	%rax, %rdi
+ 1704 0fda 41FFD1   		call	*%r9
+ 1705 0fdd E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1705      00
+ 1706 0fe2 488B10   		movq	(%rax), %rdx
+ 1707 0fe5 4881C288 		addq	$136, %rdx
+ 1707      000000
+ 1708 0fec 4C8B0A   		movq	(%rdx), %r9
+ 1709 0fef 488B1500 		movq	topB+56(%rip), %rdx
+ 1709      000000
+ 1710 0ff6 41B80B01 		movl	$267, %r8d
+ 1710      0000
+ 1711 0ffc B9000000 		movl	$.LC0, %ecx
+ 1711      00
+ 1712 1001 BE000000 		movl	$subB1, %esi
+ 1712      00
+ 1713 1006 4889C7   		movq	%rax, %rdi
+ 1714 1009 41FFD1   		call	*%r9
+ 1715 100c 488B45D8 		movq	-40(%rbp), %rax
+ 1716 1010 4883C008 		addq	$8, %rax
+ 1717 1014 41B80100 		movl	$1, %r8d
+ 1717      0000
+ 1718 101a B9000000 		movl	$topB, %ecx
+ 1718      00
+ 1719 101f BA000000 		movl	$0, %edx
+ 1719      00
+ 1720 1024 BE000000 		movl	$subB1, %esi
+ 1720      00
+ 1721 1029 4889C7   		movq	%rax, %rdi
+ 1722 102c E8CFEFFF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1722      FF
+ 1723 1031 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1723      00
+ 1724              	.LEHE54:
+ 1725 1036 4889C3   		movq	%rax, %rbx
+ 1726 1039 488B03   		movq	(%rbx), %rax
+ 1727 103c 4883C078 		addq	$120, %rax
+ 1728 1040 4C8B20   		movq	(%rax), %r12
+ 1729 1043 48C745E0 		movq	$0, -32(%rbp)
+ 1729      00000000 
+ 1730 104b 488D45E0 		leaq	-32(%rbp), %rax
+ 1731 104f 4889C7   		movq	%rax, %rdi
+GAS LISTING /tmp/ccl1pnZZ.s 			page 41
+
+
+ 1732 1052 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1732      00
+ 1733 1057 8B050000 		movl	subB1+52(%rip), %eax
+ 1733      0000
+ 1734 105d 89C2     		movl	%eax, %edx
+ 1735 105f 488D45E0 		leaq	-32(%rbp), %rax
+ 1736 1063 4989C1   		movq	%rax, %r9
+ 1737 1066 41B80F01 		movl	$271, %r8d
+ 1737      0000
+ 1738 106c B9000000 		movl	$.LC0, %ecx
+ 1738      00
+ 1739 1071 BE010000 		movl	$1, %esi
+ 1739      00
+ 1740 1076 4889DF   		movq	%rbx, %rdi
+ 1741              	.LEHB55:
+ 1742 1079 41FFD4   		call	*%r12
+ 1743              	.LEHE55:
+ 1744 107c 488D45E0 		leaq	-32(%rbp), %rax
+ 1745 1080 4889C7   		movq	%rax, %rdi
+ 1746              	.LEHB56:
+ 1747 1083 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1747      00
+ 1748 1088 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1748      00
+ 1749 108d 488B10   		movq	(%rax), %rdx
+ 1750 1090 4881C288 		addq	$136, %rdx
+ 1750      000000
+ 1751 1097 4C8B0A   		movq	(%rdx), %r9
+ 1752 109a 488B1500 		movq	topA+56(%rip), %rdx
+ 1752      000000
+ 1753 10a1 41B81001 		movl	$272, %r8d
+ 1753      0000
+ 1754 10a7 B9000000 		movl	$.LC0, %ecx
+ 1754      00
+ 1755 10ac BE000000 		movl	$subA2, %esi
+ 1755      00
+ 1756 10b1 4889C7   		movq	%rax, %rdi
+ 1757 10b4 41FFD1   		call	*%r9
+ 1758 10b7 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1758      00
+ 1759 10bc 488B10   		movq	(%rax), %rdx
+ 1760 10bf 4881C288 		addq	$136, %rdx
+ 1760      000000
+ 1761 10c6 4C8B0A   		movq	(%rdx), %r9
+ 1762 10c9 488B1500 		movq	topB+56(%rip), %rdx
+ 1762      000000
+ 1763 10d0 41B81101 		movl	$273, %r8d
+ 1763      0000
+ 1764 10d6 B9000000 		movl	$.LC0, %ecx
+ 1764      00
+ 1765 10db BE000000 		movl	$subB1, %esi
+ 1765      00
+ 1766 10e0 4889C7   		movq	%rax, %rdi
+ 1767 10e3 41FFD1   		call	*%r9
+ 1768 10e6 488B45D8 		movq	-40(%rbp), %rax
+ 1769 10ea 4883C008 		addq	$8, %rax
+ 1770 10ee 41B80100 		movl	$1, %r8d
+GAS LISTING /tmp/ccl1pnZZ.s 			page 42
+
+
+ 1770      0000
+ 1771 10f4 B9000000 		movl	$subB1, %ecx
+ 1771      00
+ 1772 10f9 BA010000 		movl	$1, %edx
+ 1772      00
+ 1773 10fe BE000000 		movl	$topB, %esi
+ 1773      00
+ 1774 1103 4889C7   		movq	%rax, %rdi
+ 1775 1106 E8F5EEFF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1775      FF
+ 1776 110b E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1776      00
+ 1777              	.LEHE56:
+ 1778 1110 4889C3   		movq	%rax, %rbx
+ 1779 1113 488B03   		movq	(%rbx), %rax
+ 1780 1116 4883C078 		addq	$120, %rax
+ 1781 111a 4C8B20   		movq	(%rax), %r12
+ 1782 111d 48C745E0 		movq	$0, -32(%rbp)
+ 1782      00000000 
+ 1783 1125 488D45E0 		leaq	-32(%rbp), %rax
+ 1784 1129 4889C7   		movq	%rax, %rdi
+ 1785 112c E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1785      00
+ 1786 1131 8B050000 		movl	topB+52(%rip), %eax
+ 1786      0000
+ 1787 1137 89C2     		movl	%eax, %edx
+ 1788 1139 488D45E0 		leaq	-32(%rbp), %rax
+ 1789 113d 4989C1   		movq	%rax, %r9
+ 1790 1140 41B81501 		movl	$277, %r8d
+ 1790      0000
+ 1791 1146 B9000000 		movl	$.LC0, %ecx
+ 1791      00
+ 1792 114b BE020000 		movl	$2, %esi
+ 1792      00
+ 1793 1150 4889DF   		movq	%rbx, %rdi
+ 1794              	.LEHB57:
+ 1795 1153 41FFD4   		call	*%r12
+ 1796              	.LEHE57:
+ 1797 1156 488D45E0 		leaq	-32(%rbp), %rax
+ 1798 115a 4889C7   		movq	%rax, %rdi
+ 1799              	.LEHB58:
+ 1800 115d E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1800      00
+ 1801 1162 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1801      00
+ 1802 1167 488B10   		movq	(%rax), %rdx
+ 1803 116a 4881C288 		addq	$136, %rdx
+ 1803      000000
+ 1804 1171 4C8B0A   		movq	(%rdx), %r9
+ 1805 1174 488B1500 		movq	topA+56(%rip), %rdx
+ 1805      000000
+ 1806 117b 41B81601 		movl	$278, %r8d
+ 1806      0000
+ 1807 1181 B9000000 		movl	$.LC0, %ecx
+ 1807      00
+ 1808 1186 BE000000 		movl	$subA2, %esi
+ 1808      00
+GAS LISTING /tmp/ccl1pnZZ.s 			page 43
+
+
+ 1809 118b 4889C7   		movq	%rax, %rdi
+ 1810 118e 41FFD1   		call	*%r9
+ 1811 1191 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1811      00
+ 1812 1196 488B10   		movq	(%rax), %rdx
+ 1813 1199 4881C288 		addq	$136, %rdx
+ 1813      000000
+ 1814 11a0 4C8B0A   		movq	(%rdx), %r9
+ 1815 11a3 488B1500 		movq	topB+56(%rip), %rdx
+ 1815      000000
+ 1816 11aa 41B81701 		movl	$279, %r8d
+ 1816      0000
+ 1817 11b0 B9000000 		movl	$.LC0, %ecx
+ 1817      00
+ 1818 11b5 BE000000 		movl	$subB1, %esi
+ 1818      00
+ 1819 11ba 4889C7   		movq	%rax, %rdi
+ 1820 11bd 41FFD1   		call	*%r9
+ 1821 11c0 488B45D8 		movq	-40(%rbp), %rax
+ 1822 11c4 4883C008 		addq	$8, %rax
+ 1823 11c8 41B80200 		movl	$2, %r8d
+ 1823      0000
+ 1824 11ce B9000000 		movl	$topB, %ecx
+ 1824      00
+ 1825 11d3 BA010000 		movl	$1, %edx
+ 1825      00
+ 1826 11d8 BE000000 		movl	$subB1, %esi
+ 1826      00
+ 1827 11dd 4889C7   		movq	%rax, %rdi
+ 1828 11e0 E81BEEFF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1828      FF
+ 1829 11e5 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1829      00
+ 1830              	.LEHE58:
+ 1831 11ea 4889C3   		movq	%rax, %rbx
+ 1832 11ed 488B03   		movq	(%rbx), %rax
+ 1833 11f0 4883C078 		addq	$120, %rax
+ 1834 11f4 4C8B20   		movq	(%rax), %r12
+ 1835 11f7 48C745E0 		movq	$0, -32(%rbp)
+ 1835      00000000 
+ 1836 11ff 488D45E0 		leaq	-32(%rbp), %rax
+ 1837 1203 4889C7   		movq	%rax, %rdi
+ 1838 1206 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1838      00
+ 1839 120b 8B050000 		movl	subB1+52(%rip), %eax
+ 1839      0000
+ 1840 1211 89C2     		movl	%eax, %edx
+ 1841 1213 488D45E0 		leaq	-32(%rbp), %rax
+ 1842 1217 4989C1   		movq	%rax, %r9
+ 1843 121a 41B81B01 		movl	$283, %r8d
+ 1843      0000
+ 1844 1220 B9000000 		movl	$.LC0, %ecx
+ 1844      00
+ 1845 1225 BE020000 		movl	$2, %esi
+ 1845      00
+ 1846 122a 4889DF   		movq	%rbx, %rdi
+ 1847              	.LEHB59:
+GAS LISTING /tmp/ccl1pnZZ.s 			page 44
+
+
+ 1848 122d 41FFD4   		call	*%r12
+ 1849              	.LEHE59:
+ 1850 1230 488D45E0 		leaq	-32(%rbp), %rax
+ 1851 1234 4889C7   		movq	%rax, %rdi
+ 1852              	.LEHB60:
+ 1853 1237 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1853      00
+ 1854 123c E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1854      00
+ 1855 1241 488B10   		movq	(%rax), %rdx
+ 1856 1244 4881C288 		addq	$136, %rdx
+ 1856      000000
+ 1857 124b 4C8B0A   		movq	(%rdx), %r9
+ 1858 124e 488B1500 		movq	topA+56(%rip), %rdx
+ 1858      000000
+ 1859 1255 41B81C01 		movl	$284, %r8d
+ 1859      0000
+ 1860 125b B9000000 		movl	$.LC0, %ecx
+ 1860      00
+ 1861 1260 BE000000 		movl	$subA2, %esi
+ 1861      00
+ 1862 1265 4889C7   		movq	%rax, %rdi
+ 1863 1268 41FFD1   		call	*%r9
+ 1864 126b E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1864      00
+ 1865 1270 488B10   		movq	(%rax), %rdx
+ 1866 1273 4881C288 		addq	$136, %rdx
+ 1866      000000
+ 1867 127a 4C8B0A   		movq	(%rdx), %r9
+ 1868 127d 488B1500 		movq	topB+56(%rip), %rdx
+ 1868      000000
+ 1869 1284 41B81D01 		movl	$285, %r8d
+ 1869      0000
+ 1870 128a B9000000 		movl	$.LC0, %ecx
+ 1870      00
+ 1871 128f BE000000 		movl	$subB1, %esi
+ 1871      00
+ 1872 1294 4889C7   		movq	%rax, %rdi
+ 1873 1297 41FFD1   		call	*%r9
+ 1874 129a 488B45D8 		movq	-40(%rbp), %rax
+ 1875 129e 4883C008 		addq	$8, %rax
+ 1876 12a2 41B80200 		movl	$2, %r8d
+ 1876      0000
+ 1877 12a8 B9000000 		movl	$subB1, %ecx
+ 1877      00
+ 1878 12ad BA020000 		movl	$2, %edx
+ 1878      00
+ 1879 12b2 BE000000 		movl	$topB, %esi
+ 1879      00
+ 1880 12b7 4889C7   		movq	%rax, %rdi
+ 1881 12ba E841EDFF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1881      FF
+ 1882 12bf E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1882      00
+ 1883              	.LEHE60:
+ 1884 12c4 4889C3   		movq	%rax, %rbx
+ 1885 12c7 488B03   		movq	(%rbx), %rax
+GAS LISTING /tmp/ccl1pnZZ.s 			page 45
+
+
+ 1886 12ca 4883C078 		addq	$120, %rax
+ 1887 12ce 4C8B20   		movq	(%rax), %r12
+ 1888 12d1 48C745E0 		movq	$0, -32(%rbp)
+ 1888      00000000 
+ 1889 12d9 488D45E0 		leaq	-32(%rbp), %rax
+ 1890 12dd 4889C7   		movq	%rax, %rdi
+ 1891 12e0 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1891      00
+ 1892 12e5 8B050000 		movl	topB+52(%rip), %eax
+ 1892      0000
+ 1893 12eb 89C2     		movl	%eax, %edx
+ 1894 12ed 488D45E0 		leaq	-32(%rbp), %rax
+ 1895 12f1 4989C1   		movq	%rax, %r9
+ 1896 12f4 41B82101 		movl	$289, %r8d
+ 1896      0000
+ 1897 12fa B9000000 		movl	$.LC0, %ecx
+ 1897      00
+ 1898 12ff BE010000 		movl	$1, %esi
+ 1898      00
+ 1899 1304 4889DF   		movq	%rbx, %rdi
+ 1900              	.LEHB61:
+ 1901 1307 41FFD4   		call	*%r12
+ 1902              	.LEHE61:
+ 1903 130a 488D45E0 		leaq	-32(%rbp), %rax
+ 1904 130e 4889C7   		movq	%rax, %rdi
+ 1905              	.LEHB62:
+ 1906 1311 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1906      00
+ 1907 1316 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1907      00
+ 1908 131b 488B10   		movq	(%rax), %rdx
+ 1909 131e 4881C288 		addq	$136, %rdx
+ 1909      000000
+ 1910 1325 4C8B0A   		movq	(%rdx), %r9
+ 1911 1328 488B1500 		movq	topA+56(%rip), %rdx
+ 1911      000000
+ 1912 132f 41B82201 		movl	$290, %r8d
+ 1912      0000
+ 1913 1335 B9000000 		movl	$.LC0, %ecx
+ 1913      00
+ 1914 133a BE000000 		movl	$subA2, %esi
+ 1914      00
+ 1915 133f 4889C7   		movq	%rax, %rdi
+ 1916 1342 41FFD1   		call	*%r9
+ 1917 1345 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1917      00
+ 1918 134a 488B10   		movq	(%rax), %rdx
+ 1919 134d 4881C288 		addq	$136, %rdx
+ 1919      000000
+ 1920 1354 4C8B0A   		movq	(%rdx), %r9
+ 1921 1357 488B1500 		movq	topB+56(%rip), %rdx
+ 1921      000000
+ 1922 135e 41B82301 		movl	$291, %r8d
+ 1922      0000
+ 1923 1364 B9000000 		movl	$.LC0, %ecx
+ 1923      00
+ 1924 1369 BE000000 		movl	$subB1, %esi
+GAS LISTING /tmp/ccl1pnZZ.s 			page 46
+
+
+ 1924      00
+ 1925 136e 4889C7   		movq	%rax, %rdi
+ 1926 1371 41FFD1   		call	*%r9
+ 1927 1374 488B45D8 		movq	-40(%rbp), %rax
+ 1928 1378 4883C008 		addq	$8, %rax
+ 1929 137c 41B80400 		movl	$4, %r8d
+ 1929      0000
+ 1930 1382 B9000000 		movl	$subB1, %ecx
+ 1930      00
+ 1931 1387 BA020000 		movl	$2, %edx
+ 1931      00
+ 1932 138c BE000000 		movl	$subB1, %esi
+ 1932      00
+ 1933 1391 4889C7   		movq	%rax, %rdi
+ 1934 1394 E867ECFF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1934      FF
+ 1935 1399 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1935      00
+ 1936              	.LEHE62:
+ 1937 139e 4889C3   		movq	%rax, %rbx
+ 1938 13a1 488B03   		movq	(%rbx), %rax
+ 1939 13a4 4883C078 		addq	$120, %rax
+ 1940 13a8 4C8B20   		movq	(%rax), %r12
+ 1941 13ab 48C745E0 		movq	$0, -32(%rbp)
+ 1941      00000000 
+ 1942 13b3 488D45E0 		leaq	-32(%rbp), %rax
+ 1943 13b7 4889C7   		movq	%rax, %rdi
+ 1944 13ba E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1944      00
+ 1945 13bf 8B050000 		movl	subB1+52(%rip), %eax
+ 1945      0000
+ 1946 13c5 89C2     		movl	%eax, %edx
+ 1947 13c7 488D45E0 		leaq	-32(%rbp), %rax
+ 1948 13cb 4989C1   		movq	%rax, %r9
+ 1949 13ce 41B82701 		movl	$295, %r8d
+ 1949      0000
+ 1950 13d4 B9000000 		movl	$.LC0, %ecx
+ 1950      00
+ 1951 13d9 BE040000 		movl	$4, %esi
+ 1951      00
+ 1952 13de 4889DF   		movq	%rbx, %rdi
+ 1953              	.LEHB63:
+ 1954 13e1 41FFD4   		call	*%r12
+ 1955              	.LEHE63:
+ 1956 13e4 488D45E0 		leaq	-32(%rbp), %rax
+ 1957 13e8 4889C7   		movq	%rax, %rdi
+ 1958              	.LEHB64:
+ 1959 13eb E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 1959      00
+ 1960 13f0 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1960      00
+ 1961 13f5 488B10   		movq	(%rax), %rdx
+ 1962 13f8 4881C288 		addq	$136, %rdx
+ 1962      000000
+ 1963 13ff 4C8B0A   		movq	(%rdx), %r9
+ 1964 1402 488B1500 		movq	topA+56(%rip), %rdx
+ 1964      000000
+GAS LISTING /tmp/ccl1pnZZ.s 			page 47
+
+
+ 1965 1409 41B82801 		movl	$296, %r8d
+ 1965      0000
+ 1966 140f B9000000 		movl	$.LC0, %ecx
+ 1966      00
+ 1967 1414 BE000000 		movl	$subA2, %esi
+ 1967      00
+ 1968 1419 4889C7   		movq	%rax, %rdi
+ 1969 141c 41FFD1   		call	*%r9
+ 1970 141f E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1970      00
+ 1971 1424 488B10   		movq	(%rax), %rdx
+ 1972 1427 4881C288 		addq	$136, %rdx
+ 1972      000000
+ 1973 142e 4C8B0A   		movq	(%rdx), %r9
+ 1974 1431 488B1500 		movq	topB+56(%rip), %rdx
+ 1974      000000
+ 1975 1438 41B82901 		movl	$297, %r8d
+ 1975      0000
+ 1976 143e B9000000 		movl	$.LC0, %ecx
+ 1976      00
+ 1977 1443 BE000000 		movl	$subB1, %esi
+ 1977      00
+ 1978 1448 4889C7   		movq	%rax, %rdi
+ 1979 144b 41FFD1   		call	*%r9
+ 1980 144e 488B45D8 		movq	-40(%rbp), %rax
+ 1981 1452 4883C008 		addq	$8, %rax
+ 1982 1456 41B80400 		movl	$4, %r8d
+ 1982      0000
+ 1983 145c B9000000 		movl	$topB, %ecx
+ 1983      00
+ 1984 1461 BA040000 		movl	$4, %edx
+ 1984      00
+ 1985 1466 BE000000 		movl	$subB1, %esi
+ 1985      00
+ 1986 146b 4889C7   		movq	%rax, %rdi
+ 1987 146e E88DEBFF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 1987      FF
+ 1988 1473 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 1988      00
+ 1989              	.LEHE64:
+ 1990 1478 4889C3   		movq	%rax, %rbx
+ 1991 147b 488B03   		movq	(%rbx), %rax
+ 1992 147e 4883C078 		addq	$120, %rax
+ 1993 1482 4C8B20   		movq	(%rax), %r12
+ 1994 1485 48C745E0 		movq	$0, -32(%rbp)
+ 1994      00000000 
+ 1995 148d 488D45E0 		leaq	-32(%rbp), %rax
+ 1996 1491 4889C7   		movq	%rax, %rdi
+ 1997 1494 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 1997      00
+ 1998 1499 8B050000 		movl	subB1+52(%rip), %eax
+ 1998      0000
+ 1999 149f 89C2     		movl	%eax, %edx
+ 2000 14a1 488D45E0 		leaq	-32(%rbp), %rax
+ 2001 14a5 4989C1   		movq	%rax, %r9
+ 2002 14a8 41B82D01 		movl	$301, %r8d
+ 2002      0000
+GAS LISTING /tmp/ccl1pnZZ.s 			page 48
+
+
+ 2003 14ae B9000000 		movl	$.LC0, %ecx
+ 2003      00
+ 2004 14b3 BE000000 		movl	$0, %esi
+ 2004      00
+ 2005 14b8 4889DF   		movq	%rbx, %rdi
+ 2006              	.LEHB65:
+ 2007 14bb 41FFD4   		call	*%r12
+ 2008              	.LEHE65:
+ 2009 14be 488D45E0 		leaq	-32(%rbp), %rax
+ 2010 14c2 4889C7   		movq	%rax, %rdi
+ 2011              	.LEHB66:
+ 2012 14c5 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2012      00
+ 2013 14ca E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2013      00
+ 2014 14cf 488B10   		movq	(%rax), %rdx
+ 2015 14d2 4881C288 		addq	$136, %rdx
+ 2015      000000
+ 2016 14d9 4C8B0A   		movq	(%rdx), %r9
+ 2017 14dc 488B1500 		movq	topA+56(%rip), %rdx
+ 2017      000000
+ 2018 14e3 41B82E01 		movl	$302, %r8d
+ 2018      0000
+ 2019 14e9 B9000000 		movl	$.LC0, %ecx
+ 2019      00
+ 2020 14ee BE000000 		movl	$subA2, %esi
+ 2020      00
+ 2021 14f3 4889C7   		movq	%rax, %rdi
+ 2022 14f6 41FFD1   		call	*%r9
+ 2023 14f9 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2023      00
+ 2024 14fe 488B10   		movq	(%rax), %rdx
+ 2025 1501 4881C288 		addq	$136, %rdx
+ 2025      000000
+ 2026 1508 4C8B0A   		movq	(%rdx), %r9
+ 2027 150b 488B1500 		movq	topB+56(%rip), %rdx
+ 2027      000000
+ 2028 1512 41B82F01 		movl	$303, %r8d
+ 2028      0000
+ 2029 1518 B9000000 		movl	$.LC0, %ecx
+ 2029      00
+ 2030 151d BE000000 		movl	$subB1, %esi
+ 2030      00
+ 2031 1522 4889C7   		movq	%rax, %rdi
+ 2032 1525 41FFD1   		call	*%r9
+ 2033 1528 488B45D8 		movq	-40(%rbp), %rax
+ 2034 152c 4883C008 		addq	$8, %rax
+ 2035 1530 41B80000 		movl	$0, %r8d
+ 2035      0000
+ 2036 1536 B9000000 		movl	$topA, %ecx
+ 2036      00
+ 2037 153b BA040000 		movl	$4, %edx
+ 2037      00
+ 2038 1540 BE000000 		movl	$topB, %esi
+ 2038      00
+ 2039 1545 4889C7   		movq	%rax, %rdi
+ 2040 1548 E8B3EAFF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+GAS LISTING /tmp/ccl1pnZZ.s 			page 49
+
+
+ 2040      FF
+ 2041 154d E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2041      00
+ 2042              	.LEHE66:
+ 2043 1552 4889C3   		movq	%rax, %rbx
+ 2044 1555 488B03   		movq	(%rbx), %rax
+ 2045 1558 4883C078 		addq	$120, %rax
+ 2046 155c 4C8B20   		movq	(%rax), %r12
+ 2047 155f 48C745E0 		movq	$0, -32(%rbp)
+ 2047      00000000 
+ 2048 1567 488D45E0 		leaq	-32(%rbp), %rax
+ 2049 156b 4889C7   		movq	%rax, %rdi
+ 2050 156e E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2050      00
+ 2051 1573 8B050000 		movl	topB+52(%rip), %eax
+ 2051      0000
+ 2052 1579 89C2     		movl	%eax, %edx
+ 2053 157b 488D45E0 		leaq	-32(%rbp), %rax
+ 2054 157f 4989C1   		movq	%rax, %r9
+ 2055 1582 41B83301 		movl	$307, %r8d
+ 2055      0000
+ 2056 1588 B9000000 		movl	$.LC0, %ecx
+ 2056      00
+ 2057 158d BE000000 		movl	$0, %esi
+ 2057      00
+ 2058 1592 4889DF   		movq	%rbx, %rdi
+ 2059              	.LEHB67:
+ 2060 1595 41FFD4   		call	*%r12
+ 2061              	.LEHE67:
+ 2062 1598 488D45E0 		leaq	-32(%rbp), %rax
+ 2063 159c 4889C7   		movq	%rax, %rdi
+ 2064              	.LEHB68:
+ 2065 159f E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2065      00
+ 2066 15a4 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2066      00
+ 2067 15a9 488B10   		movq	(%rax), %rdx
+ 2068 15ac 4881C288 		addq	$136, %rdx
+ 2068      000000
+ 2069 15b3 4C8B0A   		movq	(%rdx), %r9
+ 2070 15b6 488B1500 		movq	topA+56(%rip), %rdx
+ 2070      000000
+ 2071 15bd 41B83401 		movl	$308, %r8d
+ 2071      0000
+ 2072 15c3 B9000000 		movl	$.LC0, %ecx
+ 2072      00
+ 2073 15c8 BE000000 		movl	$subA2, %esi
+ 2073      00
+ 2074 15cd 4889C7   		movq	%rax, %rdi
+ 2075 15d0 41FFD1   		call	*%r9
+ 2076 15d3 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2076      00
+ 2077 15d8 488B10   		movq	(%rax), %rdx
+ 2078 15db 4881C288 		addq	$136, %rdx
+ 2078      000000
+ 2079 15e2 4C8B0A   		movq	(%rdx), %r9
+ 2080 15e5 488B1500 		movq	topB+56(%rip), %rdx
+GAS LISTING /tmp/ccl1pnZZ.s 			page 50
+
+
+ 2080      000000
+ 2081 15ec 41B83501 		movl	$309, %r8d
+ 2081      0000
+ 2082 15f2 B9000000 		movl	$.LC0, %ecx
+ 2082      00
+ 2083 15f7 BE000000 		movl	$subB1, %esi
+ 2083      00
+ 2084 15fc 4889C7   		movq	%rax, %rdi
+ 2085 15ff 41FFD1   		call	*%r9
+ 2086 1602 488B45D8 		movq	-40(%rbp), %rax
+ 2087 1606 4883C008 		addq	$8, %rax
+ 2088 160a 41B80000 		movl	$0, %r8d
+ 2088      0000
+ 2089 1610 B9000000 		movl	$subA1, %ecx
+ 2089      00
+ 2090 1615 BA000000 		movl	$0, %edx
+ 2090      00
+ 2091 161a BE000000 		movl	$topA, %esi
+ 2091      00
+ 2092 161f 4889C7   		movq	%rax, %rdi
+ 2093 1622 E8D9E9FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 2093      FF
+ 2094 1627 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2094      00
+ 2095              	.LEHE68:
+ 2096 162c 4889C3   		movq	%rax, %rbx
+ 2097 162f 488B03   		movq	(%rbx), %rax
+ 2098 1632 4883C078 		addq	$120, %rax
+ 2099 1636 4C8B20   		movq	(%rax), %r12
+ 2100 1639 48C745E0 		movq	$0, -32(%rbp)
+ 2100      00000000 
+ 2101 1641 488D45E0 		leaq	-32(%rbp), %rax
+ 2102 1645 4889C7   		movq	%rax, %rdi
+ 2103 1648 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2103      00
+ 2104 164d 8B050000 		movl	topA+52(%rip), %eax
+ 2104      0000
+ 2105 1653 89C2     		movl	%eax, %edx
+ 2106 1655 488D45E0 		leaq	-32(%rbp), %rax
+ 2107 1659 4989C1   		movq	%rax, %r9
+ 2108 165c 41B83F01 		movl	$319, %r8d
+ 2108      0000
+ 2109 1662 B9000000 		movl	$.LC0, %ecx
+ 2109      00
+ 2110 1667 BE010000 		movl	$1, %esi
+ 2110      00
+ 2111 166c 4889DF   		movq	%rbx, %rdi
+ 2112              	.LEHB69:
+ 2113 166f 41FFD4   		call	*%r12
+ 2114              	.LEHE69:
+ 2115 1672 488D45E0 		leaq	-32(%rbp), %rax
+ 2116 1676 4889C7   		movq	%rax, %rdi
+ 2117              	.LEHB70:
+ 2118 1679 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2118      00
+ 2119 167e E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2119      00
+GAS LISTING /tmp/ccl1pnZZ.s 			page 51
+
+
+ 2120 1683 488B10   		movq	(%rax), %rdx
+ 2121 1686 4881C288 		addq	$136, %rdx
+ 2121      000000
+ 2122 168d 4C8B0A   		movq	(%rdx), %r9
+ 2123 1690 488B1500 		movq	topA+56(%rip), %rdx
+ 2123      000000
+ 2124 1697 41B84001 		movl	$320, %r8d
+ 2124      0000
+ 2125 169d B9000000 		movl	$.LC0, %ecx
+ 2125      00
+ 2126 16a2 BE000000 		movl	$subA2, %esi
+ 2126      00
+ 2127 16a7 4889C7   		movq	%rax, %rdi
+ 2128 16aa 41FFD1   		call	*%r9
+ 2129 16ad 488B45D8 		movq	-40(%rbp), %rax
+ 2130 16b1 4883C008 		addq	$8, %rax
+ 2131 16b5 41B80100 		movl	$1, %r8d
+ 2131      0000
+ 2132 16bb B9000000 		movl	$topA, %ecx
+ 2132      00
+ 2133 16c0 BA000000 		movl	$0, %edx
+ 2133      00
+ 2134 16c5 BE000000 		movl	$subA1, %esi
+ 2134      00
+ 2135 16ca 4889C7   		movq	%rax, %rdi
+ 2136 16cd E82EE9FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 2136      FF
+ 2137 16d2 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2137      00
+ 2138              	.LEHE70:
+ 2139 16d7 4889C3   		movq	%rax, %rbx
+ 2140 16da 488B03   		movq	(%rbx), %rax
+ 2141 16dd 4883C078 		addq	$120, %rax
+ 2142 16e1 4C8B20   		movq	(%rax), %r12
+ 2143 16e4 48C745E0 		movq	$0, -32(%rbp)
+ 2143      00000000 
+ 2144 16ec 488D45E0 		leaq	-32(%rbp), %rax
+ 2145 16f0 4889C7   		movq	%rax, %rdi
+ 2146 16f3 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2146      00
+ 2147 16f8 8B050000 		movl	subA1+52(%rip), %eax
+ 2147      0000
+ 2148 16fe 89C2     		movl	%eax, %edx
+ 2149 1700 488D45E0 		leaq	-32(%rbp), %rax
+ 2150 1704 4989C1   		movq	%rax, %r9
+ 2151 1707 41B84401 		movl	$324, %r8d
+ 2151      0000
+ 2152 170d B9000000 		movl	$.LC0, %ecx
+ 2152      00
+ 2153 1712 BE010000 		movl	$1, %esi
+ 2153      00
+ 2154 1717 4889DF   		movq	%rbx, %rdi
+ 2155              	.LEHB71:
+ 2156 171a 41FFD4   		call	*%r12
+ 2157              	.LEHE71:
+ 2158 171d 488D45E0 		leaq	-32(%rbp), %rax
+ 2159 1721 4889C7   		movq	%rax, %rdi
+GAS LISTING /tmp/ccl1pnZZ.s 			page 52
+
+
+ 2160              	.LEHB72:
+ 2161 1724 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2161      00
+ 2162 1729 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2162      00
+ 2163 172e 488B10   		movq	(%rax), %rdx
+ 2164 1731 4881C288 		addq	$136, %rdx
+ 2164      000000
+ 2165 1738 4C8B0A   		movq	(%rdx), %r9
+ 2166 173b 488B1500 		movq	topA+56(%rip), %rdx
+ 2166      000000
+ 2167 1742 41B84501 		movl	$325, %r8d
+ 2167      0000
+ 2168 1748 B9000000 		movl	$.LC0, %ecx
+ 2168      00
+ 2169 174d BE000000 		movl	$subA2, %esi
+ 2169      00
+ 2170 1752 4889C7   		movq	%rax, %rdi
+ 2171 1755 41FFD1   		call	*%r9
+ 2172 1758 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2172      00
+ 2173              	.LEHE72:
+ 2174 175d 4889C3   		movq	%rax, %rbx
+ 2175 1760 488B03   		movq	(%rbx), %rax
+ 2176 1763 4883C078 		addq	$120, %rax
+ 2177 1767 4C8B20   		movq	(%rax), %r12
+ 2178 176a 48C745E0 		movq	$0, -32(%rbp)
+ 2178      00000000 
+ 2179 1772 488D45E0 		leaq	-32(%rbp), %rax
+ 2180 1776 4889C7   		movq	%rax, %rdi
+ 2181 1779 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2181      00
+ 2182 177e 8B050000 		movl	topA+52(%rip), %eax
+ 2182      0000
+ 2183 1784 89C2     		movl	%eax, %edx
+ 2184 1786 488D45E0 		leaq	-32(%rbp), %rax
+ 2185 178a 4989C1   		movq	%rax, %r9
+ 2186 178d 41B84701 		movl	$327, %r8d
+ 2186      0000
+ 2187 1793 B9000000 		movl	$.LC0, %ecx
+ 2187      00
+ 2188 1798 BE010000 		movl	$1, %esi
+ 2188      00
+ 2189 179d 4889DF   		movq	%rbx, %rdi
+ 2190              	.LEHB73:
+ 2191 17a0 41FFD4   		call	*%r12
+ 2192              	.LEHE73:
+ 2193 17a3 488D45E0 		leaq	-32(%rbp), %rax
+ 2194 17a7 4889C7   		movq	%rax, %rdi
+ 2195              	.LEHB74:
+ 2196 17aa E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2196      00
+ 2197 17af E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2197      00
+ 2198              	.LEHE74:
+ 2199 17b4 4889C3   		movq	%rax, %rbx
+ 2200 17b7 488B03   		movq	(%rbx), %rax
+GAS LISTING /tmp/ccl1pnZZ.s 			page 53
+
+
+ 2201 17ba 4883C078 		addq	$120, %rax
+ 2202 17be 4C8B20   		movq	(%rax), %r12
+ 2203 17c1 48C745E0 		movq	$0, -32(%rbp)
+ 2203      00000000 
+ 2204 17c9 488D45E0 		leaq	-32(%rbp), %rax
+ 2205 17cd 4889C7   		movq	%rax, %rdi
+ 2206 17d0 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2206      00
+ 2207 17d5 8B050000 		movl	subA1+52(%rip), %eax
+ 2207      0000
+ 2208 17db 89C2     		movl	%eax, %edx
+ 2209 17dd 488D45E0 		leaq	-32(%rbp), %rax
+ 2210 17e1 4989C1   		movq	%rax, %r9
+ 2211 17e4 41B84801 		movl	$328, %r8d
+ 2211      0000
+ 2212 17ea B9000000 		movl	$.LC0, %ecx
+ 2212      00
+ 2213 17ef BE010000 		movl	$1, %esi
+ 2213      00
+ 2214 17f4 4889DF   		movq	%rbx, %rdi
+ 2215              	.LEHB75:
+ 2216 17f7 41FFD4   		call	*%r12
+ 2217              	.LEHE75:
+ 2218 17fa 488D45E0 		leaq	-32(%rbp), %rax
+ 2219 17fe 4889C7   		movq	%rax, %rdi
+ 2220              	.LEHB76:
+ 2221 1801 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2221      00
+ 2222 1806 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2222      00
+ 2223              	.LEHE76:
+ 2224 180b 4889C3   		movq	%rax, %rbx
+ 2225 180e 488B03   		movq	(%rbx), %rax
+ 2226 1811 4883C078 		addq	$120, %rax
+ 2227 1815 4C8B20   		movq	(%rax), %r12
+ 2228 1818 48C745E0 		movq	$0, -32(%rbp)
+ 2228      00000000 
+ 2229 1820 488D45E0 		leaq	-32(%rbp), %rax
+ 2230 1824 4889C7   		movq	%rax, %rdi
+ 2231 1827 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2231      00
+ 2232 182c 8B050000 		movl	subA2+52(%rip), %eax
+ 2232      0000
+ 2233 1832 89C2     		movl	%eax, %edx
+ 2234 1834 488D45E0 		leaq	-32(%rbp), %rax
+ 2235 1838 4989C1   		movq	%rax, %r9
+ 2236 183b 41B84901 		movl	$329, %r8d
+ 2236      0000
+ 2237 1841 B9000000 		movl	$.LC0, %ecx
+ 2237      00
+ 2238 1846 BE000000 		movl	$0, %esi
+ 2238      00
+ 2239 184b 4889DF   		movq	%rbx, %rdi
+ 2240              	.LEHB77:
+ 2241 184e 41FFD4   		call	*%r12
+ 2242              	.LEHE77:
+ 2243 1851 488D45E0 		leaq	-32(%rbp), %rax
+GAS LISTING /tmp/ccl1pnZZ.s 			page 54
+
+
+ 2244 1855 4889C7   		movq	%rax, %rdi
+ 2245              	.LEHB78:
+ 2246 1858 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2246      00
+ 2247 185d E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2247      00
+ 2248              	.LEHE78:
+ 2249 1862 4889C3   		movq	%rax, %rbx
+ 2250 1865 488B03   		movq	(%rbx), %rax
+ 2251 1868 4883C078 		addq	$120, %rax
+ 2252 186c 4C8B20   		movq	(%rax), %r12
+ 2253 186f 48C745E0 		movq	$0, -32(%rbp)
+ 2253      00000000 
+ 2254 1877 488D45E0 		leaq	-32(%rbp), %rax
+ 2255 187b 4889C7   		movq	%rax, %rdi
+ 2256 187e E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2256      00
+ 2257 1883 8B050000 		movl	topB+52(%rip), %eax
+ 2257      0000
+ 2258 1889 89C2     		movl	%eax, %edx
+ 2259 188b 488D45E0 		leaq	-32(%rbp), %rax
+ 2260 188f 4989C1   		movq	%rax, %r9
+ 2261 1892 41B84A01 		movl	$330, %r8d
+ 2261      0000
+ 2262 1898 B9000000 		movl	$.LC0, %ecx
+ 2262      00
+ 2263 189d BE000000 		movl	$0, %esi
+ 2263      00
+ 2264 18a2 4889DF   		movq	%rbx, %rdi
+ 2265              	.LEHB79:
+ 2266 18a5 41FFD4   		call	*%r12
+ 2267              	.LEHE79:
+ 2268 18a8 488D45E0 		leaq	-32(%rbp), %rax
+ 2269 18ac 4889C7   		movq	%rax, %rdi
+ 2270              	.LEHB80:
+ 2271 18af E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2271      00
+ 2272 18b4 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2272      00
+ 2273              	.LEHE80:
+ 2274 18b9 4889C3   		movq	%rax, %rbx
+ 2275 18bc 488B03   		movq	(%rbx), %rax
+ 2276 18bf 4883C078 		addq	$120, %rax
+ 2277 18c3 4C8B20   		movq	(%rax), %r12
+ 2278 18c6 48C745E0 		movq	$0, -32(%rbp)
+ 2278      00000000 
+ 2279 18ce 488D45E0 		leaq	-32(%rbp), %rax
+ 2280 18d2 4889C7   		movq	%rax, %rdi
+ 2281 18d5 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2281      00
+ 2282 18da 8B050000 		movl	subB1+52(%rip), %eax
+ 2282      0000
+ 2283 18e0 89C2     		movl	%eax, %edx
+ 2284 18e2 488D45E0 		leaq	-32(%rbp), %rax
+ 2285 18e6 4989C1   		movq	%rax, %r9
+ 2286 18e9 41B84B01 		movl	$331, %r8d
+ 2286      0000
+GAS LISTING /tmp/ccl1pnZZ.s 			page 55
+
+
+ 2287 18ef B9000000 		movl	$.LC0, %ecx
+ 2287      00
+ 2288 18f4 BE000000 		movl	$0, %esi
+ 2288      00
+ 2289 18f9 4889DF   		movq	%rbx, %rdi
+ 2290              	.LEHB81:
+ 2291 18fc 41FFD4   		call	*%r12
+ 2292              	.LEHE81:
+ 2293 18ff 488D45E0 		leaq	-32(%rbp), %rax
+ 2294 1903 4889C7   		movq	%rax, %rdi
+ 2295              	.LEHB82:
+ 2296 1906 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2296      00
+ 2297 190b 488B45D8 		movq	-40(%rbp), %rax
+ 2298 190f 4883C008 		addq	$8, %rax
+ 2299 1913 41B80100 		movl	$1, %r8d
+ 2299      0000
+ 2300 1919 B9000000 		movl	$subA1, %ecx
+ 2300      00
+ 2301 191e BA010000 		movl	$1, %edx
+ 2301      00
+ 2302 1923 BE000000 		movl	$topA, %esi
+ 2302      00
+ 2303 1928 4889C7   		movq	%rax, %rdi
+ 2304 192b E8D0E6FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 2304      FF
+ 2305 1930 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2305      00
+ 2306              	.LEHE82:
+ 2307 1935 4889C3   		movq	%rax, %rbx
+ 2308 1938 488B03   		movq	(%rbx), %rax
+ 2309 193b 4883C078 		addq	$120, %rax
+ 2310 193f 4C8B20   		movq	(%rax), %r12
+ 2311 1942 48C745E0 		movq	$0, -32(%rbp)
+ 2311      00000000 
+ 2312 194a 488D45E0 		leaq	-32(%rbp), %rax
+ 2313 194e 4889C7   		movq	%rax, %rdi
+ 2314 1951 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2314      00
+ 2315 1956 8B050000 		movl	topA+52(%rip), %eax
+ 2315      0000
+ 2316 195c 89C2     		movl	%eax, %edx
+ 2317 195e 488D45E0 		leaq	-32(%rbp), %rax
+ 2318 1962 4989C1   		movq	%rax, %r9
+ 2319 1965 41B84F01 		movl	$335, %r8d
+ 2319      0000
+ 2320 196b B9000000 		movl	$.LC0, %ecx
+ 2320      00
+ 2321 1970 BE020000 		movl	$2, %esi
+ 2321      00
+ 2322 1975 4889DF   		movq	%rbx, %rdi
+ 2323              	.LEHB83:
+ 2324 1978 41FFD4   		call	*%r12
+ 2325              	.LEHE83:
+ 2326 197b 488D45E0 		leaq	-32(%rbp), %rax
+ 2327 197f 4889C7   		movq	%rax, %rdi
+ 2328              	.LEHB84:
+GAS LISTING /tmp/ccl1pnZZ.s 			page 56
+
+
+ 2329 1982 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2329      00
+ 2330 1987 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2330      00
+ 2331 198c 488B10   		movq	(%rax), %rdx
+ 2332 198f 4881C288 		addq	$136, %rdx
+ 2332      000000
+ 2333 1996 4C8B0A   		movq	(%rdx), %r9
+ 2334 1999 488B1500 		movq	topA+56(%rip), %rdx
+ 2334      000000
+ 2335 19a0 41B85001 		movl	$336, %r8d
+ 2335      0000
+ 2336 19a6 B9000000 		movl	$.LC0, %ecx
+ 2336      00
+ 2337 19ab BE000000 		movl	$subA2, %esi
+ 2337      00
+ 2338 19b0 4889C7   		movq	%rax, %rdi
+ 2339 19b3 41FFD1   		call	*%r9
+ 2340 19b6 488B45D8 		movq	-40(%rbp), %rax
+ 2341 19ba 4883C008 		addq	$8, %rax
+ 2342 19be 41B80200 		movl	$2, %r8d
+ 2342      0000
+ 2343 19c4 B9000000 		movl	$topA, %ecx
+ 2343      00
+ 2344 19c9 BA010000 		movl	$1, %edx
+ 2344      00
+ 2345 19ce BE000000 		movl	$subA1, %esi
+ 2345      00
+ 2346 19d3 4889C7   		movq	%rax, %rdi
+ 2347 19d6 E825E6FF 		call	_ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+ 2347      FF
+ 2348 19db E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2348      00
+ 2349              	.LEHE84:
+ 2350 19e0 4889C3   		movq	%rax, %rbx
+ 2351 19e3 488B03   		movq	(%rbx), %rax
+ 2352 19e6 4883C078 		addq	$120, %rax
+ 2353 19ea 4C8B20   		movq	(%rax), %r12
+ 2354 19ed 48C745E0 		movq	$0, -32(%rbp)
+ 2354      00000000 
+ 2355 19f5 488D45E0 		leaq	-32(%rbp), %rax
+ 2356 19f9 4889C7   		movq	%rax, %rdi
+ 2357 19fc E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2357      00
+ 2358 1a01 8B050000 		movl	subA1+52(%rip), %eax
+ 2358      0000
+ 2359 1a07 89C2     		movl	%eax, %edx
+ 2360 1a09 488D45E0 		leaq	-32(%rbp), %rax
+ 2361 1a0d 4989C1   		movq	%rax, %r9
+ 2362 1a10 41B85401 		movl	$340, %r8d
+ 2362      0000
+ 2363 1a16 B9000000 		movl	$.LC0, %ecx
+ 2363      00
+ 2364 1a1b BE020000 		movl	$2, %esi
+ 2364      00
+ 2365 1a20 4889DF   		movq	%rbx, %rdi
+ 2366              	.LEHB85:
+GAS LISTING /tmp/ccl1pnZZ.s 			page 57
+
+
+ 2367 1a23 41FFD4   		call	*%r12
+ 2368              	.LEHE85:
+ 2369 1a26 488D45E0 		leaq	-32(%rbp), %rax
+ 2370 1a2a 4889C7   		movq	%rax, %rdi
+ 2371              	.LEHB86:
+ 2372 1a2d E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2372      00
+ 2373 1a32 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2373      00
+ 2374 1a37 488B10   		movq	(%rax), %rdx
+ 2375 1a3a 4881C288 		addq	$136, %rdx
+ 2375      000000
+ 2376 1a41 4C8B0A   		movq	(%rdx), %r9
+ 2377 1a44 488B1500 		movq	topA+56(%rip), %rdx
+ 2377      000000
+ 2378 1a4b 41B85501 		movl	$341, %r8d
+ 2378      0000
+ 2379 1a51 B9000000 		movl	$.LC0, %ecx
+ 2379      00
+ 2380 1a56 BE000000 		movl	$subA2, %esi
+ 2380      00
+ 2381 1a5b 4889C7   		movq	%rax, %rdi
+ 2382 1a5e 41FFD1   		call	*%r9
+ 2383 1a61 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2383      00
+ 2384              	.LEHE86:
+ 2385 1a66 4889C3   		movq	%rax, %rbx
+ 2386 1a69 488B03   		movq	(%rbx), %rax
+ 2387 1a6c 4883C078 		addq	$120, %rax
+ 2388 1a70 4C8B20   		movq	(%rax), %r12
+ 2389 1a73 48C745E0 		movq	$0, -32(%rbp)
+ 2389      00000000 
+ 2390 1a7b 488D45E0 		leaq	-32(%rbp), %rax
+ 2391 1a7f 4889C7   		movq	%rax, %rdi
+ 2392 1a82 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2392      00
+ 2393 1a87 8B050000 		movl	topA+52(%rip), %eax
+ 2393      0000
+ 2394 1a8d 89C2     		movl	%eax, %edx
+ 2395 1a8f 488D45E0 		leaq	-32(%rbp), %rax
+ 2396 1a93 4989C1   		movq	%rax, %r9
+ 2397 1a96 41B85701 		movl	$343, %r8d
+ 2397      0000
+ 2398 1a9c B9000000 		movl	$.LC0, %ecx
+ 2398      00
+ 2399 1aa1 BE020000 		movl	$2, %esi
+ 2399      00
+ 2400 1aa6 4889DF   		movq	%rbx, %rdi
+ 2401              	.LEHB87:
+ 2402 1aa9 41FFD4   		call	*%r12
+ 2403              	.LEHE87:
+ 2404 1aac 488D45E0 		leaq	-32(%rbp), %rax
+ 2405 1ab0 4889C7   		movq	%rax, %rdi
+ 2406              	.LEHB88:
+ 2407 1ab3 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2407      00
+ 2408 1ab8 E8000000 		call	_ZN10UtestShell10getCurrentEv
+GAS LISTING /tmp/ccl1pnZZ.s 			page 58
+
+
+ 2408      00
+ 2409              	.LEHE88:
+ 2410 1abd 4889C3   		movq	%rax, %rbx
+ 2411 1ac0 488B03   		movq	(%rbx), %rax
+ 2412 1ac3 4883C078 		addq	$120, %rax
+ 2413 1ac7 4C8B20   		movq	(%rax), %r12
+ 2414 1aca 48C745E0 		movq	$0, -32(%rbp)
+ 2414      00000000 
+ 2415 1ad2 488D45E0 		leaq	-32(%rbp), %rax
+ 2416 1ad6 4889C7   		movq	%rax, %rdi
+ 2417 1ad9 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2417      00
+ 2418 1ade 8B050000 		movl	subA1+52(%rip), %eax
+ 2418      0000
+ 2419 1ae4 89C2     		movl	%eax, %edx
+ 2420 1ae6 488D45E0 		leaq	-32(%rbp), %rax
+ 2421 1aea 4989C1   		movq	%rax, %r9
+ 2422 1aed 41B85801 		movl	$344, %r8d
+ 2422      0000
+ 2423 1af3 B9000000 		movl	$.LC0, %ecx
+ 2423      00
+ 2424 1af8 BE020000 		movl	$2, %esi
+ 2424      00
+ 2425 1afd 4889DF   		movq	%rbx, %rdi
+ 2426              	.LEHB89:
+ 2427 1b00 41FFD4   		call	*%r12
+ 2428              	.LEHE89:
+ 2429 1b03 488D45E0 		leaq	-32(%rbp), %rax
+ 2430 1b07 4889C7   		movq	%rax, %rdi
+ 2431              	.LEHB90:
+ 2432 1b0a E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2432      00
+ 2433 1b0f E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2433      00
+ 2434              	.LEHE90:
+ 2435 1b14 4889C3   		movq	%rax, %rbx
+ 2436 1b17 488B03   		movq	(%rbx), %rax
+ 2437 1b1a 4883C078 		addq	$120, %rax
+ 2438 1b1e 4C8B20   		movq	(%rax), %r12
+ 2439 1b21 48C745E0 		movq	$0, -32(%rbp)
+ 2439      00000000 
+ 2440 1b29 488D45E0 		leaq	-32(%rbp), %rax
+ 2441 1b2d 4889C7   		movq	%rax, %rdi
+ 2442 1b30 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2442      00
+ 2443 1b35 8B050000 		movl	subA2+52(%rip), %eax
+ 2443      0000
+ 2444 1b3b 89C2     		movl	%eax, %edx
+ 2445 1b3d 488D45E0 		leaq	-32(%rbp), %rax
+ 2446 1b41 4989C1   		movq	%rax, %r9
+ 2447 1b44 41B85901 		movl	$345, %r8d
+ 2447      0000
+ 2448 1b4a B9000000 		movl	$.LC0, %ecx
+ 2448      00
+ 2449 1b4f BE000000 		movl	$0, %esi
+ 2449      00
+ 2450 1b54 4889DF   		movq	%rbx, %rdi
+GAS LISTING /tmp/ccl1pnZZ.s 			page 59
+
+
+ 2451              	.LEHB91:
+ 2452 1b57 41FFD4   		call	*%r12
+ 2453              	.LEHE91:
+ 2454 1b5a 488D45E0 		leaq	-32(%rbp), %rax
+ 2455 1b5e 4889C7   		movq	%rax, %rdi
+ 2456              	.LEHB92:
+ 2457 1b61 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2457      00
+ 2458 1b66 E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2458      00
+ 2459              	.LEHE92:
+ 2460 1b6b 4889C3   		movq	%rax, %rbx
+ 2461 1b6e 488B03   		movq	(%rbx), %rax
+ 2462 1b71 4883C078 		addq	$120, %rax
+ 2463 1b75 4C8B20   		movq	(%rax), %r12
+ 2464 1b78 48C745E0 		movq	$0, -32(%rbp)
+ 2464      00000000 
+ 2465 1b80 488D45E0 		leaq	-32(%rbp), %rax
+ 2466 1b84 4889C7   		movq	%rax, %rdi
+ 2467 1b87 E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2467      00
+ 2468 1b8c 8B050000 		movl	topB+52(%rip), %eax
+ 2468      0000
+ 2469 1b92 89C2     		movl	%eax, %edx
+ 2470 1b94 488D45E0 		leaq	-32(%rbp), %rax
+ 2471 1b98 4989C1   		movq	%rax, %r9
+ 2472 1b9b 41B85A01 		movl	$346, %r8d
+ 2472      0000
+ 2473 1ba1 B9000000 		movl	$.LC0, %ecx
+ 2473      00
+ 2474 1ba6 BE000000 		movl	$0, %esi
+ 2474      00
+ 2475 1bab 4889DF   		movq	%rbx, %rdi
+ 2476              	.LEHB93:
+ 2477 1bae 41FFD4   		call	*%r12
+ 2478              	.LEHE93:
+ 2479 1bb1 488D45E0 		leaq	-32(%rbp), %rax
+ 2480 1bb5 4889C7   		movq	%rax, %rdi
+ 2481              	.LEHB94:
+ 2482 1bb8 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2482      00
+ 2483 1bbd E8000000 		call	_ZN10UtestShell10getCurrentEv
+ 2483      00
+ 2484              	.LEHE94:
+ 2485 1bc2 4889C3   		movq	%rax, %rbx
+ 2486 1bc5 488B03   		movq	(%rbx), %rax
+ 2487 1bc8 4883C078 		addq	$120, %rax
+ 2488 1bcc 4C8B20   		movq	(%rax), %r12
+ 2489 1bcf 48C745E0 		movq	$0, -32(%rbp)
+ 2489      00000000 
+ 2490 1bd7 488D45E0 		leaq	-32(%rbp), %rax
+ 2491 1bdb 4889C7   		movq	%rax, %rdi
+ 2492 1bde E8000000 		call	_ZN20NormalTestTerminatorC1Ev
+ 2492      00
+ 2493 1be3 8B050000 		movl	subB1+52(%rip), %eax
+ 2493      0000
+ 2494 1be9 89C2     		movl	%eax, %edx
+GAS LISTING /tmp/ccl1pnZZ.s 			page 60
+
+
+ 2495 1beb 488D45E0 		leaq	-32(%rbp), %rax
+ 2496 1bef 4989C1   		movq	%rax, %r9
+ 2497 1bf2 41B85B01 		movl	$347, %r8d
+ 2497      0000
+ 2498 1bf8 B9000000 		movl	$.LC0, %ecx
+ 2498      00
+ 2499 1bfd BE000000 		movl	$0, %esi
+ 2499      00
+ 2500 1c02 4889DF   		movq	%rbx, %rdi
+ 2501              	.LEHB95:
+ 2502 1c05 41FFD4   		call	*%r12
+ 2503              	.LEHE95:
+ 2504 1c08 488D45E0 		leaq	-32(%rbp), %rax
+ 2505 1c0c 4889C7   		movq	%rax, %rdi
+ 2506              	.LEHB96:
+ 2507 1c0f E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2507      00
+ 2508              	.LEHE96:
+ 2509 1c14 90       		nop
+ 2510 1c15 488B45E8 		movq	-24(%rbp), %rax
+ 2511 1c19 64483304 		xorq	%fs:40, %rax
+ 2511      25280000 
+ 2511      00
+ 2512 1c22 0F84B203 		je	.L75
+ 2512      0000
+ 2513 1c28 E9A80300 		jmp	.L112
+ 2513      00
+ 2514              	.L76:
+ 2515 1c2d 4889C3   		movq	%rax, %rbx
+ 2516 1c30 488D45E0 		leaq	-32(%rbp), %rax
+ 2517 1c34 4889C7   		movq	%rax, %rdi
+ 2518 1c37 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2518      00
+ 2519 1c3c 4889D8   		movq	%rbx, %rax
+ 2520 1c3f 4889C7   		movq	%rax, %rdi
+ 2521              	.LEHB97:
+ 2522 1c42 E8000000 		call	_Unwind_Resume
+ 2522      00
+ 2523              	.LEHE97:
+ 2524              	.L77:
+ 2525 1c47 4889C3   		movq	%rax, %rbx
+ 2526 1c4a 488D45E0 		leaq	-32(%rbp), %rax
+ 2527 1c4e 4889C7   		movq	%rax, %rdi
+ 2528 1c51 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2528      00
+ 2529 1c56 4889D8   		movq	%rbx, %rax
+ 2530 1c59 4889C7   		movq	%rax, %rdi
+ 2531              	.LEHB98:
+ 2532 1c5c E8000000 		call	_Unwind_Resume
+ 2532      00
+ 2533              	.LEHE98:
+ 2534              	.L78:
+ 2535 1c61 4889C3   		movq	%rax, %rbx
+ 2536 1c64 488D45E0 		leaq	-32(%rbp), %rax
+ 2537 1c68 4889C7   		movq	%rax, %rdi
+ 2538 1c6b E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2538      00
+GAS LISTING /tmp/ccl1pnZZ.s 			page 61
+
+
+ 2539 1c70 4889D8   		movq	%rbx, %rax
+ 2540 1c73 4889C7   		movq	%rax, %rdi
+ 2541              	.LEHB99:
+ 2542 1c76 E8000000 		call	_Unwind_Resume
+ 2542      00
+ 2543              	.LEHE99:
+ 2544              	.L79:
+ 2545 1c7b 4889C3   		movq	%rax, %rbx
+ 2546 1c7e 488D45E0 		leaq	-32(%rbp), %rax
+ 2547 1c82 4889C7   		movq	%rax, %rdi
+ 2548 1c85 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2548      00
+ 2549 1c8a 4889D8   		movq	%rbx, %rax
+ 2550 1c8d 4889C7   		movq	%rax, %rdi
+ 2551              	.LEHB100:
+ 2552 1c90 E8000000 		call	_Unwind_Resume
+ 2552      00
+ 2553              	.LEHE100:
+ 2554              	.L80:
+ 2555 1c95 4889C3   		movq	%rax, %rbx
+ 2556 1c98 488D45E0 		leaq	-32(%rbp), %rax
+ 2557 1c9c 4889C7   		movq	%rax, %rdi
+ 2558 1c9f E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2558      00
+ 2559 1ca4 4889D8   		movq	%rbx, %rax
+ 2560 1ca7 4889C7   		movq	%rax, %rdi
+ 2561              	.LEHB101:
+ 2562 1caa E8000000 		call	_Unwind_Resume
+ 2562      00
+ 2563              	.LEHE101:
+ 2564              	.L81:
+ 2565 1caf 4889C3   		movq	%rax, %rbx
+ 2566 1cb2 488D45E0 		leaq	-32(%rbp), %rax
+ 2567 1cb6 4889C7   		movq	%rax, %rdi
+ 2568 1cb9 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2568      00
+ 2569 1cbe 4889D8   		movq	%rbx, %rax
+ 2570 1cc1 4889C7   		movq	%rax, %rdi
+ 2571              	.LEHB102:
+ 2572 1cc4 E8000000 		call	_Unwind_Resume
+ 2572      00
+ 2573              	.LEHE102:
+ 2574              	.L82:
+ 2575 1cc9 4889C3   		movq	%rax, %rbx
+ 2576 1ccc 488D45E0 		leaq	-32(%rbp), %rax
+ 2577 1cd0 4889C7   		movq	%rax, %rdi
+ 2578 1cd3 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2578      00
+ 2579 1cd8 4889D8   		movq	%rbx, %rax
+ 2580 1cdb 4889C7   		movq	%rax, %rdi
+ 2581              	.LEHB103:
+ 2582 1cde E8000000 		call	_Unwind_Resume
+ 2582      00
+ 2583              	.LEHE103:
+ 2584              	.L83:
+ 2585 1ce3 4889C3   		movq	%rax, %rbx
+ 2586 1ce6 488D45E0 		leaq	-32(%rbp), %rax
+GAS LISTING /tmp/ccl1pnZZ.s 			page 62
+
+
+ 2587 1cea 4889C7   		movq	%rax, %rdi
+ 2588 1ced E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2588      00
+ 2589 1cf2 4889D8   		movq	%rbx, %rax
+ 2590 1cf5 4889C7   		movq	%rax, %rdi
+ 2591              	.LEHB104:
+ 2592 1cf8 E8000000 		call	_Unwind_Resume
+ 2592      00
+ 2593              	.LEHE104:
+ 2594              	.L84:
+ 2595 1cfd 4889C3   		movq	%rax, %rbx
+ 2596 1d00 488D45E0 		leaq	-32(%rbp), %rax
+ 2597 1d04 4889C7   		movq	%rax, %rdi
+ 2598 1d07 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2598      00
+ 2599 1d0c 4889D8   		movq	%rbx, %rax
+ 2600 1d0f 4889C7   		movq	%rax, %rdi
+ 2601              	.LEHB105:
+ 2602 1d12 E8000000 		call	_Unwind_Resume
+ 2602      00
+ 2603              	.LEHE105:
+ 2604              	.L85:
+ 2605 1d17 4889C3   		movq	%rax, %rbx
+ 2606 1d1a 488D45E0 		leaq	-32(%rbp), %rax
+ 2607 1d1e 4889C7   		movq	%rax, %rdi
+ 2608 1d21 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2608      00
+ 2609 1d26 4889D8   		movq	%rbx, %rax
+ 2610 1d29 4889C7   		movq	%rax, %rdi
+ 2611              	.LEHB106:
+ 2612 1d2c E8000000 		call	_Unwind_Resume
+ 2612      00
+ 2613              	.LEHE106:
+ 2614              	.L86:
+ 2615 1d31 4889C3   		movq	%rax, %rbx
+ 2616 1d34 488D45E0 		leaq	-32(%rbp), %rax
+ 2617 1d38 4889C7   		movq	%rax, %rdi
+ 2618 1d3b E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2618      00
+ 2619 1d40 4889D8   		movq	%rbx, %rax
+ 2620 1d43 4889C7   		movq	%rax, %rdi
+ 2621              	.LEHB107:
+ 2622 1d46 E8000000 		call	_Unwind_Resume
+ 2622      00
+ 2623              	.LEHE107:
+ 2624              	.L87:
+ 2625 1d4b 4889C3   		movq	%rax, %rbx
+ 2626 1d4e 488D45E0 		leaq	-32(%rbp), %rax
+ 2627 1d52 4889C7   		movq	%rax, %rdi
+ 2628 1d55 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2628      00
+ 2629 1d5a 4889D8   		movq	%rbx, %rax
+ 2630 1d5d 4889C7   		movq	%rax, %rdi
+ 2631              	.LEHB108:
+ 2632 1d60 E8000000 		call	_Unwind_Resume
+ 2632      00
+ 2633              	.LEHE108:
+GAS LISTING /tmp/ccl1pnZZ.s 			page 63
+
+
+ 2634              	.L88:
+ 2635 1d65 4889C3   		movq	%rax, %rbx
+ 2636 1d68 488D45E0 		leaq	-32(%rbp), %rax
+ 2637 1d6c 4889C7   		movq	%rax, %rdi
+ 2638 1d6f E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2638      00
+ 2639 1d74 4889D8   		movq	%rbx, %rax
+ 2640 1d77 4889C7   		movq	%rax, %rdi
+ 2641              	.LEHB109:
+ 2642 1d7a E8000000 		call	_Unwind_Resume
+ 2642      00
+ 2643              	.LEHE109:
+ 2644              	.L89:
+ 2645 1d7f 4889C3   		movq	%rax, %rbx
+ 2646 1d82 488D45E0 		leaq	-32(%rbp), %rax
+ 2647 1d86 4889C7   		movq	%rax, %rdi
+ 2648 1d89 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2648      00
+ 2649 1d8e 4889D8   		movq	%rbx, %rax
+ 2650 1d91 4889C7   		movq	%rax, %rdi
+ 2651              	.LEHB110:
+ 2652 1d94 E8000000 		call	_Unwind_Resume
+ 2652      00
+ 2653              	.LEHE110:
+ 2654              	.L90:
+ 2655 1d99 4889C3   		movq	%rax, %rbx
+ 2656 1d9c 488D45E0 		leaq	-32(%rbp), %rax
+ 2657 1da0 4889C7   		movq	%rax, %rdi
+ 2658 1da3 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2658      00
+ 2659 1da8 4889D8   		movq	%rbx, %rax
+ 2660 1dab 4889C7   		movq	%rax, %rdi
+ 2661              	.LEHB111:
+ 2662 1dae E8000000 		call	_Unwind_Resume
+ 2662      00
+ 2663              	.LEHE111:
+ 2664              	.L91:
+ 2665 1db3 4889C3   		movq	%rax, %rbx
+ 2666 1db6 488D45E0 		leaq	-32(%rbp), %rax
+ 2667 1dba 4889C7   		movq	%rax, %rdi
+ 2668 1dbd E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2668      00
+ 2669 1dc2 4889D8   		movq	%rbx, %rax
+ 2670 1dc5 4889C7   		movq	%rax, %rdi
+ 2671              	.LEHB112:
+ 2672 1dc8 E8000000 		call	_Unwind_Resume
+ 2672      00
+ 2673              	.LEHE112:
+ 2674              	.L92:
+ 2675 1dcd 4889C3   		movq	%rax, %rbx
+ 2676 1dd0 488D45E0 		leaq	-32(%rbp), %rax
+ 2677 1dd4 4889C7   		movq	%rax, %rdi
+ 2678 1dd7 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2678      00
+ 2679 1ddc 4889D8   		movq	%rbx, %rax
+ 2680 1ddf 4889C7   		movq	%rax, %rdi
+ 2681              	.LEHB113:
+GAS LISTING /tmp/ccl1pnZZ.s 			page 64
+
+
+ 2682 1de2 E8000000 		call	_Unwind_Resume
+ 2682      00
+ 2683              	.LEHE113:
+ 2684              	.L93:
+ 2685 1de7 4889C3   		movq	%rax, %rbx
+ 2686 1dea 488D45E0 		leaq	-32(%rbp), %rax
+ 2687 1dee 4889C7   		movq	%rax, %rdi
+ 2688 1df1 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2688      00
+ 2689 1df6 4889D8   		movq	%rbx, %rax
+ 2690 1df9 4889C7   		movq	%rax, %rdi
+ 2691              	.LEHB114:
+ 2692 1dfc E8000000 		call	_Unwind_Resume
+ 2692      00
+ 2693              	.LEHE114:
+ 2694              	.L94:
+ 2695 1e01 4889C3   		movq	%rax, %rbx
+ 2696 1e04 488D45E0 		leaq	-32(%rbp), %rax
+ 2697 1e08 4889C7   		movq	%rax, %rdi
+ 2698 1e0b E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2698      00
+ 2699 1e10 4889D8   		movq	%rbx, %rax
+ 2700 1e13 4889C7   		movq	%rax, %rdi
+ 2701              	.LEHB115:
+ 2702 1e16 E8000000 		call	_Unwind_Resume
+ 2702      00
+ 2703              	.LEHE115:
+ 2704              	.L95:
+ 2705 1e1b 4889C3   		movq	%rax, %rbx
+ 2706 1e1e 488D45E0 		leaq	-32(%rbp), %rax
+ 2707 1e22 4889C7   		movq	%rax, %rdi
+ 2708 1e25 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2708      00
+ 2709 1e2a 4889D8   		movq	%rbx, %rax
+ 2710 1e2d 4889C7   		movq	%rax, %rdi
+ 2711              	.LEHB116:
+ 2712 1e30 E8000000 		call	_Unwind_Resume
+ 2712      00
+ 2713              	.LEHE116:
+ 2714              	.L96:
+ 2715 1e35 4889C3   		movq	%rax, %rbx
+ 2716 1e38 488D45E0 		leaq	-32(%rbp), %rax
+ 2717 1e3c 4889C7   		movq	%rax, %rdi
+ 2718 1e3f E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2718      00
+ 2719 1e44 4889D8   		movq	%rbx, %rax
+ 2720 1e47 4889C7   		movq	%rax, %rdi
+ 2721              	.LEHB117:
+ 2722 1e4a E8000000 		call	_Unwind_Resume
+ 2722      00
+ 2723              	.LEHE117:
+ 2724              	.L97:
+ 2725 1e4f 4889C3   		movq	%rax, %rbx
+ 2726 1e52 488D45E0 		leaq	-32(%rbp), %rax
+ 2727 1e56 4889C7   		movq	%rax, %rdi
+ 2728 1e59 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2728      00
+GAS LISTING /tmp/ccl1pnZZ.s 			page 65
+
+
+ 2729 1e5e 4889D8   		movq	%rbx, %rax
+ 2730 1e61 4889C7   		movq	%rax, %rdi
+ 2731              	.LEHB118:
+ 2732 1e64 E8000000 		call	_Unwind_Resume
+ 2732      00
+ 2733              	.LEHE118:
+ 2734              	.L98:
+ 2735 1e69 4889C3   		movq	%rax, %rbx
+ 2736 1e6c 488D45E0 		leaq	-32(%rbp), %rax
+ 2737 1e70 4889C7   		movq	%rax, %rdi
+ 2738 1e73 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2738      00
+ 2739 1e78 4889D8   		movq	%rbx, %rax
+ 2740 1e7b 4889C7   		movq	%rax, %rdi
+ 2741              	.LEHB119:
+ 2742 1e7e E8000000 		call	_Unwind_Resume
+ 2742      00
+ 2743              	.LEHE119:
+ 2744              	.L99:
+ 2745 1e83 4889C3   		movq	%rax, %rbx
+ 2746 1e86 488D45E0 		leaq	-32(%rbp), %rax
+ 2747 1e8a 4889C7   		movq	%rax, %rdi
+ 2748 1e8d E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2748      00
+ 2749 1e92 4889D8   		movq	%rbx, %rax
+ 2750 1e95 4889C7   		movq	%rax, %rdi
+ 2751              	.LEHB120:
+ 2752 1e98 E8000000 		call	_Unwind_Resume
+ 2752      00
+ 2753              	.LEHE120:
+ 2754              	.L100:
+ 2755 1e9d 4889C3   		movq	%rax, %rbx
+ 2756 1ea0 488D45E0 		leaq	-32(%rbp), %rax
+ 2757 1ea4 4889C7   		movq	%rax, %rdi
+ 2758 1ea7 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2758      00
+ 2759 1eac 4889D8   		movq	%rbx, %rax
+ 2760 1eaf 4889C7   		movq	%rax, %rdi
+ 2761              	.LEHB121:
+ 2762 1eb2 E8000000 		call	_Unwind_Resume
+ 2762      00
+ 2763              	.LEHE121:
+ 2764              	.L101:
+ 2765 1eb7 4889C3   		movq	%rax, %rbx
+ 2766 1eba 488D45E0 		leaq	-32(%rbp), %rax
+ 2767 1ebe 4889C7   		movq	%rax, %rdi
+ 2768 1ec1 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2768      00
+ 2769 1ec6 4889D8   		movq	%rbx, %rax
+ 2770 1ec9 4889C7   		movq	%rax, %rdi
+ 2771              	.LEHB122:
+ 2772 1ecc E8000000 		call	_Unwind_Resume
+ 2772      00
+ 2773              	.LEHE122:
+ 2774              	.L102:
+ 2775 1ed1 4889C3   		movq	%rax, %rbx
+ 2776 1ed4 488D45E0 		leaq	-32(%rbp), %rax
+GAS LISTING /tmp/ccl1pnZZ.s 			page 66
+
+
+ 2777 1ed8 4889C7   		movq	%rax, %rdi
+ 2778 1edb E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2778      00
+ 2779 1ee0 4889D8   		movq	%rbx, %rax
+ 2780 1ee3 4889C7   		movq	%rax, %rdi
+ 2781              	.LEHB123:
+ 2782 1ee6 E8000000 		call	_Unwind_Resume
+ 2782      00
+ 2783              	.LEHE123:
+ 2784              	.L103:
+ 2785 1eeb 4889C3   		movq	%rax, %rbx
+ 2786 1eee 488D45E0 		leaq	-32(%rbp), %rax
+ 2787 1ef2 4889C7   		movq	%rax, %rdi
+ 2788 1ef5 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2788      00
+ 2789 1efa 4889D8   		movq	%rbx, %rax
+ 2790 1efd 4889C7   		movq	%rax, %rdi
+ 2791              	.LEHB124:
+ 2792 1f00 E8000000 		call	_Unwind_Resume
+ 2792      00
+ 2793              	.LEHE124:
+ 2794              	.L104:
+ 2795 1f05 4889C3   		movq	%rax, %rbx
+ 2796 1f08 488D45E0 		leaq	-32(%rbp), %rax
+ 2797 1f0c 4889C7   		movq	%rax, %rdi
+ 2798 1f0f E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2798      00
+ 2799 1f14 4889D8   		movq	%rbx, %rax
+ 2800 1f17 4889C7   		movq	%rax, %rdi
+ 2801              	.LEHB125:
+ 2802 1f1a E8000000 		call	_Unwind_Resume
+ 2802      00
+ 2803              	.LEHE125:
+ 2804              	.L105:
+ 2805 1f1f 4889C3   		movq	%rax, %rbx
+ 2806 1f22 488D45E0 		leaq	-32(%rbp), %rax
+ 2807 1f26 4889C7   		movq	%rax, %rdi
+ 2808 1f29 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2808      00
+ 2809 1f2e 4889D8   		movq	%rbx, %rax
+ 2810 1f31 4889C7   		movq	%rax, %rdi
+ 2811              	.LEHB126:
+ 2812 1f34 E8000000 		call	_Unwind_Resume
+ 2812      00
+ 2813              	.LEHE126:
+ 2814              	.L106:
+ 2815 1f39 4889C3   		movq	%rax, %rbx
+ 2816 1f3c 488D45E0 		leaq	-32(%rbp), %rax
+ 2817 1f40 4889C7   		movq	%rax, %rdi
+ 2818 1f43 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2818      00
+ 2819 1f48 4889D8   		movq	%rbx, %rax
+ 2820 1f4b 4889C7   		movq	%rax, %rdi
+ 2821              	.LEHB127:
+ 2822 1f4e E8000000 		call	_Unwind_Resume
+ 2822      00
+ 2823              	.LEHE127:
+GAS LISTING /tmp/ccl1pnZZ.s 			page 67
+
+
+ 2824              	.L107:
+ 2825 1f53 4889C3   		movq	%rax, %rbx
+ 2826 1f56 488D45E0 		leaq	-32(%rbp), %rax
+ 2827 1f5a 4889C7   		movq	%rax, %rdi
+ 2828 1f5d E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2828      00
+ 2829 1f62 4889D8   		movq	%rbx, %rax
+ 2830 1f65 4889C7   		movq	%rax, %rdi
+ 2831              	.LEHB128:
+ 2832 1f68 E8000000 		call	_Unwind_Resume
+ 2832      00
+ 2833              	.LEHE128:
+ 2834              	.L108:
+ 2835 1f6d 4889C3   		movq	%rax, %rbx
+ 2836 1f70 488D45E0 		leaq	-32(%rbp), %rax
+ 2837 1f74 4889C7   		movq	%rax, %rdi
+ 2838 1f77 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2838      00
+ 2839 1f7c 4889D8   		movq	%rbx, %rax
+ 2840 1f7f 4889C7   		movq	%rax, %rdi
+ 2841              	.LEHB129:
+ 2842 1f82 E8000000 		call	_Unwind_Resume
+ 2842      00
+ 2843              	.LEHE129:
+ 2844              	.L109:
+ 2845 1f87 4889C3   		movq	%rax, %rbx
+ 2846 1f8a 488D45E0 		leaq	-32(%rbp), %rax
+ 2847 1f8e 4889C7   		movq	%rax, %rdi
+ 2848 1f91 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2848      00
+ 2849 1f96 4889D8   		movq	%rbx, %rax
+ 2850 1f99 4889C7   		movq	%rax, %rdi
+ 2851              	.LEHB130:
+ 2852 1f9c E8000000 		call	_Unwind_Resume
+ 2852      00
+ 2853              	.LEHE130:
+ 2854              	.L110:
+ 2855 1fa1 4889C3   		movq	%rax, %rbx
+ 2856 1fa4 488D45E0 		leaq	-32(%rbp), %rax
+ 2857 1fa8 4889C7   		movq	%rax, %rdi
+ 2858 1fab E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2858      00
+ 2859 1fb0 4889D8   		movq	%rbx, %rax
+ 2860 1fb3 4889C7   		movq	%rax, %rdi
+ 2861              	.LEHB131:
+ 2862 1fb6 E8000000 		call	_Unwind_Resume
+ 2862      00
+ 2863              	.LEHE131:
+ 2864              	.L111:
+ 2865 1fbb 4889C3   		movq	%rax, %rbx
+ 2866 1fbe 488D45E0 		leaq	-32(%rbp), %rax
+ 2867 1fc2 4889C7   		movq	%rax, %rdi
+ 2868 1fc5 E8000000 		call	_ZN20NormalTestTerminatorD1Ev
+ 2868      00
+ 2869 1fca 4889D8   		movq	%rbx, %rax
+ 2870 1fcd 4889C7   		movq	%rax, %rdi
+ 2871              	.LEHB132:
+GAS LISTING /tmp/ccl1pnZZ.s 			page 68
+
+
+ 2872 1fd0 E8000000 		call	_Unwind_Resume
+ 2872      00
+ 2873              	.LEHE132:
+ 2874              	.L112:
+ 2875 1fd5 E8000000 		call	__stack_chk_fail
+ 2875      00
+ 2876              	.L75:
+ 2877 1fda 4883C420 		addq	$32, %rsp
+ 2878 1fde 5B       		popq	%rbx
+ 2879 1fdf 415C     		popq	%r12
+ 2880 1fe1 5D       		popq	%rbp
+ 2881              		.cfi_def_cfa 7, 8
+ 2882 1fe2 C3       		ret
+ 2883              		.cfi_endproc
+ 2884              	.LFE709:
+ 2885              		.section	.gcc_except_table
+ 2886              	.LLSDA709:
+ 2887 0070 FF       		.byte	0xff
+ 2888 0071 FF       		.byte	0xff
+ 2889 0072 01       		.byte	0x1
+ 2890 0073 DA04     		.uleb128 .LLSDACSE709-.LLSDACSB709
+ 2891              	.LLSDACSB709:
+ 2892 0075 3E       		.uleb128 .LEHB24-.LFB709
+ 2893 0076 0A       		.uleb128 .LEHE24-.LEHB24
+ 2894 0077 00       		.uleb128 0
+ 2895 0078 00       		.uleb128 0
+ 2896 0079 8B01     		.uleb128 .LEHB25-.LFB709
+ 2897 007b 03       		.uleb128 .LEHE25-.LEHB25
+ 2898 007c 8532     		.uleb128 .L76-.LFB709
+ 2899 007e 00       		.uleb128 0
+ 2900 007f 9501     		.uleb128 .LEHB26-.LFB709
+ 2901 0081 8D01     		.uleb128 .LEHE26-.LEHB26
+ 2902 0083 00       		.uleb128 0
+ 2903 0084 00       		.uleb128 0
+ 2904 0085 E502     		.uleb128 .LEHB27-.LFB709
+ 2905 0087 03       		.uleb128 .LEHE27-.LEHB27
+ 2906 0088 9F32     		.uleb128 .L77-.LFB709
+ 2907 008a 00       		.uleb128 0
+ 2908 008b EF02     		.uleb128 .LEHB28-.LFB709
+ 2909 008d 8D01     		.uleb128 .LEHE28-.LEHB28
+ 2910 008f 00       		.uleb128 0
+ 2911 0090 00       		.uleb128 0
+ 2912 0091 BF04     		.uleb128 .LEHB29-.LFB709
+ 2913 0093 03       		.uleb128 .LEHE29-.LEHB29
+ 2914 0094 B932     		.uleb128 .L78-.LFB709
+ 2915 0096 00       		.uleb128 0
+ 2916 0097 C904     		.uleb128 .LEHB30-.LFB709
+ 2917 0099 8D01     		.uleb128 .LEHE30-.LEHB30
+ 2918 009b 00       		.uleb128 0
+ 2919 009c 00       		.uleb128 0
+ 2920 009d 9906     		.uleb128 .LEHB31-.LFB709
+ 2921 009f 03       		.uleb128 .LEHE31-.LEHB31
+ 2922 00a0 D332     		.uleb128 .L79-.LFB709
+ 2923 00a2 00       		.uleb128 0
+ 2924 00a3 A306     		.uleb128 .LEHB32-.LFB709
+ 2925 00a5 8D01     		.uleb128 .LEHE32-.LEHB32
+ 2926 00a7 00       		.uleb128 0
+GAS LISTING /tmp/ccl1pnZZ.s 			page 69
+
+
+ 2927 00a8 00       		.uleb128 0
+ 2928 00a9 F307     		.uleb128 .LEHB33-.LFB709
+ 2929 00ab 03       		.uleb128 .LEHE33-.LEHB33
+ 2930 00ac ED32     		.uleb128 .L80-.LFB709
+ 2931 00ae 00       		.uleb128 0
+ 2932 00af FD07     		.uleb128 .LEHB34-.LFB709
+ 2933 00b1 8D01     		.uleb128 .LEHE34-.LEHB34
+ 2934 00b3 00       		.uleb128 0
+ 2935 00b4 00       		.uleb128 0
+ 2936 00b5 CD09     		.uleb128 .LEHB35-.LFB709
+ 2937 00b7 03       		.uleb128 .LEHE35-.LEHB35
+ 2938 00b8 8733     		.uleb128 .L81-.LFB709
+ 2939 00ba 00       		.uleb128 0
+ 2940 00bb D709     		.uleb128 .LEHB36-.LFB709
+ 2941 00bd 8D01     		.uleb128 .LEHE36-.LEHB36
+ 2942 00bf 00       		.uleb128 0
+ 2943 00c0 00       		.uleb128 0
+ 2944 00c1 A70B     		.uleb128 .LEHB37-.LFB709
+ 2945 00c3 03       		.uleb128 .LEHE37-.LEHB37
+ 2946 00c4 A133     		.uleb128 .L82-.LFB709
+ 2947 00c6 00       		.uleb128 0
+ 2948 00c7 B10B     		.uleb128 .LEHB38-.LFB709
+ 2949 00c9 8D01     		.uleb128 .LEHE38-.LEHB38
+ 2950 00cb 00       		.uleb128 0
+ 2951 00cc 00       		.uleb128 0
+ 2952 00cd 810D     		.uleb128 .LEHB39-.LFB709
+ 2953 00cf 03       		.uleb128 .LEHE39-.LEHB39
+ 2954 00d0 BB33     		.uleb128 .L83-.LFB709
+ 2955 00d2 00       		.uleb128 0
+ 2956 00d3 8B0D     		.uleb128 .LEHB40-.LFB709
+ 2957 00d5 8D01     		.uleb128 .LEHE40-.LEHB40
+ 2958 00d7 00       		.uleb128 0
+ 2959 00d8 00       		.uleb128 0
+ 2960 00d9 DB0E     		.uleb128 .LEHB41-.LFB709
+ 2961 00db 03       		.uleb128 .LEHE41-.LEHB41
+ 2962 00dc D533     		.uleb128 .L84-.LFB709
+ 2963 00de 00       		.uleb128 0
+ 2964 00df E50E     		.uleb128 .LEHB42-.LFB709
+ 2965 00e1 8D01     		.uleb128 .LEHE42-.LEHB42
+ 2966 00e3 00       		.uleb128 0
+ 2967 00e4 00       		.uleb128 0
+ 2968 00e5 B510     		.uleb128 .LEHB43-.LFB709
+ 2969 00e7 03       		.uleb128 .LEHE43-.LEHB43
+ 2970 00e8 EF33     		.uleb128 .L85-.LFB709
+ 2971 00ea 00       		.uleb128 0
+ 2972 00eb BF10     		.uleb128 .LEHB44-.LFB709
+ 2973 00ed 8D01     		.uleb128 .LEHE44-.LEHB44
+ 2974 00ef 00       		.uleb128 0
+ 2975 00f0 00       		.uleb128 0
+ 2976 00f1 8F12     		.uleb128 .LEHB45-.LFB709
+ 2977 00f3 03       		.uleb128 .LEHE45-.LEHB45
+ 2978 00f4 8934     		.uleb128 .L86-.LFB709
+ 2979 00f6 00       		.uleb128 0
+ 2980 00f7 9912     		.uleb128 .LEHB46-.LFB709
+ 2981 00f9 8D01     		.uleb128 .LEHE46-.LEHB46
+ 2982 00fb 00       		.uleb128 0
+ 2983 00fc 00       		.uleb128 0
+GAS LISTING /tmp/ccl1pnZZ.s 			page 70
+
+
+ 2984 00fd E913     		.uleb128 .LEHB47-.LFB709
+ 2985 00ff 03       		.uleb128 .LEHE47-.LEHB47
+ 2986 0100 A334     		.uleb128 .L87-.LFB709
+ 2987 0102 00       		.uleb128 0
+ 2988 0103 F313     		.uleb128 .LEHB48-.LFB709
+ 2989 0105 8D01     		.uleb128 .LEHE48-.LEHB48
+ 2990 0107 00       		.uleb128 0
+ 2991 0108 00       		.uleb128 0
+ 2992 0109 C315     		.uleb128 .LEHB49-.LFB709
+ 2993 010b 03       		.uleb128 .LEHE49-.LEHB49
+ 2994 010c BD34     		.uleb128 .L88-.LFB709
+ 2995 010e 00       		.uleb128 0
+ 2996 010f CD15     		.uleb128 .LEHB50-.LFB709
+ 2997 0111 8D01     		.uleb128 .LEHE50-.LEHB50
+ 2998 0113 00       		.uleb128 0
+ 2999 0114 00       		.uleb128 0
+ 3000 0115 9D17     		.uleb128 .LEHB51-.LFB709
+ 3001 0117 03       		.uleb128 .LEHE51-.LEHB51
+ 3002 0118 D734     		.uleb128 .L89-.LFB709
+ 3003 011a 00       		.uleb128 0
+ 3004 011b A717     		.uleb128 .LEHB52-.LFB709
+ 3005 011d 8D01     		.uleb128 .LEHE52-.LEHB52
+ 3006 011f 00       		.uleb128 0
+ 3007 0120 00       		.uleb128 0
+ 3008 0121 F718     		.uleb128 .LEHB53-.LFB709
+ 3009 0123 03       		.uleb128 .LEHE53-.LEHB53
+ 3010 0124 F134     		.uleb128 .L90-.LFB709
+ 3011 0126 00       		.uleb128 0
+ 3012 0127 8119     		.uleb128 .LEHB54-.LFB709
+ 3013 0129 8D01     		.uleb128 .LEHE54-.LEHB54
+ 3014 012b 00       		.uleb128 0
+ 3015 012c 00       		.uleb128 0
+ 3016 012d D11A     		.uleb128 .LEHB55-.LFB709
+ 3017 012f 03       		.uleb128 .LEHE55-.LEHB55
+ 3018 0130 8B35     		.uleb128 .L91-.LFB709
+ 3019 0132 00       		.uleb128 0
+ 3020 0133 DB1A     		.uleb128 .LEHB56-.LFB709
+ 3021 0135 8D01     		.uleb128 .LEHE56-.LEHB56
+ 3022 0137 00       		.uleb128 0
+ 3023 0138 00       		.uleb128 0
+ 3024 0139 AB1C     		.uleb128 .LEHB57-.LFB709
+ 3025 013b 03       		.uleb128 .LEHE57-.LEHB57
+ 3026 013c A535     		.uleb128 .L92-.LFB709
+ 3027 013e 00       		.uleb128 0
+ 3028 013f B51C     		.uleb128 .LEHB58-.LFB709
+ 3029 0141 8D01     		.uleb128 .LEHE58-.LEHB58
+ 3030 0143 00       		.uleb128 0
+ 3031 0144 00       		.uleb128 0
+ 3032 0145 851E     		.uleb128 .LEHB59-.LFB709
+ 3033 0147 03       		.uleb128 .LEHE59-.LEHB59
+ 3034 0148 BF35     		.uleb128 .L93-.LFB709
+ 3035 014a 00       		.uleb128 0
+ 3036 014b 8F1E     		.uleb128 .LEHB60-.LFB709
+ 3037 014d 8D01     		.uleb128 .LEHE60-.LEHB60
+ 3038 014f 00       		.uleb128 0
+ 3039 0150 00       		.uleb128 0
+ 3040 0151 DF1F     		.uleb128 .LEHB61-.LFB709
+GAS LISTING /tmp/ccl1pnZZ.s 			page 71
+
+
+ 3041 0153 03       		.uleb128 .LEHE61-.LEHB61
+ 3042 0154 D935     		.uleb128 .L94-.LFB709
+ 3043 0156 00       		.uleb128 0
+ 3044 0157 E91F     		.uleb128 .LEHB62-.LFB709
+ 3045 0159 8D01     		.uleb128 .LEHE62-.LEHB62
+ 3046 015b 00       		.uleb128 0
+ 3047 015c 00       		.uleb128 0
+ 3048 015d B921     		.uleb128 .LEHB63-.LFB709
+ 3049 015f 03       		.uleb128 .LEHE63-.LEHB63
+ 3050 0160 F335     		.uleb128 .L95-.LFB709
+ 3051 0162 00       		.uleb128 0
+ 3052 0163 C321     		.uleb128 .LEHB64-.LFB709
+ 3053 0165 8D01     		.uleb128 .LEHE64-.LEHB64
+ 3054 0167 00       		.uleb128 0
+ 3055 0168 00       		.uleb128 0
+ 3056 0169 9323     		.uleb128 .LEHB65-.LFB709
+ 3057 016b 03       		.uleb128 .LEHE65-.LEHB65
+ 3058 016c 8D36     		.uleb128 .L96-.LFB709
+ 3059 016e 00       		.uleb128 0
+ 3060 016f 9D23     		.uleb128 .LEHB66-.LFB709
+ 3061 0171 8D01     		.uleb128 .LEHE66-.LEHB66
+ 3062 0173 00       		.uleb128 0
+ 3063 0174 00       		.uleb128 0
+ 3064 0175 ED24     		.uleb128 .LEHB67-.LFB709
+ 3065 0177 03       		.uleb128 .LEHE67-.LEHB67
+ 3066 0178 A736     		.uleb128 .L97-.LFB709
+ 3067 017a 00       		.uleb128 0
+ 3068 017b F724     		.uleb128 .LEHB68-.LFB709
+ 3069 017d 8D01     		.uleb128 .LEHE68-.LEHB68
+ 3070 017f 00       		.uleb128 0
+ 3071 0180 00       		.uleb128 0
+ 3072 0181 C726     		.uleb128 .LEHB69-.LFB709
+ 3073 0183 03       		.uleb128 .LEHE69-.LEHB69
+ 3074 0184 C136     		.uleb128 .L98-.LFB709
+ 3075 0186 00       		.uleb128 0
+ 3076 0187 D126     		.uleb128 .LEHB70-.LFB709
+ 3077 0189 5E       		.uleb128 .LEHE70-.LEHB70
+ 3078 018a 00       		.uleb128 0
+ 3079 018b 00       		.uleb128 0
+ 3080 018c F227     		.uleb128 .LEHB71-.LFB709
+ 3081 018e 03       		.uleb128 .LEHE71-.LEHB71
+ 3082 018f DB36     		.uleb128 .L99-.LFB709
+ 3083 0191 00       		.uleb128 0
+ 3084 0192 FC27     		.uleb128 .LEHB72-.LFB709
+ 3085 0194 39       		.uleb128 .LEHE72-.LEHB72
+ 3086 0195 00       		.uleb128 0
+ 3087 0196 00       		.uleb128 0
+ 3088 0197 F828     		.uleb128 .LEHB73-.LFB709
+ 3089 0199 03       		.uleb128 .LEHE73-.LEHB73
+ 3090 019a F536     		.uleb128 .L100-.LFB709
+ 3091 019c 00       		.uleb128 0
+ 3092 019d 8229     		.uleb128 .LEHB74-.LFB709
+ 3093 019f 0A       		.uleb128 .LEHE74-.LEHB74
+ 3094 01a0 00       		.uleb128 0
+ 3095 01a1 00       		.uleb128 0
+ 3096 01a2 CF29     		.uleb128 .LEHB75-.LFB709
+ 3097 01a4 03       		.uleb128 .LEHE75-.LEHB75
+GAS LISTING /tmp/ccl1pnZZ.s 			page 72
+
+
+ 3098 01a5 8F37     		.uleb128 .L101-.LFB709
+ 3099 01a7 00       		.uleb128 0
+ 3100 01a8 D929     		.uleb128 .LEHB76-.LFB709
+ 3101 01aa 0A       		.uleb128 .LEHE76-.LEHB76
+ 3102 01ab 00       		.uleb128 0
+ 3103 01ac 00       		.uleb128 0
+ 3104 01ad A62A     		.uleb128 .LEHB77-.LFB709
+ 3105 01af 03       		.uleb128 .LEHE77-.LEHB77
+ 3106 01b0 A937     		.uleb128 .L102-.LFB709
+ 3107 01b2 00       		.uleb128 0
+ 3108 01b3 B02A     		.uleb128 .LEHB78-.LFB709
+ 3109 01b5 0A       		.uleb128 .LEHE78-.LEHB78
+ 3110 01b6 00       		.uleb128 0
+ 3111 01b7 00       		.uleb128 0
+ 3112 01b8 FD2A     		.uleb128 .LEHB79-.LFB709
+ 3113 01ba 03       		.uleb128 .LEHE79-.LEHB79
+ 3114 01bb C337     		.uleb128 .L103-.LFB709
+ 3115 01bd 00       		.uleb128 0
+ 3116 01be 872B     		.uleb128 .LEHB80-.LFB709
+ 3117 01c0 0A       		.uleb128 .LEHE80-.LEHB80
+ 3118 01c1 00       		.uleb128 0
+ 3119 01c2 00       		.uleb128 0
+ 3120 01c3 D42B     		.uleb128 .LEHB81-.LFB709
+ 3121 01c5 03       		.uleb128 .LEHE81-.LEHB81
+ 3122 01c6 DD37     		.uleb128 .L104-.LFB709
+ 3123 01c8 00       		.uleb128 0
+ 3124 01c9 DE2B     		.uleb128 .LEHB82-.LFB709
+ 3125 01cb 2F       		.uleb128 .LEHE82-.LEHB82
+ 3126 01cc 00       		.uleb128 0
+ 3127 01cd 00       		.uleb128 0
+ 3128 01ce D02C     		.uleb128 .LEHB83-.LFB709
+ 3129 01d0 03       		.uleb128 .LEHE83-.LEHB83
+ 3130 01d1 F737     		.uleb128 .L105-.LFB709
+ 3131 01d3 00       		.uleb128 0
+ 3132 01d4 DA2C     		.uleb128 .LEHB84-.LFB709
+ 3133 01d6 5E       		.uleb128 .LEHE84-.LEHB84
+ 3134 01d7 00       		.uleb128 0
+ 3135 01d8 00       		.uleb128 0
+ 3136 01d9 FB2D     		.uleb128 .LEHB85-.LFB709
+ 3137 01db 03       		.uleb128 .LEHE85-.LEHB85
+ 3138 01dc 9138     		.uleb128 .L106-.LFB709
+ 3139 01de 00       		.uleb128 0
+ 3140 01df 852E     		.uleb128 .LEHB86-.LFB709
+ 3141 01e1 39       		.uleb128 .LEHE86-.LEHB86
+ 3142 01e2 00       		.uleb128 0
+ 3143 01e3 00       		.uleb128 0
+ 3144 01e4 812F     		.uleb128 .LEHB87-.LFB709
+ 3145 01e6 03       		.uleb128 .LEHE87-.LEHB87
+ 3146 01e7 AB38     		.uleb128 .L107-.LFB709
+ 3147 01e9 00       		.uleb128 0
+ 3148 01ea 8B2F     		.uleb128 .LEHB88-.LFB709
+ 3149 01ec 0A       		.uleb128 .LEHE88-.LEHB88
+ 3150 01ed 00       		.uleb128 0
+ 3151 01ee 00       		.uleb128 0
+ 3152 01ef D82F     		.uleb128 .LEHB89-.LFB709
+ 3153 01f1 03       		.uleb128 .LEHE89-.LEHB89
+ 3154 01f2 C538     		.uleb128 .L108-.LFB709
+GAS LISTING /tmp/ccl1pnZZ.s 			page 73
+
+
+ 3155 01f4 00       		.uleb128 0
+ 3156 01f5 E22F     		.uleb128 .LEHB90-.LFB709
+ 3157 01f7 0A       		.uleb128 .LEHE90-.LEHB90
+ 3158 01f8 00       		.uleb128 0
+ 3159 01f9 00       		.uleb128 0
+ 3160 01fa AF30     		.uleb128 .LEHB91-.LFB709
+ 3161 01fc 03       		.uleb128 .LEHE91-.LEHB91
+ 3162 01fd DF38     		.uleb128 .L109-.LFB709
+ 3163 01ff 00       		.uleb128 0
+ 3164 0200 B930     		.uleb128 .LEHB92-.LFB709
+ 3165 0202 0A       		.uleb128 .LEHE92-.LEHB92
+ 3166 0203 00       		.uleb128 0
+ 3167 0204 00       		.uleb128 0
+ 3168 0205 8631     		.uleb128 .LEHB93-.LFB709
+ 3169 0207 03       		.uleb128 .LEHE93-.LEHB93
+ 3170 0208 F938     		.uleb128 .L110-.LFB709
+ 3171 020a 00       		.uleb128 0
+ 3172 020b 9031     		.uleb128 .LEHB94-.LFB709
+ 3173 020d 0A       		.uleb128 .LEHE94-.LEHB94
+ 3174 020e 00       		.uleb128 0
+ 3175 020f 00       		.uleb128 0
+ 3176 0210 DD31     		.uleb128 .LEHB95-.LFB709
+ 3177 0212 03       		.uleb128 .LEHE95-.LEHB95
+ 3178 0213 9339     		.uleb128 .L111-.LFB709
+ 3179 0215 00       		.uleb128 0
+ 3180 0216 E731     		.uleb128 .LEHB96-.LFB709
+ 3181 0218 05       		.uleb128 .LEHE96-.LEHB96
+ 3182 0219 00       		.uleb128 0
+ 3183 021a 00       		.uleb128 0
+ 3184 021b 9A32     		.uleb128 .LEHB97-.LFB709
+ 3185 021d 05       		.uleb128 .LEHE97-.LEHB97
+ 3186 021e 00       		.uleb128 0
+ 3187 021f 00       		.uleb128 0
+ 3188 0220 B432     		.uleb128 .LEHB98-.LFB709
+ 3189 0222 05       		.uleb128 .LEHE98-.LEHB98
+ 3190 0223 00       		.uleb128 0
+ 3191 0224 00       		.uleb128 0
+ 3192 0225 CE32     		.uleb128 .LEHB99-.LFB709
+ 3193 0227 05       		.uleb128 .LEHE99-.LEHB99
+ 3194 0228 00       		.uleb128 0
+ 3195 0229 00       		.uleb128 0
+ 3196 022a E832     		.uleb128 .LEHB100-.LFB709
+ 3197 022c 05       		.uleb128 .LEHE100-.LEHB100
+ 3198 022d 00       		.uleb128 0
+ 3199 022e 00       		.uleb128 0
+ 3200 022f 8233     		.uleb128 .LEHB101-.LFB709
+ 3201 0231 05       		.uleb128 .LEHE101-.LEHB101
+ 3202 0232 00       		.uleb128 0
+ 3203 0233 00       		.uleb128 0
+ 3204 0234 9C33     		.uleb128 .LEHB102-.LFB709
+ 3205 0236 05       		.uleb128 .LEHE102-.LEHB102
+ 3206 0237 00       		.uleb128 0
+ 3207 0238 00       		.uleb128 0
+ 3208 0239 B633     		.uleb128 .LEHB103-.LFB709
+ 3209 023b 05       		.uleb128 .LEHE103-.LEHB103
+ 3210 023c 00       		.uleb128 0
+ 3211 023d 00       		.uleb128 0
+GAS LISTING /tmp/ccl1pnZZ.s 			page 74
+
+
+ 3212 023e D033     		.uleb128 .LEHB104-.LFB709
+ 3213 0240 05       		.uleb128 .LEHE104-.LEHB104
+ 3214 0241 00       		.uleb128 0
+ 3215 0242 00       		.uleb128 0
+ 3216 0243 EA33     		.uleb128 .LEHB105-.LFB709
+ 3217 0245 05       		.uleb128 .LEHE105-.LEHB105
+ 3218 0246 00       		.uleb128 0
+ 3219 0247 00       		.uleb128 0
+ 3220 0248 8434     		.uleb128 .LEHB106-.LFB709
+ 3221 024a 05       		.uleb128 .LEHE106-.LEHB106
+ 3222 024b 00       		.uleb128 0
+ 3223 024c 00       		.uleb128 0
+ 3224 024d 9E34     		.uleb128 .LEHB107-.LFB709
+ 3225 024f 05       		.uleb128 .LEHE107-.LEHB107
+ 3226 0250 00       		.uleb128 0
+ 3227 0251 00       		.uleb128 0
+ 3228 0252 B834     		.uleb128 .LEHB108-.LFB709
+ 3229 0254 05       		.uleb128 .LEHE108-.LEHB108
+ 3230 0255 00       		.uleb128 0
+ 3231 0256 00       		.uleb128 0
+ 3232 0257 D234     		.uleb128 .LEHB109-.LFB709
+ 3233 0259 05       		.uleb128 .LEHE109-.LEHB109
+ 3234 025a 00       		.uleb128 0
+ 3235 025b 00       		.uleb128 0
+ 3236 025c EC34     		.uleb128 .LEHB110-.LFB709
+ 3237 025e 05       		.uleb128 .LEHE110-.LEHB110
+ 3238 025f 00       		.uleb128 0
+ 3239 0260 00       		.uleb128 0
+ 3240 0261 8635     		.uleb128 .LEHB111-.LFB709
+ 3241 0263 05       		.uleb128 .LEHE111-.LEHB111
+ 3242 0264 00       		.uleb128 0
+ 3243 0265 00       		.uleb128 0
+ 3244 0266 A035     		.uleb128 .LEHB112-.LFB709
+ 3245 0268 05       		.uleb128 .LEHE112-.LEHB112
+ 3246 0269 00       		.uleb128 0
+ 3247 026a 00       		.uleb128 0
+ 3248 026b BA35     		.uleb128 .LEHB113-.LFB709
+ 3249 026d 05       		.uleb128 .LEHE113-.LEHB113
+ 3250 026e 00       		.uleb128 0
+ 3251 026f 00       		.uleb128 0
+ 3252 0270 D435     		.uleb128 .LEHB114-.LFB709
+ 3253 0272 05       		.uleb128 .LEHE114-.LEHB114
+ 3254 0273 00       		.uleb128 0
+ 3255 0274 00       		.uleb128 0
+ 3256 0275 EE35     		.uleb128 .LEHB115-.LFB709
+ 3257 0277 05       		.uleb128 .LEHE115-.LEHB115
+ 3258 0278 00       		.uleb128 0
+ 3259 0279 00       		.uleb128 0
+ 3260 027a 8836     		.uleb128 .LEHB116-.LFB709
+ 3261 027c 05       		.uleb128 .LEHE116-.LEHB116
+ 3262 027d 00       		.uleb128 0
+ 3263 027e 00       		.uleb128 0
+ 3264 027f A236     		.uleb128 .LEHB117-.LFB709
+ 3265 0281 05       		.uleb128 .LEHE117-.LEHB117
+ 3266 0282 00       		.uleb128 0
+ 3267 0283 00       		.uleb128 0
+ 3268 0284 BC36     		.uleb128 .LEHB118-.LFB709
+GAS LISTING /tmp/ccl1pnZZ.s 			page 75
+
+
+ 3269 0286 05       		.uleb128 .LEHE118-.LEHB118
+ 3270 0287 00       		.uleb128 0
+ 3271 0288 00       		.uleb128 0
+ 3272 0289 D636     		.uleb128 .LEHB119-.LFB709
+ 3273 028b 05       		.uleb128 .LEHE119-.LEHB119
+ 3274 028c 00       		.uleb128 0
+ 3275 028d 00       		.uleb128 0
+ 3276 028e F036     		.uleb128 .LEHB120-.LFB709
+ 3277 0290 05       		.uleb128 .LEHE120-.LEHB120
+ 3278 0291 00       		.uleb128 0
+ 3279 0292 00       		.uleb128 0
+ 3280 0293 8A37     		.uleb128 .LEHB121-.LFB709
+ 3281 0295 05       		.uleb128 .LEHE121-.LEHB121
+ 3282 0296 00       		.uleb128 0
+ 3283 0297 00       		.uleb128 0
+ 3284 0298 A437     		.uleb128 .LEHB122-.LFB709
+ 3285 029a 05       		.uleb128 .LEHE122-.LEHB122
+ 3286 029b 00       		.uleb128 0
+ 3287 029c 00       		.uleb128 0
+ 3288 029d BE37     		.uleb128 .LEHB123-.LFB709
+ 3289 029f 05       		.uleb128 .LEHE123-.LEHB123
+ 3290 02a0 00       		.uleb128 0
+ 3291 02a1 00       		.uleb128 0
+ 3292 02a2 D837     		.uleb128 .LEHB124-.LFB709
+ 3293 02a4 05       		.uleb128 .LEHE124-.LEHB124
+ 3294 02a5 00       		.uleb128 0
+ 3295 02a6 00       		.uleb128 0
+ 3296 02a7 F237     		.uleb128 .LEHB125-.LFB709
+ 3297 02a9 05       		.uleb128 .LEHE125-.LEHB125
+ 3298 02aa 00       		.uleb128 0
+ 3299 02ab 00       		.uleb128 0
+ 3300 02ac 8C38     		.uleb128 .LEHB126-.LFB709
+ 3301 02ae 05       		.uleb128 .LEHE126-.LEHB126
+ 3302 02af 00       		.uleb128 0
+ 3303 02b0 00       		.uleb128 0
+ 3304 02b1 A638     		.uleb128 .LEHB127-.LFB709
+ 3305 02b3 05       		.uleb128 .LEHE127-.LEHB127
+ 3306 02b4 00       		.uleb128 0
+ 3307 02b5 00       		.uleb128 0
+ 3308 02b6 C038     		.uleb128 .LEHB128-.LFB709
+ 3309 02b8 05       		.uleb128 .LEHE128-.LEHB128
+ 3310 02b9 00       		.uleb128 0
+ 3311 02ba 00       		.uleb128 0
+ 3312 02bb DA38     		.uleb128 .LEHB129-.LFB709
+ 3313 02bd 05       		.uleb128 .LEHE129-.LEHB129
+ 3314 02be 00       		.uleb128 0
+ 3315 02bf 00       		.uleb128 0
+ 3316 02c0 F438     		.uleb128 .LEHB130-.LFB709
+ 3317 02c2 05       		.uleb128 .LEHE130-.LEHB130
+ 3318 02c3 00       		.uleb128 0
+ 3319 02c4 00       		.uleb128 0
+ 3320 02c5 8E39     		.uleb128 .LEHB131-.LFB709
+ 3321 02c7 05       		.uleb128 .LEHE131-.LEHB131
+ 3322 02c8 00       		.uleb128 0
+ 3323 02c9 00       		.uleb128 0
+ 3324 02ca A839     		.uleb128 .LEHB132-.LFB709
+ 3325 02cc 05       		.uleb128 .LEHE132-.LEHB132
+GAS LISTING /tmp/ccl1pnZZ.s 			page 76
+
+
+ 3326 02cd 00       		.uleb128 0
+ 3327 02ce 00       		.uleb128 0
+ 3328              	.LLSDACSE709:
+ 3329              		.text
+ 3331              		.weak	_ZTV55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test
+ 3332              		.section	.rodata._ZTV55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test,"aG",@progbits,_ZTV
+ 3333              		.align 8
+ 3336              	_ZTV55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test:
+ 3337 0000 00000000 		.quad	0
+ 3337      00000000 
+ 3338 0008 00000000 		.quad	_ZTI55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test
+ 3338      00000000 
+ 3339 0010 00000000 		.quad	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD1Ev
+ 3339      00000000 
+ 3340 0018 00000000 		.quad	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD0Ev
+ 3340      00000000 
+ 3341 0020 00000000 		.quad	_ZN5Utest3runEv
+ 3341      00000000 
+ 3342 0028 00000000 		.quad	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents5setupEv
+ 3342      00000000 
+ 3343 0030 00000000 		.quad	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents8teardownEv
+ 3343      00000000 
+ 3344 0038 00000000 		.quad	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test8testBodyEv
+ 3344      00000000 
+ 3345              		.section	.text._ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD2Ev,"axG",@progbits,_Z
+ 3346              		.align 2
+ 3347              		.weak	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD2Ev
+ 3349              	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD2Ev:
+ 3350              	.LFB711:
+ 3351              		.cfi_startproc
+ 3352 0000 55       		pushq	%rbp
+ 3353              		.cfi_def_cfa_offset 16
+ 3354              		.cfi_offset 6, -16
+ 3355 0001 4889E5   		movq	%rsp, %rbp
+ 3356              		.cfi_def_cfa_register 6
+ 3357 0004 4883EC10 		subq	$16, %rsp
+ 3358 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 3359 000c BA000000 		movl	$_ZTV55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test+16, %edx
+ 3359      00
+ 3360 0011 488B45F8 		movq	-8(%rbp), %rax
+ 3361 0015 488910   		movq	%rdx, (%rax)
+ 3362 0018 488B45F8 		movq	-8(%rbp), %rax
+ 3363 001c 4889C7   		movq	%rax, %rdi
+ 3364 001f E8000000 		call	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD2Ev
+ 3364      00
+ 3365 0024 B8000000 		movl	$0, %eax
+ 3365      00
+ 3366 0029 85C0     		testl	%eax, %eax
+ 3367 002b 740C     		je	.L113
+ 3368 002d 488B45F8 		movq	-8(%rbp), %rax
+ 3369 0031 4889C7   		movq	%rax, %rdi
+ 3370 0034 E8000000 		call	_ZdlPv
+ 3370      00
+ 3371              	.L113:
+ 3372 0039 C9       		leave
+ 3373              		.cfi_def_cfa 7, 8
+ 3374 003a C3       		ret
+GAS LISTING /tmp/ccl1pnZZ.s 			page 77
+
+
+ 3375              		.cfi_endproc
+ 3376              	.LFE711:
+ 3378              		.weak	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD1Ev
+ 3379              		.set	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD1Ev,_ZN55TEST_hsm_2_layer_noEven
+ 3380              		.section	.text._ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD0Ev,"axG",@progbits,_Z
+ 3381              		.align 2
+ 3382              		.weak	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD0Ev
+ 3384              	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD0Ev:
+ 3385              	.LFB713:
+ 3386              		.cfi_startproc
+ 3387 0000 55       		pushq	%rbp
+ 3388              		.cfi_def_cfa_offset 16
+ 3389              		.cfi_offset 6, -16
+ 3390 0001 4889E5   		movq	%rsp, %rbp
+ 3391              		.cfi_def_cfa_register 6
+ 3392 0004 4883EC10 		subq	$16, %rsp
+ 3393 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 3394 000c 488B45F8 		movq	-8(%rbp), %rax
+ 3395 0010 4889C7   		movq	%rax, %rdi
+ 3396 0013 E8000000 		call	_ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD1Ev
+ 3396      00
+ 3397 0018 488B45F8 		movq	-8(%rbp), %rax
+ 3398 001c 4889C7   		movq	%rax, %rdi
+ 3399 001f E8000000 		call	_ZdlPv
+ 3399      00
+ 3400 0024 C9       		leave
+ 3401              		.cfi_def_cfa 7, 8
+ 3402 0025 C3       		ret
+ 3403              		.cfi_endproc
+ 3404              	.LFE713:
+ 3406              		.weak	_ZTV60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell
+ 3407              		.section	.rodata._ZTV60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell,"aG",@progbits
+ 3408              		.align 8
+ 3411              	_ZTV60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell:
+ 3412 0000 00000000 		.quad	0
+ 3412      00000000 
+ 3413 0008 00000000 		.quad	_ZTI60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell
+ 3413      00000000 
+ 3414 0010 00000000 		.quad	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD1Ev
+ 3414      00000000 
+ 3415 0018 00000000 		.quad	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD0Ev
+ 3415      00000000 
+ 3416 0020 00000000 		.quad	_ZN10UtestShell7addTestEPS_
+ 3416      00000000 
+ 3417 0028 00000000 		.quad	_ZNK10UtestShell7getNextEv
+ 3417      00000000 
+ 3418 0030 00000000 		.quad	_ZN10UtestShell10countTestsEv
+ 3418      00000000 
+ 3419 0038 00000000 		.quad	_ZNK10UtestShell16getFormattedNameEv
+ 3419      00000000 
+ 3420 0040 00000000 		.quad	_ZNK10UtestShell7willRunEv
+ 3420      00000000 
+ 3421 0048 00000000 		.quad	_ZNK10UtestShell9hasFailedEv
+ 3421      00000000 
+ 3422 0050 00000000 		.quad	_ZN10UtestShell10assertTrueEbPKcS1_S1_iRK14TestTerminator
+ 3422      00000000 
+ 3423 0058 00000000 		.quad	_ZN10UtestShell14assertTrueTextEbPKcS1_S1_S1_iRK14TestTerminator
+GAS LISTING /tmp/ccl1pnZZ.s 			page 78
+
+
+ 3423      00000000 
+ 3424 0060 00000000 		.quad	_ZN10UtestShell15assertCstrEqualEPKcS1_S1_iRK14TestTerminator
+ 3424      00000000 
+ 3425 0068 00000000 		.quad	_ZN10UtestShell16assertCstrNEqualEPKcS1_mS1_iRK14TestTerminator
+ 3425      00000000 
+ 3426 0070 00000000 		.quad	_ZN10UtestShell21assertCstrNoCaseEqualEPKcS1_S1_i
+ 3426      00000000 
+ 3427 0078 00000000 		.quad	_ZN10UtestShell18assertCstrContainsEPKcS1_S1_i
+ 3427      00000000 
+ 3428 0080 00000000 		.quad	_ZN10UtestShell24assertCstrNoCaseContainsEPKcS1_S1_i
+ 3428      00000000 
+ 3429 0088 00000000 		.quad	_ZN10UtestShell16assertLongsEqualEllPKciRK14TestTerminator
+ 3429      00000000 
+ 3430 0090 00000000 		.quad	_ZN10UtestShell24assertUnsignedLongsEqualEmmPKciRK14TestTerminator
+ 3430      00000000 
+ 3431 0098 00000000 		.quad	_ZN10UtestShell19assertPointersEqualEPKvS1_PKci
+ 3431      00000000 
+ 3432 00a0 00000000 		.quad	_ZN10UtestShell18assertDoublesEqualEdddPKciRK14TestTerminator
+ 3432      00000000 
+ 3433 00a8 00000000 		.quad	_ZN10UtestShell12assertEqualsEbPKcS1_S1_iRK14TestTerminator
+ 3433      00000000 
+ 3434 00b0 00000000 		.quad	_ZN10UtestShell17assertBinaryEqualEPKvS1_mPKciRK14TestTerminator
+ 3434      00000000 
+ 3435 00b8 00000000 		.quad	_ZN10UtestShell4failEPKcS1_iRK14TestTerminator
+ 3435      00000000 
+ 3436 00c0 00000000 		.quad	_ZN10UtestShell5printEPKcS1_i
+ 3436      00000000 
+ 3437 00c8 00000000 		.quad	_ZN10UtestShell5printERK12SimpleStringPKci
+ 3437      00000000 
+ 3438 00d0 00000000 		.quad	_ZNK10UtestShell22isRunInSeperateProcessEv
+ 3438      00000000 
+ 3439 00d8 00000000 		.quad	_ZN10UtestShell23setRunInSeperateProcessEv
+ 3439      00000000 
+ 3440 00e0 00000000 		.quad	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell10createTestEv
+ 3440      00000000 
+ 3441 00e8 00000000 		.quad	_ZN10UtestShell11destroyTestEP5Utest
+ 3441      00000000 
+ 3442 00f0 00000000 		.quad	_ZN10UtestShell10runOneTestEP10TestPluginR10TestResult
+ 3442      00000000 
+ 3443 00f8 00000000 		.quad	_ZN10UtestShell26runOneTestInCurrentProcessEP10TestPluginR10TestResult
+ 3443      00000000 
+ 3444 0100 00000000 		.quad	_ZN10UtestShell8failWithERK11TestFailure
+ 3444      00000000 
+ 3445 0108 00000000 		.quad	_ZN10UtestShell8failWithERK11TestFailureRK14TestTerminator
+ 3445      00000000 
+ 3446 0110 00000000 		.quad	_ZNK10UtestShell12getMacroNameEv
+ 3446      00000000 
+ 3447              		.section	.text._ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD2Ev,"axG",@progbi
+ 3448              		.align 2
+ 3449              		.weak	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD2Ev
+ 3451              	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD2Ev:
+ 3452              	.LFB715:
+ 3453              		.cfi_startproc
+ 3454 0000 55       		pushq	%rbp
+ 3455              		.cfi_def_cfa_offset 16
+ 3456              		.cfi_offset 6, -16
+ 3457 0001 4889E5   		movq	%rsp, %rbp
+GAS LISTING /tmp/ccl1pnZZ.s 			page 79
+
+
+ 3458              		.cfi_def_cfa_register 6
+ 3459 0004 4883EC10 		subq	$16, %rsp
+ 3460 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 3461 000c BA000000 		movl	$_ZTV60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell+16, %edx
+ 3461      00
+ 3462 0011 488B45F8 		movq	-8(%rbp), %rax
+ 3463 0015 488910   		movq	%rdx, (%rax)
+ 3464 0018 488B45F8 		movq	-8(%rbp), %rax
+ 3465 001c 4889C7   		movq	%rax, %rdi
+ 3466 001f E8000000 		call	_ZN10UtestShellD2Ev
+ 3466      00
+ 3467 0024 B8000000 		movl	$0, %eax
+ 3467      00
+ 3468 0029 85C0     		testl	%eax, %eax
+ 3469 002b 740C     		je	.L116
+ 3470 002d 488B45F8 		movq	-8(%rbp), %rax
+ 3471 0031 4889C7   		movq	%rax, %rdi
+ 3472 0034 E8000000 		call	_ZdlPv
+ 3472      00
+ 3473              	.L116:
+ 3474 0039 C9       		leave
+ 3475              		.cfi_def_cfa 7, 8
+ 3476 003a C3       		ret
+ 3477              		.cfi_endproc
+ 3478              	.LFE715:
+ 3480              		.weak	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD1Ev
+ 3481              		.set	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD1Ev,_ZN60TEST_hsm_2_layer_n
+ 3482              		.section	.text._ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD0Ev,"axG",@progbi
+ 3483              		.align 2
+ 3484              		.weak	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD0Ev
+ 3486              	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD0Ev:
+ 3487              	.LFB717:
+ 3488              		.cfi_startproc
+ 3489 0000 55       		pushq	%rbp
+ 3490              		.cfi_def_cfa_offset 16
+ 3491              		.cfi_offset 6, -16
+ 3492 0001 4889E5   		movq	%rsp, %rbp
+ 3493              		.cfi_def_cfa_register 6
+ 3494 0004 4883EC10 		subq	$16, %rsp
+ 3495 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 3496 000c 488B45F8 		movq	-8(%rbp), %rax
+ 3497 0010 4889C7   		movq	%rax, %rdi
+ 3498 0013 E8000000 		call	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD1Ev
+ 3498      00
+ 3499 0018 488B45F8 		movq	-8(%rbp), %rax
+ 3500 001c 4889C7   		movq	%rax, %rdi
+ 3501 001f E8000000 		call	_ZdlPv
+ 3501      00
+ 3502 0024 C9       		leave
+ 3503              		.cfi_def_cfa 7, 8
+ 3504 0025 C3       		ret
+ 3505              		.cfi_endproc
+ 3506              	.LFE717:
+ 3508              		.weak	_ZTV44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents
+ 3509              		.section	.rodata._ZTV44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents,"aG",@progbits,_ZTV44TEST_GROU
+ 3510              		.align 8
+ 3513              	_ZTV44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents:
+GAS LISTING /tmp/ccl1pnZZ.s 			page 80
+
+
+ 3514 0000 00000000 		.quad	0
+ 3514      00000000 
+ 3515 0008 00000000 		.quad	_ZTI44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents
+ 3515      00000000 
+ 3516 0010 00000000 		.quad	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD1Ev
+ 3516      00000000 
+ 3517 0018 00000000 		.quad	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD0Ev
+ 3517      00000000 
+ 3518 0020 00000000 		.quad	_ZN5Utest3runEv
+ 3518      00000000 
+ 3519 0028 00000000 		.quad	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents5setupEv
+ 3519      00000000 
+ 3520 0030 00000000 		.quad	_ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents8teardownEv
+ 3520      00000000 
+ 3521 0038 00000000 		.quad	_ZN5Utest8testBodyEv
+ 3521      00000000 
+ 3522              		.weak	_ZTI60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell
+ 3523              		.section	.rodata._ZTI60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell,"aG",@progbits
+ 3524              		.align 8
+ 3527              	_ZTI60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell:
+ 3528 0000 00000000 		.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+ 3528      00000000 
+ 3529 0008 00000000 		.quad	_ZTS60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell
+ 3529      00000000 
+ 3530 0010 00000000 		.quad	_ZTI10UtestShell
+ 3530      00000000 
+ 3531              		.weak	_ZTS60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell
+ 3532              		.section	.rodata._ZTS60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell,"aG",@progbits
+ 3533              		.align 32
+ 3536              	_ZTS60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell:
+ 3537 0000 36305445 		.string	"60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell"
+ 3537      53545F68 
+ 3537      736D5F32 
+ 3537      5F6C6179 
+ 3537      65725F6E 
+ 3538              		.weak	_ZTI55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test
+ 3539              		.section	.rodata._ZTI55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test,"aG",@progbits,_ZTI
+ 3540              		.align 8
+ 3543              	_ZTI55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test:
+ 3544 0000 00000000 		.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+ 3544      00000000 
+ 3545 0008 00000000 		.quad	_ZTS55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test
+ 3545      00000000 
+ 3546 0010 00000000 		.quad	_ZTI44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents
+ 3546      00000000 
+ 3547              		.weak	_ZTS55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test
+ 3548              		.section	.rodata._ZTS55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test,"aG",@progbits,_ZTS
+ 3549              		.align 32
+ 3552              	_ZTS55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test:
+ 3553 0000 35355445 		.string	"55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test"
+ 3553      53545F68 
+ 3553      736D5F32 
+ 3553      5F6C6179 
+ 3553      65725F6E 
+ 3554              		.weak	_ZTI44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents
+ 3555              		.section	.rodata._ZTI44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents,"aG",@progbits,_ZTI44TEST_GROU
+ 3556              		.align 8
+GAS LISTING /tmp/ccl1pnZZ.s 			page 81
+
+
+ 3559              	_ZTI44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents:
+ 3560 0000 00000000 		.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+ 3560      00000000 
+ 3561 0008 00000000 		.quad	_ZTS44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents
+ 3561      00000000 
+ 3562 0010 00000000 		.quad	_ZTI5Utest
+ 3562      00000000 
+ 3563              		.weak	_ZTS44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents
+ 3564              		.section	.rodata._ZTS44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents,"aG",@progbits,_ZTS44TEST_GROU
+ 3565              		.align 32
+ 3568              	_ZTS44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents:
+ 3569 0000 34345445 		.string	"44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents"
+ 3569      53545F47 
+ 3569      524F5550 
+ 3569      5F437070 
+ 3569      55546573 
+ 3570              		.section	.rodata
+ 3571              	.LC1:
+ 3572 0031 53686F75 		.string	"Should_HandleTransitions"
+ 3572      6C645F48 
+ 3572      616E646C 
+ 3572      65547261 
+ 3572      6E736974 
+ 3573              	.LC2:
+ 3574 004a 68736D5F 		.string	"hsm_2_layer_noEvents"
+ 3574      325F6C61 
+ 3574      7965725F 
+ 3574      6E6F4576 
+ 3574      656E7473 
+ 3575              		.text
+ 3577              	_Z41__static_initialization_and_destruction_0ii:
+ 3578              	.LFB718:
+ 3579              		.cfi_startproc
+ 3580 1fe3 55       		pushq	%rbp
+ 3581              		.cfi_def_cfa_offset 16
+ 3582              		.cfi_offset 6, -16
+ 3583 1fe4 4889E5   		movq	%rsp, %rbp
+ 3584              		.cfi_def_cfa_register 6
+ 3585 1fe7 4883EC10 		subq	$16, %rsp
+ 3586 1feb 897DFC   		movl	%edi, -4(%rbp)
+ 3587 1fee 8975F8   		movl	%esi, -8(%rbp)
+ 3588 1ff1 837DFC01 		cmpl	$1, -4(%rbp)
+ 3589 1ff5 7560     		jne	.L121
+ 3590 1ff7 817DF8FF 		cmpl	$65535, -8(%rbp)
+ 3590      FF0000
+ 3591 1ffe 7557     		jne	.L121
+ 3592 2000 BF000000 		movl	$TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell_instance, %edi
+ 3592      00
+ 3593 2005 E8000000 		call	_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellC1Ev
+ 3593      00
+ 3594 200a BA000000 		movl	$__dso_handle, %edx
+ 3594      00
+ 3595 200f BE000000 		movl	$TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell_instance, %esi
+ 3595      00
+ 3596 2014 BF000000 		movl	$_ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD1Ev, %edi
+ 3596      00
+ 3597 2019 E8000000 		call	__cxa_atexit
+GAS LISTING /tmp/ccl1pnZZ.s 			page 82
+
+
+ 3597      00
+ 3598 201e 41B9B100 		movl	$177, %r9d
+ 3598      0000
+ 3599 2024 41B80000 		movl	$.LC0, %r8d
+ 3599      0000
+ 3600 202a B9000000 		movl	$.LC1, %ecx
+ 3600      00
+ 3601 202f BA000000 		movl	$.LC2, %edx
+ 3601      00
+ 3602 2034 BE000000 		movl	$TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell_instance, %esi
+ 3602      00
+ 3603 2039 BF000000 		movl	$_ZL60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Installer, %edi
+ 3603      00
+ 3604 203e E8000000 		call	_ZN13TestInstallerC1ER10UtestShellPKcS3_S3_i
+ 3604      00
+ 3605 2043 BA000000 		movl	$__dso_handle, %edx
+ 3605      00
+ 3606 2048 BE000000 		movl	$_ZL60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Installer, %esi
+ 3606      00
+ 3607 204d BF000000 		movl	$_ZN13TestInstallerD1Ev, %edi
+ 3607      00
+ 3608 2052 E8000000 		call	__cxa_atexit
+ 3608      00
+ 3609              	.L121:
+ 3610 2057 90       		nop
+ 3611 2058 C9       		leave
+ 3612              		.cfi_def_cfa 7, 8
+ 3613 2059 C3       		ret
+ 3614              		.cfi_endproc
+ 3615              	.LFE718:
+ 3617              		.data
+ 3618 0208 00000000 		.align 16
+ 3618      00000000 
+ 3621              	._79:
+ 3622 0210 00000000 		.quad	0
+ 3622      00000000 
+ 3623 0218 00000000 		.quad	0
+ 3623      00000000 
+ 3624 0220 00000000 		.quad	subA2
+ 3624      00000000 
+ 3625 0228 00000000 		.align 16
+ 3625      00000000 
+ 3628              	._80:
+ 3629 0230 00000000 		.quad	0
+ 3629      00000000 
+ 3630 0238 00000000 		.quad	0
+ 3630      00000000 
+ 3631 0240 00000000 		.quad	subB1
+ 3631      00000000 
+ 3632 0248 00000000 		.align 16
+ 3632      00000000 
+ 3635              	._81:
+ 3636 0250 00000000 		.quad	0
+ 3636      00000000 
+ 3637 0258 00000000 		.quad	0
+ 3637      00000000 
+ 3638 0260 00000000 		.quad	subA1
+GAS LISTING /tmp/ccl1pnZZ.s 			page 83
+
+
+ 3638      00000000 
+ 3639              		.text
+ 3641              	_GLOBAL__sub_I_topA:
+ 3642              	.LFB719:
+ 3643              		.cfi_startproc
+ 3644 205a 55       		pushq	%rbp
+ 3645              		.cfi_def_cfa_offset 16
+ 3646              		.cfi_offset 6, -16
+ 3647 205b 4889E5   		movq	%rsp, %rbp
+ 3648              		.cfi_def_cfa_register 6
+ 3649 205e BEFFFF00 		movl	$65535, %esi
+ 3649      00
+ 3650 2063 BF010000 		movl	$1, %edi
+ 3650      00
+ 3651 2068 E876FFFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 3651      FF
+ 3652 206d 5D       		popq	%rbp
+ 3653              		.cfi_def_cfa 7, 8
+ 3654 206e C3       		ret
+ 3655              		.cfi_endproc
+ 3656              	.LFE719:
+ 3658              		.section	.init_array,"aw"
+ 3659              		.align 8
+ 3660 0000 00000000 		.quad	_GLOBAL__sub_I_topA
+ 3660      00000000 
+ 3661              		.hidden	__dso_handle
+ 3662              		.ident	"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.5) 5.4.0 20160609"
+ 3663              		.section	.note.GNU-stack,"",@progbits
+GAS LISTING /tmp/ccl1pnZZ.s 			page 84
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 hsm_2_layer_noEvents_test.cpp
+     /tmp/ccl1pnZZ.s:6      .text._ZN14TestTerminatorC2Ev:0000000000000000 _ZN14TestTerminatorC2Ev
+     /tmp/ccl1pnZZ.s:6      .text._ZN14TestTerminatorC2Ev:0000000000000000 _ZN14TestTerminatorC1Ev
+     /tmp/ccl1pnZZ.s:31     .text._ZN20NormalTestTerminatorC2Ev:0000000000000000 _ZN20NormalTestTerminatorC2Ev
+     /tmp/ccl1pnZZ.s:31     .text._ZN20NormalTestTerminatorC2Ev:0000000000000000 _ZN20NormalTestTerminatorC1Ev
+     /tmp/ccl1pnZZ.s:61     .data:0000000000000000 topA
+     /tmp/ccl1pnZZ.s:74     .data:0000000000000060 subA1
+     /tmp/ccl1pnZZ.s:3621   .data:0000000000000210 ._79
+     /tmp/ccl1pnZZ.s:87     .data:00000000000000c0 subA2
+     /tmp/ccl1pnZZ.s:3628   .data:0000000000000230 ._80
+     /tmp/ccl1pnZZ.s:100    .data:0000000000000120 topB
+     /tmp/ccl1pnZZ.s:113    .data:0000000000000180 subB1
+     /tmp/ccl1pnZZ.s:3635   .data:0000000000000250 ._81
+     /tmp/ccl1pnZZ.s:125    .data:00000000000001e0 _ZL9stateList
+     /tmp/ccl1pnZZ.s:136    .bss:0000000000000000 externTestGrouphsm_2_layer_noEvents
+     /tmp/ccl1pnZZ.s:146    .text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents5setupEv:0000000000000000 _ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents5setupEv
+     /tmp/ccl1pnZZ.s:290    .text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents8teardownEv:0000000000000000 _ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents8teardownEv
+     /tmp/ccl1pnZZ.s:308    .text:0000000000000000 _ZL9CHECK_HSMP5hsm_tP5state13hsm_st_mode_tS2_S3_
+     /tmp/ccl1pnZZ.s:661    .text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsC2Ev:0000000000000000 _ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsC2Ev
+     /tmp/ccl1pnZZ.s:3513   .rodata._ZTV44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents:0000000000000000 _ZTV44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents
+     /tmp/ccl1pnZZ.s:661    .text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsC2Ev:0000000000000000 _ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsC1Ev
+     /tmp/ccl1pnZZ.s:690    .text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD2Ev:0000000000000000 _ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD2Ev
+     /tmp/ccl1pnZZ.s:690    .text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD2Ev:0000000000000000 _ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD1Ev
+     /tmp/ccl1pnZZ.s:725    .text._ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD0Ev:0000000000000000 _ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD0Ev
+     /tmp/ccl1pnZZ.s:751    .text._ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestC2Ev:0000000000000000 _ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestC2Ev
+     /tmp/ccl1pnZZ.s:3336   .rodata._ZTV55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test:0000000000000000 _ZTV55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test
+     /tmp/ccl1pnZZ.s:751    .text._ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestC2Ev:0000000000000000 _ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestC1Ev
+     /tmp/ccl1pnZZ.s:787    .text._ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell10createTestEv:0000000000000000 _ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell10createTestEv
+     /tmp/ccl1pnZZ.s:862    .text._ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellC2Ev:0000000000000000 _ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellC2Ev
+     /tmp/ccl1pnZZ.s:3411   .rodata._ZTV60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell:0000000000000000 _ZTV60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell
+     /tmp/ccl1pnZZ.s:862    .text._ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellC2Ev:0000000000000000 _ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellC1Ev
+     /tmp/ccl1pnZZ.s:892    .bss:0000000000000020 TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell_instance
+     /tmp/ccl1pnZZ.s:895    .bss:0000000000000058 _ZL60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Installer
+     /tmp/ccl1pnZZ.s:900    .text:0000000000000328 _ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test8testBodyEv
+     /tmp/ccl1pnZZ.s:3543   .rodata._ZTI55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test:0000000000000000 _ZTI55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test
+     /tmp/ccl1pnZZ.s:3349   .text._ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD2Ev:0000000000000000 _ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD1Ev
+     /tmp/ccl1pnZZ.s:3384   .text._ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD0Ev:0000000000000000 _ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD0Ev
+     /tmp/ccl1pnZZ.s:3349   .text._ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD2Ev:0000000000000000 _ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD2Ev
+     /tmp/ccl1pnZZ.s:3527   .rodata._ZTI60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell:0000000000000000 _ZTI60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell
+     /tmp/ccl1pnZZ.s:3451   .text._ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD2Ev:0000000000000000 _ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD1Ev
+     /tmp/ccl1pnZZ.s:3486   .text._ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD0Ev:0000000000000000 _ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD0Ev
+     /tmp/ccl1pnZZ.s:3451   .text._ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD2Ev:0000000000000000 _ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD2Ev
+     /tmp/ccl1pnZZ.s:3559   .rodata._ZTI44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents:0000000000000000 _ZTI44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents
+     /tmp/ccl1pnZZ.s:3536   .rodata._ZTS60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell:0000000000000000 _ZTS60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShell
+     /tmp/ccl1pnZZ.s:3552   .rodata._ZTS55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test:0000000000000000 _ZTS55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_Test
+     /tmp/ccl1pnZZ.s:3568   .rodata._ZTS44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents:0000000000000000 _ZTS44TEST_GROUP_CppUTestGrouphsm_2_layer_noEvents
+     /tmp/ccl1pnZZ.s:3577   .text:0000000000001fe3 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccl1pnZZ.s:3641   .text:000000000000205a _GLOBAL__sub_I_topA
+                           .group:0000000000000000 _ZN14TestTerminatorC5Ev
+                           .group:0000000000000000 _ZN20NormalTestTerminatorC5Ev
+                           .group:0000000000000000 _ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsC5Ev
+                           .group:0000000000000000 _ZN44TEST_GROUP_CppUTestGrouphsm_2_layer_noEventsD5Ev
+                           .group:0000000000000000 _ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestC5Ev
+                           .group:0000000000000000 _ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellC5Ev
+                           .group:0000000000000000 _ZN55TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestD5Ev
+                           .group:0000000000000000 _ZN60TEST_hsm_2_layer_noEvents_Should_HandleTransitions_TestShellD5Ev
+GAS LISTING /tmp/ccl1pnZZ.s 			page 85
+
+
+
+UNDEFINED SYMBOLS
+_ZTV14TestTerminator
+_ZTV20NormalTestTerminator
+__gxx_personality_v0
+_Z10_hsm_buildPK5statePPS_j
+_ZN10UtestShell10getCurrentEv
+_ZN20NormalTestTerminatorD1Ev
+_Unwind_Resume
+__stack_chk_fail
+_Z15hsm_handleEventP5hsm_tPK11hsm_event_t
+_Z10StringFromi
+_ZNK12SimpleString12asCharStringEv
+_ZN12SimpleStringD1Ev
+_ZN5UtestC2Ev
+_ZN5UtestD2Ev
+_ZdlPv
+_ZnwmPKci
+_ZdlPvPKci
+_ZN10UtestShellC2Ev
+_ZN5Utest3runEv
+_ZN10UtestShell7addTestEPS_
+_ZNK10UtestShell7getNextEv
+_ZN10UtestShell10countTestsEv
+_ZNK10UtestShell16getFormattedNameEv
+_ZNK10UtestShell7willRunEv
+_ZNK10UtestShell9hasFailedEv
+_ZN10UtestShell10assertTrueEbPKcS1_S1_iRK14TestTerminator
+_ZN10UtestShell14assertTrueTextEbPKcS1_S1_S1_iRK14TestTerminator
+_ZN10UtestShell15assertCstrEqualEPKcS1_S1_iRK14TestTerminator
+_ZN10UtestShell16assertCstrNEqualEPKcS1_mS1_iRK14TestTerminator
+_ZN10UtestShell21assertCstrNoCaseEqualEPKcS1_S1_i
+_ZN10UtestShell18assertCstrContainsEPKcS1_S1_i
+_ZN10UtestShell24assertCstrNoCaseContainsEPKcS1_S1_i
+_ZN10UtestShell16assertLongsEqualEllPKciRK14TestTerminator
+_ZN10UtestShell24assertUnsignedLongsEqualEmmPKciRK14TestTerminator
+_ZN10UtestShell19assertPointersEqualEPKvS1_PKci
+_ZN10UtestShell18assertDoublesEqualEdddPKciRK14TestTerminator
+_ZN10UtestShell12assertEqualsEbPKcS1_S1_iRK14TestTerminator
+_ZN10UtestShell17assertBinaryEqualEPKvS1_mPKciRK14TestTerminator
+_ZN10UtestShell4failEPKcS1_iRK14TestTerminator
+_ZN10UtestShell5printEPKcS1_i
+_ZN10UtestShell5printERK12SimpleStringPKci
+_ZNK10UtestShell22isRunInSeperateProcessEv
+_ZN10UtestShell23setRunInSeperateProcessEv
+_ZN10UtestShell11destroyTestEP5Utest
+_ZN10UtestShell10runOneTestEP10TestPluginR10TestResult
+_ZN10UtestShell26runOneTestInCurrentProcessEP10TestPluginR10TestResult
+_ZN10UtestShell8failWithERK11TestFailure
+_ZN10UtestShell8failWithERK11TestFailureRK14TestTerminator
+_ZNK10UtestShell12getMacroNameEv
+_ZN10UtestShellD2Ev
+_ZN5Utest8testBodyEv
+_ZTVN10__cxxabiv120__si_class_type_infoE
+_ZTI10UtestShell
+_ZTI5Utest
+__dso_handle
+GAS LISTING /tmp/ccl1pnZZ.s 			page 86
+
+
+__cxa_atexit
+_ZN13TestInstallerC1ER10UtestShellPKcS3_S3_i
+_ZN13TestInstallerD1Ev

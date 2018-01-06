@@ -1,0 +1,845 @@
+GAS LISTING /tmp/cc9xQaOh.s 			page 1
+
+
+   1              		.file	"dev_test.cpp"
+   2              		.globl	externTestGroupdev_test
+   3              		.bss
+   4              		.align 4
+   7              	externTestGroupdev_test:
+   8 0000 00000000 		.zero	4
+   9              		.section	.text._ZN32TEST_GROUP_CppUTestGroupdev_test5setupEv,"axG",@progbits,_ZN32TEST_GROUP_CppUT
+  10              		.align 2
+  11              		.weak	_ZN32TEST_GROUP_CppUTestGroupdev_test5setupEv
+  13              	_ZN32TEST_GROUP_CppUTestGroupdev_test5setupEv:
+  14              	.LFB692:
+  15              		.cfi_startproc
+  16 0000 55       		pushq	%rbp
+  17              		.cfi_def_cfa_offset 16
+  18              		.cfi_offset 6, -16
+  19 0001 4889E5   		movq	%rsp, %rbp
+  20              		.cfi_def_cfa_register 6
+  21 0004 48897DF8 		movq	%rdi, -8(%rbp)
+  22 0008 90       		nop
+  23 0009 5D       		popq	%rbp
+  24              		.cfi_def_cfa 7, 8
+  25 000a C3       		ret
+  26              		.cfi_endproc
+  27              	.LFE692:
+  29              		.section	.text._ZN32TEST_GROUP_CppUTestGroupdev_test8teardownEv,"axG",@progbits,_ZN32TEST_GROUP_Cp
+  30              		.align 2
+  31              		.weak	_ZN32TEST_GROUP_CppUTestGroupdev_test8teardownEv
+  33              	_ZN32TEST_GROUP_CppUTestGroupdev_test8teardownEv:
+  34              	.LFB693:
+  35              		.cfi_startproc
+  36 0000 55       		pushq	%rbp
+  37              		.cfi_def_cfa_offset 16
+  38              		.cfi_offset 6, -16
+  39 0001 4889E5   		movq	%rsp, %rbp
+  40              		.cfi_def_cfa_register 6
+  41 0004 48897DF8 		movq	%rdi, -8(%rbp)
+  42 0008 90       		nop
+  43 0009 5D       		popq	%rbp
+  44              		.cfi_def_cfa 7, 8
+  45 000a C3       		ret
+  46              		.cfi_endproc
+  47              	.LFE693:
+  49              		.section	.text._ZN32TEST_GROUP_CppUTestGroupdev_testC2Ev,"axG",@progbits,_ZN32TEST_GROUP_CppUTestG
+  50              		.align 2
+  51              		.weak	_ZN32TEST_GROUP_CppUTestGroupdev_testC2Ev
+  53              	_ZN32TEST_GROUP_CppUTestGroupdev_testC2Ev:
+  54              	.LFB696:
+  55              		.cfi_startproc
+  56 0000 55       		pushq	%rbp
+  57              		.cfi_def_cfa_offset 16
+  58              		.cfi_offset 6, -16
+  59 0001 4889E5   		movq	%rsp, %rbp
+  60              		.cfi_def_cfa_register 6
+  61 0004 4883EC10 		subq	$16, %rsp
+  62 0008 48897DF8 		movq	%rdi, -8(%rbp)
+  63 000c 488B45F8 		movq	-8(%rbp), %rax
+  64 0010 4889C7   		movq	%rax, %rdi
+GAS LISTING /tmp/cc9xQaOh.s 			page 2
+
+
+  65 0013 E8000000 		call	_ZN5UtestC2Ev
+  65      00
+  66 0018 BA000000 		movl	$_ZTV32TEST_GROUP_CppUTestGroupdev_test+16, %edx
+  66      00
+  67 001d 488B45F8 		movq	-8(%rbp), %rax
+  68 0021 488910   		movq	%rdx, (%rax)
+  69 0024 90       		nop
+  70 0025 C9       		leave
+  71              		.cfi_def_cfa 7, 8
+  72 0026 C3       		ret
+  73              		.cfi_endproc
+  74              	.LFE696:
+  76              		.weak	_ZN32TEST_GROUP_CppUTestGroupdev_testC1Ev
+  77              		.set	_ZN32TEST_GROUP_CppUTestGroupdev_testC1Ev,_ZN32TEST_GROUP_CppUTestGroupdev_testC2Ev
+  78              		.section	.text._ZN32TEST_GROUP_CppUTestGroupdev_testD2Ev,"axG",@progbits,_ZN32TEST_GROUP_CppUTestG
+  79              		.align 2
+  80              		.weak	_ZN32TEST_GROUP_CppUTestGroupdev_testD2Ev
+  82              	_ZN32TEST_GROUP_CppUTestGroupdev_testD2Ev:
+  83              	.LFB699:
+  84              		.cfi_startproc
+  85 0000 55       		pushq	%rbp
+  86              		.cfi_def_cfa_offset 16
+  87              		.cfi_offset 6, -16
+  88 0001 4889E5   		movq	%rsp, %rbp
+  89              		.cfi_def_cfa_register 6
+  90 0004 4883EC10 		subq	$16, %rsp
+  91 0008 48897DF8 		movq	%rdi, -8(%rbp)
+  92 000c BA000000 		movl	$_ZTV32TEST_GROUP_CppUTestGroupdev_test+16, %edx
+  92      00
+  93 0011 488B45F8 		movq	-8(%rbp), %rax
+  94 0015 488910   		movq	%rdx, (%rax)
+  95 0018 488B45F8 		movq	-8(%rbp), %rax
+  96 001c 4889C7   		movq	%rax, %rdi
+  97 001f E8000000 		call	_ZN5UtestD2Ev
+  97      00
+  98 0024 B8000000 		movl	$0, %eax
+  98      00
+  99 0029 85C0     		testl	%eax, %eax
+ 100 002b 740C     		je	.L4
+ 101 002d 488B45F8 		movq	-8(%rbp), %rax
+ 102 0031 4889C7   		movq	%rax, %rdi
+ 103 0034 E8000000 		call	_ZdlPv
+ 103      00
+ 104              	.L4:
+ 105 0039 C9       		leave
+ 106              		.cfi_def_cfa 7, 8
+ 107 003a C3       		ret
+ 108              		.cfi_endproc
+ 109              	.LFE699:
+ 111              		.weak	_ZN32TEST_GROUP_CppUTestGroupdev_testD1Ev
+ 112              		.set	_ZN32TEST_GROUP_CppUTestGroupdev_testD1Ev,_ZN32TEST_GROUP_CppUTestGroupdev_testD2Ev
+ 113              		.section	.text._ZN32TEST_GROUP_CppUTestGroupdev_testD0Ev,"axG",@progbits,_ZN32TEST_GROUP_CppUTestG
+ 114              		.align 2
+ 115              		.weak	_ZN32TEST_GROUP_CppUTestGroupdev_testD0Ev
+ 117              	_ZN32TEST_GROUP_CppUTestGroupdev_testD0Ev:
+ 118              	.LFB701:
+ 119              		.cfi_startproc
+GAS LISTING /tmp/cc9xQaOh.s 			page 3
+
+
+ 120 0000 55       		pushq	%rbp
+ 121              		.cfi_def_cfa_offset 16
+ 122              		.cfi_offset 6, -16
+ 123 0001 4889E5   		movq	%rsp, %rbp
+ 124              		.cfi_def_cfa_register 6
+ 125 0004 4883EC10 		subq	$16, %rsp
+ 126 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 127 000c 488B45F8 		movq	-8(%rbp), %rax
+ 128 0010 4889C7   		movq	%rax, %rdi
+ 129 0013 E8000000 		call	_ZN32TEST_GROUP_CppUTestGroupdev_testD1Ev
+ 129      00
+ 130 0018 488B45F8 		movq	-8(%rbp), %rax
+ 131 001c 4889C7   		movq	%rax, %rdi
+ 132 001f E8000000 		call	_ZdlPv
+ 132      00
+ 133 0024 C9       		leave
+ 134              		.cfi_def_cfa 7, 8
+ 135 0025 C3       		ret
+ 136              		.cfi_endproc
+ 137              	.LFE701:
+ 139              		.section	.text._ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestC2Ev,"axG",@prog
+ 140              		.align 2
+ 141              		.weak	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestC2Ev
+ 143              	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestC2Ev:
+ 144              	.LFB702:
+ 145              		.cfi_startproc
+ 146 0000 55       		pushq	%rbp
+ 147              		.cfi_def_cfa_offset 16
+ 148              		.cfi_offset 6, -16
+ 149 0001 4889E5   		movq	%rsp, %rbp
+ 150              		.cfi_def_cfa_register 6
+ 151 0004 4883EC10 		subq	$16, %rsp
+ 152 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 153 000c 488B45F8 		movq	-8(%rbp), %rax
+ 154 0010 4889C7   		movq	%rax, %rdi
+ 155 0013 E8000000 		call	_ZN32TEST_GROUP_CppUTestGroupdev_testC2Ev
+ 155      00
+ 156 0018 BA000000 		movl	$_ZTV62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test+16, %edx
+ 156      00
+ 157 001d 488B45F8 		movq	-8(%rbp), %rax
+ 158 0021 488910   		movq	%rdx, (%rax)
+ 159 0024 90       		nop
+ 160 0025 C9       		leave
+ 161              		.cfi_def_cfa 7, 8
+ 162 0026 C3       		ret
+ 163              		.cfi_endproc
+ 164              	.LFE702:
+ 166              		.weak	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestC1Ev
+ 167              		.set	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestC1Ev,_ZN62TEST_dev_test_Sh
+ 168              		.section	.rodata
+ 169              	.LC0:
+ 170 0000 74657374 		.string	"tests/dev_test.cpp"
+ 170      732F6465 
+ 170      765F7465 
+ 170      73742E63 
+ 170      707000
+ 171              		.section	.text._ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell10createTes
+GAS LISTING /tmp/cc9xQaOh.s 			page 4
+
+
+ 172              		.align 2
+ 173              		.weak	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell10createTestEv
+ 175              	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell10createTestEv:
+ 176              	.LFB704:
+ 177              		.cfi_startproc
+ 178              		.cfi_personality 0x3,__gxx_personality_v0
+ 179              		.cfi_lsda 0x3,.LLSDA704
+ 180 0000 55       		pushq	%rbp
+ 181              		.cfi_def_cfa_offset 16
+ 182              		.cfi_offset 6, -16
+ 183 0001 4889E5   		movq	%rsp, %rbp
+ 184              		.cfi_def_cfa_register 6
+ 185 0004 4154     		pushq	%r12
+ 186 0006 53       		pushq	%rbx
+ 187 0007 4883EC10 		subq	$16, %rsp
+ 188              		.cfi_offset 12, -24
+ 189              		.cfi_offset 3, -32
+ 190 000b 48897DE8 		movq	%rdi, -24(%rbp)
+ 191 000f BA130000 		movl	$19, %edx
+ 191      00
+ 192 0014 BE000000 		movl	$.LC0, %esi
+ 192      00
+ 193 0019 BF080000 		movl	$8, %edi
+ 193      00
+ 194              	.LEHB0:
+ 195 001e E8000000 		call	_ZnwmPKci
+ 195      00
+ 196              	.LEHE0:
+ 197 0023 4889C3   		movq	%rax, %rbx
+ 198 0026 4889DF   		movq	%rbx, %rdi
+ 199              	.LEHB1:
+ 200 0029 E8000000 		call	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestC1Ev
+ 200      00
+ 201              	.LEHE1:
+ 202 002e 4889D8   		movq	%rbx, %rax
+ 203 0031 EB20     		jmp	.L12
+ 204              	.L11:
+ 205 0033 4989C4   		movq	%rax, %r12
+ 206 0036 BA130000 		movl	$19, %edx
+ 206      00
+ 207 003b BE000000 		movl	$.LC0, %esi
+ 207      00
+ 208 0040 4889DF   		movq	%rbx, %rdi
+ 209 0043 E8000000 		call	_ZdlPvPKci
+ 209      00
+ 210 0048 4C89E0   		movq	%r12, %rax
+ 211 004b 4889C7   		movq	%rax, %rdi
+ 212              	.LEHB2:
+ 213 004e E8000000 		call	_Unwind_Resume
+ 213      00
+ 214              	.LEHE2:
+ 215              	.L12:
+ 216 0053 4883C410 		addq	$16, %rsp
+ 217 0057 5B       		popq	%rbx
+ 218 0058 415C     		popq	%r12
+ 219 005a 5D       		popq	%rbp
+ 220              		.cfi_def_cfa 7, 8
+GAS LISTING /tmp/cc9xQaOh.s 			page 5
+
+
+ 221 005b C3       		ret
+ 222              		.cfi_endproc
+ 223              	.LFE704:
+ 224              		.globl	__gxx_personality_v0
+ 225              		.section	.gcc_except_table._ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShel
+ 226              	.LLSDA704:
+ 227 0000 FF       		.byte	0xff
+ 228 0001 FF       		.byte	0xff
+ 229 0002 01       		.byte	0x1
+ 230 0003 0C       		.uleb128 .LLSDACSE704-.LLSDACSB704
+ 231              	.LLSDACSB704:
+ 232 0004 1E       		.uleb128 .LEHB0-.LFB704
+ 233 0005 05       		.uleb128 .LEHE0-.LEHB0
+ 234 0006 00       		.uleb128 0
+ 235 0007 00       		.uleb128 0
+ 236 0008 29       		.uleb128 .LEHB1-.LFB704
+ 237 0009 05       		.uleb128 .LEHE1-.LEHB1
+ 238 000a 33       		.uleb128 .L11-.LFB704
+ 239 000b 00       		.uleb128 0
+ 240 000c 4E       		.uleb128 .LEHB2-.LFB704
+ 241 000d 05       		.uleb128 .LEHE2-.LEHB2
+ 242 000e 00       		.uleb128 0
+ 243 000f 00       		.uleb128 0
+ 244              	.LLSDACSE704:
+ 245              		.section	.text._ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell10createTes
+ 247              		.section	.text._ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellC2Ev,"axG",
+ 248              		.align 2
+ 249              		.weak	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellC2Ev
+ 251              	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellC2Ev:
+ 252              	.LFB706:
+ 253              		.cfi_startproc
+ 254 0000 55       		pushq	%rbp
+ 255              		.cfi_def_cfa_offset 16
+ 256              		.cfi_offset 6, -16
+ 257 0001 4889E5   		movq	%rsp, %rbp
+ 258              		.cfi_def_cfa_register 6
+ 259 0004 4883EC10 		subq	$16, %rsp
+ 260 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 261 000c 488B45F8 		movq	-8(%rbp), %rax
+ 262 0010 4889C7   		movq	%rax, %rdi
+ 263 0013 E8000000 		call	_ZN10UtestShellC2Ev
+ 263      00
+ 264 0018 BA000000 		movl	$_ZTV67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell+16, %edx
+ 264      00
+ 265 001d 488B45F8 		movq	-8(%rbp), %rax
+ 266 0021 488910   		movq	%rdx, (%rax)
+ 267 0024 90       		nop
+ 268 0025 C9       		leave
+ 269              		.cfi_def_cfa 7, 8
+ 270 0026 C3       		ret
+ 271              		.cfi_endproc
+ 272              	.LFE706:
+ 274              		.weak	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellC1Ev
+ 275              		.set	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellC1Ev,_ZN67TEST_dev_te
+ 276              		.globl	TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell_instance
+ 277              		.bss
+ 278 0004 00000000 		.align 32
+GAS LISTING /tmp/cc9xQaOh.s 			page 6
+
+
+ 278      00000000 
+ 278      00000000 
+ 278      00000000 
+ 278      00000000 
+ 281              	TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell_instance:
+ 282 0020 00000000 		.zero	56
+ 282      00000000 
+ 282      00000000 
+ 282      00000000 
+ 282      00000000 
+ 283              		.local	_ZL67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Installer
+ 284              		.comm	_ZL67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Installer,8,8
+ 285              		.text
+ 286              		.align 2
+ 287              		.globl	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test8testBodyEv
+ 289              	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test8testBodyEv:
+ 290              	.LFB708:
+ 291              		.cfi_startproc
+ 292 0000 55       		pushq	%rbp
+ 293              		.cfi_def_cfa_offset 16
+ 294              		.cfi_offset 6, -16
+ 295 0001 4889E5   		movq	%rsp, %rbp
+ 296              		.cfi_def_cfa_register 6
+ 297 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 298 0008 90       		nop
+ 299 0009 5D       		popq	%rbp
+ 300              		.cfi_def_cfa 7, 8
+ 301 000a C3       		ret
+ 302              		.cfi_endproc
+ 303              	.LFE708:
+ 305              		.weak	_ZTV62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test
+ 306              		.section	.rodata._ZTV62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test,"aG",@progbi
+ 307              		.align 8
+ 310              	_ZTV62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test:
+ 311 0000 00000000 		.quad	0
+ 311      00000000 
+ 312 0008 00000000 		.quad	_ZTI62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test
+ 312      00000000 
+ 313 0010 00000000 		.quad	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD1Ev
+ 313      00000000 
+ 314 0018 00000000 		.quad	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD0Ev
+ 314      00000000 
+ 315 0020 00000000 		.quad	_ZN5Utest3runEv
+ 315      00000000 
+ 316 0028 00000000 		.quad	_ZN32TEST_GROUP_CppUTestGroupdev_test5setupEv
+ 316      00000000 
+ 317 0030 00000000 		.quad	_ZN32TEST_GROUP_CppUTestGroupdev_test8teardownEv
+ 317      00000000 
+ 318 0038 00000000 		.quad	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test8testBodyEv
+ 318      00000000 
+ 319              		.section	.text._ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD2Ev,"axG",@prog
+ 320              		.align 2
+ 321              		.weak	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD2Ev
+ 323              	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD2Ev:
+ 324              	.LFB710:
+ 325              		.cfi_startproc
+ 326 0000 55       		pushq	%rbp
+GAS LISTING /tmp/cc9xQaOh.s 			page 7
+
+
+ 327              		.cfi_def_cfa_offset 16
+ 328              		.cfi_offset 6, -16
+ 329 0001 4889E5   		movq	%rsp, %rbp
+ 330              		.cfi_def_cfa_register 6
+ 331 0004 4883EC10 		subq	$16, %rsp
+ 332 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 333 000c BA000000 		movl	$_ZTV62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test+16, %edx
+ 333      00
+ 334 0011 488B45F8 		movq	-8(%rbp), %rax
+ 335 0015 488910   		movq	%rdx, (%rax)
+ 336 0018 488B45F8 		movq	-8(%rbp), %rax
+ 337 001c 4889C7   		movq	%rax, %rdi
+ 338 001f E8000000 		call	_ZN32TEST_GROUP_CppUTestGroupdev_testD2Ev
+ 338      00
+ 339 0024 B8000000 		movl	$0, %eax
+ 339      00
+ 340 0029 85C0     		testl	%eax, %eax
+ 341 002b 740C     		je	.L15
+ 342 002d 488B45F8 		movq	-8(%rbp), %rax
+ 343 0031 4889C7   		movq	%rax, %rdi
+ 344 0034 E8000000 		call	_ZdlPv
+ 344      00
+ 345              	.L15:
+ 346 0039 C9       		leave
+ 347              		.cfi_def_cfa 7, 8
+ 348 003a C3       		ret
+ 349              		.cfi_endproc
+ 350              	.LFE710:
+ 352              		.weak	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD1Ev
+ 353              		.set	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD1Ev,_ZN62TEST_dev_test_Sh
+ 354              		.section	.text._ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD0Ev,"axG",@prog
+ 355              		.align 2
+ 356              		.weak	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD0Ev
+ 358              	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD0Ev:
+ 359              	.LFB712:
+ 360              		.cfi_startproc
+ 361 0000 55       		pushq	%rbp
+ 362              		.cfi_def_cfa_offset 16
+ 363              		.cfi_offset 6, -16
+ 364 0001 4889E5   		movq	%rsp, %rbp
+ 365              		.cfi_def_cfa_register 6
+ 366 0004 4883EC10 		subq	$16, %rsp
+ 367 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 368 000c 488B45F8 		movq	-8(%rbp), %rax
+ 369 0010 4889C7   		movq	%rax, %rdi
+ 370 0013 E8000000 		call	_ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD1Ev
+ 370      00
+ 371 0018 488B45F8 		movq	-8(%rbp), %rax
+ 372 001c 4889C7   		movq	%rax, %rdi
+ 373 001f E8000000 		call	_ZdlPv
+ 373      00
+ 374 0024 C9       		leave
+ 375              		.cfi_def_cfa 7, 8
+ 376 0025 C3       		ret
+ 377              		.cfi_endproc
+ 378              	.LFE712:
+ 380              		.weak	_ZTV67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell
+GAS LISTING /tmp/cc9xQaOh.s 			page 8
+
+
+ 381              		.section	.rodata._ZTV67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell,"aG",@p
+ 382              		.align 8
+ 385              	_ZTV67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell:
+ 386 0000 00000000 		.quad	0
+ 386      00000000 
+ 387 0008 00000000 		.quad	_ZTI67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell
+ 387      00000000 
+ 388 0010 00000000 		.quad	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD1Ev
+ 388      00000000 
+ 389 0018 00000000 		.quad	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD0Ev
+ 389      00000000 
+ 390 0020 00000000 		.quad	_ZN10UtestShell7addTestEPS_
+ 390      00000000 
+ 391 0028 00000000 		.quad	_ZNK10UtestShell7getNextEv
+ 391      00000000 
+ 392 0030 00000000 		.quad	_ZN10UtestShell10countTestsEv
+ 392      00000000 
+ 393 0038 00000000 		.quad	_ZNK10UtestShell16getFormattedNameEv
+ 393      00000000 
+ 394 0040 00000000 		.quad	_ZNK10UtestShell7willRunEv
+ 394      00000000 
+ 395 0048 00000000 		.quad	_ZNK10UtestShell9hasFailedEv
+ 395      00000000 
+ 396 0050 00000000 		.quad	_ZN10UtestShell10assertTrueEbPKcS1_S1_iRK14TestTerminator
+ 396      00000000 
+ 397 0058 00000000 		.quad	_ZN10UtestShell14assertTrueTextEbPKcS1_S1_S1_iRK14TestTerminator
+ 397      00000000 
+ 398 0060 00000000 		.quad	_ZN10UtestShell15assertCstrEqualEPKcS1_S1_iRK14TestTerminator
+ 398      00000000 
+ 399 0068 00000000 		.quad	_ZN10UtestShell16assertCstrNEqualEPKcS1_mS1_iRK14TestTerminator
+ 399      00000000 
+ 400 0070 00000000 		.quad	_ZN10UtestShell21assertCstrNoCaseEqualEPKcS1_S1_i
+ 400      00000000 
+ 401 0078 00000000 		.quad	_ZN10UtestShell18assertCstrContainsEPKcS1_S1_i
+ 401      00000000 
+ 402 0080 00000000 		.quad	_ZN10UtestShell24assertCstrNoCaseContainsEPKcS1_S1_i
+ 402      00000000 
+ 403 0088 00000000 		.quad	_ZN10UtestShell16assertLongsEqualEllPKciRK14TestTerminator
+ 403      00000000 
+ 404 0090 00000000 		.quad	_ZN10UtestShell24assertUnsignedLongsEqualEmmPKciRK14TestTerminator
+ 404      00000000 
+ 405 0098 00000000 		.quad	_ZN10UtestShell19assertPointersEqualEPKvS1_PKci
+ 405      00000000 
+ 406 00a0 00000000 		.quad	_ZN10UtestShell18assertDoublesEqualEdddPKciRK14TestTerminator
+ 406      00000000 
+ 407 00a8 00000000 		.quad	_ZN10UtestShell12assertEqualsEbPKcS1_S1_iRK14TestTerminator
+ 407      00000000 
+ 408 00b0 00000000 		.quad	_ZN10UtestShell17assertBinaryEqualEPKvS1_mPKciRK14TestTerminator
+ 408      00000000 
+ 409 00b8 00000000 		.quad	_ZN10UtestShell4failEPKcS1_iRK14TestTerminator
+ 409      00000000 
+ 410 00c0 00000000 		.quad	_ZN10UtestShell5printEPKcS1_i
+ 410      00000000 
+ 411 00c8 00000000 		.quad	_ZN10UtestShell5printERK12SimpleStringPKci
+ 411      00000000 
+ 412 00d0 00000000 		.quad	_ZNK10UtestShell22isRunInSeperateProcessEv
+ 412      00000000 
+GAS LISTING /tmp/cc9xQaOh.s 			page 9
+
+
+ 413 00d8 00000000 		.quad	_ZN10UtestShell23setRunInSeperateProcessEv
+ 413      00000000 
+ 414 00e0 00000000 		.quad	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell10createTestEv
+ 414      00000000 
+ 415 00e8 00000000 		.quad	_ZN10UtestShell11destroyTestEP5Utest
+ 415      00000000 
+ 416 00f0 00000000 		.quad	_ZN10UtestShell10runOneTestEP10TestPluginR10TestResult
+ 416      00000000 
+ 417 00f8 00000000 		.quad	_ZN10UtestShell26runOneTestInCurrentProcessEP10TestPluginR10TestResult
+ 417      00000000 
+ 418 0100 00000000 		.quad	_ZN10UtestShell8failWithERK11TestFailure
+ 418      00000000 
+ 419 0108 00000000 		.quad	_ZN10UtestShell8failWithERK11TestFailureRK14TestTerminator
+ 419      00000000 
+ 420 0110 00000000 		.quad	_ZNK10UtestShell12getMacroNameEv
+ 420      00000000 
+ 421              		.section	.text._ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD2Ev,"axG",
+ 422              		.align 2
+ 423              		.weak	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD2Ev
+ 425              	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD2Ev:
+ 426              	.LFB714:
+ 427              		.cfi_startproc
+ 428 0000 55       		pushq	%rbp
+ 429              		.cfi_def_cfa_offset 16
+ 430              		.cfi_offset 6, -16
+ 431 0001 4889E5   		movq	%rsp, %rbp
+ 432              		.cfi_def_cfa_register 6
+ 433 0004 4883EC10 		subq	$16, %rsp
+ 434 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 435 000c BA000000 		movl	$_ZTV67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell+16, %edx
+ 435      00
+ 436 0011 488B45F8 		movq	-8(%rbp), %rax
+ 437 0015 488910   		movq	%rdx, (%rax)
+ 438 0018 488B45F8 		movq	-8(%rbp), %rax
+ 439 001c 4889C7   		movq	%rax, %rdi
+ 440 001f E8000000 		call	_ZN10UtestShellD2Ev
+ 440      00
+ 441 0024 B8000000 		movl	$0, %eax
+ 441      00
+ 442 0029 85C0     		testl	%eax, %eax
+ 443 002b 740C     		je	.L18
+ 444 002d 488B45F8 		movq	-8(%rbp), %rax
+ 445 0031 4889C7   		movq	%rax, %rdi
+ 446 0034 E8000000 		call	_ZdlPv
+ 446      00
+ 447              	.L18:
+ 448 0039 C9       		leave
+ 449              		.cfi_def_cfa 7, 8
+ 450 003a C3       		ret
+ 451              		.cfi_endproc
+ 452              	.LFE714:
+ 454              		.weak	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD1Ev
+ 455              		.set	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD1Ev,_ZN67TEST_dev_te
+ 456              		.section	.text._ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD0Ev,"axG",
+ 457              		.align 2
+ 458              		.weak	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD0Ev
+ 460              	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD0Ev:
+GAS LISTING /tmp/cc9xQaOh.s 			page 10
+
+
+ 461              	.LFB716:
+ 462              		.cfi_startproc
+ 463 0000 55       		pushq	%rbp
+ 464              		.cfi_def_cfa_offset 16
+ 465              		.cfi_offset 6, -16
+ 466 0001 4889E5   		movq	%rsp, %rbp
+ 467              		.cfi_def_cfa_register 6
+ 468 0004 4883EC10 		subq	$16, %rsp
+ 469 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 470 000c 488B45F8 		movq	-8(%rbp), %rax
+ 471 0010 4889C7   		movq	%rax, %rdi
+ 472 0013 E8000000 		call	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD1Ev
+ 472      00
+ 473 0018 488B45F8 		movq	-8(%rbp), %rax
+ 474 001c 4889C7   		movq	%rax, %rdi
+ 475 001f E8000000 		call	_ZdlPv
+ 475      00
+ 476 0024 C9       		leave
+ 477              		.cfi_def_cfa 7, 8
+ 478 0025 C3       		ret
+ 479              		.cfi_endproc
+ 480              	.LFE716:
+ 482              		.weak	_ZTV32TEST_GROUP_CppUTestGroupdev_test
+ 483              		.section	.rodata._ZTV32TEST_GROUP_CppUTestGroupdev_test,"aG",@progbits,_ZTV32TEST_GROUP_CppUTestGr
+ 484              		.align 8
+ 487              	_ZTV32TEST_GROUP_CppUTestGroupdev_test:
+ 488 0000 00000000 		.quad	0
+ 488      00000000 
+ 489 0008 00000000 		.quad	_ZTI32TEST_GROUP_CppUTestGroupdev_test
+ 489      00000000 
+ 490 0010 00000000 		.quad	_ZN32TEST_GROUP_CppUTestGroupdev_testD1Ev
+ 490      00000000 
+ 491 0018 00000000 		.quad	_ZN32TEST_GROUP_CppUTestGroupdev_testD0Ev
+ 491      00000000 
+ 492 0020 00000000 		.quad	_ZN5Utest3runEv
+ 492      00000000 
+ 493 0028 00000000 		.quad	_ZN32TEST_GROUP_CppUTestGroupdev_test5setupEv
+ 493      00000000 
+ 494 0030 00000000 		.quad	_ZN32TEST_GROUP_CppUTestGroupdev_test8teardownEv
+ 494      00000000 
+ 495 0038 00000000 		.quad	_ZN5Utest8testBodyEv
+ 495      00000000 
+ 496              		.weak	_ZTI67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell
+ 497              		.section	.rodata._ZTI67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell,"aG",@p
+ 498              		.align 8
+ 501              	_ZTI67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell:
+ 502 0000 00000000 		.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+ 502      00000000 
+ 503 0008 00000000 		.quad	_ZTS67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell
+ 503      00000000 
+ 504 0010 00000000 		.quad	_ZTI10UtestShell
+ 504      00000000 
+ 505              		.weak	_ZTS67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell
+ 506              		.section	.rodata._ZTS67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell,"aG",@p
+ 507              		.align 32
+ 510              	_ZTS67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell:
+ 511 0000 36375445 		.string	"67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell"
+GAS LISTING /tmp/cc9xQaOh.s 			page 11
+
+
+ 511      53545F64 
+ 511      65765F74 
+ 511      6573745F 
+ 511      53686F75 
+ 512              		.weak	_ZTI62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test
+ 513              		.section	.rodata._ZTI62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test,"aG",@progbi
+ 514              		.align 8
+ 517              	_ZTI62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test:
+ 518 0000 00000000 		.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+ 518      00000000 
+ 519 0008 00000000 		.quad	_ZTS62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test
+ 519      00000000 
+ 520 0010 00000000 		.quad	_ZTI32TEST_GROUP_CppUTestGroupdev_test
+ 520      00000000 
+ 521              		.weak	_ZTS62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test
+ 522              		.section	.rodata._ZTS62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test,"aG",@progbi
+ 523              		.align 32
+ 526              	_ZTS62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test:
+ 527 0000 36325445 		.string	"62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test"
+ 527      53545F64 
+ 527      65765F74 
+ 527      6573745F 
+ 527      53686F75 
+ 528              		.weak	_ZTI32TEST_GROUP_CppUTestGroupdev_test
+ 529              		.section	.rodata._ZTI32TEST_GROUP_CppUTestGroupdev_test,"aG",@progbits,_ZTI32TEST_GROUP_CppUTestGr
+ 530              		.align 8
+ 533              	_ZTI32TEST_GROUP_CppUTestGroupdev_test:
+ 534 0000 00000000 		.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+ 534      00000000 
+ 535 0008 00000000 		.quad	_ZTS32TEST_GROUP_CppUTestGroupdev_test
+ 535      00000000 
+ 536 0010 00000000 		.quad	_ZTI5Utest
+ 536      00000000 
+ 537              		.weak	_ZTS32TEST_GROUP_CppUTestGroupdev_test
+ 538              		.section	.rodata._ZTS32TEST_GROUP_CppUTestGroupdev_test,"aG",@progbits,_ZTS32TEST_GROUP_CppUTestGr
+ 539              		.align 32
+ 542              	_ZTS32TEST_GROUP_CppUTestGroupdev_test:
+ 543 0000 33325445 		.string	"32TEST_GROUP_CppUTestGroupdev_test"
+ 543      53545F47 
+ 543      524F5550 
+ 543      5F437070 
+ 543      55546573 
+ 544              		.section	.rodata
+ 545 0013 00000000 		.align 8
+ 545      00
+ 546              	.LC1:
+ 547 0018 53686F75 		.string	"Should_ExpectedBehavior_When_StateUnderTest"
+ 547      6C645F45 
+ 547      78706563 
+ 547      74656442 
+ 547      65686176 
+ 548              	.LC2:
+ 549 0044 6465765F 		.string	"dev_test"
+ 549      74657374 
+ 549      00
+ 550              		.text
+ 552              	_Z41__static_initialization_and_destruction_0ii:
+GAS LISTING /tmp/cc9xQaOh.s 			page 12
+
+
+ 553              	.LFB717:
+ 554              		.cfi_startproc
+ 555 000b 55       		pushq	%rbp
+ 556              		.cfi_def_cfa_offset 16
+ 557              		.cfi_offset 6, -16
+ 558 000c 4889E5   		movq	%rsp, %rbp
+ 559              		.cfi_def_cfa_register 6
+ 560 000f 4883EC10 		subq	$16, %rsp
+ 561 0013 897DFC   		movl	%edi, -4(%rbp)
+ 562 0016 8975F8   		movl	%esi, -8(%rbp)
+ 563 0019 837DFC01 		cmpl	$1, -4(%rbp)
+ 564 001d 7560     		jne	.L23
+ 565 001f 817DF8FF 		cmpl	$65535, -8(%rbp)
+ 565      FF0000
+ 566 0026 7557     		jne	.L23
+ 567 0028 BF000000 		movl	$TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell_instance, %edi
+ 567      00
+ 568 002d E8000000 		call	_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellC1Ev
+ 568      00
+ 569 0032 BA000000 		movl	$__dso_handle, %edx
+ 569      00
+ 570 0037 BE000000 		movl	$TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell_instance, %esi
+ 570      00
+ 571 003c BF000000 		movl	$_ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD1Ev, %edi
+ 571      00
+ 572 0041 E8000000 		call	__cxa_atexit
+ 572      00
+ 573 0046 41B91300 		movl	$19, %r9d
+ 573      0000
+ 574 004c 41B80000 		movl	$.LC0, %r8d
+ 574      0000
+ 575 0052 B9000000 		movl	$.LC1, %ecx
+ 575      00
+ 576 0057 BA000000 		movl	$.LC2, %edx
+ 576      00
+ 577 005c BE000000 		movl	$TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell_instance, %esi
+ 577      00
+ 578 0061 BF000000 		movl	$_ZL67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Installer, %edi
+ 578      00
+ 579 0066 E8000000 		call	_ZN13TestInstallerC1ER10UtestShellPKcS3_S3_i
+ 579      00
+ 580 006b BA000000 		movl	$__dso_handle, %edx
+ 580      00
+ 581 0070 BE000000 		movl	$_ZL67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Installer, %esi
+ 581      00
+ 582 0075 BF000000 		movl	$_ZN13TestInstallerD1Ev, %edi
+ 582      00
+ 583 007a E8000000 		call	__cxa_atexit
+ 583      00
+ 584              	.L23:
+ 585 007f 90       		nop
+ 586 0080 C9       		leave
+ 587              		.cfi_def_cfa 7, 8
+ 588 0081 C3       		ret
+ 589              		.cfi_endproc
+ 590              	.LFE717:
+ 593              	_GLOBAL__sub_I_externTestGroupdev_test:
+GAS LISTING /tmp/cc9xQaOh.s 			page 13
+
+
+ 594              	.LFB718:
+ 595              		.cfi_startproc
+ 596 0082 55       		pushq	%rbp
+ 597              		.cfi_def_cfa_offset 16
+ 598              		.cfi_offset 6, -16
+ 599 0083 4889E5   		movq	%rsp, %rbp
+ 600              		.cfi_def_cfa_register 6
+ 601 0086 BEFFFF00 		movl	$65535, %esi
+ 601      00
+ 602 008b BF010000 		movl	$1, %edi
+ 602      00
+ 603 0090 E876FFFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 603      FF
+ 604 0095 5D       		popq	%rbp
+ 605              		.cfi_def_cfa 7, 8
+ 606 0096 C3       		ret
+ 607              		.cfi_endproc
+ 608              	.LFE718:
+ 610              		.section	.init_array,"aw"
+ 611              		.align 8
+ 612 0000 00000000 		.quad	_GLOBAL__sub_I_externTestGroupdev_test
+ 612      00000000 
+ 613              		.hidden	__dso_handle
+ 614              		.ident	"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.5) 5.4.0 20160609"
+ 615              		.section	.note.GNU-stack,"",@progbits
+GAS LISTING /tmp/cc9xQaOh.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 dev_test.cpp
+     /tmp/cc9xQaOh.s:7      .bss:0000000000000000 externTestGroupdev_test
+     /tmp/cc9xQaOh.s:13     .text._ZN32TEST_GROUP_CppUTestGroupdev_test5setupEv:0000000000000000 _ZN32TEST_GROUP_CppUTestGroupdev_test5setupEv
+     /tmp/cc9xQaOh.s:33     .text._ZN32TEST_GROUP_CppUTestGroupdev_test8teardownEv:0000000000000000 _ZN32TEST_GROUP_CppUTestGroupdev_test8teardownEv
+     /tmp/cc9xQaOh.s:53     .text._ZN32TEST_GROUP_CppUTestGroupdev_testC2Ev:0000000000000000 _ZN32TEST_GROUP_CppUTestGroupdev_testC2Ev
+     /tmp/cc9xQaOh.s:487    .rodata._ZTV32TEST_GROUP_CppUTestGroupdev_test:0000000000000000 _ZTV32TEST_GROUP_CppUTestGroupdev_test
+     /tmp/cc9xQaOh.s:53     .text._ZN32TEST_GROUP_CppUTestGroupdev_testC2Ev:0000000000000000 _ZN32TEST_GROUP_CppUTestGroupdev_testC1Ev
+     /tmp/cc9xQaOh.s:82     .text._ZN32TEST_GROUP_CppUTestGroupdev_testD2Ev:0000000000000000 _ZN32TEST_GROUP_CppUTestGroupdev_testD2Ev
+     /tmp/cc9xQaOh.s:82     .text._ZN32TEST_GROUP_CppUTestGroupdev_testD2Ev:0000000000000000 _ZN32TEST_GROUP_CppUTestGroupdev_testD1Ev
+     /tmp/cc9xQaOh.s:117    .text._ZN32TEST_GROUP_CppUTestGroupdev_testD0Ev:0000000000000000 _ZN32TEST_GROUP_CppUTestGroupdev_testD0Ev
+     /tmp/cc9xQaOh.s:143    .text._ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestC2Ev:0000000000000000 _ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestC2Ev
+     /tmp/cc9xQaOh.s:310    .rodata._ZTV62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test:0000000000000000 _ZTV62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test
+     /tmp/cc9xQaOh.s:143    .text._ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestC2Ev:0000000000000000 _ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestC1Ev
+     /tmp/cc9xQaOh.s:175    .text._ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell10createTestEv:0000000000000000 _ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell10createTestEv
+     /tmp/cc9xQaOh.s:251    .text._ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellC2Ev:0000000000000000 _ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellC2Ev
+     /tmp/cc9xQaOh.s:385    .rodata._ZTV67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell:0000000000000000 _ZTV67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell
+     /tmp/cc9xQaOh.s:251    .text._ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellC2Ev:0000000000000000 _ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellC1Ev
+     /tmp/cc9xQaOh.s:281    .bss:0000000000000020 TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell_instance
+     /tmp/cc9xQaOh.s:284    .bss:0000000000000058 _ZL67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Installer
+     /tmp/cc9xQaOh.s:289    .text:0000000000000000 _ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test8testBodyEv
+     /tmp/cc9xQaOh.s:517    .rodata._ZTI62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test:0000000000000000 _ZTI62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test
+     /tmp/cc9xQaOh.s:323    .text._ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD2Ev:0000000000000000 _ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD1Ev
+     /tmp/cc9xQaOh.s:358    .text._ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD0Ev:0000000000000000 _ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD0Ev
+     /tmp/cc9xQaOh.s:323    .text._ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD2Ev:0000000000000000 _ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD2Ev
+     /tmp/cc9xQaOh.s:501    .rodata._ZTI67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell:0000000000000000 _ZTI67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell
+     /tmp/cc9xQaOh.s:425    .text._ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD2Ev:0000000000000000 _ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD1Ev
+     /tmp/cc9xQaOh.s:460    .text._ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD0Ev:0000000000000000 _ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD0Ev
+     /tmp/cc9xQaOh.s:425    .text._ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD2Ev:0000000000000000 _ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD2Ev
+     /tmp/cc9xQaOh.s:533    .rodata._ZTI32TEST_GROUP_CppUTestGroupdev_test:0000000000000000 _ZTI32TEST_GROUP_CppUTestGroupdev_test
+     /tmp/cc9xQaOh.s:510    .rodata._ZTS67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell:0000000000000000 _ZTS67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShell
+     /tmp/cc9xQaOh.s:526    .rodata._ZTS62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test:0000000000000000 _ZTS62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_Test
+     /tmp/cc9xQaOh.s:542    .rodata._ZTS32TEST_GROUP_CppUTestGroupdev_test:0000000000000000 _ZTS32TEST_GROUP_CppUTestGroupdev_test
+     /tmp/cc9xQaOh.s:552    .text:000000000000000b _Z41__static_initialization_and_destruction_0ii
+     /tmp/cc9xQaOh.s:593    .text:0000000000000082 _GLOBAL__sub_I_externTestGroupdev_test
+                           .group:0000000000000000 _ZN32TEST_GROUP_CppUTestGroupdev_testC5Ev
+                           .group:0000000000000000 _ZN32TEST_GROUP_CppUTestGroupdev_testD5Ev
+                           .group:0000000000000000 _ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestC5Ev
+                           .group:0000000000000000 _ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellC5Ev
+                           .group:0000000000000000 _ZN62TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestD5Ev
+                           .group:0000000000000000 _ZN67TEST_dev_test_Should_ExpectedBehavior_When_StateUnderTest_TestShellD5Ev
+
+UNDEFINED SYMBOLS
+_ZN5UtestC2Ev
+_ZN5UtestD2Ev
+_ZdlPv
+__gxx_personality_v0
+_ZnwmPKci
+_ZdlPvPKci
+_Unwind_Resume
+_ZN10UtestShellC2Ev
+_ZN5Utest3runEv
+_ZN10UtestShell7addTestEPS_
+_ZNK10UtestShell7getNextEv
+_ZN10UtestShell10countTestsEv
+_ZNK10UtestShell16getFormattedNameEv
+_ZNK10UtestShell7willRunEv
+GAS LISTING /tmp/cc9xQaOh.s 			page 15
+
+
+_ZNK10UtestShell9hasFailedEv
+_ZN10UtestShell10assertTrueEbPKcS1_S1_iRK14TestTerminator
+_ZN10UtestShell14assertTrueTextEbPKcS1_S1_S1_iRK14TestTerminator
+_ZN10UtestShell15assertCstrEqualEPKcS1_S1_iRK14TestTerminator
+_ZN10UtestShell16assertCstrNEqualEPKcS1_mS1_iRK14TestTerminator
+_ZN10UtestShell21assertCstrNoCaseEqualEPKcS1_S1_i
+_ZN10UtestShell18assertCstrContainsEPKcS1_S1_i
+_ZN10UtestShell24assertCstrNoCaseContainsEPKcS1_S1_i
+_ZN10UtestShell16assertLongsEqualEllPKciRK14TestTerminator
+_ZN10UtestShell24assertUnsignedLongsEqualEmmPKciRK14TestTerminator
+_ZN10UtestShell19assertPointersEqualEPKvS1_PKci
+_ZN10UtestShell18assertDoublesEqualEdddPKciRK14TestTerminator
+_ZN10UtestShell12assertEqualsEbPKcS1_S1_iRK14TestTerminator
+_ZN10UtestShell17assertBinaryEqualEPKvS1_mPKciRK14TestTerminator
+_ZN10UtestShell4failEPKcS1_iRK14TestTerminator
+_ZN10UtestShell5printEPKcS1_i
+_ZN10UtestShell5printERK12SimpleStringPKci
+_ZNK10UtestShell22isRunInSeperateProcessEv
+_ZN10UtestShell23setRunInSeperateProcessEv
+_ZN10UtestShell11destroyTestEP5Utest
+_ZN10UtestShell10runOneTestEP10TestPluginR10TestResult
+_ZN10UtestShell26runOneTestInCurrentProcessEP10TestPluginR10TestResult
+_ZN10UtestShell8failWithERK11TestFailure
+_ZN10UtestShell8failWithERK11TestFailureRK14TestTerminator
+_ZNK10UtestShell12getMacroNameEv
+_ZN10UtestShellD2Ev
+_ZN5Utest8testBodyEv
+_ZTVN10__cxxabiv120__si_class_type_infoE
+_ZTI10UtestShell
+_ZTI5Utest
+__dso_handle
+__cxa_atexit
+_ZN13TestInstallerC1ER10UtestShellPKcS3_S3_i
+_ZN13TestInstallerD1Ev

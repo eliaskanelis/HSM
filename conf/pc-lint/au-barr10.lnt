@@ -1,0 +1,85 @@
+/* Date Stamp */ -d"_lint_au_barr10_lnt=au-barr10.lnt modified 13-Jun-2014"
+/* To document usage use: -message( "Using " _lint_au_barr10_lnt ) */
+
+// au-barr10.lnt -- Author options - The Barr Group's Bug-Killing Coding
+//                  Standard Rules for Embedded C
+//
+//  This options file contains options to help enforce the rules
+//  advocated by the "Top 10 Bug-Killing Coding Standard Rules"
+//  http://www.barrgroup.com/Embedded-Systems/How-To/Bug-Killing-Standards-for-Embedded-C
+//  and is intended for use with PC-lint / FlexeLint 9.00k1 or higher.
+//
+//  See also http://blog.gimpel.com/2014/06/enforcing-barr-groups-top-10-bug.html
+//  for additional information.
+//
+//  You can use this file directly when linting your programs as in:
+//
+//  lin  au-barr10  files
+
+//  Rule 1  Braces *******************************
+    +e9012      // sub-statement should be a compound statement
+    -append(9012,[BARR10 Rule #1])
+
+//  Rule 2  Keyword "const" **********************
+    +e818       // pointer parameter could be declared as pointing to const
+    -append(818,[BARR10 Rule #2])
+    +e843       // variable could be declared as const
+    -append(843,[BARR10 Rule #2])
+    +e844       // pointer variable could be declared as pointing to const
+    -append(844,[BARR10 Rule #2])
+    +e953       // variable could be declared as const
+    -append(953,[BARR10 Rule #2])
+    +e954       // pointer variable could be declared as pointing to const
+    -append(954,[BARR10 Rule #2])
+    +e952       // parameter could be declared const
+    -append(952,[BARR10 Rule #2])
+
+//  Rule 3  Keyword "static" *********************
+    +e765       // external symbol could be declared static
+    -append(765,[BARR10 Rule #3])
+
+//  Rule 4  Keyword "volatile" *******************
+    +e956       // Non const, non volatile static or external variable
+    -append(956,[BARR10 Rule #4])
+
+//  Rule 5  Comments *****************************
+    +e602       // comment within comment
+    +e9059      // C comment contains C++ comment
+    +e9066      // C++ comment contains C comment
+    -append(602,[BARR10 Rule #5])
+    -append(9059,[BARR10 Rule #5])
+    -append(9066,[BARR10 Rule #5])
+
+//  Rule 6  Fixed-width data types ***************
+    +estring(970, short)        // short not allowed outside of typedef
+    -append(970(short),[BARR10 Rule #6])
+    +estring(970, int)          // int not allowed outside of typedef
+    -append(970(int),[BARR10 Rule #6])
+    +estring(970, signed)       // signed not allowed outside of typedef
+    -append(970(signed),[BARR10 Rule #6])
+    +estring(970, unsigned)     // unsigned not allowed outside of typedef
+    -append(970(unsigned),[BARR10 Rule #6])
+    +estring(970, long)         // long not allowed outside of typedef
+    -append(970(long),[BARR10 Rule #6])
+
+//  Rule 7  Bit-wise operators *******************
+    +e9130      // bitwise operator 'operator' applied to signed underlying type
+    -append(9130,[BARR10 Rule #7])
+
+//  Rule 8  Signed and unsigned integers *********
+    +e9117      // implicit conversion changes signedness
+    -append(9117,[BARR10 Rule #8])
+
+//  Rule 9  Parameterized macros *****************
+    +e665       // Unparenthesized parameter in macro is passed an expression
+    -append(665,[BARR10 Rule #9])
+    +e666       // Expression with side effects passed to repeated parameter in macro
+    -append(666,[BARR10 Rule #9])
+    +e9022      // unparenthesized macro parameter in definition of macro
+    -append(9022,[BARR10 Rule #9])
+    +e9026      // Function-like macro defined
+    -append(9026,[BARR10 Rule #9])
+
+//  Rule 10 Commas *******************************
+    +e9146      // Multiple declarators in a declaration
+    -append(9146,[BARR10 Rule #10])

@@ -9,6 +9,7 @@
 #include "console.h"
 
 #include <stdio.h>
+#include <stdint.h>
 #include <string.h>
 
 /******************************************************************************
@@ -51,7 +52,7 @@ static void putString( const char* s )
  *  
  * \param[in]	num		The number.
  */
-static void putNum( const int num )
+static void putNum( const int32_t num )
 {
 	printf( "%i", num );
 }

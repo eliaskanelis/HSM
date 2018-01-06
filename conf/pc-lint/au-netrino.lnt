@@ -1,0 +1,358 @@
+/* Date Stamp */ -d"_lint_au_netrino_lnt=au-netrino.lnt modified 5-Jan-2012"
+/* To document usage use: -message( "Using " _lint_au_netrino_lnt ) */
+// ---------------------------------------------------------------------
+// This file is provided by Gimpel Software (www.gimpel.com) for use with
+// its products PC-lint and FlexeLint.
+//
+// Redistribution and use of this file, with or without modification, is
+// permitted provided that any such redistribution retains this notice.
+// ---------------------------------------------------------------------
+
+// au-netrino.lnt -- Author options - Netrino
+//
+//  This options file contains options to help enforce the
+//  checks advocated by Netrino - Embedded C Coding Standard
+//  http://netrino.com/Coding-Standard
+//
+//  You can use this file directly when linting your programs as in:
+//
+//  lin  au-netrino  files
+
++misra(2)  // enable MISRA C2004 specific checks
++misra(1)  // enable MISRA C1998 specific checks
+
+
+//  1.1  Comply with latest ISO Standard for C *******************
+//
+  +e975       // Unrecognized pragma name
+  -append(975,[Netrino Rule 1.1])
+
+  -A          // strict ANSI
+  +e950       // flag non-ANSI word or construct
+  -append(950,[Netrino Rule 1.1])
+
+//  1.3  Braces ***************************************************
+//
+  +esym(960,14.9)  // missing brace after if, else, while, do or for
+  -append(960(14.9), [Netrino Rule 1.3]}
+
+
+//  1.4  Parentheses *********************************************
+//
+  +e665       // Unparenthesized parameter in macro is passed an expression
+  -append(665,[Netrino Rule 1.4])
+  +e773       // Expression-like macro not parenthesized
+  -append(773,[Netrino Rule 1.4])
+  +e821       // Right hand side of assignment not parenthesized
+  -append(821,[Netrino Rule 1.4])
+  +e834       // confusing operator sequence (same precedence)
+              // Use parentheses
+  -append(834,[Netrino Rule 1.4])
+  +e973       // Unary operator in macro not parenthesized
+  -append(973,[Netrino Rule 1.4])
+  +esym(960,12.5) // non-primary expression used with logical operator
+  -append(960(12.5), [Netrino Rule 1.4]}
+
+//  1.6  Casts *****************************************************
+//
+  +e507       // Size incompatibility -- converting Integer byte pointer to
+              // Integer byte integral
+  -append(507,[Netrino Rule 1.6])
+  +e511       // Size incompatibility -- a cast was made from an integral type
+              // to a pointer and the size of the quantity was too large to fit
+              // into the pointer
+  -append(511,[Netrino Rule 1.6])
+  +e519       // Size incompatibility -- an attempt was made to cast a pointer
+              // to a pointer of unequal size
+  -append(519,[Netrino Rule 1.6])
+  +e549       // Suspicious cast -- A cast was made from a pointer to some
+              // enumerated type or from an enumerated type to a pointer
+  -append(549,[Netrino Rule 1.6])
+  +e571       // Suspicious Cast -- Usually this warning is issued for casts
+              // of the form: (unsigned) ch where ch is declared as char which is
+              // signed
+  -append(571,[Netrino Rule 1.6])
+  +e611       // Suspicious cast -- Either a pointer to a function is being
+              // cast to a pointer to an object or vice versa
+  -append(611,[Netrino Rule 1.6])
+  +e643       // loss of precision in pointer cast
+  -append(643,[Netrino Rule 1.6])
+  +e680       // suspicious truncation in arithmetic expression converted to ptr
+  -append(680,[Netrino Rule 1.6])
+  +e688       // cast used within preprocessor conditional statement
+  -append(688,[Netrino Rule 1.6])
+  +e740       // Unusual pointer cast (incompatible indirect types)
+  -append(740,[Netrino Rule 1.6])
+  +e741       // Unusual pointer cast (function qualification)
+  -append(741,[Netrino Rule 1.6])
+  +e920       // A cast is being made from the given type to void
+  -append(920,[Netrino Rule 1.6])
+  +e921       // A cast is being made from one integral type to another
+  -append(921,[Netrino Rule 1.6])
+  +e922       // A cast is being made to or from one of the floating
+              // types (float, double, long double)
+  -append(922,[Netrino Rule 1.6])
+  +e923       // A cast is being made either from a pointer to a non-pointer
+              // or from a non-pointer to a pointer
+  -append(923,[Netrino Rule 1.6])
+  +e924       // A cast is being made from a struct or a union
+  -append(924,[Netrino Rule 1.6])
+  +e925       // A cast is being made to convert one pointer to another such
+              // that one of the pointers is a pointer to void
+  -append(925,[Netrino Rule 1.6])
+  +e926       // A cast is being made to convert a char pointer to a char pointer
+              // (one or both of the char's may be unsigned)
+  -append(926,[Netrino Rule 1.6])
+  +e927       // A cast is being made to convert a char (or unsigned char) pointer
+              // to a non-char pointer
+  -append(927,[Netrino Rule 1.6])
+  +e928       // A cast is being made from a non-char pointer to a char pointer
+  -append(928,[Netrino Rule 1.6])
+  +e929       // A cast is being made to convert one pointer to another that does
+              // not fall into one of the classifications described in 925 through
+              // 928 above. This could be nonportable on machines that distinguish
+              // between pointer to char and pointer to word
+  -append(929,[Netrino Rule 1.6])
+  +e930       // A cast is being made to or from an enumeration type
+  -append(930,[Netrino Rule 1.6])
+  +e1773      // attempt to cast away const or volatile
+  -append(1173,[Netrino Rule 1.6])
+
+//  1.7  Keywords to avoid ***************************************
+//
+  -deprecate( keyword, auto, violates Netrino Rule 1.7 )
+  -deprecate( keyword, register, violates Netrino Rule 1.7 )
+  -deprecate( keyword, goto, violates Netrino Rules 1.7 and 8.5 )
+  -deprecate( keyword, continue, violates Netrino Rules 1.7 and 8.5 )
+  +esym(960, 58)   // non-switch break used
+  -append(960(58), [Netrino Rules 1.7 and 8.5])
+
+//  1.8  Keywords to frequent ************************************
+//
+  +e818       // Pointer parameter could be declared ptr to const
+  -append(818,[Netrino Rule 1.8])
+  +e843       // Variable could be declared as const
+  -append(843,[Netrino Rule 1.8])
+  +e844       // Pointer variable could be declared as const
+  -append(844,[Netrino Rule 1.8])
+  +e952       // parameter could be declared as const
+  -append(952,[Netrino Rule 1.8])
+  +e953       // variable could be declared as const
+  -append(953,[Netrino Rule 1.8])
+  +e954       // pointer variable could be declared as pointing to a const
+  -append(954,[Netrino Rule 1.8])
+  +e765       // external symbol could be made static
+  -append(765,[Netrino Rules 1.8 and 6.2])
+
+//  2.1  Comments - Acceptable Formats *****************************
+//
+  -fnc        // flag nested comments
+  +e602       // Comment within a comment
+  -append(602,[Netrino Rule 2.1])
+
+//  3.2  White Space - Alignment ***********************************
+//  3.4  White Space - Indentation *********************************
+//
+  +e525       // Negative indentation from Location
+  -append(525,[Netrino Rules 3.2 and 3.4])
+  +e539       // Did not expect positive indentation from Location
+  -append(539,[Netrino Rules 3.2 and 3.4])
+  +e735       // Expected positive indentation from Location
+  -append(735,[Netrino Rules 3.2 and 3.4])
+
+//  4.2  Modules - Header Files *************************************
+//
+  +e451       // header file repeatedly included without include guard
+  -append(451,[Netrino Rule 4.2])
+  +e967       // Header file does not have a standard include guard
+  -append(967,[Netrino Rule 4.2])
+
+//  4.3  Modules - Source Files *************************************
+//
+  +e766       // Include of header file not used in module
+  -append(766,[Netrino Rule 4.3])
+  +e966       // indirectly included header file not used in module
+  -append(966,[Netrino Rule 4.3])
+  +esym(961, 19.1) // only preprocessor statements and comments before '#include'
+  -append(961(19.1), [Netrino Rule 4.3])
+
+//  5.2  Data Types - Fixed width integers ***************************
+//
+  -deprecate( keyword, short, violates Netrino Rule 5.2 )
+  -deprecate( keyword, long,  violates Netrino Rule 5.2 )
+  +esym(960,6.1)     // disallowed use of plain char
+  -append(960(6.1), [Netrino Rule 5.2]}
+  +esym(960,6.2)     // disallowed use of plain char
+  -append(960(6.2), [Netrino Rule 5.2]}
+  +esym(970,int)     // do not use int outside of typedef
+  -append(970, [Netrino Rule 5.2]}
+
+// 5.3  Data Types - Signed integers *********************************
+//
+  +e569       // loss of information -- Integer bits to Integer bits
+  -append(569,[Netrino Rule 5.3])
+  +e570       // loss of sign, assignment made from a negative constant
+              // to an unsigned quantity
+  -append(570,[Netrino Rule 5.3])
+  +e573       // signed-unsigned mix with divide
+  -append(573,[Netrino Rule 5.3])
+  +e574       // signed-unsigned mix with relational
+  -append(574,[Netrino Rule 5.3])
+  +e701       // Shift left of signed quantity (int)
+  -append(701,[Netrino Rule 5.3])
+  +e702       // Shift right of signed quantity (int)
+  -append(702,[Netrino Rule 5.3])
+  +e703       // Shift left of signed quantity (long)
+  -append(703,[Netrino Rule 5.3])
+  +e704       // Shift right of signed quantity (long)
+  -append(704,[Netrino Rule 5.3])
+  +e712       // loss of precision, one type is larger than another type
+  -append(712,[Netrino Rule 5.3])
+  +e713       // loss of precision, signed to unsigned
+  -append(713,[Netrino Rule 5.3])
+  +e734       // loss of precision, to a quantity smaller than an int
+  -append(734,[Netrino Rule 5.3])
+
+//  5.4  Data Types - Floating Point *****************************
+//
+  +esym(960, 13.4)  // floating point variable used as loop counter
+  -append(960(13.4), [Netrino Rule 5.4])
+  +e777             // testing floats for equality
+  -append(777,[Netrino Rule 5.4])
+
+//  5.5  Data Types - Structures and Unions **********************
+//
+  +e38        // Offset of symbol inconsistent -- A member of a class or struct
+              // appears in a different position (offset from the start of the
+              // structure) than an earlier declaration
+  -append(38,[Netrino Rule 5.5])
+  +e39        // Redefinition of symbol conflicts with 'location' -- a
+              // struct or a union is being redefined
+  -append(39,[Netrino Rule 5.5])
+
+//  6.1  Procedures -  Naming Conventions **************************
+//  7.1  Variables -   Naming Conventions **************************
+//
+  +e683              // #define of standard function
+  -append(683,[Netrino Rules 6.1 and 7.1])
+  +esym(960, 20.2)   // re-use of reserved identifier
+  -append(960(20.2), [Netrino Rules 6.1 and 7.1])
+
+//  6.2  Procedures - Functions ************************************
+//
+  +e904       // return statement before end of function
+  -append(904,[Netrino Rule 6.2])
+  +e746       // Call to function not made in the presence of a prototype
+  -append(746,[Netrino Rule 6.2])
+  +e937       // old style function declararion
+  -append(937,[Netrino Rule 6.2])
+  +e957       // function defined without a prototype in scope
+  -append(957,[Netrino Rule 6.2])
+  //+e765       // external symbol could be made static
+  //-append(765,[Netrino Rules 1.8 and 6.2])
+
+//  6.3  Procedures - Function-Like Macros ************************
+//
+  +esym(961, 19.7)   // do not use function-like macros
+  -append(961(19.7), [Netrino Rule 6.3])
+
+//  7.1  Variables -   Naming Conventions - covered by Rule 6.2 *****
+//
+  //+e683            // #define of standard function
+  //-append(683,[Netrino Rules 6.2 and 7.1])
+  //+esym(960, 20.2) // re-use of reserved identifier
+  //-append(960(20.2), [Netrino Rules 6.2 and 7.1])
+
+//  7.2  Variables - Initialization *******************************
+//
+  +e35        // initializer has side-effects
+  -append(35,[Netrino Rule 7.2])
+  +e133       // too many initializers for aggregate
+  -append(133,[Netrino Rule 7.2])
+  +e134       // missing initializer
+  -append(134,[Netrino Rule 7.2])
+  +e530       // An auto variable was used before it was initialized
+  -append(530,[Netrino Rule 7.2])
+  +e603       // Symbol not initialized -- The address of the named
+              // symbol is being passed to a function where the corresponding
+              // parameter is declared as pointer to const
+  -append(603,[Netrino Rule 7.2])
+  +e540       // excessive size -- a string initializer required more space than
+              // what was allocated
+  -append(540,[Netrino Rule 7.2])
+  +e644       // variable may not have been initialized
+  -append(644,[Netrino Rule 7.2])
+  +e651       // potentially confusing initializer
+  -append(651,[Netrino Rule 7.2])
+  +e708       // union initialization
+  -append(708,[Netrino Rule 7.2])
+  +e727       // Symbol not explicitly initialized -- The named static variable
+              // (local to a function) was not explicitly initialized before use
+  -append(727,[Netrino Rule 7.2])
+  +e728       // Symbol not explicitly initialized -- The named intra-module variable
+              // (static variable with file scope) was not explicitly initialized
+  -append(728,[Netrino Rule 7.2])
+  +e729       // Symbol not explicitly initialized -- The named inter-module variable
+              // (external variable) was not explicitly initialized
+  -append(729,[Netrino Rule 7.2])
+  +e738       // Symbol not explicitly initialized -- The named static local variable
+              // was not initialized before being passed to a function whose
+              // corresponding parameter is declared as pointer to const
+  -append(738,[Netrino Rule 7.2])
+  +e771       // Symbol conceivably not initialized, The named symbol, declared at
+              // Location, was initialized in the main portion of a control
+              // loop (while, for, or do) and subsequently used outside the loop
+  -append(771,[Netrino Rule 7.2])
+  +e772       // Symbol conceivably not initialized -- The address of the named
+              // Symbol was passed to a function expecting to receive a pointer to
+              // a const item
+  -append(772,[Netrino Rule 7.2])
+  +e784       // nul character truncated from string -- During initialization of an
+              // array with a string constant there was not enough room to hold the
+              // trailing NUL character
+  -append(784,[Netrino Rule 7.2])
+  +e785       // Too few initializers for aggregate -- The number of initializers
+              // in a brace-enclosed initializer was less than the number of items
+              // in the aggregate
+  -append(785,[Netrino Rule 7.2])
+  +e940       // omitted braces within an initializer
+  -append(940,[Netrino Rule 7.2])
+  +e943       // Too few initializers for aggregate -- The initializer {0} was used
+              // to initialize an aggregate of more than one item
+  -append(943,[Netrino Rule 7.2])
+
+//  8.2  If-Else Statements  *************************************
+
+  +esym(960, 14.10)  // else-if not followed by else
+  -append(960(14.10), [Netrino Rule 8.2])
+
+//  8.3  Switch Statements ***************************************
+//
+  +e44        // A case or default statement occurred outside a switch
+  -append(44,[Netrino Rule 8.3])
+  +e108       // Invalid context -- A continue or break was encountered
+              // without an appropriate surrounding context
+  -append(108,[Netrino Rule 8.3])
+  +e137       // constant used twice within switch
+  -append(137,[Netrino Rule 8.3])
+  +e408       // type mismatch with switch expression
+  -append(408,[Netrino Rule 8.3])
+  +e744       // switch statement has no default
+  -append(744,[Netrino Rule 8.3])
+  +e764       // switch statement does not have a case
+  -append(764,[Netrino Rule 8.3])
+  +e825       // control flows into case/default
+  -append(825,[Netrino Rule 8.3])
+
+// 8.5  Unconditional Jumps - covered by Rule 1.7  ******************
+//
+  // -deprecate( keyword, goto, violates Netrino Rule 1.7 and 8.5 )
+  // -deprecate( keyword, continue, violates Netrino Rules 1.7 and 8.5 )
+  // +esym(960, 58)  // non-switch break used
+  // -append(960(58), [Netrino Rules 1.7 and 8.5])
+
+// 8.6  Equivalence Test *******************************************
+//
+  +e720       // boolean test of an assignment
+  -append(720,[Netrino Rule 8.6])
+

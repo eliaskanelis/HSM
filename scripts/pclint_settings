@@ -1,0 +1,63 @@
+#!/bin/bash
+
+PCLINT_PATH="."
+
+INCLUDE_PATH_FILE="tmp/gcc-include-path.lnt"
+
+function generate_settings
+{
+	local compiler=$1
+	local prepro_file=$2
+
+	local DUMMY_FILE="tmp/dummy.c"
+
+	[ -x $compiler ] || die "$compiler not accessible"
+
+	echo -n '' >$INCLUDE_PATH_FILE
+	echo -n '' >$DUMMY_FILE
+
+	# Generate list of include paths
+	skip=1
+	$compiler -c -v $DUMMY_FILE 2>&1 | while read line; do
+		if [ "$line" == '#include "..." search starts here:' ]; then
+			read line
+			if [ "$line" == '#include <...> search starts here:' ]; then
+				read line
+				skip=0
+			fi
+		fi
+
+		if [ "$line" == 'End of search list.' ]; then
+			skip=1
+		fi
+
+		if [ $skip -eq 0 ]; then
+			echo "--i$(echo $line)" >>$INCLUDE_PATH_FILE
+			echo "+libdir($(echo $line))" >>$INCLUDE_PATH_FILE
+		fi
+		rm -fR DUMMY_FILE
+		rm -fR "dummy.o"
+	done
+}
+
+function die
+{
+	echo "$0: Error: $1" 1>&2
+	exit 1
+}
+
+GCC="/usr/bin/gcc"
+GPP="/usr/bin/g++"
+
+# First generate settings for GNU C compiler.
+generate_settings $GCC lint_cmac.h
+
+# If GNU C++ compiler exists, generate settings for g++ as well.
+# Note! This will overwrite 'include.lnt' from gcc but this doesn't
+# matter as the 'include.lnt' from g++ is a superset of the one
+# generated from gcc.
+if [ -x $GPP ]; then
+	generate_settings $GPP lint_cppmac.h
+else
+	echo "#error \"gcclint fatal error: C++ support missing. Please delete directory $SETTINGS_DIR and retry.\"" > lint_cppmac.h
+fi

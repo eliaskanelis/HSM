@@ -1,0 +1,2003 @@
+GAS LISTING /tmp/ccIcH4uS.s 			page 1
+
+
+   1              		.file	"hsm.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.section	.rodata.str1.1,"aMS",@progbits,1
+   5              	.LC0:
+   6 0000 6F6E456E 		.string	"onEntry"
+   6      74727900 
+   7              	.LC1:
+   8 0008 64757269 		.string	"during "
+   8      6E672000 
+   9              	.LC2:
+  10 0010 67756172 		.string	"guard  "
+  10      64202000 
+  11              	.LC3:
+  12 0018 61637469 		.string	"action "
+  12      6F6E2000 
+  13              	.LC4:
+  14 0020 6F6E4578 		.string	"onExit "
+  14      69742000 
+  15              	.LC5:
+  16 0028 4552524F 		.string	"ERROR  "
+  16      52202000 
+  17              		.section	.text.hsm_state_getModeName,"ax",@progbits
+  19              	hsm_state_getModeName:
+  20              	.LFB38:
+  21              		.file 1 "src/hsm.c"
+   1:src/hsm.c     **** ﻿/******************************************************************************
+   2:src/hsm.c     **** 	Code
+   3:src/hsm.c     **** ******************************************************************************/
+   4:src/hsm.c     **** 
+   5:src/hsm.c     **** /******************************************************************************
+   6:src/hsm.c     **** 	Include files
+   7:src/hsm.c     **** ******************************************************************************/
+   8:src/hsm.c     **** 
+   9:src/hsm.c     **** #include "hsm.h"
+  10:src/hsm.c     **** 
+  11:src/hsm.c     **** #include <stdlib.h>		/* NULL */
+  12:src/hsm.c     **** 
+  13:src/hsm.c     **** /******************************************************************************
+  14:src/hsm.c     **** 	DEBUG
+  15:src/hsm.c     **** ******************************************************************************/
+  16:src/hsm.c     **** 
+  17:src/hsm.c     **** /* TODO: Delete all */
+  18:src/hsm.c     **** 
+  19:src/hsm.c     **** #include <stdio.h>
+  20:src/hsm.c     **** 
+  21:src/hsm.c     **** static const char* hsm_state_getModeName( const state_t* state )
+  22:src/hsm.c     **** {
+  22              		.loc 1 22 0
+  23              		.cfi_startproc
+  24              	.LVL0:
+  23:src/hsm.c     **** 	switch( state->itsMode )
+  25              		.loc 1 23 0
+  26 0000 8B4734   		movl	52(%rdi), %eax
+  27 0003 83F804   		cmpl	$4, %eax
+  28 0006 7721     		ja	.L2
+  29 0008 89C0     		movl	%eax, %eax
+GAS LISTING /tmp/ccIcH4uS.s 			page 2
+
+
+  30 000a FF24C500 		jmp	*.L4(,%rax,8)
+  30      000000
+  31              		.section	.rodata.hsm_state_getModeName,"a",@progbits
+  32              		.align 8
+  33              		.align 4
+  34              	.L4:
+  35 0000 00000000 		.quad	.L3
+  35      00000000 
+  36 0008 00000000 		.quad	.L9
+  36      00000000 
+  37 0010 00000000 		.quad	.L6
+  37      00000000 
+  38 0018 00000000 		.quad	.L7
+  38      00000000 
+  39 0020 00000000 		.quad	.L8
+  39      00000000 
+  40              		.section	.text.hsm_state_getModeName
+  41              	.L3:
+  24:src/hsm.c     **** 	{
+  25:src/hsm.c     **** 		case HSM_ST_M_ON_ENTRY:
+  26:src/hsm.c     **** 			return "onEntry";
+  42              		.loc 1 26 0
+  43 0011 B8000000 		movl	$.LC0, %eax
+  43      00
+  44 0016 C3       		ret
+  45              	.L6:
+  27:src/hsm.c     **** 		case HSM_ST_M_DURING:
+  28:src/hsm.c     **** 			return "during ";
+  29:src/hsm.c     **** 		case HSM_ST_M_CHECKING_GUARD:
+  30:src/hsm.c     **** 			return "guard  ";
+  46              		.loc 1 30 0
+  47 0017 B8000000 		movl	$.LC2, %eax
+  47      00
+  48 001c C3       		ret
+  49              	.L7:
+  31:src/hsm.c     **** 		case HSM_ST_M_TAKING_ACTION:
+  32:src/hsm.c     **** 			return "action ";
+  50              		.loc 1 32 0
+  51 001d B8000000 		movl	$.LC3, %eax
+  51      00
+  52 0022 C3       		ret
+  53              	.L8:
+  33:src/hsm.c     **** 		case HSM_ST_M_ON_EXIT:
+  34:src/hsm.c     **** 			return "onExit ";
+  54              		.loc 1 34 0
+  55 0023 B8000000 		movl	$.LC4, %eax
+  55      00
+  56 0028 C3       		ret
+  57              	.L2:
+  35:src/hsm.c     **** 		default:
+  36:src/hsm.c     **** 			return "ERROR  ";
+  58              		.loc 1 36 0
+  59 0029 B8000000 		movl	$.LC5, %eax
+  59      00
+  60 002e C3       		ret
+  61              	.L9:
+  28:src/hsm.c     **** 		case HSM_ST_M_CHECKING_GUARD:
+GAS LISTING /tmp/ccIcH4uS.s 			page 3
+
+
+  62              		.loc 1 28 0
+  63 002f B8000000 		movl	$.LC1, %eax
+  63      00
+  37:src/hsm.c     **** 	}
+  38:src/hsm.c     **** }
+  64              		.loc 1 38 0
+  65 0034 C3       		ret
+  66              		.cfi_endproc
+  67              	.LFE38:
+  69              		.section	.text.state_reset,"ax",@progbits
+  71              	state_reset:
+  72              	.LFB42:
+  39:src/hsm.c     **** 
+  40:src/hsm.c     **** static void hsm_debugFrom( const char* mode, const state_t* state )
+  41:src/hsm.c     **** {
+  42:src/hsm.c     **** #ifdef DEBUG
+  43:src/hsm.c     **** 	printf( "%s: ", mode );
+  44:src/hsm.c     **** 	printf( "%s.%s", state->itsName, hsm_state_getModeName( state ) );
+  45:src/hsm.c     **** #else
+  46:src/hsm.c     **** 	(void*)mode;
+  47:src/hsm.c     **** 	(void*)state;
+  48:src/hsm.c     **** #endif
+  49:src/hsm.c     **** }
+  50:src/hsm.c     **** 
+  51:src/hsm.c     **** static void hsm_debugTo( const char* msg, const state_t* state )
+  52:src/hsm.c     **** {
+  53:src/hsm.c     **** #ifdef DEBUG
+  54:src/hsm.c     **** 	//printf( " -" );
+  55:src/hsm.c     **** 	printf( " [%s] ", msg );
+  56:src/hsm.c     **** 	//printf( "-> " );
+  57:src/hsm.c     **** 	printf( "%s.%s", state->itsName, hsm_state_getModeName( state ) );
+  58:src/hsm.c     **** 	printf( "\n" );
+  59:src/hsm.c     **** #else
+  60:src/hsm.c     **** 	(void*)msg;
+  61:src/hsm.c     **** 	(void*)state;
+  62:src/hsm.c     **** #endif
+  63:src/hsm.c     **** }
+  64:src/hsm.c     **** 
+  65:src/hsm.c     **** /******************************************************************************
+  66:src/hsm.c     **** 	Local function declarations
+  67:src/hsm.c     **** ******************************************************************************/
+  68:src/hsm.c     **** 
+  69:src/hsm.c     **** static void		hsm_init( hsm_t* me, const state_t* initialState, state_t* allStates[], const uint32_t
+  70:src/hsm.c     **** 
+  71:src/hsm.c     **** /*
+  72:src/hsm.c     ****  * State related
+  73:src/hsm.c     ****  */
+  74:src/hsm.c     **** static void		state_reset( state_t* state );
+  75:src/hsm.c     **** static int		state_hasChild( const state_t* state );
+  76:src/hsm.c     **** static int		state_hasParent( const state_t* state );
+  77:src/hsm.c     **** 
+  78:src/hsm.c     **** static state_t*	state_getTop( const state_t* state );
+  79:src/hsm.c     **** 
+  80:src/hsm.c     **** static int		state_exec_onEntry( const state_t* state, const hsm_event_t* event );
+  81:src/hsm.c     **** static int		state_exec_during( const state_t* state, const hsm_event_t* event );
+  82:src/hsm.c     **** static int		state_exec_onExit( const state_t* state, const hsm_event_t* event );
+  83:src/hsm.c     **** 
+GAS LISTING /tmp/ccIcH4uS.s 			page 4
+
+
+  84:src/hsm.c     **** /******************************************************************************
+  85:src/hsm.c     **** 	Local function definitions
+  86:src/hsm.c     **** ******************************************************************************/
+  87:src/hsm.c     **** 
+  88:src/hsm.c     **** /**
+  89:src/hsm.c     ****  * \brief Initializes the hierarchical state machine.
+  90:src/hsm.c     ****  * 
+  91:src/hsm.c     ****  * \param[in,out]	me				The hierarchical state machine handle.
+  92:src/hsm.c     ****  * \param[in]		initialState	The state that the HSM will begin with.
+  93:src/hsm.c     ****  * \param[in]		allStates		A list with all the hsm's states.
+  94:src/hsm.c     ****  * \param[in]		allStatesSize	The number of the hsm's states.
+  95:src/hsm.c     ****  */
+  96:src/hsm.c     **** static void hsm_init( hsm_t* me, const state_t* initialState, state_t* allStates[], const uint32_t 
+  97:src/hsm.c     **** {
+  98:src/hsm.c     **** 	/* Check valid input */
+  99:src/hsm.c     **** 	if( ( initialState == NULL ) || ( allStates == NULL ) || ( allStatesSize == 0U ) )
+ 100:src/hsm.c     **** 	{
+ 101:src/hsm.c     **** 		me->itsInitialState = NULL;
+ 102:src/hsm.c     **** 		me->itsCurrentState = NULL;
+ 103:src/hsm.c     **** 		me->allStates = NULL;
+ 104:src/hsm.c     **** 		me->allStatesSize = 0;
+ 105:src/hsm.c     **** 		return;
+ 106:src/hsm.c     **** 	}
+ 107:src/hsm.c     **** 
+ 108:src/hsm.c     **** 	/* Check if initial state */
+ 109:src/hsm.c     **** 	if( initialState->itsParentState != NULL )
+ 110:src/hsm.c     **** 	{
+ 111:src/hsm.c     **** 		/* Not a top state */
+ 112:src/hsm.c     **** 		me->itsInitialState = NULL;
+ 113:src/hsm.c     **** 		me->itsCurrentState = NULL;
+ 114:src/hsm.c     **** 		me->allStates = NULL;
+ 115:src/hsm.c     **** 		me->allStatesSize = 0;
+ 116:src/hsm.c     **** 		return;
+ 117:src/hsm.c     **** 	}
+ 118:src/hsm.c     **** 
+ 119:src/hsm.c     **** 	/* Initialize it */
+ 120:src/hsm.c     **** 	me->itsInitialState = (state_t*)initialState;
+ 121:src/hsm.c     **** 	me->itsCurrentState = (state_t*)initialState;
+ 122:src/hsm.c     **** 	me->allStates = allStates;
+ 123:src/hsm.c     **** 	me->allStatesSize = allStatesSize;
+ 124:src/hsm.c     **** 
+ 125:src/hsm.c     **** 	/* Reset all states */
+ 126:src/hsm.c     **** 	for( uint32_t i = me->allStatesSize ; i --> 0 ; )
+ 127:src/hsm.c     **** 	{
+ 128:src/hsm.c     **** 		state_reset( me->allStates[i] );
+ 129:src/hsm.c     **** 	}
+ 130:src/hsm.c     **** }
+ 131:src/hsm.c     **** 
+ 132:src/hsm.c     **** /**
+ 133:src/hsm.c     ****  * \brief Resets state.
+ 134:src/hsm.c     ****  * 
+ 135:src/hsm.c     ****  * \param[in,out]	state	The hsm state.
+ 136:src/hsm.c     ****  */
+ 137:src/hsm.c     **** static void state_reset( state_t* state )
+ 138:src/hsm.c     **** {
+  73              		.loc 1 138 0
+  74              		.cfi_startproc
+GAS LISTING /tmp/ccIcH4uS.s 			page 5
+
+
+  75              	.LVL1:
+ 139:src/hsm.c     **** 	/* Reset state */
+ 140:src/hsm.c     **** 	state->itsMode = HSM_ST_M_ON_ENTRY;
+  76              		.loc 1 140 0
+  77 0000 C7473400 		movl	$0, 52(%rdi)
+  77      000000
+ 141:src/hsm.c     **** 	state->itsHistoryState = (state_t*)state->itsInitialState;
+  78              		.loc 1 141 0
+  79 0007 488B07   		movq	(%rdi), %rax
+  80 000a 48894738 		movq	%rax, 56(%rdi)
+  81 000e C3       		ret
+  82              		.cfi_endproc
+  83              	.LFE42:
+  85              		.section	.text.hsm_init,"ax",@progbits
+  87              	hsm_init:
+  88              	.LFB41:
+  97:src/hsm.c     **** 	/* Check valid input */
+  89              		.loc 1 97 0
+  90              		.cfi_startproc
+  91              	.LVL2:
+  99:src/hsm.c     **** 	{
+  92              		.loc 1 99 0
+  93 0000 4885F6   		testq	%rsi, %rsi
+  94 0003 410F94C0 		sete	%r8b
+  95 0007 4885D2   		testq	%rdx, %rdx
+  96 000a 0F94C0   		sete	%al
+  97 000d 4108C0   		orb	%al, %r8b
+  98 0010 7504     		jne	.L12
+  99:src/hsm.c     **** 	{
+  99              		.loc 1 99 0 is_stmt 0 discriminator 1
+ 100 0012 85C9     		testl	%ecx, %ecx
+ 101 0014 751F     		jne	.L13
+ 102              	.L12:
+ 101:src/hsm.c     **** 		me->itsCurrentState = NULL;
+ 103              		.loc 1 101 0 is_stmt 1
+ 104 0016 48C70700 		movq	$0, (%rdi)
+ 104      000000
+ 102:src/hsm.c     **** 		me->allStates = NULL;
+ 105              		.loc 1 102 0
+ 106 001d 48C74708 		movq	$0, 8(%rdi)
+ 106      00000000 
+ 103:src/hsm.c     **** 		me->allStatesSize = 0;
+ 107              		.loc 1 103 0
+ 108 0025 48C74710 		movq	$0, 16(%rdi)
+ 108      00000000 
+ 104:src/hsm.c     **** 		return;
+ 109              		.loc 1 104 0
+ 110 002d C7471800 		movl	$0, 24(%rdi)
+ 110      000000
+ 111 0034 C3       		ret
+ 112              	.L13:
+ 109:src/hsm.c     **** 	{
+ 113              		.loc 1 109 0
+ 114 0035 48837E08 		cmpq	$0, 8(%rsi)
+ 114      00
+ 115 003a 741F     		je	.L15
+ 112:src/hsm.c     **** 		me->itsCurrentState = NULL;
+GAS LISTING /tmp/ccIcH4uS.s 			page 6
+
+
+ 116              		.loc 1 112 0
+ 117 003c 48C70700 		movq	$0, (%rdi)
+ 117      000000
+ 113:src/hsm.c     **** 		me->allStates = NULL;
+ 118              		.loc 1 113 0
+ 119 0043 48C74708 		movq	$0, 8(%rdi)
+ 119      00000000 
+ 114:src/hsm.c     **** 		me->allStatesSize = 0;
+ 120              		.loc 1 114 0
+ 121 004b 48C74710 		movq	$0, 16(%rdi)
+ 121      00000000 
+ 115:src/hsm.c     **** 		return;
+ 122              		.loc 1 115 0
+ 123 0053 C7471800 		movl	$0, 24(%rdi)
+ 123      000000
+ 116:src/hsm.c     **** 	}
+ 124              		.loc 1 116 0
+ 125 005a C3       		ret
+ 126              	.L15:
+  97:src/hsm.c     **** 	/* Check valid input */
+ 127              		.loc 1 97 0
+ 128 005b 55       		pushq	%rbp
+ 129              	.LCFI0:
+ 130              		.cfi_def_cfa_offset 16
+ 131              		.cfi_offset 6, -16
+ 132 005c 53       		pushq	%rbx
+ 133              	.LCFI1:
+ 134              		.cfi_def_cfa_offset 24
+ 135              		.cfi_offset 3, -24
+ 136 005d 4889FB   		movq	%rdi, %rbx
+ 120:src/hsm.c     **** 	me->itsCurrentState = (state_t*)initialState;
+ 137              		.loc 1 120 0
+ 138 0060 488937   		movq	%rsi, (%rdi)
+ 121:src/hsm.c     **** 	me->allStates = allStates;
+ 139              		.loc 1 121 0
+ 140 0063 48897708 		movq	%rsi, 8(%rdi)
+ 122:src/hsm.c     **** 	me->allStatesSize = allStatesSize;
+ 141              		.loc 1 122 0
+ 142 0067 48895710 		movq	%rdx, 16(%rdi)
+ 123:src/hsm.c     **** 
+ 143              		.loc 1 123 0
+ 144 006b 894F18   		movl	%ecx, 24(%rdi)
+ 145              	.LVL3:
+ 146              	.LBB12:
+ 126:src/hsm.c     **** 	{
+ 147              		.loc 1 126 0
+ 148 006e EB14     		jmp	.L16
+ 149              	.LVL4:
+ 150              	.L17:
+ 128:src/hsm.c     **** 	}
+ 151              		.loc 1 128 0
+ 152 0070 89E8     		movl	%ebp, %eax
+ 153 0072 48C1E003 		salq	$3, %rax
+ 154 0076 48034310 		addq	16(%rbx), %rax
+ 155 007a 488B38   		movq	(%rax), %rdi
+ 156 007d E8000000 		call	state_reset
+ 156      00
+GAS LISTING /tmp/ccIcH4uS.s 			page 7
+
+
+ 157              	.LVL5:
+ 126:src/hsm.c     **** 	{
+ 158              		.loc 1 126 0
+ 159 0082 89E9     		movl	%ebp, %ecx
+ 160              	.LVL6:
+ 161              	.L16:
+ 126:src/hsm.c     **** 	{
+ 162              		.loc 1 126 0 is_stmt 0 discriminator 1
+ 163 0084 8D69FF   		leal	-1(%rcx), %ebp
+ 164              	.LVL7:
+ 165 0087 85C9     		testl	%ecx, %ecx
+ 166 0089 75E5     		jne	.L17
+ 167              	.LBE12:
+ 130:src/hsm.c     **** 
+ 168              		.loc 1 130 0 is_stmt 1
+ 169 008b 5B       		popq	%rbx
+ 170              	.LCFI2:
+ 171              		.cfi_restore 3
+ 172              		.cfi_def_cfa_offset 16
+ 173              	.LVL8:
+ 174 008c 5D       		popq	%rbp
+ 175              	.LCFI3:
+ 176              		.cfi_restore 6
+ 177              		.cfi_def_cfa_offset 8
+ 178              	.LVL9:
+ 179 008d C3       		ret
+ 180              		.cfi_endproc
+ 181              	.LFE41:
+ 183              		.section	.text.state_hasChild,"ax",@progbits
+ 185              	state_hasChild:
+ 186              	.LFB43:
+ 142:src/hsm.c     **** }
+ 143:src/hsm.c     **** 
+ 144:src/hsm.c     **** /**
+ 145:src/hsm.c     ****  * \brief Checks is state has children.
+ 146:src/hsm.c     ****  * 
+ 147:src/hsm.c     ****  * \param[in]	state	The hsm state.
+ 148:src/hsm.c     ****  *
+ 149:src/hsm.c     ****  * \retval		0		No children.
+ 150:src/hsm.c     ****  * \retval		1		Has children.
+ 151:src/hsm.c     ****  */
+ 152:src/hsm.c     **** static int state_hasChild( const state_t* state )
+ 153:src/hsm.c     **** {
+ 187              		.loc 1 153 0
+ 188              		.cfi_startproc
+ 189              	.LVL10:
+ 154:src/hsm.c     **** 	if( state->itsHistoryState == NULL )
+ 190              		.loc 1 154 0
+ 191 0000 48837F38 		cmpq	$0, 56(%rdi)
+ 191      00
+ 192 0005 7506     		jne	.L22
+ 155:src/hsm.c     **** 	{
+ 156:src/hsm.c     **** 		/* No children */
+ 157:src/hsm.c     **** 		return 0;
+ 193              		.loc 1 157 0
+ 194 0007 B8000000 		movl	$0, %eax
+ 194      00
+GAS LISTING /tmp/ccIcH4uS.s 			page 8
+
+
+ 195 000c C3       		ret
+ 196              	.L22:
+ 158:src/hsm.c     **** 	}
+ 159:src/hsm.c     **** 
+ 160:src/hsm.c     **** 	/* Has children */
+ 161:src/hsm.c     **** 	return 1;
+ 197              		.loc 1 161 0
+ 198 000d B8010000 		movl	$1, %eax
+ 198      00
+ 162:src/hsm.c     **** }
+ 199              		.loc 1 162 0
+ 200 0012 C3       		ret
+ 201              		.cfi_endproc
+ 202              	.LFE43:
+ 204              		.section	.text.state_hasParent,"ax",@progbits
+ 206              	state_hasParent:
+ 207              	.LFB44:
+ 163:src/hsm.c     **** 
+ 164:src/hsm.c     **** /**
+ 165:src/hsm.c     ****  * \brief Checks is state has parent.
+ 166:src/hsm.c     ****  * 
+ 167:src/hsm.c     ****  * \param[in]	state	The hsm state.
+ 168:src/hsm.c     ****  *
+ 169:src/hsm.c     ****  * \retval		0		No parent.
+ 170:src/hsm.c     ****  * \retval		1		Has parent.
+ 171:src/hsm.c     ****  */
+ 172:src/hsm.c     **** static int state_hasParent( const state_t* state )
+ 173:src/hsm.c     **** {
+ 208              		.loc 1 173 0
+ 209              		.cfi_startproc
+ 210              	.LVL11:
+ 174:src/hsm.c     **** 	if( state->itsParentState == NULL )
+ 211              		.loc 1 174 0
+ 212 0000 48837F08 		cmpq	$0, 8(%rdi)
+ 212      00
+ 213 0005 7506     		jne	.L25
+ 175:src/hsm.c     **** 	{
+ 176:src/hsm.c     **** 		/* No parent */
+ 177:src/hsm.c     **** 		return 0;
+ 214              		.loc 1 177 0
+ 215 0007 B8000000 		movl	$0, %eax
+ 215      00
+ 216 000c C3       		ret
+ 217              	.L25:
+ 178:src/hsm.c     **** 	}
+ 179:src/hsm.c     **** 
+ 180:src/hsm.c     **** 	/* Has parent */
+ 181:src/hsm.c     **** 	return 1;
+ 218              		.loc 1 181 0
+ 219 000d B8010000 		movl	$1, %eax
+ 219      00
+ 182:src/hsm.c     **** }
+ 220              		.loc 1 182 0
+ 221 0012 C3       		ret
+ 222              		.cfi_endproc
+ 223              	.LFE44:
+ 225              		.section	.text.state_getTop,"ax",@progbits
+GAS LISTING /tmp/ccIcH4uS.s 			page 9
+
+
+ 227              	state_getTop:
+ 228              	.LFB45:
+ 183:src/hsm.c     **** 
+ 184:src/hsm.c     **** /**
+ 185:src/hsm.c     ****  * \brief Gets the state's top state
+ 186:src/hsm.c     ****  * 
+ 187:src/hsm.c     ****  * \param[in]	state	The hsm state.
+ 188:src/hsm.c     ****  * 
+ 189:src/hsm.c     ****  * \return		The top state.
+ 190:src/hsm.c     ****  */
+ 191:src/hsm.c     **** static state_t* state_getTop( const state_t* state )
+ 192:src/hsm.c     **** {
+ 229              		.loc 1 192 0
+ 230              		.cfi_startproc
+ 231              	.LVL12:
+ 232 0000 55       		pushq	%rbp
+ 233              	.LCFI4:
+ 234              		.cfi_def_cfa_offset 16
+ 235              		.cfi_offset 6, -16
+ 236 0001 53       		pushq	%rbx
+ 237              	.LCFI5:
+ 238              		.cfi_def_cfa_offset 24
+ 239              		.cfi_offset 3, -24
+ 240 0002 4889FD   		movq	%rdi, %rbp
+ 241              	.LVL13:
+ 193:src/hsm.c     **** 	/* Init */
+ 194:src/hsm.c     **** 	state_t* topState = (state_t*)state;//We assume this is the top state.
+ 242              		.loc 1 194 0
+ 243 0005 4889FB   		movq	%rdi, %rbx
+ 244              	.LVL14:
+ 245              	.L28:
+ 195:src/hsm.c     **** 	
+ 196:src/hsm.c     **** 	/* Find top parent */
+ 197:src/hsm.c     **** 	do
+ 198:src/hsm.c     **** 	{
+ 199:src/hsm.c     **** 		/* Check for parent */
+ 200:src/hsm.c     **** 		if ( state_hasParent( state ) )
+ 246              		.loc 1 200 0
+ 247 0008 4889EF   		movq	%rbp, %rdi
+ 248 000b E8000000 		call	state_hasParent
+ 248      00
+ 249              	.LVL15:
+ 250 0010 85C0     		testl	%eax, %eax
+ 251 0012 7404     		je	.L27
+ 201:src/hsm.c     **** 		{
+ 202:src/hsm.c     **** 			/* It has a parent, so the parent is the top state */
+ 203:src/hsm.c     **** 			topState = (state_t*)topState->itsParentState;
+ 252              		.loc 1 203 0
+ 253 0014 488B5B08 		movq	8(%rbx), %rbx
+ 254              	.LVL16:
+ 255              	.L27:
+ 204:src/hsm.c     **** 		}
+ 205:src/hsm.c     **** 	} while( topState == NULL );
+ 256              		.loc 1 205 0
+ 257 0018 4885DB   		testq	%rbx, %rbx
+ 258 001b 74EB     		je	.L28
+ 206:src/hsm.c     **** 	
+GAS LISTING /tmp/ccIcH4uS.s 			page 10
+
+
+ 207:src/hsm.c     **** 	/* Exit with parent */
+ 208:src/hsm.c     **** 	return topState;
+ 209:src/hsm.c     **** }
+ 259              		.loc 1 209 0
+ 260 001d 4889D8   		movq	%rbx, %rax
+ 261 0020 5B       		popq	%rbx
+ 262              	.LCFI6:
+ 263              		.cfi_def_cfa_offset 16
+ 264              	.LVL17:
+ 265 0021 5D       		popq	%rbp
+ 266              	.LCFI7:
+ 267              		.cfi_def_cfa_offset 8
+ 268              	.LVL18:
+ 269 0022 C3       		ret
+ 270              		.cfi_endproc
+ 271              	.LFE45:
+ 273              		.section	.text.state_exec_onEntry,"ax",@progbits
+ 275              	state_exec_onEntry:
+ 276              	.LFB46:
+ 210:src/hsm.c     **** 
+ 211:src/hsm.c     **** /**
+ 212:src/hsm.c     ****  * \brief Executes states on entry action.
+ 213:src/hsm.c     ****  * 
+ 214:src/hsm.c     ****  * \param[in]	state	The hsm state.
+ 215:src/hsm.c     ****  * \param[in]	event	The event signal.
+ 216:src/hsm.c     ****  *
+ 217:src/hsm.c     ****  * \retval		0		Success.
+ 218:src/hsm.c     ****  * \retval		Any		Fail.
+ 219:src/hsm.c     ****  */
+ 220:src/hsm.c     **** static int state_exec_onEntry( const state_t* state, const hsm_event_t* event )
+ 221:src/hsm.c     **** {
+ 277              		.loc 1 221 0
+ 278              		.cfi_startproc
+ 279              	.LVL19:
+ 222:src/hsm.c     **** 	/* Execute */
+ 223:src/hsm.c     **** 	int err =0;
+ 224:src/hsm.c     **** 	if( state->onEntry != NULL )
+ 280              		.loc 1 224 0
+ 281 0000 488B4710 		movq	16(%rdi), %rax
+ 282 0004 4885C0   		testq	%rax, %rax
+ 283 0007 7408     		je	.L32
+ 221:src/hsm.c     **** 	/* Execute */
+ 284              		.loc 1 221 0
+ 285 0009 4883EC08 		subq	$8, %rsp
+ 286              	.LCFI8:
+ 287              		.cfi_def_cfa_offset 16
+ 225:src/hsm.c     **** 	{
+ 226:src/hsm.c     **** 		err = state->onEntry( state, event );
+ 288              		.loc 1 226 0
+ 289 000d FFD0     		call	*%rax
+ 290              	.LVL20:
+ 291 000f EB06     		jmp	.L31
+ 292              	.LVL21:
+ 293              	.L32:
+ 294              	.LCFI9:
+ 295              		.cfi_def_cfa_offset 8
+ 223:src/hsm.c     **** 	if( state->onEntry != NULL )
+GAS LISTING /tmp/ccIcH4uS.s 			page 11
+
+
+ 296              		.loc 1 223 0
+ 297 0011 B8000000 		movl	$0, %eax
+ 297      00
+ 298 0016 C3       		ret
+ 299              	.LVL22:
+ 300              	.L31:
+ 301              	.LCFI10:
+ 302              		.cfi_def_cfa_offset 16
+ 227:src/hsm.c     **** 	}
+ 228:src/hsm.c     **** 
+ 229:src/hsm.c     **** 	/* Exit */
+ 230:src/hsm.c     **** 	return err;
+ 231:src/hsm.c     **** }
+ 303              		.loc 1 231 0
+ 304 0017 4883C408 		addq	$8, %rsp
+ 305              	.LCFI11:
+ 306              		.cfi_def_cfa_offset 8
+ 307 001b C3       		ret
+ 308              		.cfi_endproc
+ 309              	.LFE46:
+ 311              		.section	.text.state_exec_during,"ax",@progbits
+ 313              	state_exec_during:
+ 314              	.LFB47:
+ 232:src/hsm.c     **** 
+ 233:src/hsm.c     **** /**
+ 234:src/hsm.c     ****  * \brief Executes states during action.
+ 235:src/hsm.c     ****  * 
+ 236:src/hsm.c     ****  * \param[in]	state	The hsm state.
+ 237:src/hsm.c     ****  * \param[in]	event	The event signal.
+ 238:src/hsm.c     ****  *
+ 239:src/hsm.c     ****  * \retval		0		Success.
+ 240:src/hsm.c     ****  * \retval		Any		Fail.
+ 241:src/hsm.c     ****  */
+ 242:src/hsm.c     **** static int state_exec_during( const state_t* state, const hsm_event_t* event )
+ 243:src/hsm.c     **** {
+ 315              		.loc 1 243 0
+ 316              		.cfi_startproc
+ 317              	.LVL23:
+ 244:src/hsm.c     **** 	/* Execute */
+ 245:src/hsm.c     **** 	int err =0;
+ 246:src/hsm.c     **** 	if( state->during != NULL )
+ 318              		.loc 1 246 0
+ 319 0000 488B4718 		movq	24(%rdi), %rax
+ 320 0004 4885C0   		testq	%rax, %rax
+ 321 0007 7408     		je	.L37
+ 243:src/hsm.c     **** 	/* Execute */
+ 322              		.loc 1 243 0
+ 323 0009 4883EC08 		subq	$8, %rsp
+ 324              	.LCFI12:
+ 325              		.cfi_def_cfa_offset 16
+ 247:src/hsm.c     **** 	{
+ 248:src/hsm.c     **** 		err = state->during( state, event );
+ 326              		.loc 1 248 0
+ 327 000d FFD0     		call	*%rax
+ 328              	.LVL24:
+ 329 000f EB06     		jmp	.L36
+ 330              	.LVL25:
+GAS LISTING /tmp/ccIcH4uS.s 			page 12
+
+
+ 331              	.L37:
+ 332              	.LCFI13:
+ 333              		.cfi_def_cfa_offset 8
+ 245:src/hsm.c     **** 	if( state->during != NULL )
+ 334              		.loc 1 245 0
+ 335 0011 B8000000 		movl	$0, %eax
+ 335      00
+ 336 0016 C3       		ret
+ 337              	.LVL26:
+ 338              	.L36:
+ 339              	.LCFI14:
+ 340              		.cfi_def_cfa_offset 16
+ 249:src/hsm.c     **** 	}
+ 250:src/hsm.c     **** 
+ 251:src/hsm.c     **** 	/* Exit */
+ 252:src/hsm.c     **** 	return err;
+ 253:src/hsm.c     **** }
+ 341              		.loc 1 253 0
+ 342 0017 4883C408 		addq	$8, %rsp
+ 343              	.LCFI15:
+ 344              		.cfi_def_cfa_offset 8
+ 345 001b C3       		ret
+ 346              		.cfi_endproc
+ 347              	.LFE47:
+ 349              		.section	.text.state_exec_onExit,"ax",@progbits
+ 351              	state_exec_onExit:
+ 352              	.LFB48:
+ 254:src/hsm.c     **** 
+ 255:src/hsm.c     **** /**
+ 256:src/hsm.c     ****  * \brief Executes states on exit action.
+ 257:src/hsm.c     ****  * 
+ 258:src/hsm.c     ****  * \param[in]	state	The hsm state.
+ 259:src/hsm.c     ****  * \param[in]	event	The event signal.
+ 260:src/hsm.c     ****  *
+ 261:src/hsm.c     ****  * \retval		0		Success.
+ 262:src/hsm.c     ****  * \retval		Any		Fail.
+ 263:src/hsm.c     ****  */
+ 264:src/hsm.c     **** static int state_exec_onExit( const state_t* state, const hsm_event_t* event )
+ 265:src/hsm.c     **** {
+ 353              		.loc 1 265 0
+ 354              		.cfi_startproc
+ 355              	.LVL27:
+ 266:src/hsm.c     **** 	/* Execute */
+ 267:src/hsm.c     **** 	int err =0;
+ 268:src/hsm.c     **** 	if( state->onExit != NULL )
+ 356              		.loc 1 268 0
+ 357 0000 488B4720 		movq	32(%rdi), %rax
+ 358 0004 4885C0   		testq	%rax, %rax
+ 359 0007 7408     		je	.L42
+ 265:src/hsm.c     **** 	/* Execute */
+ 360              		.loc 1 265 0
+ 361 0009 4883EC08 		subq	$8, %rsp
+ 362              	.LCFI16:
+ 363              		.cfi_def_cfa_offset 16
+ 269:src/hsm.c     **** 	{
+ 270:src/hsm.c     **** 		err = state->onExit( state, event );
+ 364              		.loc 1 270 0
+GAS LISTING /tmp/ccIcH4uS.s 			page 13
+
+
+ 365 000d FFD0     		call	*%rax
+ 366              	.LVL28:
+ 367 000f EB06     		jmp	.L41
+ 368              	.LVL29:
+ 369              	.L42:
+ 370              	.LCFI17:
+ 371              		.cfi_def_cfa_offset 8
+ 267:src/hsm.c     **** 	if( state->onExit != NULL )
+ 372              		.loc 1 267 0
+ 373 0011 B8000000 		movl	$0, %eax
+ 373      00
+ 374 0016 C3       		ret
+ 375              	.LVL30:
+ 376              	.L41:
+ 377              	.LCFI18:
+ 378              		.cfi_def_cfa_offset 16
+ 271:src/hsm.c     **** 	}
+ 272:src/hsm.c     **** 
+ 273:src/hsm.c     **** 	/* Exit */
+ 274:src/hsm.c     **** 	return err;
+ 275:src/hsm.c     **** }
+ 379              		.loc 1 275 0
+ 380 0017 4883C408 		addq	$8, %rsp
+ 381              	.LCFI19:
+ 382              		.cfi_def_cfa_offset 8
+ 383 001b C3       		ret
+ 384              		.cfi_endproc
+ 385              	.LFE48:
+ 387              		.section	.rodata.str1.1
+ 388              	.LC6:
+ 389 0030 25733A20 		.string	"%s: "
+ 389      00
+ 390              	.LC7:
+ 391 0035 25732E25 		.string	"%s.%s"
+ 391      7300
+ 392              		.section	.text.hsm_debugFrom,"ax",@progbits
+ 394              	hsm_debugFrom:
+ 395              	.LFB39:
+  41:src/hsm.c     **** #ifdef DEBUG
+ 396              		.loc 1 41 0
+ 397              		.cfi_startproc
+ 398              	.LVL31:
+ 399 0000 53       		pushq	%rbx
+ 400              	.LCFI20:
+ 401              		.cfi_def_cfa_offset 16
+ 402              		.cfi_offset 3, -16
+ 403 0001 4889FA   		movq	%rdi, %rdx
+ 404 0004 4889F3   		movq	%rsi, %rbx
+ 405              	.LVL32:
+ 406              	.LBB13:
+ 407              	.LBB14:
+ 408              		.file 2 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+   1:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** /* Checking macros for stdio functions.
+   2:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    Copyright (C) 2004-2016 Free Software Foundation, Inc.
+   3:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    This file is part of the GNU C Library.
+   4:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+   5:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    The GNU C Library is free software; you can redistribute it and/or
+GAS LISTING /tmp/ccIcH4uS.s 			page 14
+
+
+   6:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    modify it under the terms of the GNU Lesser General Public
+   7:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    License as published by the Free Software Foundation; either
+   8:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    version 2.1 of the License, or (at your option) any later version.
+   9:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  10:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    The GNU C Library is distributed in the hope that it will be useful,
+  11:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    but WITHOUT ANY WARRANTY; without even the implied warranty of
+  12:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  13:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    Lesser General Public License for more details.
+  14:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  15:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    You should have received a copy of the GNU Lesser General Public
+  16:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    License along with the GNU C Library; if not, see
+  17:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    <http://www.gnu.org/licenses/>.  */
+  18:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  19:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #ifndef _STDIO_H
+  20:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # error "Never include <bits/stdio2.h> directly; use <stdio.h> instead."
+  21:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
+  22:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  23:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __sprintf_chk (char *__restrict __s, int __flag, size_t __slen,
+  24:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  const char *__restrict __format, ...) __THROW;
+  25:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vsprintf_chk (char *__restrict __s, int __flag, size_t __slen,
+  26:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   const char *__restrict __format,
+  27:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   _G_va_list __ap) __THROW;
+  28:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  29:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #ifdef __va_arg_pack
+  30:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
+  31:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __NTH (sprintf (char *__restrict __s, const char *__restrict __fmt, ...))
+  32:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
+  33:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+  34:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				  __bos (__s), __fmt, __va_arg_pack ());
+  35:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
+  36:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #elif !defined __cplusplus
+  37:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # define sprintf(str, ...) \
+  38:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   __builtin___sprintf_chk (str, __USE_FORTIFY_LEVEL - 1, __bos (str), \
+  39:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   __VA_ARGS__)
+  40:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
+  41:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  42:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
+  43:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __NTH (vsprintf (char *__restrict __s, const char *__restrict __fmt,
+  44:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 		 _G_va_list __ap))
+  45:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
+  46:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___vsprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+  47:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				   __bos (__s), __fmt, __ap);
+  48:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
+  49:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  50:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #if defined __USE_ISOC99 || defined __USE_UNIX98
+  51:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  52:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __snprintf_chk (char *__restrict __s, size_t __n, int __flag,
+  53:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   size_t __slen, const char *__restrict __format,
+  54:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   ...) __THROW;
+  55:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vsnprintf_chk (char *__restrict __s, size_t __n, int __flag,
+  56:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			    size_t __slen, const char *__restrict __format,
+  57:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			    _G_va_list __ap) __THROW;
+  58:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  59:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # ifdef __va_arg_pack
+  60:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
+  61:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __NTH (snprintf (char *__restrict __s, size_t __n,
+  62:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 		 const char *__restrict __fmt, ...))
+GAS LISTING /tmp/ccIcH4uS.s 			page 15
+
+
+  63:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
+  64:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+  65:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				   __bos (__s), __fmt, __va_arg_pack ());
+  66:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
+  67:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # elif !defined __cplusplus
+  68:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #  define snprintf(str, len, ...) \
+  69:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   __builtin___snprintf_chk (str, len, __USE_FORTIFY_LEVEL - 1, __bos (str), \
+  70:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			    __VA_ARGS__)
+  71:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # endif
+  72:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  73:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
+  74:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __NTH (vsnprintf (char *__restrict __s, size_t __n,
+  75:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 		  const char *__restrict __fmt, _G_va_list __ap))
+  76:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
+  77:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___vsnprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+  78:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				    __bos (__s), __fmt, __ap);
+  79:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
+  80:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  81:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
+  82:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  83:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #if __USE_FORTIFY_LEVEL > 1
+  84:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  85:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __fprintf_chk (FILE *__restrict __stream, int __flag,
+  86:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  const char *__restrict __format, ...);
+  87:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __printf_chk (int __flag, const char *__restrict __format, ...);
+  88:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vfprintf_chk (FILE *__restrict __stream, int __flag,
+  89:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   const char *__restrict __format, _G_va_list __ap);
+  90:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vprintf_chk (int __flag, const char *__restrict __format,
+  91:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  _G_va_list __ap);
+  92:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  93:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # ifdef __va_arg_pack
+  94:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
+  95:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** fprintf (FILE *__restrict __stream, const char *__restrict __fmt, ...)
+  96:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
+  97:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __fprintf_chk (__stream, __USE_FORTIFY_LEVEL - 1, __fmt,
+  98:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			__va_arg_pack ());
+  99:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
+ 100:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+ 101:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
+ 102:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** printf (const char *__restrict __fmt, ...)
+ 103:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
+ 104:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __printf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __va_arg_pack ());
+ 409              		.loc 2 104 0
+ 410 0007 BE000000 		movl	$.LC6, %esi
+ 410      00
+ 411              	.LVL33:
+ 412 000c BF010000 		movl	$1, %edi
+ 412      00
+ 413              	.LVL34:
+ 414 0011 B8000000 		movl	$0, %eax
+ 414      00
+ 415 0016 E8000000 		call	__printf_chk
+ 415      00
+ 416              	.LVL35:
+ 417              	.LBE14:
+ 418              	.LBE13:
+  44:src/hsm.c     **** #else
+GAS LISTING /tmp/ccIcH4uS.s 			page 16
+
+
+ 419              		.loc 1 44 0
+ 420 001b 4889DF   		movq	%rbx, %rdi
+ 421 001e E8000000 		call	hsm_state_getModeName
+ 421      00
+ 422              	.LVL36:
+ 423 0023 488B5340 		movq	64(%rbx), %rdx
+ 424              	.LVL37:
+ 425              	.LBB15:
+ 426              	.LBB16:
+ 427              		.loc 2 104 0
+ 428 0027 4889C1   		movq	%rax, %rcx
+ 429 002a BE000000 		movl	$.LC7, %esi
+ 429      00
+ 430 002f BF010000 		movl	$1, %edi
+ 430      00
+ 431 0034 B8000000 		movl	$0, %eax
+ 431      00
+ 432 0039 E8000000 		call	__printf_chk
+ 432      00
+ 433              	.LVL38:
+ 434              	.LBE16:
+ 435              	.LBE15:
+  49:src/hsm.c     **** 
+ 436              		.loc 1 49 0
+ 437 003e 5B       		popq	%rbx
+ 438              	.LCFI21:
+ 439              		.cfi_def_cfa_offset 8
+ 440              	.LVL39:
+ 441 003f C3       		ret
+ 442              		.cfi_endproc
+ 443              	.LFE39:
+ 445              		.section	.rodata.str1.1
+ 446              	.LC8:
+ 447 003b 205B2573 		.string	" [%s] "
+ 447      5D2000
+ 448              		.section	.text.hsm_debugTo,"ax",@progbits
+ 450              	hsm_debugTo:
+ 451              	.LFB40:
+  52:src/hsm.c     **** #ifdef DEBUG
+ 452              		.loc 1 52 0
+ 453              		.cfi_startproc
+ 454              	.LVL40:
+ 455 0000 53       		pushq	%rbx
+ 456              	.LCFI22:
+ 457              		.cfi_def_cfa_offset 16
+ 458              		.cfi_offset 3, -16
+ 459 0001 4889FA   		movq	%rdi, %rdx
+ 460 0004 4889F3   		movq	%rsi, %rbx
+ 461              	.LVL41:
+ 462              	.LBB17:
+ 463              	.LBB18:
+ 464              		.loc 2 104 0
+ 465 0007 BE000000 		movl	$.LC8, %esi
+ 465      00
+ 466              	.LVL42:
+ 467 000c BF010000 		movl	$1, %edi
+ 467      00
+GAS LISTING /tmp/ccIcH4uS.s 			page 17
+
+
+ 468              	.LVL43:
+ 469 0011 B8000000 		movl	$0, %eax
+ 469      00
+ 470 0016 E8000000 		call	__printf_chk
+ 470      00
+ 471              	.LVL44:
+ 472              	.LBE18:
+ 473              	.LBE17:
+  57:src/hsm.c     **** 	printf( "\n" );
+ 474              		.loc 1 57 0
+ 475 001b 4889DF   		movq	%rbx, %rdi
+ 476 001e E8000000 		call	hsm_state_getModeName
+ 476      00
+ 477              	.LVL45:
+ 478 0023 488B5340 		movq	64(%rbx), %rdx
+ 479              	.LVL46:
+ 480              	.LBB19:
+ 481              	.LBB20:
+ 482              		.loc 2 104 0
+ 483 0027 4889C1   		movq	%rax, %rcx
+ 484 002a BE000000 		movl	$.LC7, %esi
+ 484      00
+ 485 002f BF010000 		movl	$1, %edi
+ 485      00
+ 486 0034 B8000000 		movl	$0, %eax
+ 486      00
+ 487 0039 E8000000 		call	__printf_chk
+ 487      00
+ 488              	.LVL47:
+ 489              	.LBE20:
+ 490              	.LBE19:
+ 491              	.LBB21:
+ 492              	.LBB22:
+ 493 003e BF0A0000 		movl	$10, %edi
+ 493      00
+ 494 0043 E8000000 		call	putchar
+ 494      00
+ 495              	.LVL48:
+ 496              	.LBE22:
+ 497              	.LBE21:
+  63:src/hsm.c     **** 
+ 498              		.loc 1 63 0
+ 499 0048 5B       		popq	%rbx
+ 500              	.LCFI23:
+ 501              		.cfi_def_cfa_offset 8
+ 502              	.LVL49:
+ 503 0049 C3       		ret
+ 504              		.cfi_endproc
+ 505              	.LFE40:
+ 507              		.section	.text._hsm_build,"ax",@progbits
+ 508              		.globl	_hsm_build
+ 510              	_hsm_build:
+ 511              	.LFB49:
+ 276:src/hsm.c     **** 
+ 277:src/hsm.c     **** /******************************************************************************
+ 278:src/hsm.c     **** 	Function definitions
+ 279:src/hsm.c     **** ******************************************************************************/
+GAS LISTING /tmp/ccIcH4uS.s 			page 18
+
+
+ 280:src/hsm.c     **** 
+ 281:src/hsm.c     **** /**
+ 282:src/hsm.c     ****  * \brief Creates the hierarchical state machine handle.
+ 283:src/hsm.c     ****  *
+ 284:src/hsm.c     ****  * For valid hsm machine initial state must be a top level state. (no parent)
+ 285:src/hsm.c     ****  *
+ 286:src/hsm.c     ****  * Use \see hsm_build instead.
+ 287:src/hsm.c     ****  * 
+ 288:src/hsm.c     ****  * \param[in]	initialState	The state that the HSM will begin with.
+ 289:src/hsm.c     ****  * \param[in]	allStates		A list with all the hsm's states.
+ 290:src/hsm.c     ****  * \param[in]	allStatesSize	The number of the hsm's states.
+ 291:src/hsm.c     ****  * 
+ 292:src/hsm.c     ****  * \return		The hierarchical state machine handle.
+ 293:src/hsm.c     ****  */
+ 294:src/hsm.c     **** hsm_t _hsm_build( const state_t* initialState, state_t* allStates[], const uint32_t allStatesSize )
+ 295:src/hsm.c     **** {
+ 512              		.loc 1 295 0
+ 513              		.cfi_startproc
+ 514              	.LVL50:
+ 515 0000 53       		pushq	%rbx
+ 516              	.LCFI24:
+ 517              		.cfi_def_cfa_offset 16
+ 518              		.cfi_offset 3, -16
+ 519 0001 4883EC30 		subq	$48, %rsp
+ 520              	.LCFI25:
+ 521              		.cfi_def_cfa_offset 64
+ 522 0005 4889FB   		movq	%rdi, %rbx
+ 523              		.loc 1 295 0
+ 524 0008 64488B04 		movq	%fs:40, %rax
+ 524      25280000 
+ 524      00
+ 525 0011 48894424 		movq	%rax, 40(%rsp)
+ 525      28
+ 526 0016 31C0     		xorl	%eax, %eax
+ 296:src/hsm.c     **** 	/* Build it */
+ 297:src/hsm.c     **** 	hsm_t aux;
+ 298:src/hsm.c     **** 	hsm_init( &aux, initialState, allStates, allStatesSize );
+ 527              		.loc 1 298 0
+ 528 0018 4889E7   		movq	%rsp, %rdi
+ 529              	.LVL51:
+ 530 001b E8000000 		call	hsm_init
+ 530      00
+ 531              	.LVL52:
+ 299:src/hsm.c     **** 	return aux;
+ 532              		.loc 1 299 0
+ 533 0020 488B0424 		movq	(%rsp), %rax
+ 534 0024 488903   		movq	%rax, (%rbx)
+ 535 0027 488B4424 		movq	8(%rsp), %rax
+ 535      08
+ 536 002c 48894308 		movq	%rax, 8(%rbx)
+ 537 0030 488B4424 		movq	16(%rsp), %rax
+ 537      10
+ 538 0035 48894310 		movq	%rax, 16(%rbx)
+ 539 0039 488B4424 		movq	24(%rsp), %rax
+ 539      18
+ 540 003e 48894318 		movq	%rax, 24(%rbx)
+ 300:src/hsm.c     **** }
+GAS LISTING /tmp/ccIcH4uS.s 			page 19
+
+
+ 541              		.loc 1 300 0
+ 542 0042 488B7C24 		movq	40(%rsp), %rdi
+ 542      28
+ 543 0047 6448333C 		xorq	%fs:40, %rdi
+ 543      25280000 
+ 543      00
+ 544 0050 7405     		je	.L50
+ 545 0052 E8000000 		call	__stack_chk_fail
+ 545      00
+ 546              	.LVL53:
+ 547              	.L50:
+ 548 0057 4889D8   		movq	%rbx, %rax
+ 549 005a 4883C430 		addq	$48, %rsp
+ 550              	.LCFI26:
+ 551              		.cfi_def_cfa_offset 16
+ 552 005e 5B       		popq	%rbx
+ 553              	.LCFI27:
+ 554              		.cfi_def_cfa_offset 8
+ 555              	.LVL54:
+ 556 005f C3       		ret
+ 557              		.cfi_endproc
+ 558              	.LFE49:
+ 560              		.section	.text.hsm_reset,"ax",@progbits
+ 561              		.globl	hsm_reset
+ 563              	hsm_reset:
+ 564              	.LFB50:
+ 301:src/hsm.c     **** 
+ 302:src/hsm.c     **** /**
+ 303:src/hsm.c     ****  * \brief Resets the hierarchical state machine and all its states.
+ 304:src/hsm.c     ****  * 
+ 305:src/hsm.c     ****  * \param[in,out]	me	The hierarchical state machine handle.
+ 306:src/hsm.c     ****  *
+ 307:src/hsm.c     ****  * \retval			0	Success.
+ 308:src/hsm.c     ****  * \retval			-1	Fail.
+ 309:src/hsm.c     ****  */
+ 310:src/hsm.c     **** int hsm_reset( hsm_t* me )
+ 311:src/hsm.c     **** {
+ 565              		.loc 1 311 0
+ 566              		.cfi_startproc
+ 567              	.LVL55:
+ 312:src/hsm.c     **** 	/* Check valid input */
+ 313:src/hsm.c     **** 	if( me == NULL )
+ 568              		.loc 1 313 0
+ 569 0000 4885FF   		testq	%rdi, %rdi
+ 570 0003 7415     		je	.L54
+ 314:src/hsm.c     **** 	{
+ 315:src/hsm.c     **** 		/* Fail */
+ 316:src/hsm.c     **** 		return -1;
+ 317:src/hsm.c     **** 	}
+ 318:src/hsm.c     **** 
+ 319:src/hsm.c     **** 	/* Reset hsm */
+ 320:src/hsm.c     **** 	hsm_init( me, me->itsInitialState, me->allStates, me->allStatesSize );
+ 571              		.loc 1 320 0
+ 572 0005 8B4F18   		movl	24(%rdi), %ecx
+ 573 0008 488B5710 		movq	16(%rdi), %rdx
+ 574 000c 488B37   		movq	(%rdi), %rsi
+ 575 000f E8000000 		call	hsm_init
+GAS LISTING /tmp/ccIcH4uS.s 			page 20
+
+
+ 575      00
+ 576              	.LVL56:
+ 321:src/hsm.c     **** 
+ 322:src/hsm.c     **** 	/* Success */
+ 323:src/hsm.c     **** 	return 0;
+ 577              		.loc 1 323 0
+ 578 0014 B8000000 		movl	$0, %eax
+ 578      00
+ 579 0019 C3       		ret
+ 580              	.LVL57:
+ 581              	.L54:
+ 316:src/hsm.c     **** 	}
+ 582              		.loc 1 316 0
+ 583 001a B8FFFFFF 		movl	$-1, %eax
+ 583      FF
+ 324:src/hsm.c     **** }
+ 584              		.loc 1 324 0
+ 585 001f C3       		ret
+ 586              		.cfi_endproc
+ 587              	.LFE50:
+ 589              		.section	.rodata.str1.1
+ 590              	.LC9:
+ 591 0042 4F4E5F45 		.string	"ON_ENTRY"
+ 591      4E545259 
+ 591      00
+ 592              	.LC10:
+ 593 004b 546F7020 		.string	"Top --> Child"
+ 593      2D2D3E20 
+ 593      4368696C 
+ 593      6400
+ 594              	.LC11:
+ 595 0059 4368696C 		.string	"Child --> Top"
+ 595      64202D2D 
+ 595      3E20546F 
+ 595      7000
+ 596              	.LC12:
+ 597 0067 44555249 		.string	"DURING  "
+ 597      4E472020 
+ 597      00
+ 598              	.LC13:
+ 599 0070 47554152 		.string	"GUARD   "
+ 599      44202020 
+ 599      00
+ 600              		.section	.rodata.str1.8,"aMS",@progbits,1
+ 601              		.align 8
+ 602              	.LC14:
+ 603 0000 28547261 		.string	"(Transition == NULL): Top --> Child"
+ 603      6E736974 
+ 603      696F6E20 
+ 603      3D3D204E 
+ 603      554C4C29 
+ 604              		.section	.rodata.str1.1
+ 605              	.LC15:
+ 606 0079 284E6F20 		.string	"(No guard): Top --> Child"
+ 606      67756172 
+ 606      64293A20 
+ 606      546F7020 
+GAS LISTING /tmp/ccIcH4uS.s 			page 21
+
+
+ 606      2D2D3E20 
+ 607              	.LC16:
+ 608 0093 4F4E5F45 		.string	"ON_EXIT "
+ 608      58495420 
+ 608      00
+ 609              		.section	.rodata.str1.8
+ 610 0024 00000000 		.align 8
+ 611              	.LC17:
+ 612 0028 28436F6D 		.string	"(Common parent): Child --> Child"
+ 612      6D6F6E20 
+ 612      70617265 
+ 612      6E74293A 
+ 612      20436869 
+ 613              		.section	.rodata.str1.1
+ 614              	.LC18:
+ 615 009c 28506172 		.string	"(Parent shouldExit also) --> "
+ 615      656E7420 
+ 615      73686F75 
+ 615      6C644578 
+ 615      69742061 
+ 616              	.LC19:
+ 617 00ba 28436861 		.string	"(Change TOP)Top --> Top"
+ 617      6E676520 
+ 617      544F5029 
+ 617      546F7020 
+ 617      2D2D3E20 
+ 618              	.LC20:
+ 619 00d2 3F203F20 		.string	"? ? ? (Change TOP)Top --> Top"
+ 619      3F202843 
+ 619      68616E67 
+ 619      6520544F 
+ 619      5029546F 
+ 620              		.section	.text.hsm_handleEvent,"ax",@progbits
+ 621              		.globl	hsm_handleEvent
+ 623              	hsm_handleEvent:
+ 624              	.LFB51:
+ 325:src/hsm.c     **** 
+ 326:src/hsm.c     **** /**
+ 327:src/hsm.c     ****  * \brief Hierarchical state machine event handler.
+ 328:src/hsm.c     ****  * 
+ 329:src/hsm.c     ****  * This is the handlers algorithm
+ 330:src/hsm.c     ****  * \dot
+ 331:src/hsm.c     ****  * 	digraph HSM{
+ 332:src/hsm.c     ****  * 		graph [fontsize=10 fontname="Verdana" compound=true rankdir=LR];
+ 333:src/hsm.c     ****  * 		node [shape=record fontsize=10 fontname="Verdana"];
+ 334:src/hsm.c     ****  * 		
+ 335:src/hsm.c     ****  * 		onEntry [ label="onEntry" ];
+ 336:src/hsm.c     ****  * 		during [ label="during" ];
+ 337:src/hsm.c     ****  * 		guard [ label="guard" ];
+ 338:src/hsm.c     ****  * 		action [ label="action" ];
+ 339:src/hsm.c     ****  * 		onExit [ label="onExit" ];
+ 340:src/hsm.c     ****  * 		
+ 341:src/hsm.c     ****  * 		onEntry -> during;
+ 342:src/hsm.c     ****  * 		during -> guard [ label = "" ];
+ 343:src/hsm.c     ****  * 		guard -> during [ label = "F" ];
+ 344:src/hsm.c     ****  * 		guard -> action [ label = "T" ];
+ 345:src/hsm.c     ****  * 		guard -> onExit [ label = "NULL" ];
+GAS LISTING /tmp/ccIcH4uS.s 			page 22
+
+
+ 346:src/hsm.c     ****  * 		action -> onExit;
+ 347:src/hsm.c     ****  * 		onExit -> onEntry;
+ 348:src/hsm.c     ****  * 	}
+ 349:src/hsm.c     ****  * \enddot
+ 350:src/hsm.c     ****  * 
+ 351:src/hsm.c     ****  * \param[in]	me		The hierarchical state machine handle.
+ 352:src/hsm.c     ****  * \param[in]	event	The event signal.
+ 353:src/hsm.c     ****  *
+ 354:src/hsm.c     ****  * \retval		1		No event signal given.
+ 355:src/hsm.c     ****  * \retval		0		Success.
+ 356:src/hsm.c     ****  * \retval		-1		Fail.
+ 357:src/hsm.c     ****  */
+ 358:src/hsm.c     **** int hsm_handleEvent( hsm_t* me, const hsm_event_t* event )
+ 359:src/hsm.c     **** {
+ 625              		.loc 1 359 0
+ 626              		.cfi_startproc
+ 627              	.LVL58:
+ 360:src/hsm.c     **** 	/* Check valid input */
+ 361:src/hsm.c     **** 	if( me == NULL )
+ 628              		.loc 1 361 0
+ 629 0000 4885FF   		testq	%rdi, %rdi
+ 630 0003 0F845802 		je	.L74
+ 630      0000
+ 359:src/hsm.c     **** 	/* Check valid input */
+ 631              		.loc 1 359 0
+ 632 0009 4156     		pushq	%r14
+ 633              	.LCFI28:
+ 634              		.cfi_def_cfa_offset 16
+ 635              		.cfi_offset 14, -16
+ 636 000b 4155     		pushq	%r13
+ 637              	.LCFI29:
+ 638              		.cfi_def_cfa_offset 24
+ 639              		.cfi_offset 13, -24
+ 640 000d 4154     		pushq	%r12
+ 641              	.LCFI30:
+ 642              		.cfi_def_cfa_offset 32
+ 643              		.cfi_offset 12, -32
+ 644 000f 55       		pushq	%rbp
+ 645              	.LCFI31:
+ 646              		.cfi_def_cfa_offset 40
+ 647              		.cfi_offset 6, -40
+ 648 0010 53       		pushq	%rbx
+ 649              	.LCFI32:
+ 650              		.cfi_def_cfa_offset 48
+ 651              		.cfi_offset 3, -48
+ 652 0011 4989F4   		movq	%rsi, %r12
+ 653 0014 4889FD   		movq	%rdi, %rbp
+ 362:src/hsm.c     **** 	{
+ 363:src/hsm.c     **** 		/* Fail */
+ 364:src/hsm.c     **** 		return -1;
+ 365:src/hsm.c     **** 	}
+ 366:src/hsm.c     **** 
+ 367:src/hsm.c     **** 	/* Handle event */
+ 368:src/hsm.c     **** 	state_t* oldState = me->itsCurrentState;
+ 654              		.loc 1 368 0
+ 655 0017 488B5F08 		movq	8(%rdi), %rbx
+ 656              	.LVL59:
+GAS LISTING /tmp/ccIcH4uS.s 			page 23
+
+
+ 369:src/hsm.c     **** 	state_t* newState = me->itsCurrentState;
+ 370:src/hsm.c     **** 	switch( oldState->itsMode )
+ 657              		.loc 1 370 0
+ 658 001b 8B4334   		movl	52(%rbx), %eax
+ 659 001e 83F801   		cmpl	$1, %eax
+ 660 0021 747E     		je	.L57
+ 661 0023 83F801   		cmpl	$1, %eax
+ 662 0026 7217     		jb	.L58
+ 663 0028 83F802   		cmpl	$2, %eax
+ 664 002b 0F84DD00 		je	.L59
+ 664      0000
+ 665 0031 83F804   		cmpl	$4, %eax
+ 666 0034 0F845601 		je	.L60
+ 666      0000
+ 667 003a E9280200 		jmp	.L82
+ 667      00
+ 668              	.L58:
+ 371:src/hsm.c     **** 	{
+ 372:src/hsm.c     **** 		case HSM_ST_M_ON_ENTRY:
+ 373:src/hsm.c     **** 			hsm_debugFrom( "ON_ENTRY", oldState );
+ 669              		.loc 1 373 0
+ 670 003f 4889DE   		movq	%rbx, %rsi
+ 671              	.LVL60:
+ 672 0042 BF000000 		movl	$.LC9, %edi
+ 672      00
+ 673              	.LVL61:
+ 674 0047 E8000000 		call	hsm_debugFrom
+ 674      00
+ 675              	.LVL62:
+ 374:src/hsm.c     **** 			
+ 375:src/hsm.c     **** 			/* Go to next mode */
+ 376:src/hsm.c     **** 			oldState->itsMode = HSM_ST_M_DURING;
+ 676              		.loc 1 376 0
+ 677 004c C7433401 		movl	$1, 52(%rbx)
+ 677      000000
+ 377:src/hsm.c     **** 
+ 378:src/hsm.c     **** 			/*
+ 379:src/hsm.c     **** 			 * Go to parent/child
+ 380:src/hsm.c     **** 			 */
+ 381:src/hsm.c     **** 			if( state_hasChild( oldState ) )
+ 678              		.loc 1 381 0
+ 679 0053 4889DF   		movq	%rbx, %rdi
+ 680 0056 E8000000 		call	state_hasChild
+ 680      00
+ 681              	.LVL63:
+ 682 005b 85C0     		testl	%eax, %eax
+ 683 005d 7412     		je	.L61
+ 382:src/hsm.c     **** 			{
+ 383:src/hsm.c     **** 				/* Change current state */
+ 384:src/hsm.c     **** 				newState = (state_t*)oldState->itsInitialState;
+ 684              		.loc 1 384 0
+ 685 005f 4C8B2B   		movq	(%rbx), %r13
+ 686              	.LVL64:
+ 385:src/hsm.c     **** 				hsm_debugTo( "Top --> Child", newState );
+ 687              		.loc 1 385 0
+ 688 0062 4C89EE   		movq	%r13, %rsi
+ 689 0065 BF000000 		movl	$.LC10, %edi
+GAS LISTING /tmp/ccIcH4uS.s 			page 24
+
+
+ 689      00
+ 690 006a E8000000 		call	hsm_debugTo
+ 690      00
+ 691              	.LVL65:
+ 692 006f EB18     		jmp	.L62
+ 693              	.LVL66:
+ 694              	.L61:
+ 386:src/hsm.c     **** 			}
+ 387:src/hsm.c     **** 			else
+ 388:src/hsm.c     **** 			{
+ 389:src/hsm.c     **** 				newState = state_getTop( oldState );
+ 695              		.loc 1 389 0
+ 696 0071 4889DF   		movq	%rbx, %rdi
+ 697 0074 E8000000 		call	state_getTop
+ 697      00
+ 698              	.LVL67:
+ 699 0079 4989C5   		movq	%rax, %r13
+ 700              	.LVL68:
+ 390:src/hsm.c     **** 				hsm_debugTo( "Child --> Top", newState );
+ 701              		.loc 1 390 0
+ 702 007c 4889C6   		movq	%rax, %rsi
+ 703 007f BF000000 		movl	$.LC11, %edi
+ 703      00
+ 704 0084 E8000000 		call	hsm_debugTo
+ 704      00
+ 705              	.LVL69:
+ 706              	.L62:
+ 391:src/hsm.c     **** 			}
+ 392:src/hsm.c     **** 
+ 393:src/hsm.c     **** 			/* Execute on_entry */
+ 394:src/hsm.c     **** 			if( state_exec_onEntry( oldState, event ) )
+ 707              		.loc 1 394 0
+ 708 0089 4C89E6   		movq	%r12, %rsi
+ 709 008c 4889DF   		movq	%rbx, %rdi
+ 710 008f E8000000 		call	state_exec_onEntry
+ 710      00
+ 711              	.LVL70:
+ 712 0094 85C0     		testl	%eax, %eax
+ 713 0096 0F84B501 		je	.L63
+ 713      0000
+ 714 009c E9CD0100 		jmp	.L76
+ 714      00
+ 715              	.LVL71:
+ 716              	.L57:
+ 395:src/hsm.c     **** 			{
+ 396:src/hsm.c     **** 				/* Fail */
+ 397:src/hsm.c     **** 				return -1;
+ 398:src/hsm.c     **** 			}
+ 399:src/hsm.c     **** 
+ 400:src/hsm.c     **** 			break;
+ 401:src/hsm.c     **** 		case HSM_ST_M_DURING:
+ 402:src/hsm.c     **** 			hsm_debugFrom( "DURING  ", oldState );
+ 717              		.loc 1 402 0
+ 718 00a1 4889DE   		movq	%rbx, %rsi
+ 719              	.LVL72:
+ 720 00a4 BF000000 		movl	$.LC12, %edi
+ 720      00
+GAS LISTING /tmp/ccIcH4uS.s 			page 25
+
+
+ 721              	.LVL73:
+ 722 00a9 E8000000 		call	hsm_debugFrom
+ 722      00
+ 723              	.LVL74:
+ 403:src/hsm.c     **** 
+ 404:src/hsm.c     **** 			/* Go to next mode */
+ 405:src/hsm.c     **** 			oldState->itsMode = HSM_ST_M_CHECKING_GUARD;
+ 724              		.loc 1 405 0
+ 725 00ae C7433402 		movl	$2, 52(%rbx)
+ 725      000000
+ 406:src/hsm.c     **** 
+ 407:src/hsm.c     **** 			/*
+ 408:src/hsm.c     **** 			 * Go to parent/child
+ 409:src/hsm.c     **** 			 */
+ 410:src/hsm.c     **** 			if( state_hasChild( oldState ) )
+ 726              		.loc 1 410 0
+ 727 00b5 4889DF   		movq	%rbx, %rdi
+ 728 00b8 E8000000 		call	state_hasChild
+ 728      00
+ 729              	.LVL75:
+ 730 00bd 85C0     		testl	%eax, %eax
+ 731 00bf 741D     		je	.L64
+ 411:src/hsm.c     **** 			{
+ 412:src/hsm.c     **** 				/* Change current state */
+ 413:src/hsm.c     **** 				if( oldState->itsInitialState->itsMode == HSM_ST_M_DURING )
+ 732              		.loc 1 413 0
+ 733 00c1 4C8B2B   		movq	(%rbx), %r13
+ 734 00c4 41837D34 		cmpl	$1, 52(%r13)
+ 734      01
+ 735 00c9 7404     		je	.L65
+ 414:src/hsm.c     **** 				{
+ 415:src/hsm.c     **** 					newState = (state_t*)oldState->itsInitialState;
+ 416:src/hsm.c     **** 				}
+ 417:src/hsm.c     **** 				else
+ 418:src/hsm.c     **** 				{
+ 419:src/hsm.c     **** 					newState = oldState->itsHistoryState;//BUG
+ 736              		.loc 1 419 0
+ 737 00cb 4C8B6B38 		movq	56(%rbx), %r13
+ 738              	.LVL76:
+ 739              	.L65:
+ 420:src/hsm.c     **** 				}
+ 421:src/hsm.c     **** 				hsm_debugTo( "Top --> Child", newState );
+ 740              		.loc 1 421 0
+ 741 00cf 4C89EE   		movq	%r13, %rsi
+ 742 00d2 BF000000 		movl	$.LC10, %edi
+ 742      00
+ 743 00d7 E8000000 		call	hsm_debugTo
+ 743      00
+ 744              	.LVL77:
+ 745 00dc EB18     		jmp	.L66
+ 746              	.LVL78:
+ 747              	.L64:
+ 422:src/hsm.c     **** 			}
+ 423:src/hsm.c     **** 			else
+ 424:src/hsm.c     **** 			{
+ 425:src/hsm.c     **** 				newState = state_getTop( oldState );
+ 748              		.loc 1 425 0
+GAS LISTING /tmp/ccIcH4uS.s 			page 26
+
+
+ 749 00de 4889DF   		movq	%rbx, %rdi
+ 750 00e1 E8000000 		call	state_getTop
+ 750      00
+ 751              	.LVL79:
+ 752 00e6 4989C5   		movq	%rax, %r13
+ 753              	.LVL80:
+ 426:src/hsm.c     **** 				hsm_debugTo( "Child --> Top", newState );
+ 754              		.loc 1 426 0
+ 755 00e9 4889C6   		movq	%rax, %rsi
+ 756 00ec BF000000 		movl	$.LC11, %edi
+ 756      00
+ 757 00f1 E8000000 		call	hsm_debugTo
+ 757      00
+ 758              	.LVL81:
+ 759              	.L66:
+ 427:src/hsm.c     **** 			}
+ 428:src/hsm.c     **** 
+ 429:src/hsm.c     **** 			/* Execute during */
+ 430:src/hsm.c     **** 			if( state_exec_during( oldState, event ) )
+ 760              		.loc 1 430 0
+ 761 00f6 4C89E6   		movq	%r12, %rsi
+ 762 00f9 4889DF   		movq	%rbx, %rdi
+ 763 00fc E8000000 		call	state_exec_during
+ 763      00
+ 764              	.LVL82:
+ 765 0101 85C0     		testl	%eax, %eax
+ 766 0103 0F844801 		je	.L63
+ 766      0000
+ 767 0109 E9670100 		jmp	.L77
+ 767      00
+ 768              	.LVL83:
+ 769              	.L59:
+ 431:src/hsm.c     **** 			{
+ 432:src/hsm.c     **** 				/* Fail */
+ 433:src/hsm.c     **** 				return -1;
+ 434:src/hsm.c     **** 			}
+ 435:src/hsm.c     **** 
+ 436:src/hsm.c     **** 			break;
+ 437:src/hsm.c     **** 		case HSM_ST_M_CHECKING_GUARD:
+ 438:src/hsm.c     **** 			hsm_debugFrom( "GUARD   ", oldState );
+ 770              		.loc 1 438 0
+ 771 010e 4889DE   		movq	%rbx, %rsi
+ 772              	.LVL84:
+ 773 0111 BF000000 		movl	$.LC13, %edi
+ 773      00
+ 774              	.LVL85:
+ 775 0116 E8000000 		call	hsm_debugFrom
+ 775      00
+ 776              	.LVL86:
+ 439:src/hsm.c     **** 
+ 440:src/hsm.c     **** 			/* Check guard */
+ 441:src/hsm.c     **** 			if( oldState->itsTransition == NULL )
+ 777              		.loc 1 441 0
+ 778 011b 488B4328 		movq	40(%rbx), %rax
+ 779 011f 4885C0   		testq	%rax, %rax
+ 780 0122 7546     		jne	.L67
+ 442:src/hsm.c     **** 			{
+GAS LISTING /tmp/ccIcH4uS.s 			page 27
+
+
+ 443:src/hsm.c     **** 				if( state_hasChild( oldState ) )
+ 781              		.loc 1 443 0
+ 782 0124 4889DF   		movq	%rbx, %rdi
+ 783 0127 E8000000 		call	state_hasChild
+ 783      00
+ 784              	.LVL87:
+ 785 012c 85C0     		testl	%eax, %eax
+ 786 012e 741D     		je	.L68
+ 444:src/hsm.c     **** 				{
+ 445:src/hsm.c     **** 					/* Transition == NULL and no child */
+ 446:src/hsm.c     **** 					oldState->itsMode = HSM_ST_M_DURING;
+ 787              		.loc 1 446 0
+ 788 0130 C7433401 		movl	$1, 52(%rbx)
+ 788      000000
+ 447:src/hsm.c     **** 					/* Change current state */
+ 448:src/hsm.c     **** 					newState = oldState->itsHistoryState;
+ 789              		.loc 1 448 0
+ 790 0137 4C8B6B38 		movq	56(%rbx), %r13
+ 791              	.LVL88:
+ 449:src/hsm.c     **** 					hsm_debugTo( "(Transition == NULL): Top --> Child", newState );
+ 792              		.loc 1 449 0
+ 793 013b 4C89EE   		movq	%r13, %rsi
+ 794 013e BF000000 		movl	$.LC14, %edi
+ 794      00
+ 795 0143 E8000000 		call	hsm_debugTo
+ 795      00
+ 796              	.LVL89:
+ 797 0148 E9040100 		jmp	.L63
+ 797      00
+ 798              	.LVL90:
+ 799              	.L68:
+ 450:src/hsm.c     **** 				}
+ 451:src/hsm.c     **** 				else
+ 452:src/hsm.c     **** 				{
+ 453:src/hsm.c     **** 					newState = state_getTop( oldState );
+ 800              		.loc 1 453 0
+ 801 014d 4889DF   		movq	%rbx, %rdi
+ 802 0150 E8000000 		call	state_getTop
+ 802      00
+ 803              	.LVL91:
+ 804 0155 4989C5   		movq	%rax, %r13
+ 805              	.LVL92:
+ 454:src/hsm.c     **** 					hsm_debugTo( "Child --> Top", newState );
+ 806              		.loc 1 454 0
+ 807 0158 4889C6   		movq	%rax, %rsi
+ 808 015b BF000000 		movl	$.LC11, %edi
+ 808      00
+ 809 0160 E8000000 		call	hsm_debugTo
+ 809      00
+ 810              	.LVL93:
+ 811 0165 E9E70000 		jmp	.L63
+ 811      00
+ 812              	.LVL94:
+ 813              	.L67:
+ 455:src/hsm.c     **** 				}
+ 456:src/hsm.c     **** 			}
+ 457:src/hsm.c     **** 			else
+GAS LISTING /tmp/ccIcH4uS.s 			page 28
+
+
+ 458:src/hsm.c     **** 			{
+ 459:src/hsm.c     **** 				/* Check guard */
+ 460:src/hsm.c     **** 				if( oldState->itsTransition[0].guard == NULL )
+ 814              		.loc 1 460 0
+ 815 016a 48833800 		cmpq	$0, (%rax)
+ 816 016e 0F85DA00 		jne	.L78
+ 816      0000
+ 461:src/hsm.c     **** 				{
+ 462:src/hsm.c     **** 					/* No guard */
+ 463:src/hsm.c     **** 					oldState->itsMode = HSM_ST_M_ON_EXIT;
+ 817              		.loc 1 463 0
+ 818 0174 C7433404 		movl	$4, 52(%rbx)
+ 818      000000
+ 464:src/hsm.c     **** 					hsm_debugTo( "(No guard): Top --> Child", newState );
+ 819              		.loc 1 464 0
+ 820 017b 4889DE   		movq	%rbx, %rsi
+ 821 017e BF000000 		movl	$.LC15, %edi
+ 821      00
+ 822 0183 E8000000 		call	hsm_debugTo
+ 822      00
+ 823              	.LVL95:
+ 369:src/hsm.c     **** 	switch( oldState->itsMode )
+ 824              		.loc 1 369 0
+ 825 0188 4989DD   		movq	%rbx, %r13
+ 826 018b E9C10000 		jmp	.L63
+ 826      00
+ 827              	.LVL96:
+ 828              	.L60:
+ 465:src/hsm.c     **** 				}
+ 466:src/hsm.c     **** 			}
+ 467:src/hsm.c     **** 
+ 468:src/hsm.c     **** 			/* Execute guard */
+ 469:src/hsm.c     **** 			//
+ 470:src/hsm.c     **** 			
+ 471:src/hsm.c     **** 
+ 472:src/hsm.c     **** 			break;
+ 473:src/hsm.c     **** 		case HSM_ST_M_ON_EXIT:
+ 474:src/hsm.c     **** 			hsm_debugFrom( "ON_EXIT ", oldState );
+ 829              		.loc 1 474 0
+ 830 0190 4889DE   		movq	%rbx, %rsi
+ 831              	.LVL97:
+ 832 0193 BF000000 		movl	$.LC16, %edi
+ 832      00
+ 833              	.LVL98:
+ 834 0198 E8000000 		call	hsm_debugFrom
+ 834      00
+ 835              	.LVL99:
+ 475:src/hsm.c     **** 
+ 476:src/hsm.c     **** 			/* Current state is old now */
+ 477:src/hsm.c     **** 			oldState->itsMode = HSM_ST_M_ON_ENTRY;
+ 836              		.loc 1 477 0
+ 837 019d C7433400 		movl	$0, 52(%rbx)
+ 837      000000
+ 478:src/hsm.c     **** 
+ 479:src/hsm.c     **** 			/*  */
+ 480:src/hsm.c     **** 			if( oldState->itsTransition != NULL )
+ 838              		.loc 1 480 0
+GAS LISTING /tmp/ccIcH4uS.s 			page 29
+
+
+ 839 01a4 4C8B7328 		movq	40(%rbx), %r14
+ 840 01a8 4D85F6   		testq	%r14, %r14
+ 841 01ab 7406     		je	.L79
+ 481:src/hsm.c     **** 			{
+ 482:src/hsm.c     **** 				newState = oldState->itsTransition[0].targetState;
+ 842              		.loc 1 482 0
+ 843 01ad 4D8B6E10 		movq	16(%r14), %r13
+ 844              	.LVL100:
+ 845 01b1 EB03     		jmp	.L69
+ 846              	.LVL101:
+ 847              	.L79:
+ 369:src/hsm.c     **** 	switch( oldState->itsMode )
+ 848              		.loc 1 369 0
+ 849 01b3 4989DD   		movq	%rbx, %r13
+ 850              	.LVL102:
+ 851              	.L69:
+ 483:src/hsm.c     **** 			}
+ 484:src/hsm.c     **** 			
+ 485:src/hsm.c     **** 			/* Change state */
+ 486:src/hsm.c     **** 			if( state_hasParent( oldState ) )
+ 852              		.loc 1 486 0
+ 853 01b6 4889DF   		movq	%rbx, %rdi
+ 854 01b9 E8000000 		call	state_hasParent
+ 854      00
+ 855              	.LVL103:
+ 856 01be 85C0     		testl	%eax, %eax
+ 857 01c0 7437     		je	.L70
+ 487:src/hsm.c     **** 			{
+ 488:src/hsm.c     **** 				if( oldState->itsParentState == newState->itsParentState )
+ 858              		.loc 1 488 0
+ 859 01c2 4C8B7308 		movq	8(%rbx), %r14
+ 860 01c6 4D3B7508 		cmpq	8(%r13), %r14
+ 861 01ca 7513     		jne	.L71
+ 862              	.LVL104:
+ 863              	.LBB23:
+ 489:src/hsm.c     **** 				{
+ 490:src/hsm.c     **** 					/*
+ 491:src/hsm.c     **** 					 * Have common parent (but not NULL)
+ 492:src/hsm.c     **** 					 */
+ 493:src/hsm.c     **** 					state_t* parent = (state_t*)oldState->itsParentState;
+ 494:src/hsm.c     **** 					parent->itsHistoryState = newState;
+ 864              		.loc 1 494 0
+ 865 01cc 4D896E38 		movq	%r13, 56(%r14)
+ 495:src/hsm.c     **** 					hsm_debugTo( "(Common parent): Child --> Child", newState );
+ 866              		.loc 1 495 0
+ 867 01d0 4C89EE   		movq	%r13, %rsi
+ 868 01d3 BF000000 		movl	$.LC17, %edi
+ 868      00
+ 869 01d8 E8000000 		call	hsm_debugTo
+ 869      00
+ 870              	.LVL105:
+ 871              	.LBE23:
+ 872 01dd EB5E     		jmp	.L72
+ 873              	.LVL106:
+ 874              	.L71:
+ 496:src/hsm.c     **** 				}
+ 497:src/hsm.c     **** 				else
+GAS LISTING /tmp/ccIcH4uS.s 			page 30
+
+
+ 498:src/hsm.c     **** 				{
+ 499:src/hsm.c     **** 					/*
+ 500:src/hsm.c     **** 					 * We exit a parent state so parent should exit also
+ 501:src/hsm.c     **** 					 */
+ 502:src/hsm.c     **** 					newState = (state_t*)oldState->itsParentState;
+ 503:src/hsm.c     **** 					newState->itsMode = HSM_ST_M_ON_EXIT;
+ 875              		.loc 1 503 0
+ 876 01df 41C74634 		movl	$4, 52(%r14)
+ 876      04000000 
+ 504:src/hsm.c     **** 					hsm_debugTo( "(Parent shouldExit also) --> ", newState );
+ 877              		.loc 1 504 0
+ 878 01e7 4C89F6   		movq	%r14, %rsi
+ 879 01ea BF000000 		movl	$.LC18, %edi
+ 879      00
+ 880 01ef E8000000 		call	hsm_debugTo
+ 880      00
+ 881              	.LVL107:
+ 502:src/hsm.c     **** 					newState->itsMode = HSM_ST_M_ON_EXIT;
+ 882              		.loc 1 502 0
+ 883 01f4 4D89F5   		movq	%r14, %r13
+ 884 01f7 EB44     		jmp	.L72
+ 885              	.LVL108:
+ 886              	.L70:
+ 505:src/hsm.c     **** 				}
+ 506:src/hsm.c     **** 			}
+ 507:src/hsm.c     **** 			else
+ 508:src/hsm.c     **** 			{
+ 509:src/hsm.c     **** 				if( state_hasParent( oldState ) )
+ 887              		.loc 1 509 0
+ 888 01f9 85C0     		testl	%eax, %eax
+ 889 01fb 7540     		jne	.L72
+ 510:src/hsm.c     **** 				{
+ 511:src/hsm.c     **** 					//hsm_debugTo( "(Change TOP)Top --> Child (But go to TOP)", newState );
+ 512:src/hsm.c     **** 				}
+ 513:src/hsm.c     **** 				else
+ 514:src/hsm.c     **** 				{
+ 515:src/hsm.c     **** 					if( oldState->itsTransition == NULL )
+ 890              		.loc 1 515 0
+ 891 01fd 4D85F6   		testq	%r14, %r14
+ 892 0200 7523     		jne	.L73
+ 516:src/hsm.c     **** 					{
+ 517:src/hsm.c     **** 						//printf( "Name: %s\n", oldState->itsHistoryState->itsTransition[0].targetState->itsName );
+ 518:src/hsm.c     **** 						newState = state_getTop( oldState->itsHistoryState->itsTransition[0].targetState );
+ 893              		.loc 1 518 0
+ 894 0202 488B4338 		movq	56(%rbx), %rax
+ 895 0206 488B4028 		movq	40(%rax), %rax
+ 896 020a 488B7810 		movq	16(%rax), %rdi
+ 897 020e E8000000 		call	state_getTop
+ 897      00
+ 898              	.LVL109:
+ 899 0213 4989C5   		movq	%rax, %r13
+ 900              	.LVL110:
+ 519:src/hsm.c     **** 						hsm_debugTo( "(Change TOP)Top --> Top", newState );
+ 901              		.loc 1 519 0
+ 902 0216 4889C6   		movq	%rax, %rsi
+ 903 0219 BF000000 		movl	$.LC19, %edi
+ 903      00
+GAS LISTING /tmp/ccIcH4uS.s 			page 31
+
+
+ 904 021e E8000000 		call	hsm_debugTo
+ 904      00
+ 905              	.LVL111:
+ 906 0223 EB18     		jmp	.L72
+ 907              	.L73:
+ 520:src/hsm.c     **** 					}
+ 521:src/hsm.c     **** 					else
+ 522:src/hsm.c     **** 					{
+ 523:src/hsm.c     **** 						newState = state_getTop( newState );
+ 908              		.loc 1 523 0
+ 909 0225 4C89EF   		movq	%r13, %rdi
+ 910 0228 E8000000 		call	state_getTop
+ 910      00
+ 911              	.LVL112:
+ 912 022d 4989C5   		movq	%rax, %r13
+ 913              	.LVL113:
+ 524:src/hsm.c     **** 						hsm_debugTo( "? ? ? (Change TOP)Top --> Top", newState );
+ 914              		.loc 1 524 0
+ 915 0230 4889C6   		movq	%rax, %rsi
+ 916 0233 BF000000 		movl	$.LC20, %edi
+ 916      00
+ 917 0238 E8000000 		call	hsm_debugTo
+ 917      00
+ 918              	.LVL114:
+ 919              	.L72:
+ 525:src/hsm.c     **** 					}
+ 526:src/hsm.c     **** 				}
+ 527:src/hsm.c     **** 			}
+ 528:src/hsm.c     **** 
+ 529:src/hsm.c     **** 			/* Execute onExit */
+ 530:src/hsm.c     **** 			if( state_exec_onExit( oldState, event ) )
+ 920              		.loc 1 530 0
+ 921 023d 4C89E6   		movq	%r12, %rsi
+ 922 0240 4889DF   		movq	%rbx, %rdi
+ 923 0243 E8000000 		call	state_exec_onExit
+ 923      00
+ 924              	.LVL115:
+ 925 0248 85C0     		testl	%eax, %eax
+ 926 024a 7405     		je	.L63
+ 927 024c EB2E     		jmp	.L80
+ 928              	.LVL116:
+ 929              	.L78:
+ 369:src/hsm.c     **** 	switch( oldState->itsMode )
+ 930              		.loc 1 369 0
+ 931 024e 4989DD   		movq	%rbx, %r13
+ 932              	.LVL117:
+ 933              	.L63:
+ 531:src/hsm.c     **** 			{
+ 532:src/hsm.c     **** 				/* Fail */
+ 533:src/hsm.c     **** 				return -1;
+ 534:src/hsm.c     **** 			}
+ 535:src/hsm.c     **** 
+ 536:src/hsm.c     **** 			break;
+ 537:src/hsm.c     **** 		default:
+ 538:src/hsm.c     **** 			/* Fail */
+ 539:src/hsm.c     **** 			return -1;
+ 540:src/hsm.c     **** 	}
+GAS LISTING /tmp/ccIcH4uS.s 			page 32
+
+
+ 541:src/hsm.c     **** 
+ 542:src/hsm.c     **** 	me->itsCurrentState = newState;
+ 934              		.loc 1 542 0
+ 935 0251 4C896D08 		movq	%r13, 8(%rbp)
+ 543:src/hsm.c     **** 
+ 544:src/hsm.c     **** 	/* Check for event signal */
+ 545:src/hsm.c     **** 	if( event == NULL )
+ 936              		.loc 1 545 0
+ 937 0255 4D85E4   		testq	%r12, %r12
+ 938 0258 7529     		jne	.L81
+ 546:src/hsm.c     **** 	{
+ 547:src/hsm.c     **** 		/* No event signal given */
+ 548:src/hsm.c     **** 		return 1;
+ 939              		.loc 1 548 0
+ 940 025a B8010000 		movl	$1, %eax
+ 940      00
+ 941 025f EB27     		jmp	.L56
+ 942              	.LVL118:
+ 943              	.L74:
+ 944              	.LCFI33:
+ 945              		.cfi_def_cfa_offset 8
+ 946              		.cfi_restore 3
+ 947              		.cfi_restore 6
+ 948              		.cfi_restore 12
+ 949              		.cfi_restore 13
+ 950              		.cfi_restore 14
+ 364:src/hsm.c     **** 	}
+ 951              		.loc 1 364 0
+ 952 0261 B8FFFFFF 		movl	$-1, %eax
+ 952      FF
+ 549:src/hsm.c     **** 	}
+ 550:src/hsm.c     **** 
+ 551:src/hsm.c     **** 	/* Success */
+ 552:src/hsm.c     **** 	return 0;
+ 553:src/hsm.c     **** }
+ 953              		.loc 1 553 0
+ 954 0266 C3       		ret
+ 955              	.LVL119:
+ 956              	.L82:
+ 957              	.LCFI34:
+ 958              		.cfi_def_cfa_offset 48
+ 959              		.cfi_offset 3, -48
+ 960              		.cfi_offset 6, -40
+ 961              		.cfi_offset 12, -32
+ 962              		.cfi_offset 13, -24
+ 963              		.cfi_offset 14, -16
+ 539:src/hsm.c     **** 	}
+ 964              		.loc 1 539 0
+ 965 0267 B8FFFFFF 		movl	$-1, %eax
+ 965      FF
+ 966 026c EB1A     		jmp	.L56
+ 967              	.LVL120:
+ 968              	.L76:
+ 397:src/hsm.c     **** 			}
+ 969              		.loc 1 397 0
+ 970 026e B8FFFFFF 		movl	$-1, %eax
+ 970      FF
+GAS LISTING /tmp/ccIcH4uS.s 			page 33
+
+
+ 971 0273 EB13     		jmp	.L56
+ 972              	.L77:
+ 433:src/hsm.c     **** 			}
+ 973              		.loc 1 433 0
+ 974 0275 B8FFFFFF 		movl	$-1, %eax
+ 974      FF
+ 975 027a EB0C     		jmp	.L56
+ 976              	.L80:
+ 533:src/hsm.c     **** 			}
+ 977              		.loc 1 533 0
+ 978 027c B8FFFFFF 		movl	$-1, %eax
+ 978      FF
+ 979 0281 EB05     		jmp	.L56
+ 980              	.L81:
+ 552:src/hsm.c     **** }
+ 981              		.loc 1 552 0
+ 982 0283 B8000000 		movl	$0, %eax
+ 982      00
+ 983              	.LVL121:
+ 984              	.L56:
+ 985              		.loc 1 553 0
+ 986 0288 5B       		popq	%rbx
+ 987              	.LCFI35:
+ 988              		.cfi_restore 3
+ 989              		.cfi_def_cfa_offset 40
+ 990              	.LVL122:
+ 991 0289 5D       		popq	%rbp
+ 992              	.LCFI36:
+ 993              		.cfi_restore 6
+ 994              		.cfi_def_cfa_offset 32
+ 995              	.LVL123:
+ 996 028a 415C     		popq	%r12
+ 997              	.LCFI37:
+ 998              		.cfi_restore 12
+ 999              		.cfi_def_cfa_offset 24
+ 1000              	.LVL124:
+ 1001 028c 415D     		popq	%r13
+ 1002              	.LCFI38:
+ 1003              		.cfi_restore 13
+ 1004              		.cfi_def_cfa_offset 16
+ 1005 028e 415E     		popq	%r14
+ 1006              	.LCFI39:
+ 1007              		.cfi_restore 14
+ 1008              		.cfi_def_cfa_offset 8
+ 1009 0290 C3       		ret
+ 1010              		.cfi_endproc
+ 1011              	.LFE51:
+ 1013              		.text
+ 1014              	.Letext0:
+ 1015              		.file 3 "/usr/include/stdint.h"
+ 1016              		.file 4 "src/hsm.h"
+ 1017              		.file 5 "/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h"
+ 1018              		.file 6 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 1019              		.file 7 "/usr/include/libio.h"
+ 1020              		.file 8 "/usr/include/stdio.h"
+ 1021              		.file 9 "<built-in>"
+GAS LISTING /tmp/ccIcH4uS.s 			page 34
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 hsm.c
+     /tmp/ccIcH4uS.s:19     .text.hsm_state_getModeName:0000000000000000 hsm_state_getModeName
+     /tmp/ccIcH4uS.s:71     .text.state_reset:0000000000000000 state_reset
+     /tmp/ccIcH4uS.s:87     .text.hsm_init:0000000000000000 hsm_init
+     /tmp/ccIcH4uS.s:185    .text.state_hasChild:0000000000000000 state_hasChild
+     /tmp/ccIcH4uS.s:206    .text.state_hasParent:0000000000000000 state_hasParent
+     /tmp/ccIcH4uS.s:227    .text.state_getTop:0000000000000000 state_getTop
+     /tmp/ccIcH4uS.s:275    .text.state_exec_onEntry:0000000000000000 state_exec_onEntry
+     /tmp/ccIcH4uS.s:313    .text.state_exec_during:0000000000000000 state_exec_during
+     /tmp/ccIcH4uS.s:351    .text.state_exec_onExit:0000000000000000 state_exec_onExit
+     /tmp/ccIcH4uS.s:394    .text.hsm_debugFrom:0000000000000000 hsm_debugFrom
+     /tmp/ccIcH4uS.s:450    .text.hsm_debugTo:0000000000000000 hsm_debugTo
+     /tmp/ccIcH4uS.s:510    .text._hsm_build:0000000000000000 _hsm_build
+     /tmp/ccIcH4uS.s:563    .text.hsm_reset:0000000000000000 hsm_reset
+     /tmp/ccIcH4uS.s:623    .text.hsm_handleEvent:0000000000000000 hsm_handleEvent
+
+UNDEFINED SYMBOLS
+__printf_chk
+putchar
+__stack_chk_fail

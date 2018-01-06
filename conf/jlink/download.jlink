@@ -1,0 +1,8 @@
+si 1
+device STM32F072RB
+speed 4000
+erase
+loadbin bin/arm/beehive.bin, 0x00
+r
+g
+exit

@@ -28,6 +28,12 @@
 #define CONSOLE_H_ONLY_ONE_INCLUDE_SAFETY
 
 /******************************************************************************
+	Include files
+******************************************************************************/
+
+#include <stdint.h>
+
+/******************************************************************************
 	Type definitions
 ******************************************************************************/
 
@@ -38,7 +44,7 @@ typedef struct console
 {
 	char* (*gets)( void );				/**< Pointer to \ref gets function. */
 	void (*puts)( const char* s );		/**< Pointer to \ref puts function. */
-	void (*putNum)( const int num );	/**< Pointer to \ref putNum function. */
+	void (*putNum)( const int32_t num );	/**< Pointer to \ref putNum function. */
 } console_t;
 
 /******************************************************************************
