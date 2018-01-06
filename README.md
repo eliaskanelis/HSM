@@ -83,4 +83,4 @@ Eclipse:
 
 ### License
 
-[PRIVATE](LICENSE) © Kanelis Ilias
+[GNU3](LICENSE) © Kanelis Ilias
