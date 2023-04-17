@@ -1,0 +1,20 @@
+kind: pipeline
+type: docker
+name: Test
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+
+- name: Change permissions to user
+  image: drone/git
+  commands:
+  - chown -R 1000:1000 .
+
+- name: Test
+  image: tedicreations/devtools:6d4e8e2
+  commands:
+  - make
+
