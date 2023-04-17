@@ -9,8 +9,6 @@
 #include "console.h"
 #include "hsm.h"
 
-#include "version.h"
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
@@ -124,13 +122,6 @@ int main( void )
 
 	/* Greeting */
 	serial.puts( "---- Hierarchical state machine v" );
-	serial.puts( VERSION );
-	serial.puts( " ----\nDate: " );
-	serial.puts( COMPILE_DATE );
-	serial.puts( "\nTime: " );
-	serial.puts( COMPILE_TIME );
-	serial.puts( "\nBranch: " );
-	serial.puts( BRANCH );
 	serial.puts( "\nSystem ready...\n\n" );
 
 	int i = 0;
