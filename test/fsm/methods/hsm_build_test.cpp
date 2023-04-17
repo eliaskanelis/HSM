@@ -2,12 +2,12 @@
 
 #include "hsm.h"
 
-#include <stdlib.h>	/* NULL */
+#include <stdlib.h>
 
 extern state_t parentState;
 extern state_t childState;
 
-state_t parentState = 
+state_t parentState =
 {
 	.itsInitialState = NULL,
 	.itsParentState = NULL,
@@ -19,7 +19,7 @@ state_t parentState =
 };
 
 /* Initial state */
-state_t childState = 
+state_t childState =
 {
 	.itsInitialState = NULL,
 	.itsParentState = &parentState,
@@ -30,10 +30,10 @@ state_t childState =
 	.itsTransitionNum = 0
 };
 
-static state_t* stateList[] = 
+static state_t* stateList[] =
 {
 	&parentState,
-	&childState 
+	&childState
 };
 
 TEST_GROUP( hsm_build )
@@ -50,7 +50,6 @@ TEST_GROUP( hsm_build )
 	{
 		//
 	}
-	
 };
 
 TEST( hsm_build, Should_InitializeValidHsmHandle_When_ValidInitialStateGiven )

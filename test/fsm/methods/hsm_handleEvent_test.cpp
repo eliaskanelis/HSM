@@ -2,13 +2,13 @@
 
 #include "hsm.h"
 
-#include <stdlib.h>	/* NULL */
+#include <stdlib.h>
 
 extern state_t firstState;
 extern state_t secondState;
 
 /* Initial state */
-state_t firstState = 
+state_t firstState =
 {
 	.itsInitialState = NULL,
 	.itsParentState = NULL,
@@ -23,7 +23,7 @@ state_t firstState =
 };
 
 /* Next state */
-state_t secondState = 
+state_t secondState =
 {
 	.itsInitialState = NULL,
 	.itsParentState = NULL,
@@ -37,7 +37,7 @@ state_t secondState =
 	.itsTransitionNum = 1
 };
 
-static state_t* stateList[] = 
+static state_t* stateList[] =
 {
 	&firstState,
 	&secondState
@@ -58,7 +58,6 @@ TEST_GROUP( hsm_handleEvent )
 	{
 		//
 	}
-	
 };
 
 TEST( hsm_handleEvent, Should_GiveError_When_InvalidHandleAndNoEvent )
@@ -78,4 +77,3 @@ TEST( hsm_handleEvent, Should_Know_When_NoEventProvided )
 	/* Check */
 	CHECK_EQUAL( 1, err );
 }
-

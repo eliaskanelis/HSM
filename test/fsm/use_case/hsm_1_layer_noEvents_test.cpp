@@ -2,7 +2,7 @@
 
 #include "hsm.h"
 
-#include <stdlib.h>	/* NULL */
+#include <stdlib.h>
 
 /*
 digraph G {
@@ -33,7 +33,7 @@ extern state_t onState;
 extern state_t offState;
 
 /* Initial state */
-state_t onState = 
+state_t onState =
 {
 	.itsInitialState = NULL,
 	.itsParentState = NULL,
@@ -48,7 +48,7 @@ state_t onState =
 };
 
 /* Next state */
-state_t offState = 
+state_t offState =
 {
 	.itsInitialState = NULL,
 	.itsParentState = NULL,
@@ -62,7 +62,7 @@ state_t offState =
 	.itsTransitionNum = 1
 };
 
-static state_t* stateList[] = 
+static state_t* stateList[] =
 {
 	&onState,
 	&offState
@@ -88,7 +88,6 @@ TEST_GROUP( hsm_1_layer_simple )
 	{
 		//
 	}
-	
 };
 
 static void CHECK_HSM_NO_EVENT( hsm_t* me, state_t* fromState, hsm_st_mode_t fromMode, state_t* toState, hsm_st_mode_t toMode )
@@ -99,7 +98,7 @@ static void CHECK_HSM_NO_EVENT( hsm_t* me, state_t* fromState, hsm_st_mode_t fro
 
 	const int err = hsm_handleEvent( me, NULL );
 	CHECK_EQUAL( 1, err );
-	
+
 	/* To */
 	POINTERS_EQUAL( toState, me->itsCurrentState );
 	LONGS_EQUAL( toMode, me->itsCurrentState->itsMode );

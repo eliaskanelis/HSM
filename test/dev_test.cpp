@@ -13,7 +13,6 @@ TEST_GROUP( dev_test )
 	{
 		//
 	}
-	
 };
 
 TEST( dev_test, Should_ExpectedBehavior_When_StateUnderTest )

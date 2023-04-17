@@ -2,7 +2,7 @@
 
 #include "hsm.h"
 
-#include <stdlib.h>	/* NULL */
+#include <stdlib.h>
 
 /*
 digraph G {
@@ -63,7 +63,7 @@ extern state_t subA2;
 extern state_t topB;
 extern state_t subB1;
 
-state_t topA = 
+state_t topA =
 {
 	.itsInitialState = &subA1,
 	.itsParentState = NULL,
@@ -74,7 +74,7 @@ state_t topA =
 	.itsTransitionNum = 0
 };
 
-state_t subA1 = 
+state_t subA1 =
 {
 	.itsInitialState = NULL,
 	.itsParentState = &topA,
@@ -88,7 +88,7 @@ state_t subA1 =
 	.itsTransitionNum = 1
 };
 
-state_t subA2 = 
+state_t subA2 =
 {
 	.itsInitialState = NULL,
 	.itsParentState = &topA,
@@ -102,7 +102,7 @@ state_t subA2 =
 	.itsTransitionNum = 0
 };
 
-state_t topB = 
+state_t topB =
 {
 	.itsInitialState = &subB1,
 	.itsParentState = NULL,
@@ -113,7 +113,7 @@ state_t topB =
 	.itsTransitionNum = 0
 };
 
-state_t subB1 = 
+state_t subB1 =
 {
 	.itsInitialState = NULL,
 	.itsParentState = &topB,
@@ -127,7 +127,7 @@ state_t subB1 =
 	.itsTransitionNum = 1
 };
 
-static state_t* stateList[] = 
+static state_t* stateList[] =
 {
 	&topA,
 	&subA1,
@@ -156,7 +156,6 @@ TEST_GROUP( hsm_2_layer_noEvents )
 	{
 		//
 	}
-	
 };
 
 static void CHECK_HSM( hsm_t* me, state_t* fromState, hsm_st_mode_t fromMode, state_t* toState, hsm_st_mode_t toMode )
@@ -168,7 +167,7 @@ static void CHECK_HSM( hsm_t* me, state_t* fromState, hsm_st_mode_t fromMode, st
 	/* Handle Event */
 	const int err = hsm_handleEvent( me, NULL );
 	CHECK_EQUAL( 1, err );
-	
+
 	/* To */
 	POINTERS_EQUAL( toState, me->itsCurrentState );
 	LONGS_EQUAL( toMode, me->itsCurrentState->itsMode );
@@ -323,7 +322,7 @@ TEST( hsm_2_layer_noEvents, Should_HandleTransitions )
 	CHECK_HSM( &me, &subA1, HSM_ST_M_ON_ENTRY, &topA, HSM_ST_M_DURING );
 	LONGS_EQUAL( HSM_ST_M_DURING, subA1.itsMode );
 	POINTERS_EQUAL( &subA2, topA.itsHistoryState );
-	
+
 	LONGS_EQUAL( HSM_ST_M_DURING, topA.itsMode );
 	LONGS_EQUAL( HSM_ST_M_DURING, subA1.itsMode );//was HSM_ST_M_ON_ENTRY
 	LONGS_EQUAL( HSM_ST_M_ON_ENTRY, subA2.itsMode );//was HSM_ST_M_DURING
@@ -339,24 +338,25 @@ TEST( hsm_2_layer_noEvents, Should_HandleTransitions )
 	CHECK_HSM( &me, &subA1, HSM_ST_M_DURING, &topA, HSM_ST_M_CHECKING_GUARD );
 	LONGS_EQUAL( HSM_ST_M_CHECKING_GUARD, subA1.itsMode );
 	POINTERS_EQUAL( &subA2, topA.itsHistoryState );
-	
+
 	LONGS_EQUAL( HSM_ST_M_CHECKING_GUARD, topA.itsMode );
 	LONGS_EQUAL( HSM_ST_M_CHECKING_GUARD, subA1.itsMode );
 	LONGS_EQUAL( HSM_ST_M_ON_ENTRY, subA2.itsMode );
 	LONGS_EQUAL( HSM_ST_M_ON_ENTRY, topB.itsMode );
 	LONGS_EQUAL( HSM_ST_M_ON_ENTRY, subB1.itsMode );
 
+	// TODO: HISTORY digging: Why is there a return?
 	return;
 
 	CHECK( hsm_handleEvent( &me, NULL ) == 1 );
-	
+
 	LONGS_EQUAL( HSM_ST_M_CHECKING_GUARD, topA.itsMode );
 	LONGS_EQUAL( HSM_ST_M_CHECKING_GUARD, subA1.itsMode );
 	LONGS_EQUAL( HSM_ST_M_ON_ENTRY, subA2.itsMode );
 	LONGS_EQUAL( HSM_ST_M_ON_ENTRY, topB.itsMode );
 	LONGS_EQUAL( HSM_ST_M_ON_ENTRY, subB1.itsMode );
 
-	/* Tests */	
+	/* Tests */
 /*	LONGS_EQUAL( HSM_ST_M_CHECKING_GUARD, topA.itsMode );
 	LONGS_EQUAL( HSM_ST_M_ON_ENTRY, subA1.itsMode );
 	LONGS_EQUAL( HSM_ST_M_DURING, subA2.itsMode );
@@ -368,6 +368,7 @@ TEST( hsm_2_layer_noEvents, Should_HandleTransitions )
 	LONGS_EQUAL( HSM_ST_M_DURING, topA.itsMode );
 	POINTERS_EQUAL( &subA2, topA.itsHistoryState );
 
+	// TODO: HISTORY digging: Why is there a return?
 	return;
 
 	/* 28) subA1.checking_guard --> subA1.on_exit */

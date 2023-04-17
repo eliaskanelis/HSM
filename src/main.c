@@ -26,7 +26,7 @@ static state_t subA2;
 static state_t topB;
 static state_t subB1;
 
-static state_t topA = 
+static state_t topA =
 {
 	.itsInitialState = &subA1,
 	.itsParentState = NULL,
@@ -38,37 +38,41 @@ static state_t topA =
 	.itsName = " topA"
 };
 
-static state_t subA1 = 
+static state_t subA1 =
 {
 	.itsInitialState = NULL,
 	.itsParentState = &topA,
 	.onEntry = NULL,
 	.during = NULL,
 	.onExit = NULL,
-	.itsTransition = (hsm_transition_t[])
+	.itsTransition = ( hsm_transition_t[] )
+	{
 		{
-			{ NULL, NULL, &subA2 }
-		},
+			NULL, NULL, &subA2
+		}
+	},
 	.itsTransitionNum = 1,
 	.itsName = "subA1"
 };
 
-static state_t subA2 = 
+static state_t subA2 =
 {
 	.itsInitialState = NULL,
 	.itsParentState = &topA,
 	.onEntry = NULL,
 	.during = NULL,
 	.onExit = NULL,
-	.itsTransition = (hsm_transition_t[])
+	.itsTransition = ( hsm_transition_t[] )
+	{
 		{
-			{ NULL, NULL, &subB1 }
-		},
+			NULL, NULL, &subB1
+		}
+	},
 	.itsTransitionNum = 1,
 	.itsName = "subA2"
 };
 
-static state_t topB = 
+static state_t topB =
 {
 	.itsInitialState = &subB1,
 	.itsParentState = NULL,
@@ -80,22 +84,24 @@ static state_t topB =
 	.itsName = " topB"
 };
 
-static state_t subB1 = 
+static state_t subB1 =
 {
 	.itsInitialState = NULL,
 	.itsParentState = &topB,
 	.onEntry = NULL,
 	.during = NULL,
 	.onExit = NULL,
-	.itsTransition = (hsm_transition_t[])
+	.itsTransition = ( hsm_transition_t[] )
+	{
 		{
-			{ NULL, NULL, &subA1 }
-		},
+			NULL, NULL, &subA1
+		}
+	},
 	.itsTransitionNum = 1,
 	.itsName = "subB1"
 };
 
-static state_t* stateList[] = 
+static state_t *stateList[] =
 {
 	&topA,
 	&subA1,
@@ -126,24 +132,18 @@ int main( void )
 	serial.puts( "\nBranch: " );
 	serial.puts( BRANCH );
 	serial.puts( "\nSystem ready...\n\n" );
-	
-	/* Build new system */
-/*	serial.puts( "\n\n-----------------------------------\n" );
-	serial.puts( "\n\nPress to start: " );
-	char* s = serial.gets();
-	serial.puts( "\n" );*/
-	
-	/* Endless loop */
+
 	int i = 0;
+
 	while( 1 )
-	{		
+	{
 		/* Handle event */
-		printf( "i: %d | ", ++i );
+		printf( "[%5d] ", ++i );
 		hsm_handleEvent( &sys, NULL );
 
 		char buffer[100];
-		fgets(&buffer, 10, stdin);
+		fgets( &buffer[0], 10, stdin );
 	}
-	
+
 	return 0;
 }

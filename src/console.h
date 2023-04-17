@@ -5,20 +5,20 @@
 /**
  * \file console.h
  *
- * \brief	Console low level driver.
- * 
+ * \brief       Console low level driver.
+ *
  * It uses the Proxy design pattern.
  *
- * Created:			30/04/2017
+ * Created:     30/04/2017
  *
- * \author	Elias Kanelis	hkanelhs@yahoo.gr
+ * \author      Elias Kanelis    hkanelhs@yahoo.gr
  */
 
 /**
-* \defgroup	Drivers	Drivers
-*
-* \code	#include <console.h>	\endcode
-*/
+ * \defgroup    Drivers    Drivers
+ *
+ * \code #include <console.h> \endcode
+ */
 
 /******************************************************************************
 	Code
@@ -42,9 +42,9 @@
  */
 typedef struct console
 {
-	char* (*gets)( void );				/**< Pointer to \ref gets function. */
-	void (*puts)( const char* s );		/**< Pointer to \ref puts function. */
-	void (*putNum)( const int32_t num );	/**< Pointer to \ref putNum function. */
+	char *( *gets )( void ); /**< Pointer to \ref gets function. */
+	void ( *puts )( const char *s ); /**< Pointer to \ref puts function. */
+	void ( *putNum )( const int32_t num ); /**< Pointer to \ref putNum function. */
 } console_t;
 
 /******************************************************************************

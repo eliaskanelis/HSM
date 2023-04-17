@@ -23,34 +23,34 @@ static char g_str[ 1000 ];
 ******************************************************************************/
 /**
  * \brief Waits until it reads a string from the console.
- * 
+ *
  * \return The string.
  */
-static char* getString( void )
+static char *getString( void )
 {
-    if( scanf( "%s", g_str ) != 1 )
-    {
+	if( scanf( "%s", g_str ) != 1 )
+	{
 		/* It failed make it empty*/
 		strcpy( g_str, "" );//TODO: check if robust
-    }
+	}
 
 	return g_str;
 }
 
 /**
  * \brief Writes a string to the console
- *  
- * \param[in]	s		The string
+ *
+ * \param[in] s The string
  */
-static void putString( const char* s )
+static void putString( const char *s )
 {
 	printf( "%s", s );
 }
 
 /**
  * \brief Writes an integer number to the console.
- *  
- * \param[in]	num		The number.
+ *
+ * \param[in] num The number.
  */
 static void putNum( const int32_t num )
 {
@@ -59,10 +59,10 @@ static void putNum( const int32_t num )
 
 /**
  * \brief Initializes the console.
- *  
- * \param[in]	obj		The console object.
+ *
+ * \param[in] obj The console object.
  */
-static void console_init( console_t* obj )
+static void console_init( console_t *obj )
 {
 	obj->gets = getString;
 	obj->puts = putString;
@@ -75,8 +75,8 @@ static void console_init( console_t* obj )
 
 /**
  * \brief Builds the console and provides a handler.
- *  
- * \return	The console object.
+ *
+ * \return The console object.
  */
 console_t console_build( void )
 {

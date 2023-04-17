@@ -2,10 +2,10 @@
 
 #include "hsm.h"
 
-#include <stdlib.h>	/* NULL */
+#include <stdlib.h>
 
 /* Initial state */
-static state_t initialState = 
+static state_t initialState =
 {
 	.itsInitialState = NULL,
 	.itsParentState = NULL,
@@ -17,7 +17,7 @@ static state_t initialState =
 };
 
 /* Next state */
-static state_t nextState = 
+static state_t nextState =
 {
 	.itsInitialState = NULL,
 	.itsParentState = NULL,
@@ -28,7 +28,7 @@ static state_t nextState =
 	.itsTransitionNum = 0
 };
 
-static state_t* stateList[] = 
+static state_t* stateList[] =
 {
 	&initialState,
 	&nextState
@@ -50,7 +50,6 @@ TEST_GROUP( hsm_reset )
 	{
 		//
 	}
-	
 };
 
 TEST( hsm_reset, Should_ReturnToInitialState_When_NotInInitialState )
