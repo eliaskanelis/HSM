@@ -1,35 +1,11 @@
 # Executables
-*.elf
-*.exe
-*.out
+/bin
 
 # Object files
-*.o
-*.obj
+/obj
 
 # Auto-generated files
 version.h
 
-# Other files
-*.tmp
-
-# Folders
-.dep
-bin
-doc
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-#*.a
-*.la
-*.lo
-
-# Shared objects
-*.dll
-*.so
-*.so.*
-*.dylib
+# Docs
+/doc
