@@ -28,9 +28,9 @@ make
 
 ## License
 
-[GNU3](LICENSE) © Kanelis Ilias
+[GNU3](LICENSE) © Kanelis Elias
 
 
 ## Contact
 
-Kanelis Ilias - [email me](mailto:hkanelhs@yahoo.gr)
+Kanelis Elias - [email me](mailto:e.kanelis@voidbuffer.com)
