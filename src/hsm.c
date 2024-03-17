@@ -453,7 +453,7 @@ int hsm_handleEvent( hsm_t *const me, const hsm_event_t *const event )
 		}
 	}
 
-	state_t *nextState = NULL;
+	const state_t *nextState = NULL;
 	hsm_st_mode_t nextStateMode = HSM_ST_M_ERROR;
 	const char *msg = NULL;
 
@@ -623,12 +623,13 @@ int hsm_handleEvent( hsm_t *const me, const hsm_event_t *const event )
 				/* Change state */
 				if( hasParentReturnCode == 1 )
 				{
+					state_t *const parent = currentState->itsParentState;
+
 					if( currentState->itsParentState == nextState->itsParentState )
 					{
 						/*
 						 * Have common parent (but not NULL)
 						 */
-						state_t *parent = currentState->itsParentState;
 						parent->itsHistoryState = nextState;
 						msg = "(Common parent): Child --> Child";
 					}
@@ -637,8 +638,8 @@ int hsm_handleEvent( hsm_t *const me, const hsm_event_t *const event )
 						/*
 						 * We exit a parent state so parent should exit also
 						 */
-						nextState = currentState->itsParentState;
-						nextState->itsMode = HSM_ST_M_ON_EXIT;
+						parent->itsMode = HSM_ST_M_ON_EXIT;
+						nextState = parent;
 						msg = "(Parent shouldExit also) --> ";
 					}
 				}
