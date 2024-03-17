@@ -18,7 +18,8 @@
 #ifdef DEBUG
 #include <stdio.h>
 
-static const char* hsm_state_modeName[] =
+// cppcheck-suppress misra-c2012-8.9
+static const char *hsm_state_modeName[] =
 {
 	"onEntry",
 	"during ",
@@ -29,16 +30,28 @@ static const char* hsm_state_modeName[] =
 };
 #endif
 
-static void hsm_debug( const state_t *fromState, const state_t *toState, const char *msg )
+static void hsm_debug( const state_t *fromState, const state_t *toState,
+                       const char *msg )
 {
 #ifdef DEBUG
-	const char* fromStateModeName = hsm_state_modeName[fromState->itsMode];
-	const char* toStateModeName = hsm_state_modeName[toState->itsMode];
+	const char *fromStateModeName = hsm_state_modeName[fromState->itsMode];
+	const char *toStateModeName = hsm_state_modeName[toState->itsMode];
 
-	printf( "\x1b[32m%s\x1b[0m: ", fromStateModeName );
-	printf( "\x1b[33m%s\x1b[0m.\x1b[33m%s\x1b[0m", fromState->itsName, fromStateModeName );
-	printf( " ---> \x1b[33m%s.\x1b[33m%s\x1b[0m\x1b[0m", toState->itsName, toStateModeName );
-	printf( "   \t[\x1b[34m%-40s\x1b[0m]\t", msg);
+	const char *fmt =
+	        // cppcheck-suppress misra-c2012-4.1
+	        "\x1b[32m%s\x1b[0m: "
+	        // cppcheck-suppress misra-c2012-4.1
+	        "\x1b[33m%s\x1b[0m.\x1b[33m%s\x1b[0m"
+	        // cppcheck-suppress misra-c2012-4.1
+	        " ---> \x1b[33m%s.\x1b[33m%s\x1b[0m\x1b[0m"
+	        // cppcheck-suppress misra-c2012-4.1
+	        "   \t[\x1b[34m%-40s\x1b[0m]\t";
+
+	( void ) printf( fmt,
+	                 fromStateModeName,
+	                 fromState->itsName, fromStateModeName,
+	                 toState->itsName, toStateModeName,
+	                 msg );
 #else
 	( void )msg;
 	( void )fromState;
@@ -62,10 +75,10 @@ static int state_hasParent( const state_t *state );
 
 static state_t *state_getTop( const state_t *state );
 
-static int state_exec_onEntry( const state_t *state,
-                               const hsm_event_t *event );
-static int state_exec_during( const state_t *state, const hsm_event_t *event );
-static int state_exec_onExit( const state_t *state, const hsm_event_t *event );
+static bool state_exec_onEntry( const state_t *state,
+                                const hsm_event_t *event );
+static bool state_exec_during( const state_t *state, const hsm_event_t *event );
+static bool state_exec_onExit( const state_t *state, const hsm_event_t *event );
 
 /**
  * \brief Initializes the hierarchical state machine.
@@ -81,7 +94,8 @@ static bool hsm_init( hsm_t *me, const state_t *initialState,
                       state_t *allStates[], const uint32_t allStatesSize )
 {
 	/* Check valid input */
-	bool success = ((me != NULL) && (initialState != NULL) && (allStates!=NULL) && (allStatesSize != 0U));
+	bool success = ( ( me != NULL ) && ( initialState != NULL ) &&
+	                 ( allStates != NULL ) && ( allStatesSize != 0U ) );
 
 	/* Check if initial state */
 	if( success )
@@ -102,14 +116,14 @@ static bool hsm_init( hsm_t *me, const state_t *initialState,
 		me->allStatesSize = allStatesSize;
 
 		/* Reset all states */
-		for( uint32_t i = me->allStatesSize ; i -- > 0 ; )
+		for( uint32_t i = 0U; i < me->allStatesSize; i++ )
 		{
 			state_reset( me->allStates[i] );
 		}
 	}
 	else
 	{
-		if (me != NULL)
+		if( me != NULL )
 		{
 			/* Not a top state */
 			me->itsInitialState = NULL;
@@ -140,19 +154,35 @@ static void state_reset( state_t *state )
  *
  * \param[in] state The hsm state.
  *
- * \retval 0 No children.
- * \retval 1 Has children.
+ * \retval  0 No children.
+ * \retval  1 Has children.
+ * \retval -1 Failure.
  */
 static int state_hasChild( const state_t *state )
 {
-	if( state->itsHistoryState == NULL )
+	int returnCode = 0;
+
+	/* Validate input */
+	if( state == NULL )
 	{
-		/* No children */
-		return 0;
+		returnCode = -1;
 	}
 
-	/* Has children */
-	return 1;
+	if( returnCode == 0 )
+	{
+		if( state->itsHistoryState == NULL )
+		{
+			/* No children */
+			returnCode = 0;
+		}
+		else
+		{
+			/* Has children */
+			returnCode = 1;
+		}
+	}
+
+	return returnCode;
 }
 
 /**
@@ -160,19 +190,35 @@ static int state_hasChild( const state_t *state )
  *
  * \param[in] state The hsm state.
  *
- * \retval 0 No parent.
- * \retval 1 Has parent.
+ * \retval  0 No parent.
+ * \retval  1 Has parent.
+ * \retval -1 Failure.
  */
 static int state_hasParent( const state_t *state )
 {
-	if( state->itsParentState == NULL )
+	int returnCode = 0;
+
+	/* Validate input */
+	if( state == NULL )
 	{
-		/* No parent */
-		return 0;
+		returnCode = -1;
 	}
 
-	/* Has parent */
-	return 1;
+	if( returnCode == 0 )
+	{
+		if( state->itsParentState == NULL )
+		{
+			/* No parent */
+			returnCode = 0;
+		}
+		else
+		{
+			/* Has parent */
+			returnCode = 1;
+		}
+	}
+
+	return returnCode;
 }
 
 /**
@@ -184,17 +230,27 @@ static int state_hasParent( const state_t *state )
  */
 static state_t *state_getTop( const state_t *state )
 {
-	/* Init */
-	state_t *topState = ( state_t * )state; //We assume this is the top state.
+	/* We assume this is the top state.*/
+	state_t *topState = ( state_t * )state;
 
 	/* Find top parent */
 	do
 	{
 		/* Check for parent */
-		if( state_hasParent( state ) )
+		const int hasParentReturnCode = state_hasParent( state );
+
+		if( hasParentReturnCode == 1 )
 		{
 			/* It has a parent, so the parent is the top state */
 			topState = ( state_t * )topState->itsParentState;
+		}
+		else if( hasParentReturnCode == 0 )
+		{
+			/* No action */
+		}
+		else
+		{
+			/* TODO: Handle error */
 		}
 	}
 	while( topState == NULL );
@@ -209,21 +265,23 @@ static state_t *state_getTop( const state_t *state )
  * \param[in] state The hsm state.
  * \param[in] event The event signal.
  *
- * \retval 0   Success.
- * \retval Any Fail.
+ * \retval True  Success.
+ * \retval False Failure.
  */
-static int state_exec_onEntry( const state_t *state, const hsm_event_t *event )
+static bool state_exec_onEntry( const state_t *state, const hsm_event_t *event )
 {
-	/* Execute */
-	int err = 0;
+	/* Validate inputs */
+	bool success = ( state != NULL );
 
-	if( state->onEntry != NULL )
+	if( success )
 	{
-		err = state->onEntry( state, event );
+		if( state->onEntry != NULL )
+		{
+			success = state->onEntry( state, event );
+		}
 	}
 
-	/* Exit */
-	return err;
+	return success;
 }
 
 /**
@@ -232,21 +290,23 @@ static int state_exec_onEntry( const state_t *state, const hsm_event_t *event )
  * \param[in] state The hsm state.
  * \param[in] event The event signal.
  *
- * \retval 0   Success.
- * \retval Any Fail.
+ * \retval True  Success.
+ * \retval False Failure.
  */
-static int state_exec_during( const state_t *state, const hsm_event_t *event )
+static bool state_exec_during( const state_t *state, const hsm_event_t *event )
 {
-	/* Execute */
-	int err = 0;
+	/* Validate inputs */
+	bool success = ( state != NULL );
 
-	if( state->during != NULL )
+	if( success )
 	{
-		err = state->during( state, event );
+		if( state->during != NULL )
+		{
+			success = state->during( state, event );
+		}
 	}
 
-	/* Exit */
-	return err;
+	return success;
 }
 
 /**
@@ -255,21 +315,23 @@ static int state_exec_during( const state_t *state, const hsm_event_t *event )
  * \param[in] state The hsm state.
  * \param[in] event The event signal.
  *
- * \retval 0   Success.
- * \retval Any Fail.
+ * \retval True  Success.
+ * \retval False Failure.
  */
-static int state_exec_onExit( const state_t *state, const hsm_event_t *event )
+static bool state_exec_onExit( const state_t *state, const hsm_event_t *event )
 {
-	/* Execute */
-	int err = 0;
+	/* Validate inputs */
+	bool success = ( state != NULL );
 
-	if( state->onExit != NULL )
+	if( success )
 	{
-		err = state->onExit( state, event );
+		if( state->onExit != NULL )
+		{
+			success = state->onExit( state, event );
+		}
 	}
 
-	/* Exit */
-	return err;
+	return success;
 }
 
 // ############################################################################
@@ -295,7 +357,7 @@ hsm_t _hsm_build( const state_t *initialState, state_t *allStates[],
 	/* Build it */
 	hsm_t aux;
 	/* TODO: Check return code. */
-	(void)hsm_init( &aux, initialState, allStates, allStatesSize );
+	( void )hsm_init( &aux, initialState, allStates, allStatesSize );
 	return aux;
 }
 
@@ -310,22 +372,24 @@ hsm_t _hsm_build( const state_t *initialState, state_t *allStates[],
 int hsm_reset( hsm_t *me )
 {
 	/* Check valid input */
-	int errorCode = 0L;
+	int errorCode = 0;
 
-	if ( me == NULL )
+	if( me == NULL )
 	{
 		/* Invalid input. */
-		errorCode = -1L;
+		errorCode = -1;
 	}
 
 	if( errorCode == 0L )
 	{
 		/* Reset hsm */
-		const bool initSuccess = hsm_init( me, me->itsInitialState, me->allStates, me->allStatesSize );
-		if (!initSuccess)
+		const bool initSuccess = hsm_init( me, me->itsInitialState, me->allStates,
+		                                   me->allStatesSize );
+
+		if( !initSuccess )
 		{
 			/* Failed to initialize the HSM */
-			errorCode = -1L;
+			errorCode = -1;
 		}
 	}
 
@@ -360,38 +424,39 @@ int hsm_reset( hsm_t *me )
  * \param[in] me    The hierarchical state machine handle.
  * \param[in] event The event signal.
  *
- * \retval 1  No event signal given.
- * \retval 0  Success.
+ * \retval  1  No event signal given.
+ * \retval  0  Success.
  * \retval -1 Failure.
  */
 int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 {
-	int errorCode = 0L;
+	int errorCode = 0;
 
 	/* Check valid input */
 	if( me == NULL )
 	{
 		/* Invalid input. */
-		errorCode = -1L;
+		errorCode = -1;
 	}
 
-	if (errorCode == 0L)
+	if( errorCode == 0 )
 	{
-		if (me->itsCurrentState == NULL)
+		if( me->itsCurrentState == NULL )
 		{
 			/* Invalid input. */
-			errorCode = -1L;
+			errorCode = -1;
 		}
 	}
 
 	state_t *newState = NULL;
-	char* msg = NULL;
+	const char *msg = NULL;
+
 	if( errorCode == 0L )
 	{
 		hsm_st_mode_t next_state_mode = HSM_ST_M_ERROR;
 
 		/* Handle event */
-		state_t * const oldState = me->itsCurrentState;
+		state_t *const oldState = me->itsCurrentState;
 		newState = me->itsCurrentState;
 
 		switch( oldState->itsMode )
@@ -401,35 +466,45 @@ int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 				/*
 				 * Go to parent/child
 				 */
-				if( state_hasChild( oldState ) )
+				const int hasChildReturnCode = state_hasChild( oldState );
+
+				if( hasChildReturnCode == 1 )
 				{
 					/* Change current state */
 					newState = ( state_t * )oldState->itsInitialState;
 					msg = "Top --> Child";
 				}
-				else
+				else if( hasChildReturnCode == 0 )
 				{
 					newState = state_getTop( oldState );
 					msg = "Child --> Top";
 				}
+				else
+				{
+					/* Error */
+					errorCode = -1;
+				}
 
 				/* Execute on_entry */
-				if( state_exec_onEntry( oldState, event ) )
+				if( !state_exec_onEntry( oldState, event ) )
 				{
 					/* Fail */
-					errorCode = -1L;
+					errorCode = -1;
 				}
 
 				/* Go to next mode */
 				next_state_mode = HSM_ST_M_DURING;
 				break;
 			}
+
 			case HSM_ST_M_DURING:
 			{
 				/*
 				 * Go to parent/child
 				 */
-				if( state_hasChild( oldState ) )
+				const int hasChildReturnCode = state_hasChild( oldState );
+
+				if( hasChildReturnCode == 1 )
 				{
 					/* Change current state */
 					if( oldState->itsInitialState->itsMode == HSM_ST_M_DURING )
@@ -443,23 +518,29 @@ int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 
 					msg = "Top --> Child";
 				}
-				else
+				else if( hasChildReturnCode == 0 )
 				{
 					newState = state_getTop( oldState );
 					msg = "Child --> Top";
 				}
+				else
+				{
+					/* Error */
+					errorCode = -1;
+				}
 
 				/* Execute during */
-				if( state_exec_during( oldState, event ) )
+				if( !state_exec_during( oldState, event ) )
 				{
 					/* Fail */
-					errorCode = -1L;
+					errorCode = -1;
 				}
 
 				/* Go to next mode */
 				next_state_mode = HSM_ST_M_CHECKING_GUARD;
 				break;
 			}
+
 			case HSM_ST_M_CHECKING_GUARD:
 			{
 				hsm_st_mode_t new_state_mode = oldState->itsMode;
@@ -467,7 +548,9 @@ int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 				/* Check guard */
 				if( oldState->itsTransition == NULL )
 				{
-					if( state_hasChild( oldState ) )
+					const int hasChildReturnCode = state_hasChild( oldState );
+
+					if( hasChildReturnCode == 1 )
 					{
 						/* Transition == NULL and no child */
 						new_state_mode = HSM_ST_M_DURING;
@@ -475,10 +558,15 @@ int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 						newState = oldState->itsHistoryState;
 						msg = "(Transition == NULL): Top --> Child";
 					}
-					else
+					else if( hasChildReturnCode == 0 )
 					{
 						newState = state_getTop( oldState );
 						msg = "Child --> Top";
+					}
+					else
+					{
+						/* Error */
+						errorCode = -1;
 					}
 				}
 				else
@@ -499,6 +587,7 @@ int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 				next_state_mode = new_state_mode;
 				break;
 			}
+
 			case HSM_ST_M_ON_EXIT:
 			{
 				/*  */
@@ -507,8 +596,10 @@ int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 					newState = oldState->itsTransition[0].targetState;
 				}
 
+				const int hasParentReturnCode = state_hasParent( oldState );
+
 				/* Change state */
-				if( state_hasParent( oldState ) )
+				if( hasParentReturnCode == 1 )
 				{
 					if( oldState->itsParentState == newState->itsParentState )
 					{
@@ -529,13 +620,13 @@ int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 						msg = "(Parent shouldExit also) --> ";
 					}
 				}
-				else
+				else if( hasParentReturnCode == 0 )
 				{
 					if( oldState->itsTransition == NULL )
 					{
 						//printf( "Name: %s\n", oldState->itsHistoryState->itsTransition[0].targetState->itsName );
 						newState = state_getTop(
-					                   oldState->itsHistoryState->itsTransition[0].targetState );
+						                   oldState->itsHistoryState->itsTransition[0].targetState );
 						msg = "(Change TOP)Top --> Top";
 					}
 					else
@@ -544,12 +635,17 @@ int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 						msg = "? ? ? (Change TOP)Top --> Top";
 					}
 				}
+				else
+				{
+					/* Error */
+					errorCode = -1;
+				}
 
 				/* Execute onExit */
-				if( state_exec_onExit( oldState, event ) )
+				if( !state_exec_onExit( oldState, event ) )
 				{
 					/* Fail */
-					errorCode = -1L;
+					errorCode = -1;
 				}
 
 				/* Current state is old now */
@@ -557,10 +653,11 @@ int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 
 				break;
 			}
+
 			default:
 			{
 				/* Fail */
-				errorCode = -1L;
+				errorCode = -1;
 			}
 		}
 
@@ -568,7 +665,7 @@ int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 		oldState->itsMode = next_state_mode;
 	}
 
-	if( errorCode == 0L )
+	if( errorCode == 0 )
 	{
 		me->itsCurrentState = newState;
 
@@ -576,7 +673,7 @@ int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 		if( event == NULL )
 		{
 			/* No event signal given */
-			errorCode = 1L;
+			errorCode = 1;
 		}
 	}
 

@@ -91,12 +91,12 @@ struct state
 	const state_t
 	*itsInitialState; /**< If it has children this is the initial. */
 	const state_t *const itsParentState; /**< The state's parent. */
-	int ( *const onEntry )( const state_t *me,
-	                        const hsm_event_t *event ); /**< The state's on entry action. */
-	int ( *const during )( const state_t *me,
-	                       const hsm_event_t *event ); /**< The state's during action. */
-	int ( *const onExit )( const state_t *me,
-	                       const hsm_event_t *event ); /**< The state's on exit action. */
+	bool ( *const onEntry )( const state_t *me,
+	                         const hsm_event_t *event ); /**< The state's on entry action. */
+	bool ( *const during )( const state_t *me,
+	                        const hsm_event_t *event ); /**< The state's during action. */
+	bool ( *const onExit )( const state_t *me,
+	                        const hsm_event_t *event ); /**< The state's on exit action. */
 	const hsm_transition_t *const
 	itsTransition; /**< The state's transition. */
 	const uint32_t
@@ -124,6 +124,7 @@ typedef struct
 // ############################################################################
 // Function declarations
 
+// cppcheck-suppress misra-c2012-2.5
 /**
  * \brief Creates the hierarchical state machine handle.
  *
