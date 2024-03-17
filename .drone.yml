@@ -13,8 +13,7 @@ steps:
   commands:
   - chown -R 1000:1000 .
 
-- name: Test
+- name: Build
   image: voidbuffer/devtools:latest
   commands:
   - make
-

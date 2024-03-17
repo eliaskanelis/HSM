@@ -1,11 +1,9 @@
-# Executables
+# Generated files
 /bin
-
-# Object files
 /obj
+/doc
+/tmp
 
 # Auto-generated files
-version.h
-
-# Docs
-/doc
+/inc/version.h
+/.cmd_history

@@ -13,7 +13,7 @@
 
 ## About
 
-> Portable cross-platform hierarchical state machine that uses a trick to 
+> Portable cross-platform hierarchical state machine that uses a trick to
 > implement inheritance in C.
 
 ## Getting Started

@@ -1,0 +1,7 @@
+{
+    "script": "misra",
+    "args": [
+	"--rule-texts=conf/cppcheck/misra_c_2012_rules.txt",
+	"--suppress-rules 21.6"
+    ]
+}

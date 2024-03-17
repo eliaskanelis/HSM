@@ -9,11 +9,11 @@
  *
  * Created:  02/05/2017
  *
- * \author   Kanelis Ilias    hkanelhs@yahoo.gr
+ * \author   Kanelis Elias    e.kanelis@voidbuffer.com
  */
 
 /**
- * \defgroup Services    Services
+ * \defgroup Ungrouped    Ungrouped
  *
  * \code
  * #include "hsm.h"
