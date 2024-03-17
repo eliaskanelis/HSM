@@ -140,12 +140,13 @@ typedef struct
 /*
  * Basic
  */
-hsm_t _hsm_build( const state_t *initialState, state_t *allStates[],
+hsm_t _hsm_build( const state_t *const initialState,
+                  const state_t *const allStates[],
                   const uint32_t allStatesSize );
 
-int hsm_reset( hsm_t *me );
+int hsm_reset( hsm_t *const me );
 
-int hsm_handleEvent( hsm_t *me, const hsm_event_t *event );
+int hsm_handleEvent( hsm_t *const me, const hsm_event_t *const event );
 
 #ifdef __cplusplus
 }
