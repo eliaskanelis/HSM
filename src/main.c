@@ -6,7 +6,6 @@
 	Include files
 ******************************************************************************/
 
-#include "console.h"
 #include "hsm.h"
 
 #include <stdlib.h>
@@ -115,14 +114,10 @@ static state_t *stateList[] =
  */
 int main( void )
 {
-	/* Build console */
-	console_t serial = console_build();
-
 	hsm_t sys = hsm_build( &topA, stateList );
 
 	/* Greeting */
-	serial.puts( "---- Hierarchical state machine v" );
-	serial.puts( "\nSystem ready...\n\n" );
+	printf( "Hierarchical state machine\nSystem ready...\n\n" );
 
 	int i = 0;
 

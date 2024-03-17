@@ -55,12 +55,6 @@ CFLAGS +=               -g
 CFLAGS += -DDEBUG
 
 #################################################
-# Console
-
-C_SOURCES +=            $(shell find components/console/ -name "*.c")
-CFLAGS +=               -Icomponents/console/
-
-#################################################
 
 OBJECTS:=               $(addprefix $(OBJ_DIR)/,$(C_SOURCES:%.c=%.o))
 MAIN_C_OBJECTS:=        $(addprefix $(OBJ_DIR)/,$(C_SOURCE_MAIN:%.c=%.o))
