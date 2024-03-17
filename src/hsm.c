@@ -1,4 +1,4 @@
-﻿// ############################################################################
+// ############################################################################
 // ############################################################################
 // Code
 
@@ -9,6 +9,7 @@
 #include "hsm.h"
 
 #include <stdlib.h>
+#include <stdbool.h>
 
 // ############################################################################
 // ############################################################################
@@ -17,52 +18,31 @@
 #ifdef DEBUG
 #include <stdio.h>
 
-static const char *hsm_state_getModeName( const state_t *state )
+static const char* hsm_state_modeName[] =
 {
-	switch( state->itsMode )
-	{
-		case HSM_ST_M_ON_ENTRY:
-			return "onEntry";
-
-		case HSM_ST_M_DURING:
-			return "during ";
-
-		case HSM_ST_M_CHECKING_GUARD:
-			return "guard  ";
-
-		case HSM_ST_M_TAKING_ACTION:
-			return "action ";
-
-		case HSM_ST_M_ON_EXIT:
-			return "onExit ";
-
-		default:
-			return "ERROR  ";
-	}
-}
+	"onEntry",
+	"during ",
+	"guard  ",
+	"action ",
+	"onExit ",
+	"ERROR  "
+};
 #endif
 
-static void hsm_debugFrom( const char *mode, const state_t *state )
+static void hsm_debug( const state_t *fromState, const state_t *toState, const char *msg )
 {
 #ifdef DEBUG
-	printf( "\x1b[32m%s\x1b[0m: \x1b[33m%s\x1b[0m.\x1b[33m%s\x1b[0m", mode,
-	        state->itsName,
-	        hsm_state_getModeName( state ) );
-#else
-	( void )mode;
-	( void )state;
-#endif
-}
+	const char* fromStateModeName = hsm_state_modeName[fromState->itsMode];
+	const char* toStateModeName = hsm_state_modeName[toState->itsMode];
 
-static void hsm_debugTo( const char *msg, const state_t *state )
-{
-#ifdef DEBUG
-	printf( "\t[\x1b[34m%s\x1b[0m]\t\t\x1b[33m%s.\x1b[33m%s\x1b[0m\x1b[0m", msg,
-	        state->itsName,
-	        hsm_state_getModeName( state ) );
+	printf( "\x1b[32m%s\x1b[0m: ", fromStateModeName );
+	printf( "\x1b[33m%s\x1b[0m.\x1b[33m%s\x1b[0m", fromState->itsName, fromStateModeName );
+	printf( " ---> \x1b[33m%s.\x1b[33m%s\x1b[0m\x1b[0m", toState->itsName, toStateModeName );
+	printf( "   \t[\x1b[34m%-40s\x1b[0m]\t", msg);
 #else
 	( void )msg;
-	( void )state;
+	( void )fromState;
+	( void )toState;
 #endif
 }
 
@@ -70,7 +50,7 @@ static void hsm_debugTo( const char *msg, const state_t *state )
 // ############################################################################
 // Local functions
 
-static void hsm_init( hsm_t *me, const state_t *initialState,
+static bool hsm_init( hsm_t *me, const state_t *initialState,
                       state_t *allStates[], const uint32_t allStatesSize );
 
 /*
@@ -94,43 +74,53 @@ static int state_exec_onExit( const state_t *state, const hsm_event_t *event );
  * \param[in]     initialState  The state that the HSM will begin with.
  * \param[in]     allStates     A list with all the hsm's states.
  * \param[in]     allStatesSize The number of the hsm's states.
+ *
+ * \return True on success, False on failure.
  */
-static void hsm_init( hsm_t *me, const state_t *initialState,
+static bool hsm_init( hsm_t *me, const state_t *initialState,
                       state_t *allStates[], const uint32_t allStatesSize )
 {
 	/* Check valid input */
-	if( ( initialState == NULL ) || ( allStates == NULL ) ||
-	                ( allStatesSize == 0U ) )
-	{
-		me->itsInitialState = NULL;
-		me->itsCurrentState = NULL;
-		me->allStates = NULL;
-		me->allStatesSize = 0;
-		return;
-	}
+	bool success = ((me != NULL) && (initialState != NULL) && (allStates!=NULL) && (allStatesSize != 0U));
 
 	/* Check if initial state */
-	if( initialState->itsParentState != NULL )
+	if( success )
 	{
-		/* Not a top state */
-		me->itsInitialState = NULL;
-		me->itsCurrentState = NULL;
-		me->allStates = NULL;
-		me->allStatesSize = 0;
-		return;
+		if( initialState->itsParentState != NULL )
+		{
+			/* Not a top state */
+			success = false;
+		}
 	}
 
-	/* Initialize it */
-	me->itsInitialState = ( state_t * )initialState;
-	me->itsCurrentState = ( state_t * )initialState;
-	me->allStates = allStates;
-	me->allStatesSize = allStatesSize;
-
-	/* Reset all states */
-	for( uint32_t i = me->allStatesSize ; i -- > 0 ; )
+	if( success )
 	{
-		state_reset( me->allStates[i] );
+		/* Initialize it */
+		me->itsInitialState = ( state_t * )initialState;
+		me->itsCurrentState = ( state_t * )initialState;
+		me->allStates = allStates;
+		me->allStatesSize = allStatesSize;
+
+		/* Reset all states */
+		for( uint32_t i = me->allStatesSize ; i -- > 0 ; )
+		{
+			state_reset( me->allStates[i] );
+		}
 	}
+	else
+	{
+		if (me != NULL)
+		{
+			/* Not a top state */
+			me->itsInitialState = NULL;
+			me->itsCurrentState = NULL;
+			me->allStates = NULL;
+			me->allStatesSize = 0;
+			success = false;
+		}
+	}
+
+	return success;
 }
 
 /**
@@ -304,7 +294,8 @@ hsm_t _hsm_build( const state_t *initialState, state_t *allStates[],
 {
 	/* Build it */
 	hsm_t aux;
-	hsm_init( &aux, initialState, allStates, allStatesSize );
+	/* TODO: Check return code. */
+	(void)hsm_init( &aux, initialState, allStates, allStatesSize );
 	return aux;
 }
 
@@ -314,22 +305,31 @@ hsm_t _hsm_build( const state_t *initialState, state_t *allStates[],
  * \param[in,out] me The hierarchical state machine handle.
  *
  * \retval 0  Success.
- * \retval -1 Fail.
+ * \retval -1 Failure.
  */
 int hsm_reset( hsm_t *me )
 {
 	/* Check valid input */
-	if( me == NULL )
+	int errorCode = 0L;
+
+	if ( me == NULL )
 	{
-		/* Fail */
-		return -1;
+		/* Invalid input. */
+		errorCode = -1L;
 	}
 
-	/* Reset hsm */
-	hsm_init( me, me->itsInitialState, me->allStates, me->allStatesSize );
+	if( errorCode == 0L )
+	{
+		/* Reset hsm */
+		const bool initSuccess = hsm_init( me, me->itsInitialState, me->allStates, me->allStatesSize );
+		if (!initSuccess)
+		{
+			/* Failed to initialize the HSM */
+			errorCode = -1L;
+		}
+	}
 
-	/* Success */
-	return 0;
+	return errorCode;
 }
 
 /**
@@ -362,167 +362,172 @@ int hsm_reset( hsm_t *me )
  *
  * \retval 1  No event signal given.
  * \retval 0  Success.
- * \retval -1 Fail.
+ * \retval -1 Failure.
  */
 int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 {
+	int errorCode = 0L;
+
 	/* Check valid input */
 	if( me == NULL )
 	{
-		/* Fail */
-		return -1;
+		/* Invalid input. */
+		errorCode = -1L;
 	}
 
-	/* Handle event */
-	state_t *oldState = me->itsCurrentState;
-	state_t *newState = me->itsCurrentState;
-
-	switch( oldState->itsMode )
+	if (errorCode == 0L)
 	{
-		case HSM_ST_M_ON_ENTRY:
-			hsm_debugFrom( "ON_ENTRY", oldState );
+		if (me->itsCurrentState == NULL)
+		{
+			/* Invalid input. */
+			errorCode = -1L;
+		}
+	}
 
-			/* Go to next mode */
-			oldState->itsMode = HSM_ST_M_DURING;
+	state_t *newState = NULL;
+	char* msg = NULL;
+	if( errorCode == 0L )
+	{
+		hsm_st_mode_t next_state_mode = HSM_ST_M_ERROR;
 
-			/*
-			 * Go to parent/child
-			 */
-			if( state_hasChild( oldState ) )
+		/* Handle event */
+		state_t * const oldState = me->itsCurrentState;
+		newState = me->itsCurrentState;
+
+		switch( oldState->itsMode )
+		{
+			case HSM_ST_M_ON_ENTRY:
 			{
-				/* Change current state */
-				newState = ( state_t * )oldState->itsInitialState;
-				hsm_debugTo( "Top --> Child", newState );
-			}
-			else
-			{
-				newState = state_getTop( oldState );
-				hsm_debugTo( "Child --> Top", newState );
-			}
-
-			/* Execute on_entry */
-			if( state_exec_onEntry( oldState, event ) )
-			{
-				/* Fail */
-				return -1;
-			}
-
-			break;
-
-		case HSM_ST_M_DURING:
-			hsm_debugFrom( "DURING  ", oldState );
-
-			/* Go to next mode */
-			oldState->itsMode = HSM_ST_M_CHECKING_GUARD;
-
-			/*
-			 * Go to parent/child
-			 */
-			if( state_hasChild( oldState ) )
-			{
-				/* Change current state */
-				if( oldState->itsInitialState->itsMode == HSM_ST_M_DURING )
-				{
-					newState = ( state_t * )oldState->itsInitialState;
-				}
-				else
-				{
-					newState = oldState->itsHistoryState;//BUG
-				}
-
-				hsm_debugTo( "Top --> Child", newState );
-			}
-			else
-			{
-				newState = state_getTop( oldState );
-				hsm_debugTo( "Child --> Top", newState );
-			}
-
-			/* Execute during */
-			if( state_exec_during( oldState, event ) )
-			{
-				/* Fail */
-				return -1;
-			}
-
-			break;
-
-		case HSM_ST_M_CHECKING_GUARD:
-			hsm_debugFrom( "GUARD   ", oldState );
-
-			/* Check guard */
-			if( oldState->itsTransition == NULL )
-			{
+				/*
+				 * Go to parent/child
+				 */
 				if( state_hasChild( oldState ) )
 				{
-					/* Transition == NULL and no child */
-					oldState->itsMode = HSM_ST_M_DURING;
 					/* Change current state */
-					newState = oldState->itsHistoryState;
-					hsm_debugTo( "(Transition == NULL): Top --> Child", newState );
+					newState = ( state_t * )oldState->itsInitialState;
+					msg = "Top --> Child";
 				}
 				else
 				{
 					newState = state_getTop( oldState );
-					hsm_debugTo( "Child --> Top", newState );
+					msg = "Child --> Top";
 				}
-			}
-			else
-			{
-				/* Check guard */
-				if( oldState->itsTransition[0].guard == NULL )
+
+				/* Execute on_entry */
+				if( state_exec_onEntry( oldState, event ) )
 				{
-					/* No guard */
-					oldState->itsMode = HSM_ST_M_ON_EXIT;
-					hsm_debugTo( "(No guard): Top --> Child", newState );
+					/* Fail */
+					errorCode = -1L;
 				}
+
+				/* Go to next mode */
+				next_state_mode = HSM_ST_M_DURING;
+				break;
 			}
-
-			/* Execute guard */
-			//
-
-
-			break;
-
-		case HSM_ST_M_ON_EXIT:
-			hsm_debugFrom( "ON_EXIT ", oldState );
-
-			/* Current state is old now */
-			oldState->itsMode = HSM_ST_M_ON_ENTRY;
-
-			/*  */
-			if( oldState->itsTransition != NULL )
+			case HSM_ST_M_DURING:
 			{
-				newState = oldState->itsTransition[0].targetState;
-			}
-
-			/* Change state */
-			if( state_hasParent( oldState ) )
-			{
-				if( oldState->itsParentState == newState->itsParentState )
+				/*
+				 * Go to parent/child
+				 */
+				if( state_hasChild( oldState ) )
 				{
-					/*
-					 * Have common parent (but not NULL)
-					 */
-					state_t *parent = ( state_t * )oldState->itsParentState;
-					parent->itsHistoryState = newState;
-					hsm_debugTo( "(Common parent): Child --> Child", newState );
+					/* Change current state */
+					if( oldState->itsInitialState->itsMode == HSM_ST_M_DURING )
+					{
+						newState = ( state_t * )oldState->itsInitialState;
+					}
+					else
+					{
+						newState = oldState->itsHistoryState;//BUG
+					}
+
+					msg = "Top --> Child";
 				}
 				else
 				{
-					/*
-					 * We exit a parent state so parent should exit also
-					 */
-					newState = ( state_t * )oldState->itsParentState;
-					newState->itsMode = HSM_ST_M_ON_EXIT;
-					hsm_debugTo( "(Parent shouldExit also) --> ", newState );
+					newState = state_getTop( oldState );
+					msg = "Child --> Top";
 				}
+
+				/* Execute during */
+				if( state_exec_during( oldState, event ) )
+				{
+					/* Fail */
+					errorCode = -1L;
+				}
+
+				/* Go to next mode */
+				next_state_mode = HSM_ST_M_CHECKING_GUARD;
+				break;
 			}
-			else
+			case HSM_ST_M_CHECKING_GUARD:
 			{
+				hsm_st_mode_t new_state_mode = oldState->itsMode;
+
+				/* Check guard */
+				if( oldState->itsTransition == NULL )
+				{
+					if( state_hasChild( oldState ) )
+					{
+						/* Transition == NULL and no child */
+						new_state_mode = HSM_ST_M_DURING;
+						/* Change current state */
+						newState = oldState->itsHistoryState;
+						msg = "(Transition == NULL): Top --> Child";
+					}
+					else
+					{
+						newState = state_getTop( oldState );
+						msg = "Child --> Top";
+					}
+				}
+				else
+				{
+					/* Check guard */
+					if( oldState->itsTransition[0].guard == NULL )
+					{
+						/* No guard */
+						new_state_mode = HSM_ST_M_ON_EXIT;
+						msg = "(No guard): Top --> Child";
+					}
+				}
+
+				/* Execute guard */
+				//
+
+				/* Go to next mode */
+				next_state_mode = new_state_mode;
+				break;
+			}
+			case HSM_ST_M_ON_EXIT:
+			{
+				/*  */
+				if( oldState->itsTransition != NULL )
+				{
+					newState = oldState->itsTransition[0].targetState;
+				}
+
+				/* Change state */
 				if( state_hasParent( oldState ) )
 				{
-					//hsm_debugTo( "(Change TOP)Top --> Child (But go to TOP)", newState );
+					if( oldState->itsParentState == newState->itsParentState )
+					{
+						/*
+						 * Have common parent (but not NULL)
+						 */
+						state_t *parent = ( state_t * )oldState->itsParentState;
+						parent->itsHistoryState = newState;
+						msg = "(Common parent): Child --> Child";
+					}
+					else
+					{
+						/*
+						 * We exit a parent state so parent should exit also
+						 */
+						newState = ( state_t * )oldState->itsParentState;
+						newState->itsMode = HSM_ST_M_ON_EXIT;
+						msg = "(Parent shouldExit also) --> ";
+					}
 				}
 				else
 				{
@@ -530,40 +535,51 @@ int hsm_handleEvent( hsm_t *me, const hsm_event_t *event )
 					{
 						//printf( "Name: %s\n", oldState->itsHistoryState->itsTransition[0].targetState->itsName );
 						newState = state_getTop(
-						                   oldState->itsHistoryState->itsTransition[0].targetState );
-						hsm_debugTo( "(Change TOP)Top --> Top", newState );
+					                   oldState->itsHistoryState->itsTransition[0].targetState );
+						msg = "(Change TOP)Top --> Top";
 					}
 					else
 					{
 						newState = state_getTop( newState );
-						hsm_debugTo( "? ? ? (Change TOP)Top --> Top", newState );
+						msg = "? ? ? (Change TOP)Top --> Top";
 					}
 				}
-			}
 
-			/* Execute onExit */
-			if( state_exec_onExit( oldState, event ) )
+				/* Execute onExit */
+				if( state_exec_onExit( oldState, event ) )
+				{
+					/* Fail */
+					errorCode = -1L;
+				}
+
+				/* Current state is old now */
+				next_state_mode = HSM_ST_M_ON_ENTRY;
+
+				break;
+			}
+			default:
 			{
 				/* Fail */
-				return -1;
+				errorCode = -1L;
 			}
+		}
 
-			break;
-
-		default:
-			/* Fail */
-			return -1;
+		hsm_debug( oldState, newState, msg );
+		oldState->itsMode = next_state_mode;
 	}
 
-	me->itsCurrentState = newState;
-
-	/* Check for event signal */
-	if( event == NULL )
+	if( errorCode == 0L )
 	{
-		/* No event signal given */
-		return 1;
+		me->itsCurrentState = newState;
+
+		/* Check for event signal */
+		if( event == NULL )
+		{
+			/* No event signal given */
+			errorCode = 1L;
+		}
 	}
 
 	/* Success */
-	return 0;
+	return errorCode;
 }

@@ -1,4 +1,4 @@
-﻿// ############################################################################
+// ############################################################################
 // ############################################################################
 // About
 
@@ -74,7 +74,7 @@ typedef struct
  */
 typedef enum
 {
-	HSM_ST_M_ON_ENTRY, /**< The HSM state is in onEntry action. */
+	HSM_ST_M_ON_ENTRY = 0u, /**< The HSM state is in onEntry action. */
 	HSM_ST_M_DURING, /**< The HSM state is in during action. */
 	HSM_ST_M_CHECKING_GUARD, /**< The HSM state is checking guards. */
 	HSM_ST_M_TAKING_ACTION, /**< The HSM state is taking action. */
