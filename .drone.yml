@@ -18,7 +18,19 @@ steps:
   - git fetch --tags
   - chown -R 1000:1000 .
 
+- name: Analyse
+  image: voidbuffer/devtools:latest
+  commands:
+  - ./scripts/shellcheck.sh
+  - ./scripts/cppcheck.sh
+  - ./scripts/pmccabe.sh
+
 - name: Build
   image: voidbuffer/devtools:latest
   commands:
   - make
+
+- name: Docs
+  image: voidbuffer/devtools:latest
+  commands:
+  - ./scripts/doxygen.sh
