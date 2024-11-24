@@ -24,6 +24,7 @@ steps:
   - ./scripts/shellcheck.sh
   - ./scripts/cppcheck.sh
   - ./scripts/pmccabe.sh
+  - ./scripts/checkFormatting.sh
 
 - name: Build
   image: voidbuffer/devtools:latest
