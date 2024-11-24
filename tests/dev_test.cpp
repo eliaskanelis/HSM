@@ -1,21 +1,14 @@
 #include "CppUTest/TestHarness.h"
 
-TEST_GROUP( dev_test )
-{
-	//
+TEST_GROUP(dev_test){
 
-	void setup()
-	{
-		//
-	}
+    void setup(){
+        //
+    }
 
-	void teardown()
-	{
-		//
-	}
-};
+    void teardown(){
+        //
+    }};
 
-TEST( dev_test, Should_ExpectedBehavior_When_StateUnderTest )
-{
-
-}
+TEST(dev_test, Should_ExpectedBehavior_When_StateUnderTest)
+{}
